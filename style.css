@@ -126,7 +126,7 @@ a {
     transition: color var(--transition);
 }
 
-/* Estilo da palavra "Vinho" dentro do logo (span) */
+/* Estilo do span dentro do logo (exclamação) */
 .logo span {
     /* Cor vinho */
     color: var(--primary);
@@ -366,7 +366,7 @@ a {
 }
 
 /* ============================================
-   GRADE DE POSTS
+   GRADE DE POSTS (SEÇÃO ARTIGOS)
    ============================================ */
 /* Container da grade de posts */
 .posts-grid {
@@ -527,6 +527,64 @@ a {
 .btn-load-more:active {
     /* Reduz levemente */
     transform: scale(0.98);
+}
+
+/* ============================================
+   SEÇÕES SOBRE E CONTATO
+   ============================================ */
+/* Estilo comum para as seções sobre e contato */
+.about-section,
+.contact-section {
+    /* Espaço superior */
+    padding: 4rem 0;
+    /* Borda superior sutil */
+    border-top: 1px solid var(--dark-gray);
+}
+
+/* Container interno para limitar largura */
+.about-container,
+.contact-container {
+    /* Largura máxima para leitura confortável */
+    max-width: 800px;
+    /* Centraliza */
+    margin: 0 auto;
+}
+
+/* Título das seções */
+.section-title {
+    /* Tamanho grande */
+    font-size: 2.4rem;
+    /* Cor branca */
+    color: var(--white);
+    /* Espaço inferior */
+    margin-bottom: 1.5rem;
+    /* Borda inferior decorativa */
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+/* Texto comum das seções */
+.section-text {
+    /* Cor cinza claro */
+    color: var(--light-gray);
+    /* Altura da linha */
+    line-height: 1.7;
+    /* Espaço inferior entre parágrafos */
+    margin-bottom: 1.5rem;
+}
+
+/* Link de contato dentro da seção contato */
+.contact-link {
+    /* Cor vinho */
+    color: var(--primary);
+    /* Transição de cor */
+    transition: color var(--transition);
+}
+
+/* Efeito hover no link de contato */
+.contact-link:hover {
+    /* Cor branca */
+    color: var(--white);
 }
 
 /* ============================================
