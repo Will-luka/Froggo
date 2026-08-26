@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Adiciona a classe 'post-card' ao article
         article.classList.add('post-card');
 
-        // Cria o link interno do card
+        // Cria o link interno do card (agora aponta para a seção de artigos)
         const link = document.createElement('a');
-        // Define o href (neste caso, '#', pois é demonstrativo)
-        link.href = '#';
+        // Define o href como âncora para a seção de artigos
+        link.href = '#artigos';
         // Adiciona a classe 'post-card-link'
         link.classList.add('post-card-link');
 
