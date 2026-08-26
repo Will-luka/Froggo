@@ -29,8 +29,8 @@
     <main class="container main-content">
         <!-- Seção principal do Pokémon -->
         <section class="pokemon-detail">
-            <!-- Bloco de Introdução -->
-            <div class="info-card intro-card">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
                 <div class="pokemon-intro">
                     <div class="pokemon-intro-image">
                         <img src="alcremie.jpg" alt="Alcremie">
@@ -52,33 +52,27 @@
                 </div>
             </div>
 
-            <!-- Grade de bloquinhos -->
-            <div class="pokemon-cards-grid">
-                <!-- Bloco: Evolução -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🔄 Evolução</h2>
-                    <div class="evolution-info">
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                <!-- Card: Evolução -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">🔄 Evolução</h2>
+                    <div class="pokemon-card-content">
                         <div class="evolution-chain">
-                            <div class="evolution-stage">
-                                <span class="evolution-name">Milcery</span>
-                            </div>
+                            <span class="evolution-name">Milcery</span>
                             <span class="evolution-arrow">→</span>
-                            <div class="evolution-stage">
-                                <span class="evolution-level">Nível 4</span>
-                            </div>
+                            <span class="evolution-level">Nível 4</span>
                             <span class="evolution-arrow">→</span>
-                            <div class="evolution-stage">
-                                <span class="evolution-name">Alcremie</span>
-                            </div>
+                            <span class="evolution-name">Alcremie</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Passiva -->
-                <div class="info-card">
-                    <h2 class="info-card-title">✨ Passiva: Aroma Veil</h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Aroma Veil</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Quando um aliado está sob efeito de um dos escudos ou buffs de Alcremie, 
                             remove quaisquer hindrances aplicados ou que estejam afetando aquele aliado. 
                             Esta habilidade entra em cooldown de 10s após remover um hindrance. 
@@ -87,11 +81,11 @@
                     </div>
                 </div>
 
-                <!-- Bloco: Sweet Gauge -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🍰 Sweet Gauge</h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Sweet Gauge -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">🍰 Sweet Gauge</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Quando Milcery evolui para Alcremie, ganha um Sweet Gauge. 
                             Quando o Sweet Gauge é preenchido com 15 stacks, o cooldown de uma carga 
                             de Recover e Decorate será resetado. Estas habilidades também serão fortalecidas.
@@ -99,160 +93,204 @@
                     </div>
                 </div>
 
-                <!-- Bloco: Ataque Básico -->
-                <div class="info-card">
-                    <h2 class="info-card-title">👊 Ataque Básico</h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Ataca jogando chantilly. Milcery e Alcremie não possuem ataque carregado (boosted attack).
                         </p>
                     </div>
                 </div>
 
-                <!-- Bloco: Helping Hand -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🛡️ Helping Hand <span class="level-badge">Nível 1 ou 3</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Helping Hand -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🛡️ Helping Hand
+                        <span class="level-badge">Nível 1 ou 3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Concede a um aliado designado ou a si mesmo um escudo por 3s, 
                             além de aumentar o Ataque dele em 40 e Ataque Especial em 25 por 3s 
                             (sim, é um buff fixo, não funciona com base em %).
                         </p>
-                        <p class="ability-cooldown">Cooldown: 8.00s | Tipo: Buff</p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-type">📋 Tipo: Buff</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Charm -->
-                <div class="info-card">
-                    <h2 class="info-card-title">💖 Charm <span class="level-badge">Nível 1 ou 3</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Charm -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        💖 Charm
+                        <span class="level-badge">Nível 1 ou 3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Encanta um Pokémon alvo com sua voz fofa, causando dano ao primeiro Pokémon atingido. 
                             Pokémon atingidos pelo charme têm seu Ataque reduzido em 30, Ataque Especial reduzido em 20 
                             e velocidade de movimento reduzida em 30% por 2s. Adicionalmente, aumenta o Sweet Gauge em 2.
                         </p>
-                        <p class="ability-cooldown">Cooldown: 5.00s | Tipo: Debuff</p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Debuff</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Decorate -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🎀 Decorate <span class="level-badge">Nível 4</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Decorate -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🎀 Decorate
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Concede a um aliado designado ou a si mesmo um escudo por 4s. 
                             Se o escudo for concedido a um aliado, Alcremie recebe um escudo extra do mesmo valor. 
                             Ataques básicos e carregados do Pokémon protegido causarão dano adicional e aumentarão 
                             o Sweet Gauge de Alcremie em 1 por 6s (só aumenta se a própria alcremie usar seu ataque básico próprio). 
                             Quando fortalecido por um Sweet Gauge cheio, os ataques causam ainda mais dano adicional.
                         </p>
-                        <p class="ability-upgrade">⭐ Nível 10: Aumenta o tamanho do escudo.</p>
-                        <p class="ability-cooldown">Cooldown: 8.50s | Tipo: Buff</p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Aumenta o tamanho do escudo.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.50s</span>
+                            <span class="meta-type">📋 Tipo: Buff</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Recover -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🧁 Recover <span class="level-badge">Nível 4</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Recover -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🧁 Recover
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Coloca uma porção de chantilly em um local designado por até 20s. 
                             Quando um aliado pega o chantilly, seu HP é restaurado e sua velocidade de movimento 
                             aumenta em 15% por 2s. Quando o chantilly é consumido, o Sweet Gauge aumenta em 3. 
                             Quando o Sweet Gauge está cheio, a próxima porção fica mais doce, restaurando mais HP 
                             e aumentando a velocidade de movimento em 40% por 2s e aumenta o Sweet Gauge em 5.
                         </p>
-                        <p class="ability-upgrade">⭐ Nível 10: O número máximo de usos em reserva aumenta para 3.</p>
-                        <p class="ability-cooldown">Cooldown: 7.00s | Tipo: Recovery</p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: O número máximo de usos em reserva aumenta para 3.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Dazzling Gleam -->
-                <div class="info-card">
-                    <h2 class="info-card-title">✨ Dazzling Gleam <span class="level-badge">Nível 6</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Dazzling Gleam -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ✨ Dazzling Gleam
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Libera um raio de luz em forma de cone em uma direção designada, causando dano aos Pokémon oponentes 
                             após um tempinho, atordoando-os por 0.4s e aumentando o Sweet Gauge em 4 para cada Pokémon oponente atingido. 
                             Se um aliado foi afetado por Decorate, o Pokémon decorado também liberará um raio de luz cônico.
                         </p>
-                        <p class="ability-upgrade">⭐ Nível 12: Aumenta o dano.</p>
-                        <p class="ability-cooldown">Cooldown: 6.00s | Tipo: Hindrance</p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Sweet Scent -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🌸 Sweet Scent <span class="level-badge">Nível 6</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Sweet Scent -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌸 Sweet Scent
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Lança um perfume doce em um local designado, causando dano aos Pokémon oponentes na área 
                             e reduzindo sua velocidade de movimento em 30%, decaindo 10% a cada 0.5s. 
                             O anel externo do perfume permanece por 3s, causando dano e aplicando um slow de 100% 
                             durando 0.5s aos oponentes que tocarem o anel. Aumenta o Sweet Gauge em 2 para cada acerto. 
                             O golpe dá dois danos separados.
                         </p>
-                        <p class="ability-upgrade">⭐ Nível 12: Aumenta a duração do slow do anel externo para 1.5s.</p>
-                        <p class="ability-cooldown">Cooldown: 8.00s | Tipo: Debuff</p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a duração do slow do anel externo para 1.5s.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-type">📋 Tipo: Debuff</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Unite Move -->
-                <div class="info-card unite-move-card">
-                    <h2 class="info-card-title">👑 Unite Move: Fluffy Cream Supreme <span class="level-badge">Nível 8</span></h2>
-                    <div class="ability-simple">
-                        <p class="ability-description">
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Fluffy Cream Supreme
+                        <span class="level-badge">Nível 8</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Cria um bolo gigante e fica em cima dele, tornando-se imparável e ganhando um escudo por 6s. 
                             Então joga chantilly nos aliados. Aliados que recebem chantilly são curados e têm seu HP máximo 
                             aumentado por 8s. Esta habilidade termina mais cedo se o escudo for perdido, se Alcremie ficar 
                             bound (como por exemplo, se ela for alvejada por uma ult de Charizard), ou se a habilidade for cancelada manualmente.
                         </p>
-                        <p class="ability-cooldown">Cooldown: 100s | Buffs: 40% Velocidade, 30% CDR, 30% Escudo de HP Máximo (6s)</p>
-                    </div>
-                </div>
-
-                <!-- Bloco: Build Recomendada -->
-                <div class="info-card build-card">
-                    <h2 class="info-card-title">🎯 Build Recomendada</h2>
-                    <div class="build-items">
-                        <div class="build-item">
-                            <div class="build-item-icon">
-                                <!-- Espaço para imagem do item (será adicionada depois) -->
-                                <div class="item-placeholder">?</div>
-                            </div>
-                            <div class="build-item-info">
-                                <h3 class="build-item-name">Rescue Hood</h3>
-                                <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
-                            </div>
-                        </div>
-                        <div class="build-item">
-                            <div class="build-item-icon">
-                                <!-- Espaço para imagem do item (será adicionada depois) -->
-                                <div class="item-placeholder">?</div>
-                            </div>
-                            <div class="build-item-info">
-                                <h3 class="build-item-name">Wise Glasses</h3>
-                                <p class="build-item-desc">Aumenta o Ataque Especial, amplificando o poder das habilidades.</p>
-                            </div>
-                        </div>
-                        <div class="build-item">
-                            <div class="build-item-icon">
-                                <!-- Espaço para imagem do item (será adicionada depois) -->
-                                <div class="item-placeholder">?</div>
-                            </div>
-                            <div class="build-item-info">
-                                <h3 class="build-item-name">Sp. Atk. Specs</h3>
-                                <p class="build-item-desc">Aumenta permanentemente o Ataque Especial ao marcar gols.</p>
-                            </div>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 100s</span>
+                            <span class="meta-type">📋 Buffs: 40% Velocidade, 30% CDR, 30% Escudo de HP Máximo (6s)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bloco: Estratégia Early Game -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🌅 Early Game <span class="level-badge">Níveis 1-3</span></h2>
-                    <div class="strategy-simple">
-                        <p class="strategy-text">
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Rescue Hood</h3>
+                                    <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
+                                </div>
+                            </div>
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Wise Glasses</h3>
+                                    <p class="build-item-desc">Aumenta o Ataque Especial, amplificando o poder das habilidades.</p>
+                                </div>
+                            </div>
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Sp. Atk. Specs</h3>
+                                    <p class="build-item-desc">Aumenta permanentemente o Ataque Especial ao marcar gols.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Comece com charm. Apoie seu aliado em dano para ele terminar os farms mais rapidamente, 
                             quando pegar helping hand, use-o para aumentar a durabilidade do seu amiguinho ou pra ajudar ele 
                             ofensivamente (levando em conta os buffs em atk e atk sp).
@@ -260,11 +298,14 @@
                     </div>
                 </div>
 
-                <!-- Bloco: Estratégia Mid Game -->
-                <div class="info-card">
-                    <h2 class="info-card-title">☀️ Mid Game <span class="level-badge">Níveis 4-7</span></h2>
-                    <div class="strategy-simple">
-                        <p class="strategy-text">
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 4-7</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Ao evoluir, escolha entre Decorate (buff/escudo) ou Recover (cura). 
                             Eu sei que você vai pegar Recover, não vai? VOCÊ VAI NÉ??
                             Tente prever onde seus aliados estarão ao mirar o bolo (como? Pratica uai, kkkk). 
@@ -276,11 +317,14 @@
                     </div>
                 </div>
 
-                <!-- Bloco: Estratégia Late Game -->
-                <div class="info-card">
-                    <h2 class="info-card-title">🌙 Late Game <span class="level-badge">Nível 8+</span></h2>
-                    <div class="strategy-simple">
-                        <p class="strategy-text">
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Nível 8+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
                             Mantenha a estratégia anterior. Sobre a ult. Tenta ficar no meio da briga 
                             (lembra que seus aliados também tem que ter o cérebro de não se afastar de você depois que ultar).
                             Ao mesmo tempo que tenta ficar na briga, fica num lugar seguro, pra evitar que quebrem seu escudo 
@@ -292,15 +336,17 @@
                     </div>
                 </div>
 
-                <!-- Bloco: Dicas Gerais -->
-                <div class="info-card tips-card">
-                    <h2 class="info-card-title">💡 Dicas Gerais</h2>
-                    <ul class="strategy-tips">
-                        <li>Gerencie o Sweet Gauge para ter habilidades fortalecidas nos momentos certos.</li>
-                        <li>Use Aroma Veil para limpar CC dos aliados.</li>
-                        <li>Decorate pode ser usado em si mesmo se estiver sendo focado.</li>
-                        <li>Recover pode ser deixado no chão como "armadilha" de cura para aliados. Mas nem sempre é viável, gerencie seus cooldowns com cuidado.</li>
-                    </ul>
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                            <li>Gerencie o Sweet Gauge para ter habilidades fortalecidas nos momentos certos.</li>
+                            <li>Use Aroma Veil para limpar CC dos aliados.</li>
+                            <li>Decorate pode ser usado em si mesmo se estiver sendo focado.</li>
+                            <li>Recover pode ser deixado no chão como "armadilha" de cura para aliados. Mas nem sempre é viável, gerencie seus cooldowns com cuidado.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
