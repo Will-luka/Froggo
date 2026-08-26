@@ -39,61 +39,50 @@
                     <div class="pokemon-tags">
                         <span class="tag tag-support">Suporte</span>
                         <span class="tag tag-ranged">À distância</span>
-                        <span class="tag tag-easy">Fácil</span>
+                        <span class="tag tag-novice">Novato</span>
+                        <span class="tag tag-special">Atacante Especial</span>
                     </div>
                     <p class="pokemon-description">
-                        Alcremie é capaz de curar, buffar e dar shield para seus aliados. É um dos melhores healers presentes no jogo. Tente manter seus aliados em aproximadamente 50-75% do seu range pra ser possível prever suas próximas jogadas, principalmente quando se está usando Recover.
+                        Alcremie é um Pokémon Suporte que foca em curar e fortalecer aliados. 
+                        Sua passiva Aroma Veil remove hindrances (stuns) de aliados que possuem seus escudos ou buffs. 
+                        Possui um medidor especial chamado Sweet Gauge que, quando cheio, fortalece suas habilidades.
                     </p>
                 </div>
             </div>
 
             <!-- Grade de informações detalhadas -->
             <div class="pokemon-info-grid">
-                <!-- Card de Atributos -->
+                <!-- Card de Evolução e Passiva -->
                 <div class="info-card">
-                    <h2 class="info-card-title">Atributos</h2>
-                    <div class="stats-list">
-                        <div class="stat-item">
-                            <span class="stat-label">HP</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 40%;"></div>
+                    <h2 class="info-card-title">Evolução e Passiva</h2>
+                    <div class="evolution-info">
+                        <div class="evolution-chain">
+                            <div class="evolution-stage">
+                                <span class="evolution-name">Milcery</span>
+                                <span class="evolution-arrow">→</span>
+                                <span class="evolution-level">Nível 4</span>
+                                <span class="evolution-arrow">→</span>
+                                <span class="evolution-name">Alcremie</span>
                             </div>
-                            <span class="stat-value">Médio</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Ataque</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 20%;"></div>
-                            </div>
-                            <span class="stat-value">Baixo</span>
+                    </div>
+                    <div class="abilities-list">
+                        <div class="ability-item">
+                            <h3 class="ability-name">Passiva: Aroma Veil</h3>
+                            <p class="ability-description">
+                                Quando um aliado está sob efeito de um dos escudos ou buffs de Alcremie, 
+                                remove quaisquer hindrances aplicados ou que estejam afetando aquele aliado. 
+                                Esta habilidade entra em cooldown de 10s após remover um hindrance. 
+                                Esta habilidade também funciona em Alcremie.
+                            </p>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Defesa</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 30%;"></div>
-                            </div>
-                            <span class="stat-value">Baixa</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Ataque Especial</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 85%;"></div>
-                            </div>
-                            <span class="stat-value">Alto</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Defesa Especial</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 75%;"></div>
-                            </div>
-                            <span class="stat-value">Alto</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Velocidade</span>
-                            <div class="stat-bar">
-                                <div class="stat-fill" style="width: 35%;"></div>
-                            </div>
-                            <span class="stat-value">Baixa</span>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Sweet Gauge (após evoluir)</h3>
+                            <p class="ability-description">
+                                Quando Milcery evolui para Alcremie, ganha um Sweet Gauge. 
+                                Quando o Sweet Gauge é preenchido com 15 stacks, o cooldown de uma carga 
+                                de Recover e Decorate será resetado. Estas habilidades também serão fortalecidas.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -103,40 +92,82 @@
                     <h2 class="info-card-title">Habilidades</h2>
                     <div class="abilities-list">
                         <div class="ability-item">
-                            <h3 class="ability-name">Habilidade Passiva: Sweet Veil</h3>
-                            <p class="ability-description">
-                                Impede que aliados próximos sejam colocados para dormir.
-                            </p>
-                        </div>
-                        <div class="ability-item">
                             <h3 class="ability-name">Ataque Básico</h3>
                             <p class="ability-description">
-                                A cada terceiro ataque, Alcremie lança um projétil que causa dano adicional.
+                                Ataca jogando chantilly. Milcery e Alcremie não possuem ataque carregado (boosted attack).
                             </p>
                         </div>
                         <div class="ability-item">
-                            <h3 class="ability-name">Habilidade Inicial: Decorate</h3>
+                            <h3 class="ability-name">Helping Hand (Move 1) - Nível 1 ou 3</h3>
                             <p class="ability-description">
-                                Alcremie decora um aliado, curando-o e aumentando seu Ataque Especial temporariamente.
+                                Concede a um aliado designado ou a si mesmo um escudo por 3s, 
+                                além de aumentar o Ataque dele em 40 e Ataque Especial em 25 por 3s (sim, é um buff fixo, não funciona com base em %).
                             </p>
+                            <p class="ability-cooldown">Cooldown: 8.00s | Tipo: Buff</p>
                         </div>
                         <div class="ability-item">
-                            <h3 class="ability-name">Habilidade Secundária: Dazzling Gleam</h3>
+                            <h3 class="ability-name">Charm (Move 2) - Nível 1 ou 3</h3>
                             <p class="ability-description">
-                                Emite um flash de luz que causa dano aos inimigos na área.
+                                Encanta um Pokémon alvo com sua voz fofa, causando dano ao primeiro Pokémon atingido. 
+                                Pokémon atingidos pelo charme têm seu Ataque reduzido em 30, Ataque Especial reduzido em 20 
+                                e velocidade de movimento reduzida em 30% por 2s. Adicionalmente, aumenta o Sweet Gauge em 2.
                             </p>
+                            <p class="ability-cooldown">Cooldown: 5.00s | Tipo: Debuff</p>
                         </div>
                         <div class="ability-item">
-                            <h3 class="ability-name">Habilidade Secundária: Tri Attack</h3>
+                            <h3 class="ability-name">Decorate (Upgrade do Helping Hand) - Nível 4</h3>
                             <p class="ability-description">
-                                Dispara três projéteis elementais que causam dano e podem aplicar efeitos diferentes.
+                                Concede a um aliado designado ou a si mesmo um escudo por 4s. 
+                                Se o escudo for concedido a um aliado, Alcremie recebe um escudo extra do mesmo valor. 
+                                Ataques básicos e carregados do Pokémon protegido causarão dano adicional e aumentarão 
+                                o Sweet Gauge de Alcremie em 1 por 6s (só aumenta se a própria alcremie usar seu ataque básico próprio). Quando fortalecido por um Sweet Gauge cheio, 
+                                os ataques causam ainda mais dano adicional.
                             </p>
+                            <p class="ability-upgrade">Nível 10: Aumenta o tamanho do escudo.</p>
+                            <p class="ability-cooldown">Cooldown: 8.50s | Tipo: Buff</p>
                         </div>
                         <div class="ability-item">
-                            <h3 class="ability-name">Unite Move: Berry Sweet</h3>
+                            <h3 class="ability-name">Recover (Upgrade do Helping Hand) - Nível 4</h3>
                             <p class="ability-description">
-                                Alcremie cura aliados em uma grande área e concede escudo temporário.
+                                Coloca uma porção de chantilly em um local designado por até 20s. 
+                                Quando um aliado pega o chantilly, seu HP é restaurado e sua velocidade de movimento 
+                                aumenta em 15% por 2s. Quando o chantilly é consumido, o Sweet Gauge aumenta em 3. 
+                                Quando o Sweet Gauge está cheio, a próxima porção fica mais doce, restaurando mais HP 
+                                e aumentando a velocidade de movimento em 40% por 2s e aumenta o Sweet Gauge em 5.
                             </p>
+                            <p class="ability-upgrade">Nível 10: O número máximo de usos em reserva aumenta para 3.</p>
+                            <p class="ability-cooldown">Cooldown: 7.00s | Tipo: Recovery</p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Dazzling Gleam (Upgrade do Charm) - Nível 6</h3>
+                            <p class="ability-description">
+                                Libera um raio de luz em forma de cone em uma direção designada, causando dano aos Pokémon oponentes após um tempinho, 
+                                atordoando-os por 0.4s e aumentando o Sweet Gauge em 4 para cada Pokémon oponente atingido. 
+                                Se um aliado foi afetado por Decorate, o Pokémon decorado também liberará um raio de luz cônico.
+                            </p>
+                            <p class="ability-upgrade">Nível 12: Aumenta o dano.</p>
+                            <p class="ability-cooldown">Cooldown: 6.00s | Tipo: Hindrance</p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Sweet Scent (Upgrade do Charm) - Nível 6</h3>
+                            <p class="ability-description">
+                                Lança um perfume doce em um local designado, causando dano aos Pokémon oponentes na área 
+                                e reduzindo sua velocidade de movimento em 30%, decaindo 10% a cada 0.5s. 
+                                O anel externo do perfume permanece por 3s, causando dano e aplicando um slow de 100% 
+                                durando 0.5s aos oponentes que tocarem o anel. Aumenta o Sweet Gauge em 2 para cada acerto. O golpe dá dois danos separados.
+                            </p>
+                            <p class="ability-upgrade">Nível 12: Aumenta a duração do slow do anel externo para 1.5s.</p>
+                            <p class="ability-cooldown">Cooldown: 8.00s | Tipo: Debuff</p>
+                        </div>
+                        <div class="ability-item unite-move">
+                            <h3 class="ability-name">Unite Move: Fluffy Cream Supreme - Nível 8</h3>
+                            <p class="ability-description">
+                                Cria um bolo gigante e fica em cima dele, tornando-se imparável e ganhando um escudo por 6s. 
+                                Então joga chantilly nos aliados. Aliados que recebem chantilly são curados e têm seu HP máximo 
+                                aumentado por 8s. Esta habilidade termina mais cedo se o escudo for perdido, se Alcremie ficar 
+                                bound (como por exemplo, se ela for alvejada por uma ult de Charizard), ou se a habilidade for cancelada manualmente.
+                            </p>
+                            <p class="ability-cooldown">Cooldown: 100s | Buffs: 40% Velocidade, 30% CDR, 30% Escudo de HP Máximo (6s)</p>
                         </div>
                     </div>
                 </div>
@@ -152,7 +183,7 @@
                             </div>
                             <div class="build-item-info">
                                 <h3 class="build-item-name">Rescue Hood</h3>
-                                <p class="build-item-desc">Aumenta a cura e escudos concedidos aos aliados.</p>
+                                <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
                             </div>
                         </div>
                         <div class="build-item">
@@ -162,7 +193,7 @@
                             </div>
                             <div class="build-item-info">
                                 <h3 class="build-item-name">Wise Glasses</h3>
-                                <p class="build-item-desc">Aumenta o Ataque Especial.</p>
+                                <p class="build-item-desc">Aumenta o Ataque Especial, amplificando o poder das habilidades.</p>
                             </div>
                         </div>
                         <div class="build-item">
@@ -172,7 +203,7 @@
                             </div>
                             <div class="build-item-info">
                                 <h3 class="build-item-name">Sp. Atk. Specs</h3>
-                                <p class="build-item-desc">Aumenta o Ataque Especial ao marcar gols.</p>
+                                <p class="build-item-desc">Aumenta permanentemente o Ataque Especial ao marcar gols.</p>
                             </div>
                         </div>
                     </div>
@@ -182,26 +213,33 @@
                 <div class="info-card">
                     <h2 class="info-card-title">Estratégia e Dicas</h2>
                     <div class="strategy-content">
-                        <h3 class="strategy-subtitle">Início de Jogo</h3>
+                        <h3 class="strategy-subtitle">Early game (Níveis 1-3)</h3>
                         <p class="strategy-text">
-                            Fique na rota inferior (bottom) com seu parceiro de dupla. 
-                            Use Decorate para curar e fortalecer seu aliado durante as trocas.
-                            Foque em farmar experiência para evoluir rapidamente.
+                            Comece com charm. Apoie seu aliado em dano para ele terminar os farms mais rapidamente, quando pegar helping hand, use-o para aumentar a durabilidade do seu amiguinho ou pra ajudar ele ofensivamente (levando em conta os buffs em atk e atk sp).
                         </p>
                         
-                        <h3 class="strategy-subtitle">Meio de Jogo</h3>
+                        <h3 class="strategy-subtitle">Mid game (Níveis 4-7)</h3>
                         <p class="strategy-text">
-                            Continue apoiando sua equipe com curas e buffs. 
-                            Posicione-se atrás dos tanques e cause dano com Dazzling Gleam 
-                            ou Tri Attack quando seguro.
+                            Ao evoluir, escolha entre Decorate (buff/escudo) ou Recover (cura). 
+                            Eu sei que você vai pegar Recover, não vai? VOCÊ VAI NÉ??
+                            Tente prever onde seus aliados estarão ao mirar o bolo (como? Pratica uai, kkkk). Lembre que o movimento de certos pokémon (geralmente speedsters) é frenético e caótico, nesses casos só taca bolo no meio da treta e reza pro aliado pegar enquanto samba pelo campo de batalha.
+                            Recover é aproveitado ao máximo quando usado em pokémon parados, com alta resistência e/ou movimento facilmente previsível, não necessariamente esses três juntos, obviamente.
                         </p>
                         
-                        <h3 class="strategy-subtitle">Fim de Jogo</h3>
+                        <h3 class="strategy-subtitle">Late game (Nível 8+)</h3>
                         <p class="strategy-text">
-                            Em lutas de equipe, fique próximo aos carries e use seu 
-                            Unite Move (Berry Sweet) no momento certo para virar a luta.
-                            Priorize manter seus aliados vivos com curas constantes.
+                            Mantenha a estratégia anterior. Sobre a ult. Tenta ficar no meio da briga (lembra que seus aliados também tem que ter o cérebro de não se afastar de você depois que ultar).
+                            Ao mesmo tempo que tenta ficar na briga, fica num lugar seguro, pra evitar que quebrem seu escudo (por exemplo, evite ficar perto do adc ou assasino oponentes).
+                            Também é viável usar ela num aliado só (lembre que quanto mais aliados forem afetados pela ult, mais o buff/cura será dividido entre eles). Fazendo isso você pode salvar seu ADC de morrer pra um assasino (ou fazer seu hypercarry te carregar fazendo 2v5 hihihi)
                         </p>
+
+                        <h3 class="strategy-subtitle">Dicas Gerais</h3>
+                        <ul class="strategy-tips">
+                            <li>Gerencie o Sweet Gauge para ter habilidades fortalecidas nos momentos certos.</li>
+                            <li>Use Aroma Veil para limpar CC dos aliados.</li>
+                            <li>Decorate pode ser usado em si mesmo se estiver sendo focado.</li>
+                            <li>Recover pode ser deixado no chão como "armadilha" de cura para aliados. Mas nem sempre é viável, gerencie seus cooldowns com cuidado.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
