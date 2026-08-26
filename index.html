@@ -9,34 +9,35 @@
     <!-- Meta tag para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título da página exibido na aba do navegador -->
-    <title>BlogVinho - Base para Web Blog</title>
+    <title>Gâteau! - Blog de Culinária e Receitas</title>
     <!-- Link para o arquivo de estilos CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Cabeçalho fixo no topo da página -->
-    <header class="site-header">
+
+    <!-- Cabeçalho fixo no topo da página (âncora para Início) -->
+    <header class="site-header" id="inicio">
         <!-- Container centraliza o conteúdo e define largura máxima -->
         <div class="container header-container">
-            <!-- Logo do blog com link para a página inicial -->
-            <a href="#" class="logo">
-                <!-- Texto do logo com destaque na palavra "Vinho" -->
-                Blog<span>Vinho</span>
+            <!-- Logo do blog com link para o topo da página -->
+            <a href="#inicio" class="logo">
+                <!-- Texto do logo com destaque na exclamação -->
+                Gâteau<span>!</span>
             </a>
 
             <!-- Navegação principal do site -->
             <nav class="main-nav" id="mainNav">
                 <!-- Lista não ordenada para os itens do menu -->
                 <ul class="nav-list">
-                    <!-- Item de menu com classe ativa para destacar a página atual -->
-                    <li class="nav-item"><a href="#" class="nav-link active">Início</a></li>
-                    <!-- Item de menu normal -->
-                    <li class="nav-item"><a href="#" class="nav-link">Artigos</a></li>
-                    <!-- Item de menu normal -->
-                    <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-                    <!-- Item de menu normal -->
-                    <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    <!-- Item de menu com link para a seção Início -->
+                    <li class="nav-item"><a href="#inicio" class="nav-link active">Início</a></li>
+                    <!-- Item de menu com link para a seção Artigos -->
+                    <li class="nav-item"><a href="#artigos" class="nav-link">Artigos</a></li>
+                    <!-- Item de menu com link para a seção Sobre -->
+                    <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <!-- Item de menu com link para a seção Contato -->
+                    <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
 
@@ -52,8 +53,8 @@
     <main class="container main-content">
         <!-- Seção para o post em destaque (maior) -->
         <section class="featured-post" id="featuredPost">
-            <!-- Link envolvendo todo o card para torná-lo clicável -->
-            <a href="#" class="featured-link">
+            <!-- Link envolvendo todo o card, aponta para a seção de artigos -->
+            <a href="#artigos" class="featured-link">
                 <!-- Div que representa a imagem do post (placeholder com gradiente) -->
                 <div class="featured-image">
                     <!-- Texto sobreposto à imagem (apenas demonstrativo) -->
@@ -61,23 +62,23 @@
                 </div>
                 <!-- Container para as informações textuais do post -->
                 <div class="featured-content">
-                    <!-- Título do post em destaque -->
-                    <h2 class="featured-title">Título do Post em Destaque</h2>
-                    <!-- Resumo/descrição do post -->
-                    <p class="featured-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <!-- Título do post em destaque (alterado para Apresentação) -->
+                    <h2 class="featured-title">Apresentação</h2>
+                    <!-- Resumo/descrição provisória (alterada para "abc") -->
+                    <p class="featured-excerpt">abc</p>
                     <!-- Metadados como autor e data -->
                     <div class="post-meta">
-                        <!-- Nome do autor -->
-                        <span class="author">Por João Silva</span>
-                        <!-- Data de publicação -->
-                        <span class="date">10 de Fevereiro de 2025</span>
+                        <!-- Nome do autor (adaptado) -->
+                        <span class="author">Por Equipe Gâteau</span>
+                        <!-- Data de publicação (adaptada) -->
+                        <span class="date">Bem-vindo ao nosso blog</span>
                     </div>
                 </div>
             </a>
         </section>
 
         <!-- Grade de posts (os posts serão adicionados dinamicamente via JavaScript) -->
-        <section class="posts-grid" id="postsGrid">
+        <section class="posts-grid" id="artigos">
             <!-- Os cards de posts serão inseridos aqui pelo script.js -->
         </section>
 
@@ -86,14 +87,44 @@
             <!-- Botão que carrega mais posts ao ser clicado -->
             <button id="loadMoreBtn" class="btn-load-more">Carregar Mais</button>
         </div>
+
+        <!-- Seção Sobre (nova) -->
+        <section class="about-section" id="sobre">
+            <div class="about-container">
+                <h2 class="section-title">Sobre o Gâteau!</h2>
+                <p class="section-text">
+                    Bem-vindo ao <strong>Gâteau!</strong>, um espaço dedicado à arte da confeitaria e da culinária.
+                    Aqui compartilhamos receitas, dicas e histórias que despertam o prazer de cozinhar.
+                    Nosso objetivo é inspirar você a criar momentos deliciosos na sua cozinha.
+                </p>
+                <p class="section-text">
+                    Este site é uma base personalizável para blogs. Sinta-se à vontade para adaptar textos, cores e
+                    funcionalidades conforme sua necessidade.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção Contato (nova) -->
+        <section class="contact-section" id="contato">
+            <div class="contact-container">
+                <h2 class="section-title">Contato</h2>
+                <p class="section-text">
+                    Tem alguma dúvida, sugestão ou apenas quer dizer olá? Envie uma mensagem para
+                    <a href="mailto:contato@gateau.com" class="contact-link">contato@gateau.com</a>.
+                </p>
+                <p class="section-text">
+                    Ou siga nossas redes sociais para ficar por dentro das novidades.
+                </p>
+            </div>
+        </section>
     </main>
 
     <!-- Rodapé do site -->
     <footer class="site-footer">
         <!-- Container para centralizar e limitar largura -->
         <div class="container footer-container">
-            <!-- Texto de copyright -->
-            <p class="copyright">&copy; 2025 BlogVinho. Todos os direitos reservados.</p>
+            <!-- Texto de copyright com o novo nome -->
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
             <!-- Links para redes sociais (apenas exemplo) -->
             <div class="social-links">
                 <a href="#" class="social-link">Twitter</a>
