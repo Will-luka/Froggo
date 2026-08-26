@@ -523,3 +523,22 @@ a {
         transform: translateY(0);
     }
 }
+/* Container da imagem em destaque */
+.featured-image {
+    height: 30rem;                /* altura fixa do bloco */
+    position: relative;
+    overflow: hidden;             /* corta o que ultrapassar */
+    background-color: var(--dark-gray); /* cor de fundo enquanto carrega */
+    padding: 0;
+    margin: 0;
+}
+
+/* Imagem dentro do container */
+.featured-image .featured-img {
+    width: 100%;                  /* ocupa toda a largura */
+    height: 100%;                 /* ocupa toda a altura */
+    object-fit: cover;            /* preenche sem distorcer, cortando o excesso */
+    display: block;               /* remove espaço extra abaixo da imagem */
+    margin: 0;
+    padding: 0;
+}
