@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Alcremie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <!-- Logo leva para a página inicial -->
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- Seção principal do Pokémon -->
+        <section class="pokemon-detail">
+            <!-- Cabeçalho com imagem e informações básicas -->
+            <div class="pokemon-header">
+                <div class="pokemon-header-image">
+                    <img src="alcremie.jpg" alt="Alcremie">
+                </div>
+                <div class="pokemon-header-info">
+                    <h1 class="pokemon-detail-title">Alcremie</h1>
+                    <div class="pokemon-tags">
+                        <span class="tag tag-support">Suporte</span>
+                        <span class="tag tag-ranged">À distância</span>
+                        <span class="tag tag-easy">Fácil</span>
+                    </div>
+                    <p class="pokemon-description">
+                        Alcremie é capaz de curar, buffar e dar shield para seus aliados. É um dos melhores healers presentes no jogo. Tente manter seus aliados em aproximadamente 50-75% do seu range pra ser possível prever suas próximas jogadas, principalmente quando se está usando Recover.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grade de informações detalhadas -->
+            <div class="pokemon-info-grid">
+                <!-- Card de Atributos -->
+                <div class="info-card">
+                    <h2 class="info-card-title">Atributos</h2>
+                    <div class="stats-list">
+                        <div class="stat-item">
+                            <span class="stat-label">HP</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 40%;"></div>
+                            </div>
+                            <span class="stat-value">Médio</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Ataque</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 20%;"></div>
+                            </div>
+                            <span class="stat-value">Baixo</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Defesa</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 30%;"></div>
+                            </div>
+                            <span class="stat-value">Baixa</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Ataque Especial</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 85%;"></div>
+                            </div>
+                            <span class="stat-value">Alto</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Defesa Especial</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 75%;"></div>
+                            </div>
+                            <span class="stat-value">Alto</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Velocidade</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 35%;"></div>
+                            </div>
+                            <span class="stat-value">Baixa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Habilidades -->
+                <div class="info-card">
+                    <h2 class="info-card-title">Habilidades</h2>
+                    <div class="abilities-list">
+                        <div class="ability-item">
+                            <h3 class="ability-name">Habilidade Passiva: Sweet Veil</h3>
+                            <p class="ability-description">
+                                Impede que aliados próximos sejam colocados para dormir.
+                            </p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Ataque Básico</h3>
+                            <p class="ability-description">
+                                A cada terceiro ataque, Alcremie lança um projétil que causa dano adicional.
+                            </p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Habilidade Inicial: Decorate</h3>
+                            <p class="ability-description">
+                                Alcremie decora um aliado, curando-o e aumentando seu Ataque Especial temporariamente.
+                            </p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Habilidade Secundária: Dazzling Gleam</h3>
+                            <p class="ability-description">
+                                Emite um flash de luz que causa dano aos inimigos na área.
+                            </p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Habilidade Secundária: Tri Attack</h3>
+                            <p class="ability-description">
+                                Dispara três projéteis elementais que causam dano e podem aplicar efeitos diferentes.
+                            </p>
+                        </div>
+                        <div class="ability-item">
+                            <h3 class="ability-name">Unite Move: Berry Sweet</h3>
+                            <p class="ability-description">
+                                Alcremie cura aliados em uma grande área e concede escudo temporário.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Build Recomendada -->
+                <div class="info-card">
+                    <h2 class="info-card-title">Build Recomendada</h2>
+                    <div class="build-items">
+                        <div class="build-item">
+                            <div class="build-item-icon">
+                                <!-- Espaço para imagem do item (será adicionada depois) -->
+                                <div class="item-placeholder">?</div>
+                            </div>
+                            <div class="build-item-info">
+                                <h3 class="build-item-name">Rescue Hood</h3>
+                                <p class="build-item-desc">Aumenta a cura e escudos concedidos aos aliados.</p>
+                            </div>
+                        </div>
+                        <div class="build-item">
+                            <div class="build-item-icon">
+                                <!-- Espaço para imagem do item (será adicionada depois) -->
+                                <div class="item-placeholder">?</div>
+                            </div>
+                            <div class="build-item-info">
+                                <h3 class="build-item-name">Wise Glasses</h3>
+                                <p class="build-item-desc">Aumenta o Ataque Especial.</p>
+                            </div>
+                        </div>
+                        <div class="build-item">
+                            <div class="build-item-icon">
+                                <!-- Espaço para imagem do item (será adicionada depois) -->
+                                <div class="item-placeholder">?</div>
+                            </div>
+                            <div class="build-item-info">
+                                <h3 class="build-item-name">Sp. Atk. Specs</h3>
+                                <p class="build-item-desc">Aumenta o Ataque Especial ao marcar gols.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Estratégia -->
+                <div class="info-card">
+                    <h2 class="info-card-title">Estratégia e Dicas</h2>
+                    <div class="strategy-content">
+                        <h3 class="strategy-subtitle">Início de Jogo</h3>
+                        <p class="strategy-text">
+                            Fique na rota inferior (bottom) com seu parceiro de dupla. 
+                            Use Decorate para curar e fortalecer seu aliado durante as trocas.
+                            Foque em farmar experiência para evoluir rapidamente.
+                        </p>
+                        
+                        <h3 class="strategy-subtitle">Meio de Jogo</h3>
+                        <p class="strategy-text">
+                            Continue apoiando sua equipe com curas e buffs. 
+                            Posicione-se atrás dos tanques e cause dano com Dazzling Gleam 
+                            ou Tri Attack quando seguro.
+                        </p>
+                        
+                        <h3 class="strategy-subtitle">Fim de Jogo</h3>
+                        <p class="strategy-text">
+                            Em lutas de equipe, fique próximo aos carries e use seu 
+                            Unite Move (Berry Sweet) no momento certo para virar a luta.
+                            Priorize manter seus aliados vivos com curas constantes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
