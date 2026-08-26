@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Contato e Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link active">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="contact-section">
+            <div class="contact-container">
+                <h1 class="page-title">Contato e Feedback</h1>
+                
+                <!-- Card de introdução -->
+                <div class="pokemon-card" style="margin-bottom: 3rem;">
+                    <h2 class="pokemon-card-title">💬 Envie seu Feedback</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Tem alguma sugestão, crítica ou elogio? Adoraria ouvir sua opinião! 
+                            Preencha o formulário abaixo ou use um dos meios de contato alternativos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card do formulário -->
+                <div class="pokemon-card" style="margin-bottom: 3rem;">
+                    <h2 class="pokemon-card-title">📝 Formulário de Feedback</h2>
+                    <div class="pokemon-card-content">
+                        <!-- Formulário usando FormSubmit (serviço gratuito) -->
+                        <!-- Substitua SEU_EMAIL_AQUI pelo seu email real -->
+                        <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" class="feedback-form">
+                            <!-- Campo oculto para evitar spam -->
+                            <input type="hidden" name="_subject" value="Novo Feedback - Gâteau!">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <!-- Nome -->
+                            <div class="form-group">
+                                <label for="name" class="form-label">Seu Nome (opcional)</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Como podemos te chamar?">
+                            </div>
+                            
+                            <!-- Email para resposta -->
+                            <div class="form-group">
+                                <label for="email" class="form-label">Seu Email (opcional)</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Para respondermos se necessário">
+                            </div>
+                            
+                            <!-- Tipo de feedback -->
+                            <div class="form-group">
+                                <label for="type" class="form-label">Tipo de Feedback</label>
+                                <select id="type" name="type" class="form-input form-select">
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="critica">Crítica</option>
+                                    <option value="elogio">Elogio</option>
+                                    <option value="duvida">Dúvida</option>
+                                    <option value="erro">Erro encontrado</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Mensagem -->
+                            <div class="form-group">
+                                <label for="message" class="form-label">Mensagem *</label>
+                                <textarea id="message" name="message" class="form-input form-textarea" rows="6" placeholder="Escreva seu feedback aqui..." required></textarea>
+                            </div>
+                            
+                            <!-- Botão de envio -->
+                            <button type="submit" class="btn-load-more" style="width: 100%;">
+                                Enviar Feedback 📨
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Card de contato alternativo -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">📱 Outros Meios de Contato</h2>
+                    <div class="pokemon-card-content">
+                        <div class="contact-methods">
+                            <!-- Email direto -->
+                            <a href="mailto:SEU_EMAIL_AQUI" class="contact-method">
+                                <span class="contact-icon">📧</span>
+                                <div class="contact-info">
+                                    <h3 class="contact-method-title">Email</h3>
+                                    <p class="contact-method-desc">Clique para enviar email direto</p>
+                                </div>
+                            </a>
+                            
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/SEU_NUMERO_AQUI" target="_blank" class="contact-method">
+                                <span class="contact-icon">💬</span>
+                                <div class="contact-info">
+                                    <h3 class="contact-method-title">WhatsApp</h3>
+                                    <p class="contact-method-desc">Conversa direta no WhatsApp</p>
+                                </div>
+                            </a>
+                            
+                            <!-- Discord -->
+                            <a href="SEU_LINK_DISCORD_AQUI" target="_blank" class="contact-method">
+                                <span class="contact-icon">🎮</span>
+                                <div class="contact-info">
+                                    <h3 class="contact-method-title">Discord</h3>
+                                    <p class="contact-method-desc">Entre no meu servidor</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
