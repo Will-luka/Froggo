@@ -40,14 +40,13 @@
                         <div class="pokemon-tags">
                             <span class="tag tag-support">Suporte</span>
                             <span class="tag tag-melee">Corpo a Corpo</span>
-                            <span class="tag tag-novice">Novato</span>
+                            <span class="tag tag-intermediate">Intermediário</span>
                             <span class="tag tag-special">Atacante Especial</span>
                         </div>
                         <p class="pokemon-description">
-                            Blissey é o Pokémon Suporte definitivo, focado em manter seus aliados vivos a todo custo. 
-                            Com sua passiva Natural Cure, remove condições negativas de si mesma. 
-                            Sua principal função é curar, dar escudos e buffs para a equipe, 
-                            sendo essencial em qualquer composição que precise de sustain.
+                            Blissey é uma Suporte tanque focada em manter aliados vivos com curas poderosas e escudos. 
+                            Sua passiva Natural Cure limpa efeitos negativos automaticamente a cada 6s. 
+                            Possui habilidades de cura, buff e proteção que a tornam essencial em composições de equipe.
                         </p>
                     </div>
                 </div>
@@ -78,8 +77,8 @@
                     <h2 class="pokemon-card-title">✨ Passiva: Natural Cure</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Remove todos os efeitos negativos de status de Blissey quando ela fica fora de combate por um curto período. 
-                            Isso permite que Blissey se recupere rapidamente de queimaduras, venenos e outras condições.
+                            Limpa automaticamente este Pokémon a cada 6s, mesmo se não houver efeitos para limpar. 
+                            Isso significa que Blissey remove efeitos negativos de status de si mesma constantemente.
                         </p>
                     </div>
                 </div>
@@ -89,8 +88,8 @@
                     <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            A cada terceiro ataque, Blissey lança um ovo que causa dano adicional ao oponente atingido. 
-                            O ataque básico de Blissey é corpo a corpo, diferente da maioria dos suportes.
+                            Torna-se um ataque carregado (boosted attack) após 6s, causando dano aumentado. 
+                            Este ataque carregado permanece pronto até ser usado.
                         </p>
                     </div>
                 </div>
@@ -99,16 +98,17 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         👊 Pound
-                        <span class="level-badge">Nível 1 ou 3</span>
+                        <span class="level-badge">Nível 1 ou 2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Blissey golpeia o oponente com força, causando dano e empurrando-o para trás. 
-                            É uma habilidade simples, mas eficaz para afastar inimigos que se aproximam demais.
+                            Golpeia na direção designada, causando dano aos Pokémon oponentes na área de efeito 
+                            e diminuindo a velocidade de movimento deles em 40% por 2s. 
+                            É uma habilidade corpo a corpo útil para afastar inimigos.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
-                            <span class="meta-type">📋 Tipo: Dano</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Melee</span>
                         </div>
                     </div>
                 </div>
@@ -117,16 +117,37 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         💚 Heal Pulse
-                        <span class="level-badge">Nível 1 ou 3</span>
+                        <span class="level-badge">Nível 1 ou 2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Blissey emite uma onda de cura que restaura HP de Blissey e de um aliado próximo. 
-                            Esta é a principal habilidade de cura no início do jogo.
+                            Restaura o HP do usuário e de um aliado designado a cada 0.5s durante 2s. 
+                            É a principal habilidade de cura no início do jogo, fornecendo sustain constante.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
                             <span class="meta-type">📋 Tipo: Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Egg Bomb -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        💣 Egg Bomb
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança um ovo no local designado que explode, causando dano aos Pokémon oponentes na área 
+                            e empurrando-os para longe do centro do impacto por 0.8s. 
+                            Máximo de 2 usos em reserva, com 2s de cooldown entre usos.
+                            Se aprender Soft-Boiled junto, os usos são compartilhados e o cooldown base vira 5s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Reduz a velocidade dos oponentes em 40% por 2s.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged</span>
                         </div>
                     </div>
                 </div>
@@ -135,15 +156,16 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🛡️ Helping Hand
-                        <span class="level-badge">Nível 4</span>
+                        <span class="level-badge">Nível 6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Blissey fortalece a si mesma e a um aliado próximo, aumentando a velocidade de movimento 
-                            e a velocidade de ataque por um curto período. Ideal para engajar ou recuar em lutas.
+                            Aumenta a velocidade de movimento e velocidade de ataque básico do usuário 
+                            e aliados próximos em 30% por 4s. Quando buffado, os ataques básicos do usuário 
+                            também se tornam ataques carregados.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: Aumenta ainda mais a velocidade de movimento.</span>
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano de ataque básico de todos os aliados buffados em 15% por 4s.</span>
                             <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
                             <span class="meta-type">📋 Tipo: Buff</span>
                         </div>
@@ -158,12 +180,14 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Blissey cura a si mesma ou a um aliado com um ovo especial, restaurando uma grande quantidade de HP. 
-                            Pode ser usada em movimento, tornando-a essencial para salvar aliados em perigo.
+                            Lança um ovo para um aliado designado, restaurando o HP do usuário e do aliado. 
+                            Depois, ambos restauram HP ao longo do tempo a cada 1s durante 2s. 
+                            Usos subsequentes sobrescrevem qualquer HP ao longo do tempo pendente. 
+                            Máximo de 2 usos em reserva, com 2s de cooldown entre usos.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: Aumenta a quantidade de cura.</span>
-                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-upgrade">⭐ Nível 10: Ganha 1 uso adicional em reserva.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 12.00s</span>
                             <span class="meta-type">📋 Tipo: Recovery</span>
                         </div>
                     </div>
@@ -173,36 +197,18 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🛡️ Safeguard
-                        <span class="level-badge">Nível 6</span>
+                        <span class="level-badge">Nível 4</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Blissey cria uma barreira protetora que concede escudo e imunidade a hindrances 
-                            para si mesma e aliados próximos. Perfeita para iniciar lutas ou proteger a equipe de CC.
+                            Limpa o usuário e um aliado designado, e concede a ambos um escudo 
+                            que os torna imparáveis (unstoppable) por 4s. 
+                            Perfeita para proteger aliados de CC inimigo.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a duração do escudo.</span>
+                            <span class="meta-upgrade">⭐ Nível 10: Fortalece o valor do escudo.</span>
                             <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
                             <span class="meta-type">📋 Tipo: Buff</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Egg Bomb -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">
-                        💣 Egg Bomb
-                        <span class="level-badge">Nível 6</span>
-                    </h2>
-                    <div class="pokemon-card-content">
-                        <p class="pokemon-card-text">
-                            Blissey lança um ovo explosivo que causa dano em área e reduz a velocidade dos oponentes atingidos. 
-                            Útil para controlar espaço e auxiliar no dano da equipe.
-                        </p>
-                        <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano e o slow.</span>
-                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
-                            <span class="meta-type">📋 Tipo: Dano</span>
                         </div>
                     </div>
                 </div>
@@ -215,13 +221,15 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Blissey corre em direção a um aliado designado, ganhando imparabilidade durante o trajeto. 
-                            Ao chegar, concede um grande escudo e cura tanto o aliado quanto a si mesma. 
-                            Esta habilidade pode virar o rumo de uma luta, salvando um carry de morrer.
+                            Fica imparável e avança para o aliado designado, dando-lhe um ovo que concede escudo 
+                            e aumenta o Ataque e Ataque Especial dele em 20% por 6s. 
+                            Blissey também intercepta 50% do dano pós-mitigação recebido pelo aliado como dano não mitigado por 6s. 
+                            Enquanto avança, Pokémon oponentes atingidos são danificados e lançados ao ar por 0.8s. 
+                            Ao alcançar o aliado, oponentes próximos são danificados novamente.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-cooldown">⏱️ Cooldown: 100s</span>
-                            <span class="meta-type">📋 Buffs: Escudo e cura massivos</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 112s</span>
+                            <span class="meta-type">📋 Buffs: 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
                         </div>
                     </div>
                 </div>
@@ -254,7 +262,7 @@
                                     <div class="item-placeholder">?</div>
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Sp Atk Specs</h3>
+                                    <h3 class="build-item-name">Exp. Share</h3>
                                     <p class="build-item-desc">Compartilha experiência com aliados próximos, acelerando o nível da equipe.</p>
                                 </div>
                             </div>
@@ -285,9 +293,9 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Escolha entre Helping Hand (buff de velocidade) ou Soft-Boiled (cura forte). 
-                            Soft-Boiled é geralmente melhor para manter aliados vivos em lutas prolongadas. 
-                            No nível 6, escolha Safeguard para proteger contra CC ou Egg Bomb para controle de área.
+                            No nível 4, escolha entre Soft-Boiled (cura forte) ou Safeguard (escudo e imunidade a CC). 
+                            Soft-Boiled é excelente para manter aliados vivos, enquanto Safeguard protege contra composições 
+                            com muito controle de grupo. No nível 6, escolha Egg Bomb para dano/controle ou Helping Hand para buff.
                         </p>
                     </div>
                 </div>
@@ -300,10 +308,10 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Use seu Unite Move (Bliss Assistance) para salvar aliados em perigo ou iniciar lutas. 
-                            Posicione-se perto dos carries e use curas constantemente. 
-                            Com Safeguard, proteja sua equipe de CC inimigo durante lutas de equipe. 
-                            Lembre-se: Blissey é o alvo prioritário dos inimigos, então mantenha distância segura.
+                            Use seu Unite Move (Bliss Assistance) para salvar aliados em perigo ou para iniciar lutas 
+                            com o buff de Ataque e Ataque Especial. Posicione-se perto dos carries e use curas constantemente. 
+                            Lembre-se que Blissey é alvo prioritário dos inimigos, então mantenha distância segura 
+                            enquanto continua curando.
                         </p>
                     </div>
                 </div>
@@ -314,10 +322,10 @@
                     <div class="pokemon-card-content">
                         <ul class="strategy-tips">
                             <li>Priorize curar os carries da equipe, não os tanques.</li>
-                            <li>Use Safeguard preventivamente antes de lutas de equipe.</li>
-                            <li>Seu Unite Move pode ser usado para salvar um aliado de uma ult inimiga.</li>
-                            <li>Fique sempre atrás da linha de frente, mas perto o suficiente para curar.</li>
+                            <li>Use Safeguard preventivamente antes de lutas de equipe para proteger contra CC.</li>
+                            <li>Seu Unite Move pode salvar um aliado de uma ult inimiga e virar a luta.</li>
                             <li>Soft-Boiled pode ser usado em si mesma se estiver sendo focada.</li>
+                            <li>Compartilhe experiência com Exp. Share para acelerar o nível dos seus carries.</li>
                         </ul>
                     </div>
                 </div>
