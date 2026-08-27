@@ -1138,3 +1138,7 @@ a {
         transform: translateY(0);
     }
 }
+.tag-melee {
+    background-color: #F44336;
+    color: white;
+}
