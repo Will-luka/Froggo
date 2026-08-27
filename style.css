@@ -97,7 +97,7 @@ a {
     color: var(--white);
 }
 
-/* Imagem circular antes do texto do logo (bolo.jpg) */
+/* Imagem circular antes do texto do logo */
 .logo::before {
     content: "";
     display: inline-block;
@@ -178,7 +178,7 @@ a {
     flex: 1;
 }
 
-/* Título de página (usado em artigos, sobre, contato) */
+/* Título de página */
 .page-title {
     font-size: 3rem;
     color: var(--white);
@@ -361,5 +361,628 @@ a {
 }
 
 /* ============================================
-   (restante do arquivo original)
+   GRADE DE POSTS (página de artigos)
    ============================================ */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    border: 2px solid var(--card-border);
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--primary);
+}
+
+.post-card-link {
+    display: block;
+    color: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card-image {
+    height: 18rem;
+    background: linear-gradient(45deg, var(--medium-gray), #2a2a2a);
+    transition: opacity var(--transition);
+}
+
+.post-card:hover .post-card-image {
+    opacity: 0.9;
+}
+
+.post-card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card-title {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    transition: color var(--transition);
+}
+
+.post-card:hover .post-card-title {
+    color: var(--primary);
+}
+
+.post-card-excerpt {
+    color: var(--lighter-gray);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.post-card .post-meta {
+    font-size: 1.1rem;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+/* ============================================
+   BOTÃO CARREGAR MAIS
+   ============================================ */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-load-more {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--primary-dark);
+    padding: 1.2rem 3rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition), border-color var(--transition);
+    letter-spacing: 0.05rem;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-load-more:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.02);
+    border-color: var(--primary);
+}
+
+.btn-load-more:active {
+    transform: scale(0.98);
+}
+
+/* ============================================
+   SEÇÕES SOBRE E CONTATO
+   ============================================ */
+.about-section,
+.contact-section {
+    padding: 2rem 0;
+}
+
+.about-container,
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-text {
+    color: var(--light-gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.contact-link {
+    color: var(--primary);
+    transition: color var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--white);
+}
+
+/* ============================================
+   FORMULÁRIO DE FEEDBACK
+   ============================================ */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.form-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-family: inherit;
+    transition: border-color var(--transition), background-color var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.form-input::placeholder {
+    color: var(--medium-gray);
+}
+
+.form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b0b0b0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+    padding-right: 3rem;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Métodos de contato alternativos */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 2px solid var(--card-border);
+    transition: all var(--transition);
+}
+
+.contact-method:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-method-title {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.contact-method-desc {
+    color: var(--lighter-gray);
+    font-size: 1.3rem;
+}
+
+/* ============================================
+   PÁGINA DE DETALHES DO POKÉMON (CARDS INDIVIDUAIS)
+   ============================================ */
+.pokemon-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Card de introdução */
+.intro-card {
+    margin-bottom: 4rem;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-strong);
+}
+
+.pokemon-intro {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.pokemon-intro-image {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--medium-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 20px rgba(114, 47, 55, 0.3);
+}
+
+.pokemon-intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pokemon-intro-info {
+    flex: 1;
+}
+
+.pokemon-detail-title {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.pokemon-tags {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+}
+
+.tag-support {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tag-ranged {
+    background-color: #2196F3;
+    color: white;
+}
+
+.tag-melee {
+    background-color: #F44336;
+    color: white;
+}
+
+.tag-novice {
+    background-color: #FF9800;
+    color: white;
+}
+
+.tag-intermediate {
+    background-color: #FFC107;
+    color: black;
+}
+
+.tag-special {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.pokemon-description {
+    color: var(--light-gray);
+    line-height: 1.6;
+}
+
+/* Container de cards individuais */
+.pokemon-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+/* Card individual do Pokémon */
+.pokemon-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--card-border);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    position: relative;
+}
+
+/* Linha decorativa no topo do card */
+.pokemon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    border-radius: 12px 12px 0 0;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--primary);
+}
+
+.pokemon-card-title {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pokemon-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pokemon-card-text {
+    color: var(--lighter-gray);
+    line-height: 1.7;
+    font-size: 1.5rem;
+}
+
+/* Badge de nível */
+.level-badge {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+/* Metadados do card */
+.pokemon-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.meta-cooldown {
+    color: #2196F3;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(33, 150, 243, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+.meta-type {
+    color: var(--lighter-gray);
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+.meta-upgrade {
+    color: #FF9800;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(255, 152, 0, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+/* Evolução */
+.evolution-chain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    flex-wrap: wrap;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.evolution-name {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.evolution-level {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgba(114, 47, 55, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.evolution-arrow {
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Card da Unite Move */
+.unite-move-card {
+    border: 3px solid #FFD700;
+    background: linear-gradient(135deg, var(--card-bg), rgba(255, 215, 0, 0.08));
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.unite-move-card::before {
+    background: linear-gradient(90deg, #FFD700, transparent);
+}
+
+.unite-move-card:hover {
+    border-color: #FFD700;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+/* Build */
+.build-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.build-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.build-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.build-item-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background-color: var(--medium-gray);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--card-border);
+}
+
+.item-placeholder {
+    color: var(--lighter-gray);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.build-item-info {
+    flex: 1;
+}
+
+.build-item-name {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.build-item-desc {
+    color: var(--lighter-gray);
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+/* Card de dicas */
+.tips-card {
+    background: linear-gradient(135deg, var(--card-bg), rgba(114, 47, 55, 0.2));
+    border-color: var(--primary);
+    border-width: 3px;
+}
+
+.tips-card::before {
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark), transparent);
+}
+
+.strategy-tips {
+    list-style: none;
+    padding: 0;
+    color: var(--lighter-gray);
+    line-height: 1.7;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.strategy-tips li {
+    margin-bottom: 0;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+/* Botão de voltar */
+.back-button-container {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* ============================================
+   RODAPÉ
+   ============================================ */
+.site-footer {
+    background-color: var(--black);
+    border-top: 3px solid var(--primary);
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--medium-gray);
+    font-size: 1.4rem;
+   }
