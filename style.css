@@ -81,7 +81,6 @@ a {
     color: var(--white);
     letter-spacing: 0.05rem;
     transition: color var(--transition);
-    /* ensure pseudo-element aligns nicely */
     display: inline-flex;
     align-items: center;
 }
@@ -98,7 +97,7 @@ a {
     color: var(--white);
 }
 
-/* Circular image before the logo text (bolo.jpg) */
+/* Imagem circular antes do texto do logo (bolo.jpg) */
 .logo::before {
     content: "";
     display: inline-block;
@@ -362,5 +361,5 @@ a {
 }
 
 /* ============================================
-   (rest of original file unchanged)
-*/
+   (restante do arquivo original)
+   ============================================ */
