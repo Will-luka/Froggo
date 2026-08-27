@@ -1,3 +1,20 @@
+// Add favicon dynamically to <head> so new pages automatically get the site icon
+(function addFavicon() {
+    try {
+        // Don't add if a favicon already exists
+        if (document.querySelector('link[rel~="icon"]')) return;
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.href = 'bolo.jpg';
+        link.type = 'image/jpeg';
+        const head = document.getElementsByTagName('head')[0] || document.documentElement;
+        head.appendChild(link);
+    } catch (e) {
+        // silently fail if environment doesn't allow it
+        console.error('Favicon injection failed:', e);
+    }
+})();
+
 // Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function () {
 
