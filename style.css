@@ -986,3 +986,215 @@ a {
     color: var(--medium-gray);
     font-size: 1.4rem;
    }
+/* ============================================
+   CENTRAL DE GUIAS (artigos.html)
+   ============================================ */
+.guide-section {
+    margin-bottom: 3rem;
+}
+
+.guide-subtitle {
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+/* ============================================
+   TIER LIST
+   ============================================ */
+.tier-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+}
+
+.tier-label {
+    flex-shrink: 0;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--white);
+    padding: 1rem;
+}
+
+.tier-s {
+    background-color: #FF6B6B;
+}
+
+.tier-a {
+    background-color: #FFA94D;
+}
+
+.tier-b {
+    background-color: #FFD93D;
+    color: var(--black);
+}
+
+.tier-c {
+    background-color: #6BCB77;
+}
+
+.tier-analysis {
+    background-color: #868E96;
+    font-size: 1.2rem;
+    width: 100px;
+    text-align: center;
+}
+
+.tier-pokemons {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    min-height: 80px;
+}
+
+.tier-pokemons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.tier-empty {
+    color: var(--medium-gray);
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+.tier-pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: background-color var(--transition), transform var(--transition);
+    cursor: pointer;
+}
+
+.tier-pokemon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.tier-pokemon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--card-border);
+}
+
+.tier-pokemon span {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ============================================
+   POPUPS
+   ============================================ */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}
+
+.popup-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+    background-color: var(--card-bg);
+    border: 3px solid var(--primary);
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: var(--shadow-strong);
+}
+
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.popup-close:hover {
+    color: var(--primary);
+}
+
+.popup-title {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.popup-text {
+    color: var(--lighter-gray);
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade da tier list */
+@media (max-width: 768px) {
+    .tier-row {
+        flex-direction: column;
+    }
+
+    .tier-label {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .tier-analysis {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .tier-pokemons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .tier-pokemon img {
+        width: 50px;
+        height: 50px;
+    }
+}
