@@ -173,3 +173,46 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+// ============================================
+// 4. TIER LIST POPUPS (apenas na página de artigos)
+// ============================================
+// Abre o popup quando clicar no Pokémon
+document.querySelectorAll('.tier-pokemon').forEach(function(pokemon) {
+    pokemon.addEventListener('click', function(e) {
+        e.preventDefault();
+        const popupId = this.getAttribute('data-popup');
+        const popup = document.getElementById(popupId);
+        if (popup) {
+            popup.classList.add('active');
+        }
+    });
+});
+
+// Fecha o popup quando clicar no X
+document.querySelectorAll('.popup-close').forEach(function(closeBtn) {
+    closeBtn.addEventListener('click', function() {
+        const popupId = this.getAttribute('data-close');
+        const popup = document.getElementById(popupId);
+        if (popup) {
+            popup.classList.remove('active');
+        }
+    });
+});
+
+// Fecha o popup quando clicar fora do conteúdo
+document.querySelectorAll('.popup-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('active');
+        }
+    });
+});
+
+// Fecha o popup com tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.popup-overlay.active').forEach(function(popup) {
+            popup.classList.remove('active');
+        });
+    }
+});
