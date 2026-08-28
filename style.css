@@ -1172,7 +1172,7 @@ a {
     }
 }
 
-/* Responsividade da tier list */
+/* Resposta da tier list */
 @media (max-width: 768px) {
     .tier-row {
         flex-direction: column;
