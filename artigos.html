@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gâteau! - Artigos</title>
+    <title>Gâteau! - Guias e Tutoriais</title>
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cabeçalho fixo -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">Gâteau<span>!</span></a>
@@ -14,7 +16,6 @@
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
-                    <!-- Link ativo na página de artigos -->
                     <li class="nav-item"><a href="artigos.html" class="nav-link active">Artigos</a></li>
                     <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
@@ -26,19 +27,334 @@
     </header>
 
     <main class="container main-content">
-        <!-- Título da seção -->
-        <h1 class="page-title">Artigos</h1>
+        <!-- Título da página -->
+        <h1 class="page-title">Guias e Tutoriais</h1>
 
-        <!-- Grade de posts (será preenchida via JavaScript) -->
-        <section class="posts-grid" id="postsGrid">
-            <!-- Os cards serão inseridos aqui -->
+        <!-- ============================================
+             SEÇÃO: COMO JOGAR DE SUPORTE
+             ============================================ -->
+        <section class="guide-section">
+            <div class="pokemon-card">
+                <h2 class="pokemon-card-title">📖 Como Jogar de Suporte</h2>
+                <div class="pokemon-card-content">
+                    <p class="pokemon-card-text">
+                        Jogar de Suporte no Pokémon UNITE é essencial para o sucesso da equipe. 
+                        Seu papel não é causar dano, mas sim <strong>manter seus aliados vivos</strong> e 
+                        <strong>fortalecê-los</strong> para vencer as lutas.
+                    </p>
+                    
+                    <h3 class="guide-subtitle">🎯 Objetivos do Suporte</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Proteger o carry:</strong> Fique perto do seu atacante principal e garanta que ele sobreviva.</li>
+                        <li><strong>Controlar o ritmo:</strong> Use habilidades de cura e escudo nos momentos certos.</li>
+                        <li><strong>Fornecer visão:</strong> Ajude a controlar o mapa e avise sobre emboscadas.</li>
+                        <li><strong>Garantir objetivos:</strong> Ajude a equipe a garantir Dreadnaw, Rotom, Regieleki e Rayquaza.</li>
+                    </ul>
+
+                    <h3 class="guide-subtitle">🛡️ Dicas Essenciais</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Use Exp. Share:</strong> Permite que seu carry evolua mais rápido.</li>
+                        <li><strong>Fique atrás da linha de frente:</strong> Você é o alvo prioritário dos inimigos.</li>
+                        <li><strong>Comunique-se:</strong> Avise quando suas habilidades estiverem em cooldown.</li>
+                        <li><strong>Aprenda o posicionamento:</strong> Nem perto demais (para não morrer), nem longe demais (para não conseguir curar).</li>
+                    </ul>
+
+                    <h3 class="guide-subtitle">⚠️ Erros Comuns</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Curar o tanque:</strong> Priorize curar quem causa dano, não quem aguenta dano.</li>
+                        <li><strong>Usar Unite Move cedo demais:</strong> Guarde para momentos decisivos.</li>
+                        <li><strong>Farmar sozinho:</strong> Suporte não deve farmar solo, fique com a equipe.</li>
+                        <li><strong>Esquecer dos objetivos:</strong> Esteja presente nas lutas por Dreadnaw e Rayquaza.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <!-- Container do botão carregar mais -->
-        <div class="load-more-container">
-            <button id="loadMoreBtn" class="btn-load-more">Carregar Mais</button>
-        </div>
+        <!-- ============================================
+             SEÇÃO: TIER LIST DE SUPORTES
+             ============================================ -->
+        <section class="guide-section">
+            <div class="pokemon-card">
+                <h2 class="pokemon-card-title">🏆 Tier List de Suportes</h2>
+                <div class="pokemon-card-content">
+                    <p class="pokemon-card-text">
+                        Clique em um Pokémon para ver por que ele está naquela posição.
+                    </p>
+
+                    <!-- Tier S -->
+                    <div class="tier-row">
+                        <div class="tier-label tier-s">S</div>
+                        <div class="tier-pokemons">
+                            <p class="tier-empty">Nenhum Pokémon no rank S ainda</p>
+                        </div>
+                    </div>
+
+                    <!-- Tier A -->
+                    <div class="tier-row">
+                        <div class="tier-label tier-a">A</div>
+                        <div class="tier-pokemons">
+                            <p class="tier-empty">Nenhum Pokémon no rank A ainda</p>
+                        </div>
+                    </div>
+
+                    <!-- Tier B -->
+                    <div class="tier-row">
+                        <div class="tier-label tier-b">B</div>
+                        <div class="tier-pokemons">
+                            <p class="tier-empty">Nenhum Pokémon no rank B ainda</p>
+                        </div>
+                    </div>
+
+                    <!-- Tier C -->
+                    <div class="tier-row">
+                        <div class="tier-label tier-c">C</div>
+                        <div class="tier-pokemons">
+                            <p class="tier-empty">Nenhum Pokémon no rank C ainda</p>
+                        </div>
+                    </div>
+
+                    <!-- Tier Em Análise -->
+                    <div class="tier-row">
+                        <div class="tier-label tier-analysis">Em Análise</div>
+                        <div class="tier-pokemons tier-pokemons-grid">
+                            <!-- Alcremie -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-alcremie">
+                                <img src="alcremie.jpg" alt="Alcremie">
+                                <span>Alcremie</span>
+                            </a>
+
+                            <!-- Blissey -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-blissey">
+                                <img src="blissey.jpg" alt="Blissey">
+                                <span>Blissey</span>
+                            </a>
+
+                            <!-- Clefable -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-clefable">
+                                <img src="clefable.jpg" alt="Clefable">
+                                <span>Clefable</span>
+                            </a>
+
+                            <!-- Comfey -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-comfey">
+                                <img src="comfey.jpg" alt="Comfey">
+                                <span>Comfey</span>
+                            </a>
+
+                            <!-- Eldegoss -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-eldegoss">
+                                <img src="eldegoss.jpg" alt="Eldegoss">
+                                <span>Eldegoss</span>
+                            </a>
+
+                            <!-- Hoopa -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-hoopa">
+                                <img src="hoopa.jpg" alt="Hoopa">
+                                <span>Hoopa</span>
+                            </a>
+
+                            <!-- Latias -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-latias">
+                                <img src="latias.jpg" alt="Latias">
+                                <span>Latias</span>
+                            </a>
+
+                            <!-- Meganium -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-meganium">
+                                <img src="meganium.jpg" alt="Meganium">
+                                <span>Meganium</span>
+                            </a>
+
+                            <!-- Mr. Mime -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-mrmime">
+                                <img src="mrmime.jpg" alt="Mr. Mime">
+                                <span>Mr. Mime</span>
+                            </a>
+
+                            <!-- Psyduck -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-psyduck">
+                                <img src="psyduck.jpg" alt="Psyduck">
+                                <span>Psyduck</span>
+                            </a>
+
+                            <!-- Sableye -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-sableye">
+                                <img src="sableye.jpg" alt="Sableye">
+                                <span>Sableye</span>
+                            </a>
+
+                            <!-- Wigglytuff -->
+                            <a href="#" class="tier-pokemon" data-popup="popup-wigglytuff">
+                                <img src="wigglytuff.jpg" alt="Wigglytuff">
+                                <span>Wigglytuff</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO: DICAS DE ROTAÇÃO
+             ============================================ -->
+        <section class="guide-section">
+            <div class="pokemon-card">
+                <h2 class="pokemon-card-title">🗺️ Dicas de Rotação</h2>
+                <div class="pokemon-card-content">
+                    <p class="pokemon-card-text">
+                        Rotação é o movimento estratégico pelo mapa para garantir objetivos e vantagem para a equipe.
+                    </p>
+
+                    <h3 class="guide-subtitle">🌊 Rota Inferior (Bottom)</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Objetivo principal:</strong> Dreadnaw (primeiros 8 minutos)</li>
+                        <li><strong>Suporte fica aqui:</strong> Geralmente é onde o suporte começa</li>
+                        <li><strong>Dica:</strong> Ajude a garantir o Dreadnaw para dar escudo e experiência para a equipe</li>
+                    </ul>
+
+                    <h3 class="guide-subtitle">⚡ Rota Superior (Top)</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Objetivo principal:</strong> Rotom (primeiros 8 minutos)</li>
+                        <li><strong>Suporte pode rotacionar:</strong> Se a equipe precisar de ajuda</li>
+                        <li><strong>Dica:</strong> Rotom destrói torres, então priorize se o Dreadnaw já foi garantido</li>
+                    </ul>
+
+                    <h3 class="guide-subtitle">🌲 Rota Central (Jungle)</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Geralmente ocupada por:</strong> Speedsters ou atacantes</li>
+                        <li><strong>Suporte não fica aqui:</strong> Mas pode ajudar a defender se necessário</li>
+                        <li><strong>Dica:</strong> Fique atento ao minimapa para ajudar o jungler se ele for invadido</li>
+                    </ul>
+
+                    <h3 class="guide-subtitle">🔥 Rayquaza (Final do Jogo)</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Momento decisivo:</strong> Aparece aos 8 minutos</li>
+                        <li><strong>Suporte deve:</strong> Estar com a equipe, protegendo os carries</li>
+                        <li><strong>Dica:</strong> Use seus escudos e curas para manter todos vivos durante a luta</li>
+                    </ul>
+
+                    <h3 class="guide-subtitle">📋 Regras Gerais de Rotação</h3>
+                    <ul class="strategy-tips">
+                        <li><strong>Nunca ande sozinho:</strong> Suporte é alvo fácil</li>
+                        <li><strong>Olhe o minimapa:</strong> Esteja ciente de onde os inimigos estão</li>
+                        <li><strong>Priorize objetivos:</strong> Dreadnaw > Rotom > Farm > Kills</li>
+                        <li><strong>Comunique-se:</strong> Avise quando for rotacionar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- ============================================
+         POPUPS DA TIER LIST
+         ============================================ -->
+    <!-- Popup: Alcremie -->
+    <div class="popup-overlay" id="popup-alcremie">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-alcremie">✕</button>
+            <h3 class="popup-title">Alcremie</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Blissey -->
+    <div class="popup-overlay" id="popup-blissey">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-blissey">✕</button>
+            <h3 class="popup-title">Blissey</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Clefable -->
+    <div class="popup-overlay" id="popup-clefable">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-clefable">✕</button>
+            <h3 class="popup-title">Clefable</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Comfey -->
+    <div class="popup-overlay" id="popup-comfey">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-comfey">✕</button>
+            <h3 class="popup-title">Comfey</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Eldegoss -->
+    <div class="popup-overlay" id="popup-eldegoss">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-eldegoss">✕</button>
+            <h3 class="popup-title">Eldegoss</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Hoopa -->
+    <div class="popup-overlay" id="popup-hoopa">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-hoopa">✕</button>
+            <h3 class="popup-title">Hoopa</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Latias -->
+    <div class="popup-overlay" id="popup-latias">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-latias">✕</button>
+            <h3 class="popup-title">Latias</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Meganium -->
+    <div class="popup-overlay" id="popup-meganium">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-meganium">✕</button>
+            <h3 class="popup-title">Meganium</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Mr. Mime -->
+    <div class="popup-overlay" id="popup-mrmime">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-mrmime">✕</button>
+            <h3 class="popup-title">Mr. Mime</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Psyduck -->
+    <div class="popup-overlay" id="popup-psyduck">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-psyduck">✕</button>
+            <h3 class="popup-title">Psyduck</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Sableye -->
+    <div class="popup-overlay" id="popup-sableye">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-sableye">✕</button>
+            <h3 class="popup-title">Sableye</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
+
+    <!-- Popup: Wigglytuff -->
+    <div class="popup-overlay" id="popup-wigglytuff">
+        <div class="popup-content">
+            <button class="popup-close" data-close="popup-wigglytuff">✕</button>
+            <h3 class="popup-title">Wigglytuff</h3>
+            <p class="popup-text">Em desenvolvimento...</p>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="container footer-container">
