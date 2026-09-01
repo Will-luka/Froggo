@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Comfey</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
 
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="pokemon-detail">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <img src="comfey.jpg" alt="Comfey">
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h1 class="pokemon-detail-title">Comfey</h1>
+                        <div class="pokemon-tags">
+                            <span class="tag tag-support">Parasita</span>
+                            <span class="tag tag-ranged">À distância</span>
+                            <span class="tag tag-novice">Novato</span>
+                            <span class="tag tag-special">Atacante Especial</span>
+                        </div>
+                        <p class="pokemon-description">
+                            Comfey é o suporte que literalmente gruda em você. 
+                            Acumula flores para fortalecer suas habilidades e pode até marcar gols junto com o aliado. 
+                            É a definição de parasitismo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Triage</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Aumenta a velocidade de movimento em 25% quando está perto de aliados com 50% do HP máximo ou menos. 
+                            Armazena até 8 flores; consome todas ao usar Synthesis, Floral Healing ou Sweet Kiss enquanto está agarrada, 
+                            fortalecendo os efeitos. Ganha 1 flor a cada 1,5s e 4 flores ao entrar na grama alta quando está solta (5s de CD).
+                        </p>
+                        <p class="pokemon-card-text">
+                            Quando usa Synthesis, Floral Healing ou Sweet Kiss estando solta, Comfey se agarra ao aliado designado, 
+                            concedendo um escudo Triage baseado no HP máximo dela.
+                        </p>
+                        <p class="pokemon-card-text">
+                            <strong>Enquanto agarrada:</strong> fica inalvejável (invencível, imortal, etc), restaura 1% do HP máximo por segundo, 
+                            e marca gols junto com o aliado se não estiver usando habilidades. 
+                            Ao se soltar, remove o escudo Triage do aliado, fica invencível por 0,5s e prepara um ataque carregado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            A cada terceiro ataque, usa um ataque carregado que causa dano aumentado e ganha 2 flores quando acerta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Synthesis -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌿 Synthesis
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Se estiver solta, agarra-se ao aliado designado e concede escudo Triage. 
+                            Se estiver agarrada, restaura o HP do aliado. Consome flores para curar adicionalmente (até 8 flores).
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Vine Whip -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌿 Vine Whip
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Ataca com vinhas na direção designada, causando dano em linha e reduzindo a velocidade dos oponentes 
+                            em 40% por 2s. Enquanto agarrada a um aliado, o alcance aumenta.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Slow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Floral Healing -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌸 Floral Healing
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Se estiver solta, agarra-se ao aliado e concede escudo Triage. 
+                            Se estiver agarrada, restaura o HP do aliado, consumindo flores para curar mais. 
+                            O excesso de cura vira um escudo de overheal por 5s. 
+                            Com flores adicionais, o escudo de overheal fica mais forte.
+                          O escudo é acumulável até certo ponto.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Enquanto agarrada, aumenta a velocidade do aliado em 30% por 2s.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery / Shield</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Sweet Kiss -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        💋 Sweet Kiss
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Principal skill do parasita e a considerada mais insuportável, digo, mais útil pro seu time. Ela puxa inimigos afetados na direção do aliado que você tá parasitando (mais flores puxam por mais tempo).
+                          Segurar a skill aumenta seu range.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Enquanto agarrada, aumenta a velocidade do aliado em 50% por 2s enquanto segura o botão da skill.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Magical Leaf -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🍃 Magical Leaf
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança folhas curiosas que perseguem oponentes aleatórios na área por 5s, 
+                            causando dano e aplicando marcas. Se um alvo marcado for atingido por 6 folhas, 
+                            fica atordoado por 0,5s. Funciona mesmo contra inimigos na grama ou furtivos. 
+                            Enquanto agarrada, o alcance aumenta.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta para 4 folhas por segundo (máximo 24 folhas).</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
+                            <span class="meta-type">📋 Tipo: Área / Stun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Grass Knot -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌱 Grass Knot
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança vinhas que imobilizam até dois oponentes. Se acertar dois inimigos próximos, 
+                            puxa o segundo para a localização do primeiro e causa dano adicional em ambos. 
+                            Enquanto agarrada, o alcance aumenta.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a área de efeito.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Flowery Fields Forever
+                        <span class="level-badge">Nível 8</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Fica imparável e cria uma grande área de grama alta por 6s. 
+                            Pokémon dentro da grama ficam invisíveis, como na grama normal do mapa. 
+                            A grama cura aliados a cada 0,5s e concede flores especiais que permitem 
+                            usos fortalecidos de Floral Healing ou Sweet Kiss.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 89s</span>
+                            <span class="meta-type">📋 Buffs: 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Rescue Hood</h3>
+                                    <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados. Basicamente item obrigatório se for de cura.</p>
+                                </div>
+                            </div>
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Buddy Barrier</h3>
+                                    <p class="build-item-desc">Protege seus aliados e ajuda a alguém não morrer antes da cura se aplicar.</p>
+                                </div>
+                            </div>
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Reasonant Guard</h3>
+                                    <p class="build-item-desc">Dá um escudo a você e a seu aliado quando você dá dano num oponente, não funciona em farms.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Comece com Vine Whip para dar slow nos inimigos e ajudar no farm. Depois pegue Synthesis
+                          Se for pra usar esse troço, usa direito, não fica grudado numa pessoa só (analise, é melhor ficar só em aliado X ou ficar variando e ajudar o time todo? a resposta varia de partida pra partida)
+                          e fica entrando e saindo dos matos pra farmar as flores.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 4-7</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            No nível 4, escolha Floral Healing (cura e overheal shield) ou Sweet Kiss (charm para controle). 
+                            De modo geral pegue Sweet Kiss, a não ser que nenhum dos seus aliados se aproveite do efeito do Sweet Kiss.
+                            No nível 6, Magical Leaf para caçar inimigos escondidos ou Grass Knot para imobilizar. 
+                            Continue agarrada no carry e use as flores com sabedoria.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Nível 8+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Use o Unite Move Flowery Fields Forever nas lutas de equipe para curar e esconder aliados. 
+                            A grama alta pode virar o rumo da batalha se bem posicionada. 
+                            Com as flores especiais, use Floral Healing fortalecida para salvar o time. 
+                            Permaneça agarrada ao carry, mas solte-se se precisar fugir ou reposicionar.
+                          (Sim, a grama alta que você cria esconde os objetivos como groudon, kyogre, etc, mas só se nenhum inimigo estiver dentro).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                            <li>Fique agarrado no carry para ficar inalvejável e curar sem parar.</li>
+                            <li>Gerencie as flores: use-as nos momentos decisivos, não desperdice.</li>
+                            <li>Entre na grama alta quando estiver solta para ganhar 4 flores rapidamente.</li>
+                            <li>Sweet Kiss é excelente para segurar assassinos que pulam no seu carry.</li>
+                            <li>Seu Unite Move pode esconder a equipe, use para emboscar ou fugir.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
