@@ -689,6 +689,11 @@ a {
     color: black;
 }
 
+.tag-expert {
+    background-color: #E91E63;
+    color: white;
+}
+
 .tag-special {
     background-color: #9C27B0;
     color: white;
