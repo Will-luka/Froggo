@@ -1,1 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Latias</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
 
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="pokemon-detail">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <img src="hoopa.jpg" alt="Hoopa">
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h1 class="pokemon-detail-title">Latias</h1>
+                        <div class="pokemon-tags">
+                            <span class="tag tag-support">Suporte</span>
+                            <span class="tag tag-ranged">À distância</span>
+                            <span class="tag tag-novice">Novato</span>
+                            <span class="tag tag-special">Atacante Especial</span>
+                        </div>
+                        <p class="pokemon-description">
+                            Latias é um suporte com capacidade de ficar mais forte ao longo do jogo, tem debuff, buff, escudos, e dano!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Levitate</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Depois de usar uma skill, a speed de latias aumenta por um curto período em 50%. Ficar perto de um Latios aliado também aumenta a speed, em 10% (esses buffs na velocidade não tem cooldown).
+                          Se Latias não estiver em combate, ela pode usar um botão que a passiva cria para teleportar para o local que Latios (se for um aliado) está.
+                        </p>
+                        <p class="pokemon-card-text">
+                            <strong>Cooldown da passiva:</strong> 90s
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança um projétil psíquico. Latias não tem ataque boostado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Confusion -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌌 Confusion
+                        <span class="level-badge">Nível 1 ou 3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança uma força psíquica em linha reta, causando dano e diminuido a speed de oponentes atingidos em 20% por 2 segundos.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Swift -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ⭐ Swift
+                        <span class="level-badge">Nível 1 ou 3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                           Lança raios em formato de estrelas em cone.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Area / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Dragon Pulse -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🐲 Dragon Pulse
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Libera um laser em formato de cone, que causa dano e diminui a velocidade de Latias em 60% enquanto o movimento dura. Latias pode se mover enquanto esse movimento ocorre.
+                          Após aprender essa skill, latias consegue 2 Eon a cada farm eliminado (tem que ser last hit) ou 2 Eon a cada oponente atingido.
+                          Com 25 Eon ganhe 2 projéteis que vão atacar seus alvos após o laser. Com 50 e 75 Eon +1 projétil vai ser adicionado cada. Com 100 Eon ganhe +2.
+                          A partir de 101 Eon, aumenta o dano dos projéteis em 0,5% por cada Eon ganho. Limite: 1099 Eon.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: O laser diminui a velocidade dos oponentes atingidos em 30% por 2 segundos.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.50s</span>
+                            <span class="meta-type">📋 Tipo: Area / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Dragon Breath -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌠 Dragon Breath
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Libera uma baforada em linha reta, diminuindo speed e def sp em 30% cada por 3 segundos. Acertar um oponente com esse golpe faz ele ser "marcado" com uma névoa colorida (perdão, não
+                          sei a cor pois sou daltônico kakak). Essa névoa aparece até mesmo quando o oponente está invísivel.
+                          Após aprender essa skill, latias consegue 2 Eon a cada farm eliminado (tem que ser last hit) ou 3 Eon a cada oponente atingido.
+                          Com 31 Eon essa skill vai mais longe, com 61 vai mais longe ainda. A partir de 61 Eon, o dano dessa skill aumenta em 0,5%. Limite: 1059 Eon.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: O slow aumenta para 40%.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.50s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Mist Ball -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        💨 Mist Ball
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Libera uma bola de névoa em linha reta. Quando chega no range máximo ou a skill é apertada de novo, cria uma área circular que dá DPS. O projétil e a área circular dão danos separados. Também dá um slow de 40% por 2 segundos.
+                          Quando um oponente é acertado ele é marcado. A marca os faz causar -25% de dano. A marca dura 2 segundos, mas se Latios ou Latias causar dano num oponente marcado, a duração da marca aumenta em 1 segundo por acerto. Isso
+                          pode se extender infinitamente.
+                         </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a duração base da marca pra 3 segundos.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Debuff</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Dragon Cheer -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌑 Dragon Cheer
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança uma esfera sombria que causa dano, reduz a velocidade em 50% por 1s
+                            e diminui a Defesa Especial do alvo em 30% por 3s. Se Hoopa acertar o mesmo alvo
+                            com outra habilidade ou ataque carregado em até 4s, causa dano adicional e deixa o inimigo
+                            impossibilitado de agir por 0,8s. Com Trick ativo, o aliado vinculado também dispara uma Shadow Ball.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: A esfera explode ao desaparecer, afetando inimigos na área.</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 4.50s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Rings Unbound
+                        <span class="level-badge">Nível 9</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Hoopa se torna invencível por 0,6s enquanto se transforma em Hoopa Unbound
+                            e abre um grande portal em um local designado. A forma Unbound dura 15s,
+                            aumentando o HP máximo em 40% e trocando as habilidades para Hyperspace Fury e Psybeam.
+                            Nessa forma, Hoopa não pode marcar gols nem usar a passiva Magician.
+                            O portal permanece por 10s e aliados podem se teletransportar para ele uma vez.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 112s</span>
+                            <span class="meta-type">📋 Buffs: 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Rescue Hood</h3>
+                                    <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
+                                </div>
+                            </div>
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Buddy Barrier</h3>
+                                    <p class="build-item-desc">Concede escudo para você e um aliado ao usar o Unite Move.</p>
+                                </div>
+                            </div>
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">LIVRE</h3>
+                                    <p class="build-item-desc">Pode usar um item da sua preferência pessoal. Não sabe qual usar? Cursed Incense, Resonant Guard, etc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Comece com Astonish para dar stun e ajudar no farm, e Confusion para dar dano e slow.
+                            Use a passiva Magician sempre que possível para roubar frutas ou energia dos inimigos.
+                            Fique na rota com seu aliado e controle o ritmo da lane.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 4-7</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            No nível 4, escolha Hyperspace Hole (rotação de equipe) ou Trick (buff e link).
+                            Hyperspace Hole é ótima para movimentar a equipe; Trick é excelente para fortalecer um carry.
+                            No nível 6, Phantom Force para mobilidade e dano, ou Shadow Ball para poke e controle.
+                            Adapte conforme a necessidade do time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Nível 9+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Use o Unite Move Rings Unbound nas lutas de equipe para se transformar em Hoopa Unbound
+                            e abrir um portal para a equipe. Lembre-se: na forma Unbound você é um Atacante,
+                            então jogue agressivamente, mas sem esquecer que não pode marcar gols.
+                            Posicione o portal estrategicamente para permitir que aliados cheguem rapidamente à luta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                            <li>Use a passiva Magician para negar recursos ao time inimigo.</li>
+                            <li>Hyperspace Hole pode virar uma luta se usada para trazer a equipe inteira.</li>
+                            <li>Trick é excelente com Pokémon de ataque básico forte, como Cinderace ou Decidueye.</li>
+                            <li>Phantom Force permite jogadas ousadas e fugas rápidas.</li>
+                            <li>Não use o Unite Move à toa: a transformação muda seu papel completamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
