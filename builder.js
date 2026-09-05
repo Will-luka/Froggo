@@ -788,35 +788,9 @@ function updateStackInputs() {
     const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
     const currentPokemon = pokemonSelect.value;
     
-    // Verificar se os inputs já existem e correspondem à seleção atual
-    const existingInputs = stacksContainer.querySelectorAll('.stack-input');
-    const existingItems = [];
-    existingInputs.forEach(input => {
-        existingItems.push({
-            item: input.getAttribute('data-item'),
-            value: input.value
-        });
-    });
-    
-    const neededItems = [];
-    selectedHeld.forEach(itemName => {
-        if (stackItems[itemName]) {
-            neededItems.push(itemName);
-        }
-    });
-    
+    const neededItems = selectedHeld.filter(itemName => stackItems[itemName]);
     const needsEon = currentPokemon === "Latias";
     
-    // Se os inputs já são os corretos, apenas retorna (mantém o foco)
-    const hasEonInput = stacksContainer.querySelector('#eon-stacks') !== null;
-    const sameItems = existingItems.length === neededItems.length && 
-                      neededItems.every(item => existingItems.some(e => e.item === item));
-    
-    if (sameItems && (needsEon ? hasEonInput : !hasEonInput)) {
-        return;
-    }
-    
-    // Se chegou aqui, precisa recriar os inputs
     let stacksHTML = '';
     
     neededItems.forEach(itemName => {
@@ -852,34 +826,25 @@ function updateStackInputs() {
     
     stacksContainer.innerHTML = stacksHTML;
     
-    // Adicionar eventos aos inputs
-    const stackInputs = document.querySelectorAll('.stack-input');
+    // Adicionar eventos aos inputs de stack
+    const stackInputs = stacksContainer.querySelectorAll('.stack-input');
     stackInputs.forEach(input => {
         input.addEventListener('input', function() {
-            renderResults(false); // false = não recriar inputs
+            updateResultsOnly();
         });
     });
 }
 
-function renderResults(skipInputUpdate = true) {
+function updateResultsOnly() {
     const pokemonName = pokemonSelect.value;
     const level = levelSelect.value;
     
     if (!pokemonName || !level) {
-        resultsPanel.innerHTML = '<p class="results-placeholder">Selecione um Pokémon para ver os resultados.</p>';
-        itemDescContainer.innerHTML = '';
-        stacksContainer.innerHTML = '';
         return;
-    }
-    
-    // Só atualizar os inputs se a seleção mudou
-    if (!skipInputUpdate) {
-        updateStackInputs();
     }
     
     const baseStats = getPokemonStats(pokemonName, level);
     if (!baseStats) {
-        resultsPanel.innerHTML = '<p class="results-placeholder">Dados não encontrados para este Pokémon.</p>';
         return;
     }
     
@@ -957,20 +922,38 @@ function renderResults(skipInputUpdate = true) {
     itemDescContainer.innerHTML = itemsHTML;
 }
 
+function renderResults() {
+    const pokemonName = pokemonSelect.value;
+    const level = levelSelect.value;
+    
+    if (!pokemonName || !level) {
+        resultsPanel.innerHTML = '<p class="results-placeholder">Selecione um Pokémon para ver os resultados.</p>';
+        itemDescContainer.innerHTML = '';
+        stacksContainer.innerHTML = '';
+        return;
+    }
+    
+    // Atualizar inputs de stack (apenas quando seleção de Pokémon ou itens muda)
+    updateStackInputs();
+    
+    // Atualizar resultados
+    updateResultsOnly();
+}
+
 function initEvents() {
-    pokemonSelect.addEventListener('change', function() { renderResults(false); });
-    levelSelect.addEventListener('change', function() { renderResults(false); });
-    held1.addEventListener('change', function() { renderResults(false); });
-    held2.addEventListener('change', function() { renderResults(false); });
-    held3.addEventListener('change', function() { renderResults(false); });
-    battleItem.addEventListener('change', function() { renderResults(false); });
+    pokemonSelect.addEventListener('change', renderResults);
+    levelSelect.addEventListener('change', updateResultsOnly);
+    held1.addEventListener('change', renderResults);
+    held2.addEventListener('change', renderResults);
+    held3.addEventListener('change', renderResults);
+    battleItem.addEventListener('change', updateResultsOnly);
 }
 
 function initBuilder() {
     populateLevelSelect();
     populateItemSelects();
     initEvents();
-    renderResults(false);
+    renderResults();
 }
 
 document.addEventListener('DOMContentLoaded', initBuilder);
