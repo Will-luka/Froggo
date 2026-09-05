@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Builder</title>
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="builder.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <h1 class="page-title">Builder de Suportes</h1>
+        <p class="section-subtitle">Monte sua build e veja o impacto exato nas habilidades</p>
+
+        <div class="builder-container">
+            <!-- Painel de configuração -->
+            <div class="builder-panel">
+                <div class="builder-group">
+                    <label for="pokemon-select">Pokémon:</label>
+                    <select id="pokemon-select" class="builder-select">
+                        <option value="">-- Selecione --</option>
+                        <option value="Alcremie">Alcremie</option>
+                        <option value="Blissey">Blissey</option>
+                        <option value="Clefable">Clefable</option>
+                        <option value="Comfey">Comfey</option>
+                        <option value="Eldegoss">Eldegoss</option>
+                        <option value="Hoopa">Hoopa</option>
+                        <option value="Latias">Latias</option>
+                        <option value="Meganium">Meganium</option>
+                        <option value="Mr. Mime">Mr. Mime</option>
+                        <option value="Psyduck">Psyduck</option>
+                        <option value="Sableye">Sableye</option>
+                        <option value="Wigglytuff">Wigglytuff</option>
+                    </select>
+                </div>
+
+                <div class="builder-group">
+                    <label for="level-select">Nível:</label>
+                    <select id="level-select" class="builder-select"></select>
+                </div>
+
+                <div class="builder-group">
+                    <label for="held1">Held Item 1:</label>
+                    <select id="held1" class="builder-select held-select"></select>
+                </div>
+                <div class="builder-group">
+                    <label for="held2">Held Item 2:</label>
+                    <select id="held2" class="builder-select held-select"></select>
+                </div>
+                <div class="builder-group">
+                    <label for="held3">Held Item 3:</label>
+                    <select id="held3" class="builder-select held-select"></select>
+                </div>
+                <div class="builder-group">
+                    <label for="battle-item">Battle Item:</label>
+                    <select id="battle-item" class="builder-select battle-select"></select>
+                </div>
+            </div>
+
+            <!-- Painel de resultados -->
+            <div class="results-panel" id="results-panel">
+                <p class="results-placeholder">Selecione um Pokémon para ver os resultados.</p>
+            </div>
+        </div>
+
+        <!-- Descrições dos itens selecionados -->
+        <div class="item-desc-container" id="item-desc"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+    <script src="builder.js"></script>
+</body>
+</html>
