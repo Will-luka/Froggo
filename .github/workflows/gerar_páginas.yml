@@ -8,6 +8,9 @@ on:
       - 'gerar_paginas.py'
       - '.github/workflows/gerar_paginas.yml'
 
+permissions:
+  contents: write
+
 jobs:
   gerar:
     runs-on: ubuntu-latest
