@@ -2,7 +2,7 @@
   {
     "nome": "Meganium",
     "imagem": "meganium.jpg",
-    "descricao": "Meganium é um suporte capaz de curar em área, debuffar e stunnar inimigos.",
+    "descricao": "Meganium é capaz de curar em área, debuffar e stunnar inimigos.",
     "tags": ["suporte", "melee", "novato", "especial"],
     "evolucao": [
   { "tipo": "nome", "valor": "Chikorita" },
