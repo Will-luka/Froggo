@@ -25,7 +25,7 @@
       {
         "emoji": "🍂",
         "nome": "Magical Leaf",
-        "nivel": "1 ou 3",
+        "nivel": "1 ou 2",
         "cooldown": "5.00s",
         "tipo": "Ranged / Target",
         "descricao": "Lança folhas no alvo, causando dano e reduzindo a velocidade dele em 40% por 2 segundos.",
@@ -34,7 +34,7 @@
       {
         "emoji": "☀️",
         "nome": "Synthesis",
-        "nivel": "1 ou 3",
+        "nivel": "1 ou 2",
         "cooldown": "5.00s",
         "tipo": "Target / Recovery",
         "descricao": "Produz energia recuperativa ao redor de si e do aliado designado em uma pequena área, qualquer pokémon nas áreas terá uma pequena parte do hp restaurado, essas duas áreas curam separadamente.",
