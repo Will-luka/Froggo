@@ -1,83 +1,93 @@
 [
   {
-    "nome": "Latias",
-    "imagem": "latias.jpg",
-    "descricao": "Latias é um suporte com capacidade de ficar mais forte ao longo do jogo, tem debuff, buff, escudos, e dano!",
-    "tags": ["suporte", "ranged", "novato", "especial"],
-    "evolucao": [],
+    "nome": "Meganium",
+    "imagem": "meganium.jpg",
+    "descricao": "Meganium é um suporte capaz de curar em área, debuffar e stunnar inimigos.",
+    "tags": ["suporte", "melee", "novato", "especial"],
+    "evolucao": [
+  { "tipo": "nome", "valor": "Chikorita" },
+  { "tipo": "seta", "valor": "→" },
+  { "tipo": "nivel", "valor": "Nível 5" },
+  { "tipo": "seta", "valor": "→" },
+  { "tipo": "nome", "valor": "Bayleef" },
+  { "tipo": "seta", "valor": "→" },
+  { "tipo": "nivel", "valor": "Nível 7" },
+  { "tipo": "seta", "valor": "→" },
+  { "tipo": "nome", "valor": "Meganium" }
+],
     "passiva": {
-      "nome": "Levitate",
-      "descricao": "Depois de usar uma skill, a speed de Latias aumenta por um curto período em 50%. Ficar perto de um Latios aliado também aumenta a speed em 10%.",
-      "cooldown": "90s"
+      "nome": "Overgrow",
+      "descricao": "Aumenta a cura das suas skills em 10% se o(s) alvo(s) da cura estiver(em) com 30% ou menos do HP.",
+      "cooldown": "Sempre ativo"
     },
-    "ataque_basico": "Lança um projétil psíquico. Latias não tem ataque boostado.",
+    "ataque_basico": "Usa vinhas pra dar uma cabeçada no oponente.",
     "habilidades": [
       {
-        "emoji": "🌌",
-        "nome": "Confusion",
+        "emoji": "🍂",
+        "nome": "Magical Leaf",
         "nivel": "1 ou 3",
-        "cooldown": "8.00s",
-        "tipo": "Ranged",
-        "descricao": "Lança uma força psíquica em linha reta, causando dano e diminuindo a speed dos oponentes em 20% por 2s.",
+        "cooldown": "5.00s",
+        "tipo": "Ranged / Target",
+        "descricao": "Lança folhas no alvo, causando dano e reduzindo a velocidade dele em 40% por 2 segundos.",
         "upgrade": ""
       },
       {
-        "emoji": "⭐",
-        "nome": "Swift",
+        "emoji": "☀️",
+        "nome": "Synthesis",
         "nivel": "1 ou 3",
+        "cooldown": "5.00s",
+        "tipo": "Target / Recovery",
+        "descricao": "Produz energia recuperativa ao redor de si e do aliado designado em uma pequena área, qualquer pokémon nas áreas terá uma pequena parte do hp restaurado, essas duas áreas curam separadamente.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌾",
+        "nome": "Grass Knot",
+        "nivel": "5",
         "cooldown": "6.00s",
-        "tipo": "Area / Dano",
-        "descricao": "Lança raios em formato de estrelas em cone.",
+        "tipo": "Ranged / Hindrance",
+        "descricao": "Libera vinhas na direção designada, atingindo o primeiro alvo acertado e prendendo ele por 1 segundo. Na floração, este golpe tem área aumentada e após 2 segundos prende qualquer inimigo ao redor do alvo.",
+        "upgrade": "Nível 11: Reduz o cooldown dessa skill em 1 segundo."
+      },
+      {
+        "emoji": "🌸",
+        "nome": "Petal Blizzard",
+        "nivel": "7",
+        "cooldown": "7.00s",
+        "tipo": "Ranged / Recovery",
+        "descricao": "Joga pétalas na direção designada, causando dano, curando a si e um aliado próximo e diminuindo a speed de inimigos acertados em 30% por 2 segundos. Na floração, este golpe deixa pétalas no chão, tem range aumentado e ganha dano/cura extra a cada 0.5 segundos enquanto as pétalas ficam no chão. ",
+        "upgrade": "Nível 13: Aumenta a cura ligeiramente."
+      },
+      {
+        "emoji": "",
+        "nome": "",
+        "nivel": "",
+        "cooldown": "",
+        "tipo": "",
+        "descricao": "",
         "upgrade": ""
       },
       {
-        "emoji": "🐲",
-        "nome": "Dragon Pulse",
-        "nivel": "4",
-        "cooldown": "6.50s",
-        "tipo": "Area / Dano",
-        "descricao": "Libera um laser em cone, causando dano. Após aprender, Latias ganha Eon a cada farm eliminado ou oponente atingido.",
-        "upgrade": "Nível 10: O laser diminui a velocidade dos oponentes atingidos em 30% por 2s."
-      },
-      {
-        "emoji": "🌠",
-        "nome": "Dragon Breath",
-        "nivel": "4",
-        "cooldown": "5.50s",
-        "tipo": "Ranged / Dano",
-        "descricao": "Libera uma baforada em linha reta, diminuindo speed e def sp em 30% por 3s.",
-        "upgrade": "Nível 10: O slow aumenta para 40%."
-      },
-      {
-        "emoji": "💨",
-        "nome": "Mist Ball",
-        "nivel": "6",
-        "cooldown": "7.00s",
-        "tipo": "Ranged / Debuff",
-        "descricao": "Lança uma bola de névoa que cria área de DPS e aplica marca que reduz o dano do oponente em 25%.",
-        "upgrade": "Nível 12: Aumenta a duração base da marca para 3s."
-      },
-      {
-        "emoji": "🌑",
-        "nome": "Dragon Cheer",
-        "nivel": "6",
-        "cooldown": "8.00s",
-        "tipo": "Target / Buff",
-        "descricao": "Ruge para um aliado, garantindo escudo e dano extra no próximo hit.",
-        "upgrade": "Nível 12: Escudo aumenta um pouco."
+        "emoji": "",
+        "nome": "",
+        "nivel": "",
+        "cooldown": "",
+        "tipo": "",
+        "descricao": "",
+        "upgrade": ""
       }
     ],
     "unite_move": {
-      "nome": "Mist Blast",
-      "nivel": "Nível 8",
-      "cooldown": "112s",
-      "descricao": "Mira um oponente e carrega energia por 1.8s antes de lançar um laser. Cooldowns são resetados após acertar.",
-      "buffs": "30% Velocidade, 20% Escudo de HP Máximo (6s)"
+      "nome": "Full Bloom Aroma",
+      "nivel": "Nível 7",
+      "cooldown": "34s",
+      "descricao": "Emite um aroma doce ao seu redor, causando dano a cada 0,5s em oponentes na área de efeito. Oponentes acertados tem seu dano reduzido em 10% por 3 segundos, essa duração reseta a cada vez que o oponente recebe o dano. Após usar, a próxima skill usada é afetada pela floração.",
+      "buffs": "10% Velocidade, 10% Escudo de HP Máximo (5s)"
     },
     "build": [
       {
-        "nome": "Drive Lens",
-        "descricao": "Reduz ligeiramente os cooldowns e aumenta seu dano após kills/assistências."
+        "nome": "Sp atk Specs",
+        "descricao": "Aumenta Ataque Especial permanentemente a cada gol até um máximo de 6 vezes."
       },
       {
         "nome": "Shell Bell",
@@ -89,18 +99,18 @@
       }
     ],
     "estrategias": {
-      "early_niveis": "1-3",
-      "early": "Comece com Swift e ajude seu aliado a farmar. Dispute os farms neutros usando Confusion seguido de Swift.",
-      "mid_niveis": "4-7",
-      "mid": "Escolha Dragon Pulse ou Dragon Breath. Stacke sempre que possível. No nível 6, escolha Dragon Cheer ou Mist Ball.",
-      "late_niveis": "8+",
-      "late": "Use o Unite Move Mist Blast para eliminar inimigos fugindo ou contribuir em fights."
+      "early_niveis": "1-4",
+      "early": "Comece com Magical Leaf e ajude seu aliado a farmar, aproveite o alto dano da skill pra roubar farm, e use synthesis para aumentar a sustain do time.",
+      "mid_niveis": "5-6",
+      "mid": "Consiga Grass Knot e o use pra restringir o avanço/recuo de inimigos.",
+      "late_niveis": "7+",
+      "late": "Consiga Petal Blizzard e use constantemente sua ult, aproveitando o baixo cooldown."
     },
     "dicas": [
-      "Use a passiva Levitate para se reposicionar e chegar antecipadamente nos locais.",
-      "Combo básico: Mist Ball/Dragon Cheer, Dragon Pulse/Breath, ult, repita.",
-      "Sua ult será cancelada se o oponente ficar inalvejável, imortal, ou se você levar stun.",
-      "Latias é um suporte ofensivo, não jogue recuado à toa."
+      "Sua cura após o level 7 é baixa, não confie demais",
+      "Na floração, prefira usar Grass Knot primeiro",
+      "Use a ult para salvar aliados com o efeito da buddy barrier e o debuff de dano",
+      "Meganium é um suporte resistente, não se contenha se precisar fazer frente"
     ]
   }
 ]
