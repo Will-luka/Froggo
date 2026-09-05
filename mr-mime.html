@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Mr. Mime</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="pokemon-detail">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <img src="mrmime.jpg" alt="Mr. Mime">
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h1 class="pokemon-detail-title">Mr. Mime</h1>
+                        <div class="pokemon-tags">
+                            <span class="tag tag-support">Support</span>
+<span class="tag tag-melee">Melee</span>
+<span class="tag tag-intermediate">Intermediate</span>
+<span class="tag tag-special">Special</span>
+                        </div>
+                        <p class="pokemon-description">
+                            Mr. Mime é um suporte com capacidades tank. Usa seus stuns e barreiras para controlar o campo de batalha e proteger os aliados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                
+
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Filter</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Ao usar uma habilidade, Mr. Mime recebe 10% menos dano por 2s. Isso reforça seu papel de suporte tanque.
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            A cada 5s, ganha um ataque carregado que causa dano aumentado e arremessa os inimigos no ar por 0,5s.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <!-- Card: Fake Out -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        👏 Fake Out
+                        <span class="level-badge">Nível 1 ou 3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Bate palmas, causando dano e empurrando os inimigos por 0,4s. Use para roubar farm e afastar oponentes.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Melee / Stun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Confusion -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🔮 Confusion
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Dispara uma onda psíquica que empurra os inimigos. Se baterem na parede, tomam dano bônus e stun de 1,5s. Inimigos afetados por Power Swap também sofrem stun.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 11: Aumenta o dano.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Stun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Psychic -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🧠 Psychic
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Pulsa energia ao redor de si, causando dano em área. Após três pulsos, um pulso final stuna por 1s. Cada acerto reduz a Def. Especial do inimigo.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 11: Os pulsos também reduzem a velocidade em 30%.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.50s</span>
+                            <span class="meta-type">📋 Tipo: Area / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Barrier -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🧱 Barrier
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Cria uma parede que impede a passagem dos inimigos. Inimigos próximos são empurrados e ficam sem ação por 0,5s. Possui 2 cargas.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 13: Passa a ter 3 cargas.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.50s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Power Swap -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🔗 Power Swap
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Cria um vínculo com o alvo. Se for aliado, aumenta velocidade e dano, e cura ao longo do tempo. Se for inimigo, reduz velocidade e dano, e causa dano contínuo.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 13: Aumenta o buff/dano em aliados e o debuff em inimigos para 20%.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 4.50s</span>
+                            <span class="meta-type">📋 Tipo: Buff / Debuff</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Showtime
+                        <span class="level-badge">Nível 9</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Mr. Mime salta e começa uma performance, causando dano em área 4 vezes e ficando imparável. O golpe final causa dano dobrado e stun de 1s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 100s</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% Escudo de HP Máximo (6s)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Focus Band</h3>
+                                    <p class="build-item-desc">Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Resonant Guard</h3>
+                                    <p class="build-item-desc">Ao causar dano, concede um escudo a você e a um aliado próximo.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Vanguard Bell</h3>
+                                    <p class="build-item-desc">Restaura HP sempre que você aplica controle de grupo em um oponente.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-3</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Comece com Fake Out para roubar farm inimigo e afastar oponentes. Use Light Screen para ser chato, stunnando e atrapalhando a movimentação inimiga perto de você.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 4-6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Use os stuns das skills do nível 4 para que seus aliados acertem as skills deles com mais facilidade. Depois use as skills do nível 6 para aplicar stuns de forma mais poderosa. Combinações ideais: Confusion + Barrier ou Psychic + Power Swap.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Níveis 9+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Use a ult para stunnar inimigos em área, impedir o avanço de um oponente que poderia eliminar um aliado facilmente, ou iniciar uma luta com vantagem.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                                                        <li>Confusion + Barrier é uma combinação devastadora perto de paredes.</li>
+                            <li>Power Swap é excelente para fortalecer um carry ou enfraquecer um assassino.</li>
+                            <li>Light Screen pode bloquear rotas de fuga e entrada.</li>
+                            <li>Seu ataque básico carregado pode interromper habilidades inimigas.</li>
+                            <li>Jogue na linha de frente, mas sem se afastar demais dos aliados.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

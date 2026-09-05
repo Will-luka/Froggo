@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Wigglytuff</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="pokemon-detail">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <img src="wigglytuff.jpg" alt="Wigglytuff">
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h1 class="pokemon-detail-title">Wigglytuff</h1>
+                        <div class="pokemon-tags">
+                            <span class="tag tag-support">Support</span>
+<span class="tag tag-melee">Melee</span>
+<span class="tag tag-intermediate">Intermediate</span>
+<span class="tag tag-special">Special</span>
+                        </div>
+                        <p class="pokemon-description">
+                            Wigglytuff faz papel de tank e é ótima para ajudar o time a aplicar dano. Suas habilidades controlam o ritmo da luta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                
+                <!-- Card: Evolução/Transformação -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">🔄 Evolução</h2>
+                    <div class="pokemon-card-content">
+                        <div class="evolution-chain">
+                            <span class="evolution-name">Jigglypuff</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 4</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Wigglytuff</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Cute Charm</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Quando atingida por um ataque inimigo de curto alcance, encanta o atacante, fazendo-o se aproximar involuntariamente. Cooldown de 10s.
+                        </p>
+                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 10s</p>
+                    </div>
+                </div>
+
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            A cada terceiro ataque, Wigglytuff ganha um ataque carregado que causa dano e stuna por 0,5s.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <!-- Card: Pound -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        👋 Pound
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Bate no chão duas vezes em cone, causando dano e reduzindo a velocidade em 40% por 0,5s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Melee / Slow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Defense Curl -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🛡️ Defense Curl
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Ganha um escudo de 25% do HP máximo por 0,5s e rola para frente, jogando inimigos no ar por 0,5s. Se bater em obstáculo, reseta o cooldown de Pound.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Sing -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🎵 Sing
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Canta, reduzindo a velocidade dos inimigos e aumentando a própria velocidade. Inimigos que ficarem na área por 4 notas adormecem e têm suas defesas reduzidas.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a duração do sono.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-type">📋 Tipo: Area / Sleep</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Rollout -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌀 Rollout
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Ganha escudo e rola para frente, ficando imparável. Joga inimigos no ar e reseta o cooldown de Pound, Double Slap e Dazzling Gleam ao bater em obstáculos.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o tempo dos inimigos no ar.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Dazzling Gleam -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ✨ Dazzling Gleam
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Emite um flash de energia encantada, causando dano em cone em dois tempos.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: O primeiro flash reduz a velocidade em 40%.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 4.00s</span>
+                            <span class="meta-type">📋 Tipo: Area / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Double Slap -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        👋 Double Slap
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Desfere uma sequência de tapas em cone, causando dano múltiplas vezes e reduzindo a velocidade.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Aumenta o número de tapas.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Melee / Slow</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Starlight Recital
+                        <span class="level-badge">Nível 8</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Canta e fica imparável por 3s, dando escudo a aliados próximos e removendo status negativos. Quando o escudo expira, aliados são curados.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 89s</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Focus Band</h3>
+                                    <p class="build-item-desc">Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Resonant Guard</h3>
+                                    <p class="build-item-desc">Ao causar dano, concede um escudo a você e a um aliado próximo.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Vanguard Bell</h3>
+                                    <p class="build-item-desc">Restaura HP sempre que você aplica controle de grupo em um oponente.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Ajude seu aliado a farmar e roube farms inimigos com Pound. Use Defense Curl para resetar o Pound e stunnar inimigos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 4-6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Escolha sempre Sing no nível 4 pela utilidade de sono e redução de defesas. No nível 6, qualquer uma das skills é viável; depende da sua preferência.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Níveis 8+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Use a ult para limpar aliados de stuns e dar sobrevida ao time. Tente usar quando 3 ou mais aliados estiverem no alcance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                                                        <li>Wigglytuff é tanque, fique na frente protegendo os carries.</li>
+                            <li>Sing é excelente para preparar emboscadas.</li>
+                            <li>Defense Curl e Rollout podem surpreender inimigos.</li>
+                            <li>A ult pode virar uma luta se usada no momento certo.</li>
+                            <li>Não tenha medo de iniciar lutas.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

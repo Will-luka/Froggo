@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Sableye</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="pokemon-detail">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <img src="sableye.jpg" alt="Sableye">
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h1 class="pokemon-detail-title">Sableye</h1>
+                        <div class="pokemon-tags">
+                            <span class="tag tag-support">Support</span>
+<span class="tag tag-melee">Melee</span>
+<span class="tag tag-intermediate">Intermediate</span>
+<span class="tag tag-physical">Physical</span>
+                        </div>
+                        <p class="pokemon-description">
+                            Sableye é o suporte mais próximo de um assassino. Fica invisível, invade a jungle inimiga, rouba buffs e estraga o mental do adversário. É complexo, mas recompensador.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                
+
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Prankster</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Quando Sableye está fora da visão inimiga, entra em stealth e ganha 10% de velocidade. Ao entrar no campo de visão inimigo, permanece invisível por mais 1,7s. Sai do stealth ao atacar.
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            A cada terceiro ataque, lança um ataque carregado que causa dano e reduz a velocidade em 20%. Se estiver em stealth, aplica medo por 1s, forçando o inimigo a se afastar.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <!-- Card: Thief -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        💎 Thief
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Avança na direção designada, causando dano e roubando 5 de energia Aeos do inimigo. Se o inimigo não tiver energia, fica sem ação por 0,5s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.50s</span>
+                            <span class="meta-type">📋 Tipo: Dash / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Shadow Sneak -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌑 Shadow Sneak
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Aplica um buff que deixa Sableye invisível após 1,5s e aumenta a velocidade. Ao entrar em stealth, prepara um ataque carregado com dano extra.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Aumenta a duração e restaura HP enquanto estiver em stealth.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 12.00s</span>
+                            <span class="meta-type">📋 Tipo: Buff / Stealth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Knock Off -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        👊 Knock Off
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Avança e retorna, causando dano e fazendo inimigos sem energia ficarem sem ação por mais tempo. Inimigos atingidos derrubam Aeos Energy.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Energia coletada recupera HP e aumenta velocidade.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.50s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance / Dano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Confuse Ray -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        😈 Confuse Ray
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança um raio que confunde os inimigos, fazendo-os atacar aliados por 2s. Inimigos confusos têm o dano reduzido.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a velocidade e a velocidade de ataque do alvo confuso.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Feint Attack -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        💰 Feint Attack
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança energia Aeos falsa no chão. Se um inimigo pisar, explode causando dano ao longo do tempo e reduzindo a velocidade.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Inimigos derrotados pela armadilha dropam mais energia.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Area / Armadilha</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Chaos Glower
+                        <span class="level-badge">Nível 8</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Sableye fica imparável e atira luz dos olhos em cone. Inimigos de frente são forçados a preparar retorno à base; se sofrerem dano, ficam sem ação por 1,5s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 100s</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Float Stone</h3>
+                                    <p class="build-item-desc">Aumenta a velocidade de movimento quando fora de combate. Essencial para rotação e invisibilidade.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Exp. Share</h3>
+                                    <p class="build-item-desc">Ganha experiência passiva por segundo. Deixa o Sableye relevante mesmo sem farmar.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Leftovers</h3>
+                                    <p class="build-item-desc">Recupera uma porcentagem do HP máximo por segundo quando fora de combate.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Invada a jungle inimiga para roubar buffs e atrasar o jungler adversário. Use Thief para roubar energia e atrapalhar. Tome cuidado com o head, pois você não tem escape sem X Speed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 4-6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Pegue Shadow Sneak para invisibilidade ou Knock Off para dano e controle. Use Confuse Ray para desorganizar o time inimigo ou Feint Attack como armadilha.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Níveis 8+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Use a ult para tirar um inimigo da luta ou forçar um retorno. Continue perturbando a rotação inimiga e protegendo seus carries.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                                                        <li>Sableye é ótimo para estragar o mental do jungler inimigo.</li>
+                            <li>Sempre tenha um propósito ao engajar: você não causa dano sozinho.</li>
+                            <li>Jogue como um defensor invisível: proteja seu carry sem ser visto.</li>
+                            <li>Use a ult para negar a participação de um inimigo em uma luta.</li>
+                            <li>A invisibilidade permite posicionamentos agressivos.</li>
+                            <li>É um dos suportes mais difíceis de dominar, mas muito recompensador.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
