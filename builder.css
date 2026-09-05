@@ -1,0 +1,178 @@
+/* ============================================
+   BUILDER - ESTILOS ESPECÍFICOS
+   ============================================ */
+
+.builder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.builder-panel {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.builder-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.builder-group label {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.builder-select {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color var(--transition);
+}
+
+.builder-select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.builder-select option {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.results-panel {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.results-placeholder {
+    text-align: center;
+    color: var(--medium-gray);
+    font-size: 1.6rem;
+    font-style: italic;
+}
+
+/* Cards de habilidades na calculadora */
+.skill-calc-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-calc-name {
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.skill-calc-type {
+    color: #2196F3;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.skill-calc-values {
+    color: var(--lighter-gray);
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.skill-calc-values strong {
+    color: var(--white);
+}
+
+/* Stats finais */
+.stats-final-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-final-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.stat-final-label {
+    color: var(--medium-gray);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.stat-final-value {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-final-value.positive {
+    color: #4CAF50;
+}
+
+.stat-final-value.negative {
+    color: #F44336;
+}
+
+/* Descrições dos itens */
+.item-desc-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+
+.item-desc-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.item-desc-name {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.item-desc-text {
+    color: var(--lighter-gray);
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .builder-panel {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-final-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
