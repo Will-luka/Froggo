@@ -786,27 +786,57 @@ function calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier, e
 
 function updateStackInputs() {
     const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
-    let stacksHTML = '<div style="margin-top: 1rem;">';
+    const currentPokemon = pokemonSelect.value;
     
+    // Verificar se os inputs já existem e correspondem à seleção atual
+    const existingInputs = stacksContainer.querySelectorAll('.stack-input');
+    const existingItems = [];
+    existingInputs.forEach(input => {
+        existingItems.push({
+            item: input.getAttribute('data-item'),
+            value: input.value
+        });
+    });
+    
+    const neededItems = [];
     selectedHeld.forEach(itemName => {
         if (stackItems[itemName]) {
-            const maxStacks = stackItems[itemName].maxStacks;
-            stacksHTML += `
-                <div class="builder-group" style="margin-bottom: 0.5rem;">
-                    <label for="stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}">${itemName} (stacks):</label>
-                    <input type="number" id="stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}" 
-                           class="stack-input builder-select" 
-                           data-item="${itemName}" 
-                           min="0" 
-                           max="${maxStacks}" 
-                           value="0">
-                </div>
-            `;
+            neededItems.push(itemName);
         }
     });
     
-    // Eon Power para Latias
-    if (pokemonSelect.value === "Latias") {
+    const needsEon = currentPokemon === "Latias";
+    
+    // Se os inputs já são os corretos, apenas retorna (mantém o foco)
+    const hasEonInput = stacksContainer.querySelector('#eon-stacks') !== null;
+    const sameItems = existingItems.length === neededItems.length && 
+                      neededItems.every(item => existingItems.some(e => e.item === item));
+    
+    if (sameItems && (needsEon ? hasEonInput : !hasEonInput)) {
+        return;
+    }
+    
+    // Se chegou aqui, precisa recriar os inputs
+    let stacksHTML = '';
+    
+    neededItems.forEach(itemName => {
+        const maxStacks = stackItems[itemName].maxStacks;
+        const inputId = `stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}`;
+        stacksHTML += `
+            <div class="builder-group" style="margin-bottom: 0.5rem;">
+                <label for="${inputId}">${itemName} (stacks):</label>
+                <input type="number" id="${inputId}" 
+                       class="stack-input builder-select" 
+                       data-item="${itemName}" 
+                       min="0" 
+                       max="${maxStacks}" 
+                       value="0"
+                       step="1">
+            </div>
+        `;
+    });
+    
+    if (needsEon) {
         stacksHTML += `
             <div class="builder-group" style="margin-bottom: 0.5rem;">
                 <label for="eon-stacks">Eon Power (0-1099):</label>
@@ -814,22 +844,24 @@ function updateStackInputs() {
                        class="stack-input builder-select" 
                        min="0" 
                        max="1099" 
-                       value="0">
+                       value="0"
+                       step="1">
             </div>
         `;
     }
     
-    stacksHTML += '</div>';
     stacksContainer.innerHTML = stacksHTML;
     
-    // Adicionar eventos aos inputs de stack
+    // Adicionar eventos aos inputs
     const stackInputs = document.querySelectorAll('.stack-input');
     stackInputs.forEach(input => {
-        input.addEventListener('input', renderResults);
+        input.addEventListener('input', function() {
+            renderResults(false); // false = não recriar inputs
+        });
     });
 }
 
-function renderResults() {
+function renderResults(skipInputUpdate = true) {
     const pokemonName = pokemonSelect.value;
     const level = levelSelect.value;
     
@@ -840,7 +872,10 @@ function renderResults() {
         return;
     }
     
-    updateStackInputs();
+    // Só atualizar os inputs se a seleção mudou
+    if (!skipInputUpdate) {
+        updateStackInputs();
+    }
     
     const baseStats = getPokemonStats(pokemonName, level);
     if (!baseStats) {
@@ -923,19 +958,19 @@ function renderResults() {
 }
 
 function initEvents() {
-    pokemonSelect.addEventListener('change', renderResults);
-    levelSelect.addEventListener('change', renderResults);
-    held1.addEventListener('change', renderResults);
-    held2.addEventListener('change', renderResults);
-    held3.addEventListener('change', renderResults);
-    battleItem.addEventListener('change', renderResults);
+    pokemonSelect.addEventListener('change', function() { renderResults(false); });
+    levelSelect.addEventListener('change', function() { renderResults(false); });
+    held1.addEventListener('change', function() { renderResults(false); });
+    held2.addEventListener('change', function() { renderResults(false); });
+    held3.addEventListener('change', function() { renderResults(false); });
+    battleItem.addEventListener('change', function() { renderResults(false); });
 }
 
 function initBuilder() {
     populateLevelSelect();
     populateItemSelects();
     initEvents();
-    renderResults();
+    renderResults(false);
 }
 
 document.addEventListener('DOMContentLoaded', initBuilder);
