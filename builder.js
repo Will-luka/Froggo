@@ -566,8 +566,18 @@ const battleItemsData = {
 };
 
 // ============================================
-// LÓGICA DA CALCULADORA
+// LÓGICA DA CALCULADORA (com stacks)
 // ============================================
+
+// Itens stackáveis e seus efeitos por stack
+const stackItems = {
+    "Aeos Cookie": { maxStacks: 6, hpPerStack: 200 },
+    "Attack Weight": { maxStacks: 6, atkPerStack: 12 },
+    "Sp. Atk Specs": { maxStacks: 6, spAtkPerStack: 16 },
+    "Drive Lens": { maxStacks: 20, spAtkPercentPerStack: 0.6 },
+    "Accel Bracer": { maxStacks: 20, atkPercentPerStack: 0.6 },
+    "Weakness Policy": { maxStacks: 4, atkPercentPerStack: 2.5 }
+};
 
 // Referências aos elementos do DOM
 const pokemonSelect = document.getElementById('pokemon-select');
@@ -579,11 +589,18 @@ const battleItem = document.getElementById('battle-item');
 const resultsPanel = document.getElementById('results-panel');
 const itemDescContainer = document.getElementById('item-desc');
 
-// Preencher selects de held items e battle items
+// Container para stacks dinâmicos
+const stacksContainer = document.createElement('div');
+stacksContainer.id = 'stacks-container';
+stacksContainer.style.marginTop = '1rem';
+document.querySelector('.builder-panel').appendChild(stacksContainer);
+
+// Preencher selects
 function populateItemSelects() {
     const heldSelects = [held1, held2, held3];
     
     heldSelects.forEach(select => {
+        select.innerHTML = '';
         const defaultOption = document.createElement('option');
         defaultOption.value = "";
         defaultOption.textContent = "-- Nenhum --";
@@ -597,6 +614,7 @@ function populateItemSelects() {
         });
     });
     
+    battleItem.innerHTML = '';
     const battleDefault = document.createElement('option');
     battleDefault.value = "";
     battleDefault.textContent = "-- Nenhum --";
@@ -610,8 +628,8 @@ function populateItemSelects() {
     });
 }
 
-// Preencher select de níveis (1-15)
 function populateLevelSelect() {
+    levelSelect.innerHTML = '';
     for (let i = 1; i <= 15; i++) {
         const option = document.createElement('option');
         option.value = i;
@@ -620,7 +638,6 @@ function populateLevelSelect() {
     }
 }
 
-// Obter stats do Pokémon no nível selecionado
 function getPokemonStats(pokemonName, level) {
     const pokemon = pokemonData[pokemonName];
     if (!pokemon) return null;
@@ -628,8 +645,26 @@ function getPokemonStats(pokemonName, level) {
     return statsAtLevel ? { ...statsAtLevel } : null;
 }
 
-// Aplicar bônus dos held items aos stats
-function applyHeldItems(baseStats, selectedItems) {
+function getSelectedStacks() {
+    const stacks = {};
+    const stackInputs = document.querySelectorAll('.stack-input');
+    stackInputs.forEach(input => {
+        const itemName = input.getAttribute('data-item');
+        const value = parseInt(input.value) || 0;
+        stacks[itemName] = value;
+    });
+    return stacks;
+}
+
+function getEonStacks() {
+    const eonInput = document.getElementById('eon-stacks');
+    if (eonInput) {
+        return parseInt(eonInput.value) || 0;
+    }
+    return 0;
+}
+
+function applyHeldItems(baseStats, selectedItems, stacks, eonStacks) {
     const finalStats = { ...baseStats };
     
     selectedItems.forEach(itemName => {
@@ -641,16 +676,39 @@ function applyHeldItems(baseStats, selectedItems) {
             if (itemAttrs.def) finalStats.def += itemAttrs.def;
             if (itemAttrs.spAtk) finalStats.spAtk += itemAttrs.spAtk;
             if (itemAttrs.spDef) finalStats.spDef += itemAttrs.spDef;
+            
+            // Aplicar stacks
+            if (stackItems[itemName] && stacks[itemName]) {
+                const stackInfo = stackItems[itemName];
+                const stackCount = Math.min(stacks[itemName], stackInfo.maxStacks);
+                
+                if (stackInfo.hpPerStack) {
+                    finalStats.hp += stackInfo.hpPerStack * stackCount;
+                }
+                if (stackInfo.atkPerStack) {
+                    finalStats.atk += stackInfo.atkPerStack * stackCount;
+                }
+                if (stackInfo.spAtkPerStack) {
+                    finalStats.spAtk += stackInfo.spAtkPerStack * stackCount;
+                }
+            }
         }
     });
+    
+    // Aplicar Eon Power da Latias
+    if (pokemonSelect.value === "Latias" && eonStacks > 0) {
+        // Dragon Breath: +0.5% dano por Eon (a partir de 61)
+        // Dragon Pulse: +0.5% dano dos projéteis por Eon (a partir de 101)
+        // Para simplificar, vamos adicionar um multiplicador
+    }
     
     return finalStats;
 }
 
-// Aplicar efeitos percentuais dos itens (Wise Glasses, Rescue Hood, etc.)
-function applyPercentEffects(finalStats, selectedItems) {
+function applyPercentEffects(finalStats, selectedItems, stacks) {
     let spAtkMultiplier = 1;
     let shieldHealMultiplier = 1;
+    let atkMultiplier = 1;
     
     selectedItems.forEach(itemName => {
         if (itemName === "Wise Glasses") {
@@ -659,17 +717,31 @@ function applyPercentEffects(finalStats, selectedItems) {
         if (itemName === "Rescue Hood") {
             shieldHealMultiplier += 0.23;
         }
+        if (stackItems[itemName] && stacks[itemName]) {
+            const stackInfo = stackItems[itemName];
+            const stackCount = Math.min(stacks[itemName], stackInfo.maxStacks);
+            
+            if (stackInfo.spAtkPercentPerStack) {
+                spAtkMultiplier += (stackInfo.spAtkPercentPerStack / 100) * stackCount;
+            }
+            if (stackInfo.atkPercentPerStack) {
+                atkMultiplier += (stackInfo.atkPercentPerStack / 100) * stackCount;
+            }
+        }
     });
+    
+    finalStats.spAtk = Math.round(finalStats.spAtk * spAtkMultiplier);
+    finalStats.atk = Math.round(finalStats.atk * atkMultiplier);
     
     return {
         stats: finalStats,
         spAtkMultiplier,
-        shieldHealMultiplier
+        shieldHealMultiplier,
+        atkMultiplier
     };
 }
 
-// Calcular valores das habilidades
-function calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier) {
+function calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier, eonStacks) {
     const pokemon = pokemonData[pokemonName];
     if (!pokemon) return [];
     
@@ -686,10 +758,21 @@ function calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier) {
             valor = skill.formula;
         }
         
-        // Aplicar multiplicador de escudo/cura se for skill de cura ou escudo
         if (skill.tipo === "Cura" || skill.tipo === "Escudo") {
             if (typeof valor === 'number') {
                 valor = Math.round(valor * shieldHealMultiplier);
+            }
+        }
+        
+        // Aplicar Eon Power da Latias em habilidades específicas
+        if (pokemonName === "Latias" && eonStacks > 0) {
+            if (skill.nome === "Dragon Breath (Dano)" && eonStacks >= 61) {
+                const bonus = 1 + (eonStacks - 61) * 0.005;
+                valor = Math.round(valor * bonus);
+            }
+            if (skill.nome === "Dragon Pulse (Dano)" && eonStacks >= 101) {
+                const bonus = 1 + (eonStacks - 101) * 0.005;
+                valor = Math.round(valor * bonus);
             }
         }
         
@@ -701,7 +784,51 @@ function calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier) {
     });
 }
 
-// Renderizar resultados
+function updateStackInputs() {
+    const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
+    let stacksHTML = '<div style="margin-top: 1rem;">';
+    
+    selectedHeld.forEach(itemName => {
+        if (stackItems[itemName]) {
+            const maxStacks = stackItems[itemName].maxStacks;
+            stacksHTML += `
+                <div class="builder-group" style="margin-bottom: 0.5rem;">
+                    <label for="stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}">${itemName} (stacks):</label>
+                    <input type="number" id="stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}" 
+                           class="stack-input builder-select" 
+                           data-item="${itemName}" 
+                           min="0" 
+                           max="${maxStacks}" 
+                           value="0">
+                </div>
+            `;
+        }
+    });
+    
+    // Eon Power para Latias
+    if (pokemonSelect.value === "Latias") {
+        stacksHTML += `
+            <div class="builder-group" style="margin-bottom: 0.5rem;">
+                <label for="eon-stacks">Eon Power (0-1099):</label>
+                <input type="number" id="eon-stacks" 
+                       class="stack-input builder-select" 
+                       min="0" 
+                       max="1099" 
+                       value="0">
+            </div>
+        `;
+    }
+    
+    stacksHTML += '</div>';
+    stacksContainer.innerHTML = stacksHTML;
+    
+    // Adicionar eventos aos inputs de stack
+    const stackInputs = document.querySelectorAll('.stack-input');
+    stackInputs.forEach(input => {
+        input.addEventListener('input', renderResults);
+    });
+}
+
 function renderResults() {
     const pokemonName = pokemonSelect.value;
     const level = levelSelect.value;
@@ -709,8 +836,11 @@ function renderResults() {
     if (!pokemonName || !level) {
         resultsPanel.innerHTML = '<p class="results-placeholder">Selecione um Pokémon para ver os resultados.</p>';
         itemDescContainer.innerHTML = '';
+        stacksContainer.innerHTML = '';
         return;
     }
+    
+    updateStackInputs();
     
     const baseStats = getPokemonStats(pokemonName, level);
     if (!baseStats) {
@@ -719,41 +849,39 @@ function renderResults() {
     }
     
     const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
-    const finalStats = applyHeldItems(baseStats, selectedHeld);
-    const { stats: adjustedStats, spAtkMultiplier, shieldHealMultiplier } = applyPercentEffects(finalStats, selectedHeld);
+    const stacks = getSelectedStacks();
+    const eonStacks = getEonStacks();
     
-    // Aplicar multiplicador de SpAtk do Wise Glasses
-    adjustedStats.spAtk = Math.round(adjustedStats.spAtk * spAtkMultiplier);
+    const statsAfterItems = applyHeldItems(baseStats, selectedHeld, stacks, eonStacks);
+    const { stats: finalStats, shieldHealMultiplier } = applyPercentEffects(statsAfterItems, selectedHeld, stacks);
     
-    const skills = calculateSkills(pokemonName, level, adjustedStats, shieldHealMultiplier);
+    const skills = calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier, eonStacks);
     
-    // Construir HTML dos stats finais
     let statsHTML = `
         <div class="stats-final-container">
             <div class="stat-final-box">
                 <div class="stat-final-label">HP</div>
-                <div class="stat-final-value">${adjustedStats.hp}</div>
+                <div class="stat-final-value">${finalStats.hp}</div>
             </div>
             <div class="stat-final-box">
                 <div class="stat-final-label">Ataque</div>
-                <div class="stat-final-value">${adjustedStats.atk}</div>
+                <div class="stat-final-value">${finalStats.atk}</div>
             </div>
             <div class="stat-final-box">
                 <div class="stat-final-label">Defesa</div>
-                <div class="stat-final-value">${adjustedStats.def}</div>
+                <div class="stat-final-value">${finalStats.def}</div>
             </div>
             <div class="stat-final-box">
                 <div class="stat-final-label">Sp. Atk</div>
-                <div class="stat-final-value">${adjustedStats.spAtk}</div>
+                <div class="stat-final-value">${finalStats.spAtk}</div>
             </div>
             <div class="stat-final-box">
                 <div class="stat-final-label">Sp. Def</div>
-                <div class="stat-final-value">${adjustedStats.spDef}</div>
+                <div class="stat-final-value">${finalStats.spDef}</div>
             </div>
         </div>
     `;
     
-    // Construir HTML das habilidades
     let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
     skills.forEach(skill => {
         skillsHTML += `
@@ -769,7 +897,7 @@ function renderResults() {
     
     resultsPanel.innerHTML = statsHTML + skillsHTML;
     
-    // Renderizar descrições dos itens selecionados
+    // Descrições dos itens
     let itemsHTML = '';
     selectedHeld.forEach(itemName => {
         if (heldItemsData[itemName]) {
@@ -794,7 +922,6 @@ function renderResults() {
     itemDescContainer.innerHTML = itemsHTML;
 }
 
-// Adicionar eventos aos selects
 function initEvents() {
     pokemonSelect.addEventListener('change', renderResults);
     levelSelect.addEventListener('change', renderResults);
@@ -804,7 +931,6 @@ function initEvents() {
     battleItem.addEventListener('change', renderResults);
 }
 
-// Inicializar
 function initBuilder() {
     populateLevelSelect();
     populateItemSelects();
@@ -812,5 +938,4 @@ function initBuilder() {
     renderResults();
 }
 
-// Iniciar quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', initBuilder);
