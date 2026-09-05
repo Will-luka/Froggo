@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Meganium</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="pokemon-detail">
+            <!-- Card de Introdução -->
+            <div class="pokemon-card intro-card">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <img src="meganium.jpg" alt="Meganium">
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h1 class="pokemon-detail-title">Meganium</h1>
+                        <div class="pokemon-tags">
+                            <span class="tag tag-suporte">Suporte</span>
+<span class="tag tag-melee">Melee</span>
+<span class="tag tag-novato">Novato</span>
+<span class="tag tag-especial">Especial</span>
+                        </div>
+                        <p class="pokemon-description">
+                            Meganium é capaz de curar em área, debuffar e stunnar inimigos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de cards individuais -->
+            <div class="pokemon-cards-container">
+                
+                <!-- Card: Evolução/Transformação -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">🔄 Evolução</h2>
+                    <div class="pokemon-card-content">
+                        <div class="evolution-chain">
+                            <span class="evolution-name">Chikorita</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 5</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Bayleef</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 7</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Meganium</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card: Passiva -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">✨ Passiva: Overgrow</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Aumenta a cura das suas skills em 10% se o(s) alvo(s) da cura estiver(em) com 30% ou menos do HP.
+                        </p>
+                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> Sempre ativo</p>
+                    </div>
+                </div>
+
+                <!-- Card: Ataque Básico -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Usa vinhas pra dar uma cabeçada no oponente.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <!-- Card: Magical Leaf -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🍂 Magical Leaf
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança folhas no alvo, causando dano e reduzindo a velocidade dele em 40% por 2 segundos.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Target</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Synthesis -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Synthesis
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Produz energia recuperativa ao redor de si e do aliado designado em uma pequena área, qualquer pokémon nas áreas terá uma pequena parte do hp restaurado, essas duas áreas curam separadamente.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
+                            <span class="meta-type">📋 Tipo: Target / Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Grass Knot -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌾 Grass Knot
+                        <span class="level-badge">Nível 5</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Libera vinhas na direção designada, atingindo o primeiro alvo acertado e prendendo ele por 1 segundo. Na floração, este golpe tem área aumentada e após 2 segundos prende qualquer inimigo ao redor do alvo.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 11: Reduz o cooldown dessa skill em 1 segundo.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Hindrance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Petal Blizzard -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌸 Petal Blizzard
+                        <span class="level-badge">Nível 7</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Joga pétalas na direção designada, causando dano, curando a si e um aliado próximo e diminuindo a speed de inimigos acertados em 30% por 2 segundos. Na floração, este golpe deixa pétalas no chão, tem range aumentado e ganha dano/cura extra a cada 0.5 segundos enquanto as pétalas ficam no chão. 
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 13: Aumenta a cura ligeiramente.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card:  -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                         
+                        <span class="level-badge">Nível </span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: </span>
+                            <span class="meta-type">📋 Tipo: </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card:  -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                         
+                        <span class="level-badge">Nível </span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: </span>
+                            <span class="meta-type">📋 Tipo: </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card: Unite Move -->
+                <div class="pokemon-card unite-move-card">
+                    <h2 class="pokemon-card-title">
+                        👑 Unite Move: Full Bloom Aroma
+                        <span class="level-badge">Nível 7</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Emite um aroma doce ao seu redor, causando dano a cada 0,5s em oponentes na área de efeito. Oponentes acertados tem seu dano reduzido em 10% por 3 segundos, essa duração reseta a cada vez que o oponente recebe o dano. Após usar, a próxima skill usada é afetada pela floração.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-cooldown">⏱️ Cooldown: 34s</span>
+                            <span class="meta-type">📋 10% Velocidade, 10% Escudo de HP Máximo (5s)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Build Recomendada -->
+                <div class="pokemon-card build-card">
+                    <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
+                    <div class="pokemon-card-content">
+                        <div class="build-items">
+                            
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Sp atk Specs</h3>
+                                    <p class="build-item-desc">Aumenta Ataque Especial permanentemente a cada gol até um máximo de 6 vezes.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">Shell Bell</h3>
+                                    <p class="build-item-desc">Reduz ligeiramente os cooldowns e recupera HP ao acertar uma skill.</p>
+                                </div>
+                            </div>
+
+                            <div class="build-item">
+                                <div class="build-item-icon">
+                                    <div class="item-placeholder">?</div>
+                                </div>
+                                <div class="build-item-info">
+                                    <h3 class="build-item-name">LIVRE</h3>
+                                    <p class="build-item-desc">Item da sua preferência. Cursed Incense, Resonant Guard, Energy Amplifier, etc.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Early Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌅 Early Game
+                        <span class="level-badge">Níveis 1-4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Comece com Magical Leaf e ajude seu aliado a farmar, aproveite o alto dano da skill pra roubar farm, e use synthesis para aumentar a sustain do time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Mid Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        ☀️ Mid Game
+                        <span class="level-badge">Níveis 5-6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Consiga Grass Knot e o use pra restringir o avanço/recuo de inimigos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Late Game -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🌙 Late Game
+                        <span class="level-badge">Níveis 7+</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Consiga Petal Blizzard e use constantemente sua ult, aproveitando o baixo cooldown.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Dicas Gerais -->
+                <div class="pokemon-card tips-card">
+                    <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
+                    <div class="pokemon-card-content">
+                        <ul class="strategy-tips">
+                                                        <li>Sua cura após o level 7 é baixa, não confie demais</li>
+                            <li>Na floração, prefira usar Grass Knot primeiro</li>
+                            <li>Use a ult para salvar aliados com o efeito da buddy barrier e o debuff de dano</li>
+                            <li>Meganium é um suporte resistente, não se contenha se precisar fazer frente</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para voltar -->
+            <div class="back-button-container">
+                <a href="index.html" class="btn-load-more">Voltar para Início</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
