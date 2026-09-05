@@ -3,7 +3,7 @@
     "nome": "Meganium",
     "imagem": "meganium.jpg",
     "descricao": "Meganium é capaz de curar em área, debuffar e stunnar inimigos.",
-    "tags": ["suporte", "melee", "novato", "especial"],
+    "tags": ["support", "melee", "novice", "special"],
     "evolucao": [
   { "tipo": "nome", "valor": "Chikorita" },
   { "tipo": "seta", "valor": "→" },
@@ -57,24 +57,6 @@
         "tipo": "Ranged / Recovery",
         "descricao": "Joga pétalas na direção designada, causando dano, curando a si e um aliado próximo e diminuindo a speed de inimigos acertados em 30% por 2 segundos. Na floração, este golpe deixa pétalas no chão, tem range aumentado e ganha dano/cura extra a cada 0.5 segundos enquanto as pétalas ficam no chão. ",
         "upgrade": "Nível 13: Aumenta a cura ligeiramente."
-      },
-      {
-        "emoji": "",
-        "nome": "",
-        "nivel": "",
-        "cooldown": "",
-        "tipo": "",
-        "descricao": "",
-        "upgrade": ""
-      },
-      {
-        "emoji": "",
-        "nome": "",
-        "nivel": "",
-        "cooldown": "",
-        "tipo": "",
-        "descricao": "",
-        "upgrade": ""
       }
     ],
     "unite_move": {
