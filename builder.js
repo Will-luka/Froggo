@@ -33,7 +33,7 @@ const pokemonData = {
             { nome: "Dazzling Gleam Lv12 (Dano)", tipo: "Dano", formula: (s, lv) => 1.80 * s.spAtk + 21 * (lv - 1) + 410 },
             { nome: "Sweet Scent Explosão (Dano)", tipo: "Dano", formula: (s, lv) => 0.629 * s.spAtk + 8 * (lv - 1) + 209 },
             { nome: "Sweet Scent Anel (Dano)", tipo: "Dano", formula: (s, lv) => 0.8925 * s.spAtk + 10 * (lv - 1) + 293 },
-            { nome: "Unite Move (Cura por Creme)", tipo: "Cura", formula: (s, lv) => 0.19 * s.spAtk + 3 * (lv - 1) + 45 }
+            { nome: "Fluffy Cream Supreme", tipo: "Cura", formula: (s, lv) => 0.19 * s.spAtk + 3 * (lv - 1) + 45 }
         ]
     },
     "Blissey": {
@@ -63,8 +63,8 @@ const pokemonData = {
             { nome: "Soft-Boiled HoT (Cura por Tick)", tipo: "Cura", formula: (s, lv) => 0.75 * s.spAtk + 0 * (lv - 1) + 92 },
             { nome: "Safeguard (Escudo)", tipo: "Escudo", formula: (s, lv) => 1.85 * s.spAtk + 13 * (lv - 1) + 620 },
             { nome: "Safeguard Lv10 (Escudo)", tipo: "Escudo", formula: (s, lv) => 2.05 * s.spAtk + 14 * (lv - 1) + 690 },
-            { nome: "Unite Move (Dano)", tipo: "Dano", formula: (s, lv) => 0.944 * s.spAtk + 25 * (lv - 1) + 1190 },
-            { nome: "Unite Move (Escudo)", tipo: "Escudo", formula: (s, lv) => 2.40 * s.spAtk + 0 * (lv - 1) + 1200 }
+            { nome: "Bliss Assistance (Dano)", tipo: "Dano", formula: (s, lv) => 0.944 * s.spAtk + 25 * (lv - 1) + 1190 },
+{ nome: "Bliss Assistance (Escudo)", tipo: "Escudo", formula: (s, lv) => 2.40 * s.spAtk + 0 * (lv - 1) + 1200 }
         ]
     },
     "Clefable": {
@@ -93,7 +93,7 @@ const pokemonData = {
             { nome: "Draining Kiss (Dano)", tipo: "Dano", formula: (s, lv) => 1.40 * s.spAtk + 20 * (lv - 1) + 350 },
             { nome: "Follow Me (Escudo)", tipo: "Escudo", formula: (s, lv) => 2.34 * s.spAtk + 0 * (lv - 1) + 810 },
             { nome: "Gravity (Dano Auto)", tipo: "Dano", formula: (s, lv) => 0.98 * s.spAtk + 10 * (lv - 1) + 410 },
-            { nome: "Unite Move (Cura)", tipo: "Cura", formula: (s, lv) => "30% do HP faltante" }
+            { nome: "Wonder Wish", tipo: "Cura", formula: (s, lv) => "30% do HP faltante" }
         ]
     },
     "Comfey": {
@@ -125,7 +125,7 @@ const pokemonData = {
             { nome: "Magical Leaf (Dano por Folha)", tipo: "Dano", formula: (s, lv) => 0.16 * s.spAtk + 1 * (lv - 1) + 60 },
             { nome: "Grass Knot (Dano)", tipo: "Dano", formula: (s, lv) => 0.78 * s.spAtk + 10 * (lv - 1) + 410 },
             { nome: "Grass Knot (Dano Adicional)", tipo: "Dano", formula: (s, lv) => 0.55 * s.spAtk + 7 * (lv - 1) + 286 },
-            { nome: "Unite Move (Cura por Tick)", tipo: "Cura", formula: (s, lv) => 0.225 * s.spAtk + 0 * (lv - 1) + 120 }
+            { nome: "Flowery Fields Forever", tipo: "Cura", formula: (s, lv) => 0.225 * s.spAtk + 0 * (lv - 1) + 120 }
         ]
     },
     "Eldegoss": {
@@ -156,8 +156,8 @@ const pokemonData = {
             { nome: "Leaf Tornado (Segundo Dano)", tipo: "Dano", formula: (s, lv) => 0.25 * (1.06 * s.spAtk + 6 * (lv - 1) + 240) },
             { nome: "Cotton Guard (Escudo)", tipo: "Escudo", formula: (s, lv) => 1.725 * s.spAtk + 23 * (lv - 1) + 290 },
             { nome: "Cotton Spore (Dano)", tipo: "Dano", formula: (s, lv) => 1.48 * s.spAtk + 14 * (lv - 1) + 350 },
-            { nome: "Unite Move (Dano)", tipo: "Dano", formula: (s, lv) => 2.00 * s.spAtk + 8 * (lv - 1) + 530 },
-            { nome: "Unite Move (Cura)", tipo: "Cura", formula: (s, lv) => 3.37 * s.spAtk + 14 * (lv - 1) + 700 }
+            { nome: "Cotton Cloud Crash (Dano)", tipo: "Dano", formula: (s, lv) => 2.00 * s.spAtk + 8 * (lv - 1) + 530 },
+{ nome: "Cotton Cloud Crash (Cura)", tipo: "Cura", formula: (s, lv) => 3.37 * s.spAtk + 14 * (lv - 1) + 700 }
         ]
     },
     "Hoopa": {
@@ -219,7 +219,7 @@ const pokemonData = {
             { nome: "Dragon Breath (Dano)", tipo: "Dano", formula: (s, lv) => 0.90 * s.spAtk + 0 * (lv - 1) + 270 },
             { nome: "Mist Ball (Dano)", tipo: "Dano", formula: (s, lv) => 1.10 * s.spAtk + 14 * (lv - 1) + 320 },
             { nome: "Dragon Cheer (Escudo)", tipo: "Escudo", formula: (s, lv) => 2.00 * s.spAtk + 30 * (lv - 1) + 600 },
-            { nome: "Unite Move (Dano)", tipo: "Dano", formula: (s, lv) => 2.00 * s.spAtk + 8 * (lv - 1) + 530 }
+            { nome: "Mist Blast", tipo: "Dano", formula: (s, lv) => 2.00 * s.spAtk + 8 * (lv - 1) + 530 }
         ]
     },
     "Meganium": {
@@ -247,7 +247,7 @@ const pokemonData = {
             { nome: "Grass Knot (Dano)", tipo: "Dano", formula: (s, lv) => 0.78 * s.spAtk + 10 * (lv - 1) + 410 },
             { nome: "Grass Knot (Dano Adicional)", tipo: "Dano", formula: (s, lv) => 0.55 * s.spAtk + 7 * (lv - 1) + 286 },
             { nome: "Petal Blizzard (Dano)", tipo: "Dano", formula: (s, lv) => 1.40 * s.spAtk + 20 * (lv - 1) + 350 },
-            { nome: "Unite Move (Dano por Tick)", tipo: "Dano", formula: (s, lv) => 0.225 * s.spAtk + 0 * (lv - 1) + 120 }
+            { nome: "Full Bloom Aroma", tipo: "Dano", formula: (s, lv) => 0.225 * s.spAtk + 0 * (lv - 1) + 120 }
         ]
     },
     "Mr. Mime": {
@@ -278,8 +278,8 @@ const pokemonData = {
             { nome: "Psychic (Pulso Final)", tipo: "Dano", formula: (s, lv) => 0.72 * s.spAtk + 8 * (lv - 1) + 170 },
             { nome: "Power Swap (Dano por Tick)", tipo: "Dano", formula: (s, lv) => 0.18 * s.spAtk + 1 * (lv - 1) + 30 },
             { nome: "Power Swap (Cura por Tick)", tipo: "Cura", formula: (s, lv) => 0.21 * s.spAtk + 2 * (lv - 1) + 15 },
-            { nome: "Unite Move (Primeiros 3 Danos)", tipo: "Dano", formula: (s, lv) => 0.79 * s.spAtk + 5 * (lv - 1) + 220 },
-            { nome: "Unite Move (Dano Final)", tipo: "Dano", formula: (s, lv) => 1.58 * s.spAtk + 10 * (lv - 1) + 440 }
+            { nome: "Showtime (Primeiros 3 Danos)", tipo: "Dano", formula: (s, lv) => 0.79 * s.spAtk + 5 * (lv - 1) + 220 },
+{ nome: "Showtime (Dano Final)", tipo: "Dano", formula: (s, lv) => 1.58 * s.spAtk + 10 * (lv - 1) + 440 }
         ]
     },
     "Psyduck": {
@@ -312,7 +312,7 @@ const pokemonData = {
             { nome: "Tail Whip (Dano)", tipo: "Dano", formula: (s, lv) => 0.60 * s.spAtk + 2 * (lv - 1) + 320 },
             { nome: "Disable (Dano)", tipo: "Dano", formula: (s, lv) => 0.63 * s.spAtk + 3 * (lv - 1) + 300 },
             { nome: "Psychic (Dano)", tipo: "Dano", formula: (s, lv) => 1.035 * s.spAtk + 9 * (lv - 1) + 495 },
-            { nome: "Unite Move (Dano por Onda)", tipo: "Dano", formula: (s, lv) => 0.60 * s.spAtk + 6 * (lv - 1) + 300 }
+            { nome: "Full-Power Psy-ay-ay!", tipo: "Dano", formula: (s, lv) => 0.60 * s.spAtk + 6 * (lv - 1) + 300 }
         ]
     },
     "Sableye": {
@@ -342,7 +342,7 @@ const pokemonData = {
             { nome: "Astonish Costas (Dano)", tipo: "Dano", formula: (s, lv) => 1.053 * s.atk + 14 * (lv - 1) + 455 },
             { nome: "Feint Attack (Dano por Tick)", tipo: "Dano", formula: (s, lv) => 0.33 * s.atk + 2 * (lv - 1) + 80 },
             { nome: "Confuse Ray (Dano)", tipo: "Dano", formula: (s, lv) => 1.05 * s.atk + 12 * (lv - 1) + 450 },
-            { nome: "Unite Move (Dano)", tipo: "Dano", formula: (s, lv) => 1.84 * s.atk + 16 * (lv - 1) + 790 }
+            { nome: "Chaos Glower", tipo: "Dano", formula: (s, lv) => 1.84 * s.atk + 16 * (lv - 1) + 790 }
         ]
     },
     "Wigglytuff": {
@@ -370,7 +370,7 @@ const pokemonData = {
             { nome: "Dazzling Gleam (Primeiro Dano)", tipo: "Dano", formula: (s, lv) => 0.22 * s.spAtk + 6 * (lv - 1) + 130 },
             { nome: "Dazzling Gleam (Segundo Dano)", tipo: "Dano", formula: (s, lv) => 1.125 * s.spAtk + 31 * (lv - 1) + 670 },
             { nome: "Rollout (Dano por Acerto)", tipo: "Dano", formula: (s, lv) => 0.47 * s.spAtk + 14 * (lv - 1) + 590 },
-            { nome: "Unite Move (Escudo)", tipo: "Escudo", formula: (s, lv) => 1.519 * s.spAtk + 0 * (lv - 1) + 810 }
+            { nome: "Starlight Recital", tipo: "Escudo", formula: (s, lv) => 1.519 * s.spAtk + 0 * (lv - 1) + 810 }
         ]
     }
 };
