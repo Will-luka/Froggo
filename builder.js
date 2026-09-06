@@ -650,7 +650,8 @@ skills.forEach(skill => {
         chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k).startsWith(primeiraPalavra));
     }
 
-    const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
+    const chaveItem = Object.keys(imagensMap.held_items || {}).find(k => normalizarNome(k) === normalizarNome(itemName));
+const img = chaveItem ? imagensMap.held_items[chaveItem] : '';
     skillsHTML += `<div class="skill-calc-card">
         <div class="skill-calc-header">
             ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
