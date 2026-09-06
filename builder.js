@@ -1,3 +1,10 @@
+// Mapeamento de imagens
+let imagensMap = {
+    held_items: {},
+    battle_items: {},
+    skills: {}
+};
+
 // ============================================
 // DADOS DOS POKÉMON SUPORTE
 // ============================================
@@ -380,142 +387,40 @@ const pokemonData = {
 // ============================================
 
 const heldItemsData = {
-    "Accel Bracer": {
-        atributos: { atk: 17.5, cdr: 3.5 },
-        efeito: "Ganha acúmulos de Ataque ao nocautear (2 stacks) ou dar assistência (1 stack). Máximo de 20 acúmulos, cada um concede +0.6% de Ataque."
-    },
-    "Aeos Cookie": {
-        atributos: { hp: 280 },
-        efeito: "Cada gol marcado aumenta o HP máximo permanentemente em até 200 (máximo 6 vezes)."
-    },
-    "Amulet Coin": {
-        atributos: { hp: 280, mov: 175 },
-        efeito: "Garante mais Aeos Energy ao derrotar Pokémon selvagens e aumenta a velocidade de marcar gols em 10%."
-    },
-    "Assault Vest": {
-        atributos: { hp: 315, spDef: 59.5 },
-        efeito: "Se ficar 15s sem receber dano especial, ganha um escudo contra ataques especiais."
-    },
-    "Attack Weight": {
-        atributos: { atk: 21 },
-        efeito: "Aumenta permanentemente o Ataque a cada gol marcado (até 6 vezes)."
-    },
-    "Big Root": {
-        atributos: { hp: 525 },
-        efeito: "Melhora a eficácia de recuperação de HP própria (cura de si mesmo) em 20%."
-    },
-    "Buddy Barrier": {
-        atributos: { hp: 525 },
-        efeito: "Ao usar o Unite Move, concede um escudo de 25% do HP máximo para você e o aliado próximo com menos vida."
-    },
-    "Charging Charm": {
-        atributos: { atk: 17.5, mov: 140 },
-        efeito: "Carrega energia ao se mover ou atacar; quando cheia, o próximo ataque causa dano adicional."
-    },
-    "Choice Scarf": {
-        atributos: { atkSpd: 8.75, mov: 175 },
-        efeito: "Após 3 ataques básicos, a velocidade de movimento aumenta significativamente por 3s."
-    },
-    "Choice Specs": {
-        atributos: { spAtk: 44 },
-        efeito: "Ao atingir um oponente com um golpe, causa dano adicional baseado no Sp. Atk."
-    },
-    "Curse Bangle": {
-        atributos: { atk: 28 },
-        efeito: "Reduz a recuperação de HP do oponente em 30% por 1,5s após causar dano."
-    },
-    "Curse Incense": {
-        atributos: { spAtk: 45.5 },
-        efeito: "Reduz a recuperação de HP do oponente em 30% por 1,5s após causar dano."
-    },
-    "Drain Crown": {
-        atributos: { hp: 140, atk: 21 },
-        efeito: "Ataques básicos baseados em Ataque restauram HP proporcional ao dano causado (15%)."
-    },
-    "Drive Lens": {
-        atributos: { spAtk: 28, cdr: 3.5 },
-        efeito: "Ganha acúmulos de Sp. Atk em nocautes ou assistências (máximo 20 acúmulos, +0.6% cada)."
-    },
-    "Energy Amplifier": {
-        atributos: { rate: 7, cdr: 5.25 },
-        efeito: "Após usar o Unite Move, o dano causado aumenta em 21% por 4s."
-    },
-    "Exp. Share": {
-        atributos: { hp: 420, mov: 175 },
-        efeito: "Se for o nível mais baixo do time, ganha 5 de experiência por segundo."
-    },
-    "Float Stone": {
-        atributos: { atk: 28, mov: 175 },
-        efeito: "Fora de combate por 5s, aumenta a velocidade de movimento em 20%."
-    },
-    "Focus Band": {
-        atributos: { def: 35, spDef: 35 },
-        efeito: "Quando o HP cai abaixo de 25%, recupera 12% do HP perdido 3 vezes (cooldown 80s)."
-    },
-    "Leftovers": {
-        atributos: { hp: 420, regen: 10.5 },
-        efeito: "Fora de combate, recupera 4% do HP máximo por segundo."
-    },
-    "Muscle Band": {
-        atributos: { atk: 17.5, atkSpd: 8.75 },
-        efeito: "Ataques básicos causam dano adicional baseado no HP restante do oponente (máx 360)."
-    },
-    "Rapid-Fire Scarf": {
-        atributos: { atk: 14, atkSpd: 10.5 },
-        efeito: "Após 3 ataques básicos, a velocidade de ataque aumenta em 25% por 5s (cooldown 10s)."
-    },
-    "Razor Claw": {
-        atributos: { atk: 17.5, crit: 2.35 },
-        efeito: "Após usar um movimento, o próximo ataque básico causa dano extra e lentidão (se for corpo a corpo)."
-    },
-    "Rescue Hood": {
-        atributos: { def: 35, spDef: 35 },
-        efeito: "Aumenta a eficácia de escudos e curas concedidos a aliados em 23%."
-    },
-    "Resonant Guard": {
-        atributos: { hp: 525, regen: 21 },
-        efeito: "Ao causar dano, concede um escudo de 6% do HP máximo para você e um aliado próximo (cooldown 10s)."
-    },
-    "Rocky Helmet": {
-        atributos: { hp: 315, def: 59.5 },
-        efeito: "Ao receber dano igual a 3% do seu HP, causa 2.5% do seu HP máximo em área."
-    },
-    "Scope Lens": {
-        atributos: { crit: 7, critDmg: 14 },
-        efeito: "Aumenta a taxa e o dano crítico. Ataques críticos causam dano adicional."
-    },
-    "Score Shield": {
-        atributos: { hp: 525 },
-        efeito: "Protege com um escudo enquanto tenta marcar um gol."
-    },
-    "Shell Bell": {
-        atributos: { spAtk: 28, cdr: 5.25 },
-        efeito: "Ao acertar um movimento, recupera HP com base no Sp. Atk (cooldown 8s)."
-    },
-    "Slick Spoon": {
-        atributos: { hp: 245, spAtk: 35 },
-        efeito: "Permite que o dano de Ataque Especial ignore 15% da Defesa Especial do alvo."
-    },
-    "Sp. Atk Specs": {
-        atributos: { spAtk: 28 },
-        efeito: "Aumenta permanentemente o Ataque Especial a cada gol marcado (máximo 6 vezes)."
-    },
-    "Tenacity Belt": {
-        atributos: { def: 35, spDef: 35 },
-        efeito: "Quando sofre controle de grupo, as defesas aumentam em 28% por 3s."
-    },
-    "Vanguard Bell": {
-        atributos: { hp: 525 },
-        efeito: "Restaura 10% do HP máximo sempre que aplica controle de grupo em um oponente (cooldown 5s)."
-    },
-    "Weakness Policy": {
-        atributos: { hp: 235, atk: 17.5 },
-        efeito: "Ao receber dano, o Ataque aumenta em 2.5% (máximo 4 acúmulos)."
-    },
-    "Wise Glasses": {
-        atributos: { spAtk: 44 },
-        efeito: "Aumenta o Ataque Especial total em 7%."
-    }
+    "Accel Bracer": { atributos: { atk: 17.5, cdr: 3.5 }, efeito: "Ganha acúmulos de Ataque ao nocautear (2 stacks) ou dar assistência (1 stack). Máximo de 20 acúmulos, cada um concede +0.6% de Ataque." },
+    "Aeos Cookie": { atributos: { hp: 280 }, efeito: "Cada gol marcado aumenta o HP máximo permanentemente em até 200 (máximo 6 vezes)." },
+    "Amulet Coin": { atributos: { hp: 280, mov: 175 }, efeito: "Garante mais Aeos Energy ao derrotar Pokémon selvagens e aumenta a velocidade de marcar gols em 10%." },
+    "Assault Vest": { atributos: { hp: 315, spDef: 59.5 }, efeito: "Se ficar 15s sem receber dano especial, ganha um escudo contra ataques especiais." },
+    "Attack Weight": { atributos: { atk: 21 }, efeito: "Aumenta permanentemente o Ataque a cada gol marcado (até 6 vezes)." },
+    "Big Root": { atributos: { hp: 525 }, efeito: "Melhora a eficácia de recuperação de HP própria (cura de si mesmo) em 20%." },
+    "Buddy Barrier": { atributos: { hp: 525 }, efeito: "Ao usar o Unite Move, concede um escudo de 25% do HP máximo para você e o aliado próximo com menos vida." },
+    "Charging Charm": { atributos: { atk: 17.5, mov: 140 }, efeito: "Carrega energia ao se mover ou atacar; quando cheia, o próximo ataque causa dano adicional." },
+    "Choice Scarf": { atributos: { atkSpd: 8.75, mov: 175 }, efeito: "Após 3 ataques básicos, a velocidade de movimento aumenta significativamente por 3s." },
+    "Choice Specs": { atributos: { spAtk: 44 }, efeito: "Ao atingir um oponente com um golpe, causa dano adicional baseado no Sp. Atk." },
+    "Curse Bangle": { atributos: { atk: 28 }, efeito: "Reduz a recuperação de HP do oponente em 30% por 1,5s após causar dano." },
+    "Curse Incense": { atributos: { spAtk: 45.5 }, efeito: "Reduz a recuperação de HP do oponente em 30% por 1,5s após causar dano." },
+    "Drain Crown": { atributos: { hp: 140, atk: 21 }, efeito: "Ataques básicos baseados em Ataque restauram HP proporcional ao dano causado (15%)." },
+    "Drive Lens": { atributos: { spAtk: 28, cdr: 3.5 }, efeito: "Ganha acúmulos de Sp. Atk em nocautes ou assistências (máximo 20 acúmulos, +0.6% cada)." },
+    "Energy Amplifier": { atributos: { rate: 7, cdr: 5.25 }, efeito: "Após usar o Unite Move, o dano causado aumenta em 21% por 4s." },
+    "Exp. Share": { atributos: { hp: 420, mov: 175 }, efeito: "Se for o nível mais baixo do time, ganha 5 de experiência por segundo." },
+    "Float Stone": { atributos: { atk: 28, mov: 175 }, efeito: "Fora de combate por 5s, aumenta a velocidade de movimento em 20%." },
+    "Focus Band": { atributos: { def: 35, spDef: 35 }, efeito: "Quando o HP cai abaixo de 25%, recupera 12% do HP perdido 3 vezes (cooldown 80s)." },
+    "Leftovers": { atributos: { hp: 420, regen: 10.5 }, efeito: "Fora de combate, recupera 4% do HP máximo por segundo." },
+    "Muscle Band": { atributos: { atk: 17.5, atkSpd: 8.75 }, efeito: "Ataques básicos causam dano adicional baseado no HP restante do oponente (máx 360)." },
+    "Rapid-Fire Scarf": { atributos: { atk: 14, atkSpd: 10.5 }, efeito: "Após 3 ataques básicos, a velocidade de ataque aumenta em 25% por 5s (cooldown 10s)." },
+    "Razor Claw": { atributos: { atk: 17.5, crit: 2.35 }, efeito: "Após usar um movimento, o próximo ataque básico causa dano extra e lentidão (se for corpo a corpo)." },
+    "Rescue Hood": { atributos: { def: 35, spDef: 35 }, efeito: "Aumenta a eficácia de escudos e curas concedidos a aliados em 23%." },
+    "Resonant Guard": { atributos: { hp: 525, regen: 21 }, efeito: "Ao causar dano, concede um escudo de 6% do HP máximo para você e um aliado próximo (cooldown 10s)." },
+    "Rocky Helmet": { atributos: { hp: 315, def: 59.5 }, efeito: "Ao receber dano igual a 3% do seu HP, causa 2.5% do seu HP máximo em área." },
+    "Scope Lens": { atributos: { crit: 7, critDmg: 14 }, efeito: "Aumenta a taxa e o dano crítico. Ataques críticos causam dano adicional." },
+    "Score Shield": { atributos: { hp: 525 }, efeito: "Protege com um escudo enquanto tenta marcar um gol." },
+    "Shell Bell": { atributos: { spAtk: 28, cdr: 5.25 }, efeito: "Ao acertar um movimento, recupera HP com base no Sp. Atk (cooldown 8s)." },
+    "Slick Spoon": { atributos: { hp: 245, spAtk: 35 }, efeito: "Permite que o dano de Ataque Especial ignore 15% da Defesa Especial do alvo." },
+    "Sp. Atk Specs": { atributos: { spAtk: 28 }, efeito: "Aumenta permanentemente o Ataque Especial a cada gol marcado (máximo 6 vezes)." },
+    "Tenacity Belt": { atributos: { def: 35, spDef: 35 }, efeito: "Quando sofre controle de grupo, as defesas aumentam em 28% por 3s." },
+    "Vanguard Bell": { atributos: { hp: 525 }, efeito: "Restaura 10% do HP máximo sempre que aplica controle de grupo em um oponente (cooldown 5s)." },
+    "Weakness Policy": { atributos: { hp: 235, atk: 17.5 }, efeito: "Ao receber dano, o Ataque aumenta em 2.5% (máximo 4 acúmulos)." },
+    "Wise Glasses": { atributos: { spAtk: 44 }, efeito: "Aumenta o Ataque Especial total em 7%." }
 };
 
 // ============================================
@@ -523,53 +428,22 @@ const heldItemsData = {
 // ============================================
 
 const battleItemsData = {
-    "Eject Button": {
-        cooldown: "80s",
-        efeito: "Move-se rapidamente em uma direção."
-    },
-    "Fluffy Tail": {
-        cooldown: "22s",
-        efeito: "Atordoa um Pokémon selvagem e faz com que ele receba dano aumentado."
-    },
-    "Full Heal": {
-        cooldown: "60s",
-        efeito: "Remove condições de status e torna o Pokémon imparável por 1,5s."
-    },
-    "Goal Getter": {
-        cooldown: "60s",
-        efeito: "Dobra a velocidade de marcar gols por 10s."
-    },
-    "Goal Hacker": {
-        cooldown: "80s",
-        efeito: "Buffa uma zona de gol aliada ou desativa as defesas de uma zona inimiga."
-    },
-    "Potion": {
-        cooldown: "30s",
-        efeito: "Restaura uma quantidade fixa de HP mais uma porcentagem do HP máximo."
-    },
-    "Slow Smoke": {
-        cooldown: "35s",
-        efeito: "Cria uma nuvem que reduz drasticamente a velocidade de movimento e ataque dos inimigos."
-    },
-    "X Attack": {
-        cooldown: "40s",
-        efeito: "Aumenta Ataque, Sp. Atk e velocidade de ataque por 6,5s."
-    },
-    "X Speed": {
-        cooldown: "50s",
-        efeito: "Aumenta a velocidade de movimento e garante imunidade a lentidão por 6s."
-    },
-    "Shedinja Doll": {
-        cooldown: "45s",
-        efeito: "Torna o usuário invulnerável e imóvel por 2s."
-    }
+    "Eject Button": { cooldown: "80s", efeito: "Move-se rapidamente em uma direção." },
+    "Fluffy Tail": { cooldown: "22s", efeito: "Atordoa um Pokémon selvagem e faz com que ele receba dano aumentado." },
+    "Full Heal": { cooldown: "60s", efeito: "Remove condições de status e torna o Pokémon imparável por 1,5s." },
+    "Goal Getter": { cooldown: "60s", efeito: "Dobra a velocidade de marcar gols por 10s." },
+    "Goal Hacker": { cooldown: "80s", efeito: "Buffa uma zona de gol aliada ou desativa as defesas de uma zona inimiga." },
+    "Potion": { cooldown: "30s", efeito: "Restaura uma quantidade fixa de HP mais uma porcentagem do HP máximo." },
+    "Slow Smoke": { cooldown: "35s", efeito: "Cria uma nuvem que reduz drasticamente a velocidade de movimento e ataque dos inimigos." },
+    "X Attack": { cooldown: "40s", efeito: "Aumenta Ataque, Sp. Atk e velocidade de ataque por 6,5s." },
+    "X Speed": { cooldown: "50s", efeito: "Aumenta a velocidade de movimento e garante imunidade a lentidão por 6s." },
+    "Shedinja Doll": { cooldown: "45s", efeito: "Torna o usuário invulnerável e imóvel por 2s." }
 };
 
 // ============================================
-// LÓGICA DA CALCULADORA (com stacks)
+// LÓGICA DA CALCULADORA
 // ============================================
 
-// Itens stackáveis e seus efeitos por stack
 const stackItems = {
     "Aeos Cookie": { maxStacks: 6, hpPerStack: 200 },
     "Attack Weight": { maxStacks: 6, atkPerStack: 12 },
@@ -579,7 +453,6 @@ const stackItems = {
     "Weakness Policy": { maxStacks: 4, atkPercentPerStack: 2.5 }
 };
 
-// Referências aos elementos do DOM
 const pokemonSelect = document.getElementById('pokemon-select');
 const levelSelect = document.getElementById('level-select');
 const held1 = document.getElementById('held1');
@@ -589,23 +462,28 @@ const battleItem = document.getElementById('battle-item');
 const resultsPanel = document.getElementById('results-panel');
 const itemDescContainer = document.getElementById('item-desc');
 
-// Container para stacks dinâmicos
+let imagensMap = { held_items: {}, battle_items: {}, skills: {} };
+
 const stacksContainer = document.createElement('div');
 stacksContainer.id = 'stacks-container';
 stacksContainer.style.marginTop = '1rem';
 document.querySelector('.builder-panel').appendChild(stacksContainer);
 
-// Preencher selects
+async function carregarImagens() {
+    try {
+        const resposta = await fetch('imagens.json');
+        if (resposta.ok) {
+            imagensMap = await resposta.json();
+        }
+    } catch (erro) {
+        console.warn('Não foi possível carregar imagens.json:', erro);
+    }
+}
+
 function populateItemSelects() {
     const heldSelects = [held1, held2, held3];
-    
     heldSelects.forEach(select => {
-        select.innerHTML = '';
-        const defaultOption = document.createElement('option');
-        defaultOption.value = "";
-        defaultOption.textContent = "-- Nenhum --";
-        select.appendChild(defaultOption);
-        
+        select.innerHTML = '<option value="">-- Nenhum --</option>';
         Object.keys(heldItemsData).forEach(itemName => {
             const option = document.createElement('option');
             option.value = itemName;
@@ -613,13 +491,7 @@ function populateItemSelects() {
             select.appendChild(option);
         });
     });
-    
-    battleItem.innerHTML = '';
-    const battleDefault = document.createElement('option');
-    battleDefault.value = "";
-    battleDefault.textContent = "-- Nenhum --";
-    battleItem.appendChild(battleDefault);
-    
+    battleItem.innerHTML = '<option value="">-- Nenhum --</option>';
     Object.keys(battleItemsData).forEach(itemName => {
         const option = document.createElement('option');
         option.value = itemName;
@@ -647,296 +519,150 @@ function getPokemonStats(pokemonName, level) {
 
 function getSelectedStacks() {
     const stacks = {};
-    const stackInputs = document.querySelectorAll('.stack-input');
-    stackInputs.forEach(input => {
+    document.querySelectorAll('.stack-input').forEach(input => {
         const itemName = input.getAttribute('data-item');
-        const value = parseInt(input.value) || 0;
-        stacks[itemName] = value;
+        stacks[itemName] = parseInt(input.value) || 0;
     });
     return stacks;
 }
 
 function getEonStacks() {
     const eonInput = document.getElementById('eon-stacks');
-    if (eonInput) {
-        return parseInt(eonInput.value) || 0;
-    }
-    return 0;
+    return eonInput ? parseInt(eonInput.value) || 0 : 0;
 }
 
 function applyHeldItems(baseStats, selectedItems, stacks, eonStacks) {
     const finalStats = { ...baseStats };
-    
     selectedItems.forEach(itemName => {
         if (itemName && heldItemsData[itemName]) {
-            const itemAttrs = heldItemsData[itemName].atributos;
-            
-            if (itemAttrs.hp) finalStats.hp += itemAttrs.hp;
-            if (itemAttrs.atk) finalStats.atk += itemAttrs.atk;
-            if (itemAttrs.def) finalStats.def += itemAttrs.def;
-            if (itemAttrs.spAtk) finalStats.spAtk += itemAttrs.spAtk;
-            if (itemAttrs.spDef) finalStats.spDef += itemAttrs.spDef;
-            
-            // Aplicar stacks
+            const attrs = heldItemsData[itemName].atributos;
+            if (attrs.hp) finalStats.hp += attrs.hp;
+            if (attrs.atk) finalStats.atk += attrs.atk;
+            if (attrs.def) finalStats.def += attrs.def;
+            if (attrs.spAtk) finalStats.spAtk += attrs.spAtk;
+            if (attrs.spDef) finalStats.spDef += attrs.spDef;
             if (stackItems[itemName] && stacks[itemName]) {
-                const stackInfo = stackItems[itemName];
-                const stackCount = Math.min(stacks[itemName], stackInfo.maxStacks);
-                
-                if (stackInfo.hpPerStack) {
-                    finalStats.hp += stackInfo.hpPerStack * stackCount;
-                }
-                if (stackInfo.atkPerStack) {
-                    finalStats.atk += stackInfo.atkPerStack * stackCount;
-                }
-                if (stackInfo.spAtkPerStack) {
-                    finalStats.spAtk += stackInfo.spAtkPerStack * stackCount;
-                }
+                const info = stackItems[itemName];
+                const count = Math.min(stacks[itemName], info.maxStacks);
+                if (info.hpPerStack) finalStats.hp += info.hpPerStack * count;
+                if (info.atkPerStack) finalStats.atk += info.atkPerStack * count;
+                if (info.spAtkPerStack) finalStats.spAtk += info.spAtkPerStack * count;
             }
         }
     });
-    
-    // Aplicar Eon Power da Latias
-    if (pokemonSelect.value === "Latias" && eonStacks > 0) {
-        // Dragon Breath: +0.5% dano por Eon (a partir de 61)
-        // Dragon Pulse: +0.5% dano dos projéteis por Eon (a partir de 101)
-        // Para simplificar, vamos adicionar um multiplicador
-    }
-    
     return finalStats;
 }
 
 function applyPercentEffects(finalStats, selectedItems, stacks) {
-    let spAtkMultiplier = 1;
-    let shieldHealMultiplier = 1;
-    let atkMultiplier = 1;
-    
+    let spAtkMult = 1, shieldHealMult = 1, atkMult = 1;
     selectedItems.forEach(itemName => {
-        if (itemName === "Wise Glasses") {
-            spAtkMultiplier += 0.07;
-        }
-        if (itemName === "Rescue Hood") {
-            shieldHealMultiplier += 0.23;
-        }
+        if (itemName === "Wise Glasses") spAtkMult += 0.07;
+        if (itemName === "Rescue Hood") shieldHealMult += 0.23;
         if (stackItems[itemName] && stacks[itemName]) {
-            const stackInfo = stackItems[itemName];
-            const stackCount = Math.min(stacks[itemName], stackInfo.maxStacks);
-            
-            if (stackInfo.spAtkPercentPerStack) {
-                spAtkMultiplier += (stackInfo.spAtkPercentPerStack / 100) * stackCount;
-            }
-            if (stackInfo.atkPercentPerStack) {
-                atkMultiplier += (stackInfo.atkPercentPerStack / 100) * stackCount;
-            }
+            const info = stackItems[itemName];
+            const count = Math.min(stacks[itemName], info.maxStacks);
+            if (info.spAtkPercentPerStack) spAtkMult += (info.spAtkPercentPerStack / 100) * count;
+            if (info.atkPercentPerStack) atkMult += (info.atkPercentPerStack / 100) * count;
         }
     });
-    
-    finalStats.spAtk = Math.round(finalStats.spAtk * spAtkMultiplier);
-    finalStats.atk = Math.round(finalStats.atk * atkMultiplier);
-    
-    return {
-        stats: finalStats,
-        spAtkMultiplier,
-        shieldHealMultiplier,
-        atkMultiplier
-    };
+    finalStats.spAtk = Math.round(finalStats.spAtk * spAtkMult);
+    finalStats.atk = Math.round(finalStats.atk * atkMult);
+    return { stats: finalStats, shieldHealMult };
 }
 
-function calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier, eonStacks) {
+function calculateSkills(pokemonName, level, finalStats, shieldHealMult, eonStacks) {
     const pokemon = pokemonData[pokemonName];
     if (!pokemon) return [];
-    
     const lv = parseInt(level);
-    
     return pokemon.skills.map(skill => {
-        let valor;
-        if (typeof skill.formula === 'function') {
-            valor = skill.formula(finalStats, lv);
-            if (typeof valor === 'number') {
-                valor = Math.round(valor);
-            }
-        } else {
-            valor = skill.formula;
+        let valor = typeof skill.formula === 'function' ? skill.formula(finalStats, lv) : skill.formula;
+        if (typeof valor === 'number') valor = Math.round(valor);
+        if ((skill.tipo === "Cura" || skill.tipo === "Escudo") && typeof valor === 'number') {
+            valor = Math.round(valor * shieldHealMult);
         }
-        
-        if (skill.tipo === "Cura" || skill.tipo === "Escudo") {
-            if (typeof valor === 'number') {
-                valor = Math.round(valor * shieldHealMultiplier);
-            }
-        }
-        
-        // Aplicar Eon Power da Latias em habilidades específicas
         if (pokemonName === "Latias" && eonStacks > 0) {
-            if (skill.nome === "Dragon Breath (Dano)" && eonStacks >= 61) {
-                const bonus = 1 + (eonStacks - 61) * 0.005;
-                valor = Math.round(valor * bonus);
-            }
-            if (skill.nome === "Dragon Pulse (Dano)" && eonStacks >= 101) {
-                const bonus = 1 + (eonStacks - 101) * 0.005;
-                valor = Math.round(valor * bonus);
-            }
+            if (skill.nome === "Dragon Breath (Dano)" && eonStacks >= 61) valor = Math.round(valor * (1 + (eonStacks - 61) * 0.005));
+            if (skill.nome === "Dragon Pulse (Dano)" && eonStacks >= 101) valor = Math.round(valor * (1 + (eonStacks - 101) * 0.005));
         }
-        
-        return {
-            nome: skill.nome,
-            tipo: skill.tipo,
-            valor: valor
-        };
+        return { nome: skill.nome, tipo: skill.tipo, valor };
     });
 }
 
 function updateStackInputs() {
     const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
-    const currentPokemon = pokemonSelect.value;
-    
-    const neededItems = selectedHeld.filter(itemName => stackItems[itemName]);
-    const needsEon = currentPokemon === "Latias";
-    
-    let stacksHTML = '';
-    
+    const neededItems = selectedHeld.filter(item => stackItems[item]);
+    const needsEon = pokemonSelect.value === "Latias";
+    let html = '';
     neededItems.forEach(itemName => {
-        const maxStacks = stackItems[itemName].maxStacks;
-        const inputId = `stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}`;
-        stacksHTML += `
-            <div class="builder-group" style="margin-bottom: 0.5rem;">
-                <label for="${inputId}">${itemName} (stacks):</label>
-                <input type="number" id="${inputId}" 
-                       class="stack-input builder-select" 
-                       data-item="${itemName}" 
-                       min="0" 
-                       max="${maxStacks}" 
-                       value="0"
-                       step="1">
-            </div>
-        `;
+        const max = stackItems[itemName].maxStacks;
+        const id = `stack-${itemName.replace(/[^a-zA-Z0-9]/g, '')}`;
+        html += `<div class="builder-group" style="margin-bottom:0.5rem;"><label>${itemName} (stacks):</label><input type="number" id="${id}" class="stack-input builder-select" data-item="${itemName}" min="0" max="${max}" value="0" step="1"></div>`;
     });
-    
     if (needsEon) {
-        stacksHTML += `
-            <div class="builder-group" style="margin-bottom: 0.5rem;">
-                <label for="eon-stacks">Eon Power (0-1099):</label>
-                <input type="number" id="eon-stacks" 
-                       class="stack-input builder-select" 
-                       min="0" 
-                       max="1099" 
-                       value="0"
-                       step="1">
-            </div>
-        `;
+        html += `<div class="builder-group" style="margin-bottom:0.5rem;"><label>Eon Power (0-1099):</label><input type="number" id="eon-stacks" class="stack-input builder-select" min="0" max="1099" value="0" step="1"></div>`;
     }
-    
-    stacksContainer.innerHTML = stacksHTML;
-    
-    // Adicionar eventos aos inputs de stack
-    const stackInputs = stacksContainer.querySelectorAll('.stack-input');
-    stackInputs.forEach(input => {
-        input.addEventListener('input', function() {
-            updateResultsOnly();
-        });
-    });
+    stacksContainer.innerHTML = html;
+    document.querySelectorAll('.stack-input').forEach(input => input.addEventListener('input', updateResultsOnly));
 }
 
 function updateResultsOnly() {
     const pokemonName = pokemonSelect.value;
     const level = levelSelect.value;
-    
-    if (!pokemonName || !level) {
-        return;
-    }
-    
+    if (!pokemonName || !level) return;
     const baseStats = getPokemonStats(pokemonName, level);
-    if (!baseStats) {
-        return;
-    }
-    
+    if (!baseStats) return;
     const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
     const stacks = getSelectedStacks();
     const eonStacks = getEonStacks();
-    
     const statsAfterItems = applyHeldItems(baseStats, selectedHeld, stacks, eonStacks);
-    const { stats: finalStats, shieldHealMultiplier } = applyPercentEffects(statsAfterItems, selectedHeld, stacks);
-    
-    const skills = calculateSkills(pokemonName, level, finalStats, shieldHealMultiplier, eonStacks);
-    
-    let statsHTML = `
-        <div class="stats-final-container">
-            <div class="stat-final-box">
-                <div class="stat-final-label">HP</div>
-                <div class="stat-final-value">${finalStats.hp}</div>
-            </div>
-            <div class="stat-final-box">
-                <div class="stat-final-label">Ataque</div>
-                <div class="stat-final-value">${finalStats.atk}</div>
-            </div>
-            <div class="stat-final-box">
-                <div class="stat-final-label">Defesa</div>
-                <div class="stat-final-value">${finalStats.def}</div>
-            </div>
-            <div class="stat-final-box">
-                <div class="stat-final-label">Sp. Atk</div>
-                <div class="stat-final-value">${finalStats.spAtk}</div>
-            </div>
-            <div class="stat-final-box">
-                <div class="stat-final-label">Sp. Def</div>
-                <div class="stat-final-value">${finalStats.spDef}</div>
-            </div>
-        </div>
-    `;
-    
+    const { stats: finalStats, shieldHealMult } = applyPercentEffects(statsAfterItems, selectedHeld, stacks);
+    const skills = calculateSkills(pokemonName, level, finalStats, shieldHealMult, eonStacks);
+
+    let statsHTML = `<div class="stats-final-container">
+        <div class="stat-final-box"><div class="stat-final-label">HP</div><div class="stat-final-value">${finalStats.hp}</div></div>
+        <div class="stat-final-box"><div class="stat-final-label">Ataque</div><div class="stat-final-value">${finalStats.atk}</div></div>
+        <div class="stat-final-box"><div class="stat-final-label">Defesa</div><div class="stat-final-value">${finalStats.def}</div></div>
+        <div class="stat-final-box"><div class="stat-final-label">Sp. Atk</div><div class="stat-final-value">${finalStats.spAtk}</div></div>
+        <div class="stat-final-box"><div class="stat-final-label">Sp. Def</div><div class="stat-final-value">${finalStats.spDef}</div></div>
+    </div>`;
+
     let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
     skills.forEach(skill => {
-        skillsHTML += `
-            <div class="skill-calc-card">
-                <div class="skill-calc-name">${skill.nome}</div>
-                <div class="skill-calc-type">${skill.tipo}</div>
-                <div class="skill-calc-values">
-                    Valor: <strong>${skill.valor}</strong>
-                </div>
+        const imgSkill = (imagensMap.skills[pokemonName] && imagensMap.skills[pokemonName][skill.nome]) || '';
+        skillsHTML += `<div class="skill-calc-card">
+            <div class="skill-calc-header">
+                ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
+                <div><div class="skill-calc-name">${skill.nome}</div><div class="skill-calc-type">${skill.tipo}</div></div>
             </div>
-        `;
+            <div class="skill-calc-values">Valor: <strong>${skill.valor}</strong></div>
+        </div>`;
     });
-    
     resultsPanel.innerHTML = statsHTML + skillsHTML;
-    
-    // Descrições dos itens
+
     let itemsHTML = '';
     selectedHeld.forEach(itemName => {
         if (heldItemsData[itemName]) {
-            itemsHTML += `
-                <div class="item-desc-card">
-                    <div class="item-desc-name">${itemName}</div>
-                    <div class="item-desc-text">${heldItemsData[itemName].efeito}</div>
-                </div>
-            `;
+            const img = (imagensMap.held_items && imagensMap.held_items[itemName]) || '';
+            itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${itemName}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${itemName}</div><div class="item-desc-text">${heldItemsData[itemName].efeito}</div></div></div>`;
         }
     });
-    
     if (battleItem.value && battleItemsData[battleItem.value]) {
-        itemsHTML += `
-            <div class="item-desc-card">
-                <div class="item-desc-name">${battleItem.value} (Battle Item)</div>
-                <div class="item-desc-text">${battleItemsData[battleItem.value].efeito}</div>
-            </div>
-        `;
+        const img = (imagensMap.battle_items && imagensMap.battle_items[battleItem.value]) || '';
+        itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${battleItem.value}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${battleItem.value} (Battle Item)</div><div class="item-desc-text">${battleItemsData[battleItem.value].efeito}</div></div></div>`;
     }
-    
     itemDescContainer.innerHTML = itemsHTML;
 }
 
 function renderResults() {
     const pokemonName = pokemonSelect.value;
     const level = levelSelect.value;
-    
     if (!pokemonName || !level) {
         resultsPanel.innerHTML = '<p class="results-placeholder">Selecione um Pokémon para ver os resultados.</p>';
         itemDescContainer.innerHTML = '';
         stacksContainer.innerHTML = '';
         return;
     }
-    
-    // Atualizar inputs de stack (apenas quando seleção de Pokémon ou itens muda)
     updateStackInputs();
-    
-    // Atualizar resultados
     updateResultsOnly();
 }
 
@@ -949,7 +675,8 @@ function initEvents() {
     battleItem.addEventListener('change', updateResultsOnly);
 }
 
-function initBuilder() {
+async function initBuilder() {
+    await carregarImagens();
     populateLevelSelect();
     populateItemSelects();
     initEvents();
