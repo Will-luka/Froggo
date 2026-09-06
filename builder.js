@@ -530,9 +530,9 @@ function normalizarNome(nome) {
         'primeiro', 'segundo', 'dano', 'cura', 'escudo',
         'adicional', 'por', 'tick', 'tapa', 'acerto', 'onda',
         'folha', 'bolha', 'chamas', 'fortalecido', 'final',
-        'inicial', 'basico', 'ataque'
+        'inicial', 'basico', 'ataque', 'parede', 'power', 'swap'
     ];
-    
+
     return nome
         .toLowerCase()
         .replace(/ \(.*?\)/g, '')
@@ -642,8 +642,14 @@ function updateResultsOnly() {
 
 let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
 skills.forEach(skill => {
-    const nomeLimpo = normalizarNome(skill.nome);
-    const chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
+    let nomeLimpo = normalizarNome(skill.nome);
+    let chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
+
+    if (!chaveJson && nomeLimpo.includes(' ')) {
+        const primeiraPalavra = nomeLimpo.split(' ')[0];
+        chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k).startsWith(primeiraPalavra));
+    }
+
     const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
     skillsHTML += `<div class="skill-calc-card">
         <div class="skill-calc-header">
