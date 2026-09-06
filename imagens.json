@@ -95,7 +95,14 @@
     },
     "Hoopa": {
       "Astonish": "imagens/skills/Hoopa/Astonish.png",
-      "Psybeam": "imagens/skills/Hoopa/Psybeam.png"
+      "Confusion": "imagens/skills/Hoopa/Confusion.png",
+      "Hyperspace Fury": "imagens/skills/Hoopa/Hyperspace_Fury.png",
+      "Hyperspace Hole": "imagens/skills/Hoopa/Hyperspace_Hole.png",
+      "Phantom Force": "imagens/skills/Hoopa/Phantom_Force.png",
+      "Psybeam": "imagens/skills/Hoopa/Psybeam.png",
+      "Rings Unbound": "imagens/skills/Hoopa/Rings_Unbound.png",
+      "Shadow Ball": "imagens/skills/Hoopa/Shadow_Ball.png",
+      "Trick": "imagens/skills/Hoopa/Trick.png"
     },
     "Latias": {
       "Confusion": "imagens/skills/Latias/Confusion.png",
