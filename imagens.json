@@ -48,6 +48,15 @@
     "X Speed": "imagens/battle-items/X_Speed.png"
   },
   "skills": {
+    "Alcremie": {
+      "Charm": "imagens/skills/Alcremie/Charm.png",
+      "Dazzling Gleam": "imagens/skills/Alcremie/Dazzling_Gleam.png",
+      "Decorate": "imagens/skills/Alcremie/Decorate.png",
+      "Fluffy Cream Supreme": "imagens/skills/Alcremie/Fluffy_Cream_Supreme.png",
+      "Helping Hand": "imagens/skills/Alcremie/Helping_Hand.png",
+      "Recover": "imagens/skills/Alcremie/Recover.png",
+      "Sweet Scent": "imagens/skills/Alcremie/Sweet_Scent.png"
+    },
     "Blissey": {
       "Bliss Assistance": "imagens/skills/Blissey/Bliss_Assistance.png",
       "Egg Bomb": "imagens/skills/Blissey/Egg_Bomb.png",
