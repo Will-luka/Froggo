@@ -545,6 +545,7 @@ function normalizarNome(nome) {
         .join(' ')
         .trim();
 }
+
 function applyHeldItems(baseStats, selectedItems, stacks, eonStacks) {
     const finalStats = { ...baseStats };
     selectedItems.forEach(itemName => {
@@ -640,38 +641,39 @@ function updateResultsOnly() {
         <div class="stat-final-box"><div class="stat-final-label">Sp. Def</div><div class="stat-final-value">${finalStats.spDef}</div></div>
     </div>`;
 
-let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
-skills.forEach(skill => {
-    let nomeLimpo = normalizarNome(skill.nome);
-    let chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
+    let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
+    skills.forEach(skill => {
+        let nomeLimpo = normalizarNome(skill.nome);
+        let chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
 
-    if (!chaveJson && nomeLimpo.includes(' ')) {
-        const primeiraPalavra = nomeLimpo.split(' ')[0];
-        chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k).startsWith(primeiraPalavra));
-    }
+        if (!chaveJson && nomeLimpo.includes(' ')) {
+            const primeiraPalavra = nomeLimpo.split(' ')[0];
+            chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k).startsWith(primeiraPalavra));
+        }
 
-    const chaveItem = Object.keys(imagensMap.held_items || {}).find(k => normalizarNome(k) === normalizarNome(itemName));
-const img = chaveItem ? imagensMap.held_items[chaveItem] : '';
-    skillsHTML += `<div class="skill-calc-card">
-        <div class="skill-calc-header">
-            ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
-            <div><div class="skill-calc-name">${skill.nome}</div><div class="skill-calc-type">${skill.tipo}</div></div>
-        </div>
-        <div class="skill-calc-values">Valor: <strong>${skill.valor}</strong></div>
-    </div>`;
-});
+        const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
+
+        skillsHTML += `<div class="skill-calc-card">
+            <div class="skill-calc-header">
+                ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
+                <div><div class="skill-calc-name">${skill.nome}</div><div class="skill-calc-type">${skill.tipo}</div></div>
+            </div>
+            <div class="skill-calc-values">Valor: <strong>${skill.valor}</strong></div>
+        </div>`;
+    });
     resultsPanel.innerHTML = statsHTML + skillsHTML;
 
     let itemsHTML = '';
     selectedHeld.forEach(itemName => {
-    if (heldItemsData[itemName]) {
-        const chaveItem = Object.keys(imagensMap.held_items || {}).find(k => normalizarNome(k) === normalizarNome(itemName));
-        const img = chaveItem ? imagensMap.held_items[chaveItem] : '';
-        itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${itemName}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${itemName}</div><div class="item-desc-text">${heldItemsData[itemName].efeito}</div></div></div>`;
-    }
-});
+        if (heldItemsData[itemName]) {
+            const chaveItem = Object.keys(imagensMap.held_items || {}).find(k => normalizarNome(k) === normalizarNome(itemName));
+            const img = chaveItem ? imagensMap.held_items[chaveItem] : '';
+            itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${itemName}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${itemName}</div><div class="item-desc-text">${heldItemsData[itemName].efeito}</div></div></div>`;
+        }
+    });
     if (battleItem.value && battleItemsData[battleItem.value]) {
-        const img = (imagensMap.battle_items && imagensMap.battle_items[battleItem.value]) || '';
+        const chaveBattle = Object.keys(imagensMap.battle_items || {}).find(k => normalizarNome(k) === normalizarNome(battleItem.value));
+        const img = chaveBattle ? imagensMap.battle_items[chaveBattle] : '';
         itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${battleItem.value}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${battleItem.value} (Battle Item)</div><div class="item-desc-text">${battleItemsData[battleItem.value].efeito}</div></div></div>`;
     }
     itemDescContainer.innerHTML = itemsHTML;
