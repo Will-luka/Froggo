@@ -664,11 +664,12 @@ const img = chaveItem ? imagensMap.held_items[chaveItem] : '';
 
     let itemsHTML = '';
     selectedHeld.forEach(itemName => {
-        if (heldItemsData[itemName]) {
-            const img = (imagensMap.held_items && imagensMap.held_items[itemName]) || '';
-            itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${itemName}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${itemName}</div><div class="item-desc-text">${heldItemsData[itemName].efeito}</div></div></div>`;
-        }
-    });
+    if (heldItemsData[itemName]) {
+        const chaveItem = Object.keys(imagensMap.held_items || {}).find(k => normalizarNome(k) === normalizarNome(itemName));
+        const img = chaveItem ? imagensMap.held_items[chaveItem] : '';
+        itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${itemName}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${itemName}</div><div class="item-desc-text">${heldItemsData[itemName].efeito}</div></div></div>`;
+    }
+});
     if (battleItem.value && battleItemsData[battleItem.value]) {
         const img = (imagensMap.battle_items && imagensMap.battle_items[battleItem.value]) || '';
         itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${battleItem.value}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${battleItem.value} (Battle Item)</div><div class="item-desc-text">${battleItemsData[battleItem.value].efeito}</div></div></div>`;
