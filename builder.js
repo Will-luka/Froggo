@@ -541,7 +541,7 @@ function normalizarNome(nome) {
         .replace(/\d+/g, '')
         .split(' ')
         .filter(palavra => !palavrasIgnoradas.includes(palavra))
-        .slice(0, 3)
+        .slice(0, 2)
         .join(' ')
         .trim();
 }
