@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gâteau! - Blissey</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bolo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Cabeçalho fixo -->
     <header class="site-header">
         <div class="container header-container">
-            <!-- Logo leva para a página inicial -->
             <a href="index.html" class="logo">Gâteau<span>!</span></a>
 
             <nav class="main-nav" id="mainNav">
@@ -27,7 +28,6 @@
     </header>
 
     <main class="container main-content">
-        <!-- Seção principal do Pokémon -->
         <section class="pokemon-detail">
             <!-- Card de Introdução -->
             <div class="pokemon-card intro-card">
@@ -38,13 +38,13 @@
                     <div class="pokemon-intro-info">
                         <h1 class="pokemon-detail-title">Blissey</h1>
                         <div class="pokemon-tags">
-                            <span class="tag tag-support">Suporte</span>
-                            <span class="tag tag-melee">Corpo a Corpo</span>
-                            <span class="tag tag-intermediate">Intermediário</span>
-                            <span class="tag tag-special">Atacante Especial</span>
+                            <span class="tag tag-support">Support</span>
+<span class="tag tag-melee">Melee</span>
+<span class="tag tag-intermediate">Intermediate</span>
+<span class="tag tag-special">Special</span>
                         </div>
                         <p class="pokemon-description">
-                            Blissey é um pokémon que tá sempre no meta, é capaz de curar, stunnar, buffar e remover CC dos aliados (esses fedidos kakak).
+                            Blissey é a Suporte tanque focada em manter aliados vivos com curas poderosas e escudos. Sua passiva Natural Cure limpa efeitos negativos automaticamente a cada 6s. Possui habilidades de cura, buff e proteção que a tornam essencial em composições de equipe.
                         </p>
                     </div>
                 </div>
@@ -52,27 +52,34 @@
 
             <!-- Grade de cards individuais -->
             <div class="pokemon-cards-container">
-                <!-- Card: Evolução -->
+                
+                <!-- Card: Evolução/Transformação -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">🔄 Evolução</h2>
                     <div class="pokemon-card-content">
                         <div class="evolution-chain">
-                            <span class="evolution-name">Chansey</span>
+                            <span class="evolution-name">Happiny</span>
                             <span class="evolution-arrow">→</span>
                             <span class="evolution-level">Nível 4</span>
                             <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Chansey</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 8</span>
+                            <span class="evolution-arrow">→</span>
                             <span class="evolution-name">Blissey</span>
+                        </div>
                     </div>
                 </div>
+
 
                 <!-- Card: Passiva -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">✨ Passiva: Natural Cure</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Limpa automaticamente este Pokémon a cada 6s, mesmo se não houver efeitos para limpar. 
-                            Isso significa que Blissey remove efeitos negativos de status de si mesma constantemente.
+                            Limpa automaticamente este Pokémon a cada 6s, mesmo se não houver efeitos para limpar. Isso significa que Blissey remove efeitos negativos de status de si mesma constantemente.
                         </p>
+                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 6s</p>
                     </div>
                 </div>
 
@@ -81,12 +88,12 @@
                     <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Torna-se um ataque carregado (boosted attack) após 6s, causando dano aumentado. 
-                            Este ataque carregado permanece pronto até ser usado.
+                            Torna-se um ataque carregado (boosted attack) após 6s, causando dano aumentado. Este ataque carregado permanece pronto até ser usado.
                         </p>
                     </div>
                 </div>
 
+                
                 <!-- Card: Pound -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
@@ -95,10 +102,10 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Golpeia na direção designada, causando dano aos Pokémon oponentes na área de efeito 
-                            e diminuindo a velocidade de movimento deles em 40% por 2s. 
+                            Golpeia na direção designada, causando dano aos Pokémon oponentes na área de efeito e diminuindo a velocidade de movimento deles em 40% por 2s.
                         </p>
                         <div class="pokemon-card-meta">
+                            
                             <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
                             <span class="meta-type">📋 Tipo: Melee</span>
                         </div>
@@ -113,9 +120,10 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Restaura o HP do usuário e de um aliado designado a cada 0.5s durante 2s. (é uma cura minúscula)
+                            Restaura o HP do usuário e de um aliado designado a cada 0.5s durante 2s.
                         </p>
                         <div class="pokemon-card-meta">
+                            
                             <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
                             <span class="meta-type">📋 Tipo: Recovery</span>
                         </div>
@@ -130,13 +138,11 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança um ovo no local designado que explode, causando dano aos Pokémon oponentes na área 
-                            e empurrando-os para longe do centro do impacto por 0.8s. 
-                            Máximo de 2 usos em reserva, com 2s de cooldown entre usos.
-                            Se aprender Soft-Boiled junto, os usos são compartilhados e o cooldown base vira 5s.
+                            Lança um ovo no local designado que explode, causando dano aos Pokémon oponentes na área e empurrando-os para longe do centro do impacto por 0.8s.
                         </p>
                         <div class="pokemon-card-meta">
                             <span class="meta-upgrade">⭐ Nível 12: Reduz a velocidade dos oponentes em 40% por 2s.</span>
+
                             <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
                             <span class="meta-type">📋 Tipo: Ranged</span>
                         </div>
@@ -151,12 +157,11 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Aumenta a velocidade de movimento e velocidade de ataque básico do usuário 
-                            e aliados próximos em 30% por 4s. Quando buffado, os ataques básicos do usuário 
-                            também se tornam ataques carregados.
+                            Aumenta a velocidade de movimento e velocidade de ataque básico do usuário e aliados próximos em 30% por 4s. Quando buffado, os ataques básicos do usuário também se tornam ataques carregados.
                         </p>
                         <div class="pokemon-card-meta">
                             <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano de ataque básico de todos os aliados buffados em 15% por 4s.</span>
+
                             <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
                             <span class="meta-type">📋 Tipo: Buff</span>
                         </div>
@@ -171,13 +176,11 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança um ovo para um aliado designado, restaurando o HP do usuário e do aliado. 
-                            Depois, ambos restauram HP ao longo do tempo a cada 1s durante 2s. 
-                            Usos subsequentes sobrescrevem qualquer HP ao longo do tempo pendente. (isso significa: não spamme cura, tá desperdiçando cooldown)
-                            Máximo de 2 usos em reserva, com 2s de cooldown entre usos.
+                            Lança um ovo para um aliado designado, restaurando o HP do usuário e do aliado. Depois, ambos restauram HP ao longo do tempo a cada 1s durante 2s.
                         </p>
                         <div class="pokemon-card-meta">
                             <span class="meta-upgrade">⭐ Nível 10: Ganha 1 uso adicional em reserva.</span>
+
                             <span class="meta-cooldown">⏱️ Cooldown: 12.00s</span>
                             <span class="meta-type">📋 Tipo: Recovery</span>
                         </div>
@@ -192,16 +195,17 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Limpa o usuário e um aliado designado, e concede a ambos um escudo 
-                            que os torna imparáveis (unstoppable) por 4s. 
+                            Limpa o usuário e um aliado designado, e concede a ambos um escudo que os torna imparáveis (unstoppable) por 4s.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: Aumenta o escudo.</span>
+                            <span class="meta-upgrade">⭐ Nível 10: Fortalece o valor do escudo.</span>
+
                             <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
                             <span class="meta-type">📋 Tipo: Buff</span>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Card: Unite Move -->
                 <div class="pokemon-card unite-move-card">
@@ -211,15 +215,11 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Fica imparável e avança para o aliado designado, dando-lhe um ovo que concede escudo 
-                            e aumenta o Ataque e Ataque Especial dele em 20% por 6s. 
-                            Blissey também intercepta 50% do dano pós-mitigação recebido pelo aliado como dano não mitigado por 6s. 
-                            Enquanto avança, Pokémon oponentes atingidos são stunnados e lançados ao ar por 0.8s. 
-                            Ao alcançar o aliado, oponentes próximos são stunnados novamente.
+                            Fica imparável e avança para o aliado designado, dando-lhe um ovo que concede escudo e aumenta o Ataque e Ataque Especial dele em 20% por 6s. Blissey também intercepta 50% do dano pós-mitigação recebido pelo aliado como dano não mitigado por 6s.
                         </p>
                         <div class="pokemon-card-meta">
                             <span class="meta-cooldown">⏱️ Cooldown: 112s</span>
-                            <span class="meta-type">📋 Buffs: 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
                         </div>
                     </div>
                 </div>
@@ -229,6 +229,7 @@
                     <h2 class="pokemon-card-title">🎯 Build Recomendada</h2>
                     <div class="pokemon-card-content">
                         <div class="build-items">
+                            
                             <div class="build-item">
                                 <div class="build-item-icon">
                                     <div class="item-placeholder">?</div>
@@ -238,6 +239,7 @@
                                     <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
                                 </div>
                             </div>
+
                             <div class="build-item">
                                 <div class="build-item-icon">
                                     <div class="item-placeholder">?</div>
@@ -247,15 +249,17 @@
                                     <p class="build-item-desc">Concede escudo para você e um aliado ao usar o Unite Move.</p>
                                 </div>
                             </div>
+
                             <div class="build-item">
                                 <div class="build-item-icon">
                                     <div class="item-placeholder">?</div>
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Sp. Atk. Specs.</h3>
-                                    <p class="build-item-desc">Aumenta o Sp Atk permanentemente até o fim da partida.</p>
+                                    <h3 class="build-item-name">Exp. Share</h3>
+                                    <p class="build-item-desc">Compartilha experiência com aliados próximos, acelerando o nível da equipe.</p>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -264,12 +268,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🌅 Early Game
-                        <span class="level-badge">Níveis 1-3</span>
+                        <span class="level-badge">Níveis 1-2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Ajude seu aliado a farmar e use Pound pra smitar farms neutros e/ou pra desacelerar inimigos (serve pra ajudar no engaje aliado ou no desengaje oponente)
-                            Usa Heal Pulse pra dar uma quase nula sobrevida pro seu coleguinha kakakkkk
+                            Fique na rota com seu aliado e use Heal Pulse para mantê-lo vivo durante as trocas.
                         </p>
                     </div>
                 </div>
@@ -278,15 +281,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         ☀️ Mid Game
-                        <span class="level-badge">Níveis 4-7</span>
+                        <span class="level-badge">Níveis 4-6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            No nível 4, escolha entre Soft-Boiled (cura) ou Safeguard (escudo e imunidade a CC). 
-                            A regra é simples, olha a comp inimiga, muito stun? Algum stun muito chato? Pega safeguard, caso contrário, pegue curinha.
-                            SAFEGUARD: Jogue recuado enquanto acompanha o carry.
-                            SOFT-BOILED: Acompanhe o carry e aproveite que a skill cura você e ele ao mesmo tempo, pra tankar parte do dano que ele poderia receber, assim
-                            a cura em si mesmo não se torna inútil.
+                            Escolha Soft-Boiled para cura forte ou Safeguard para proteção contra CC. No nível 6, Helping Hand para buff ou Egg Bomb para dano.
                         </p>
                     </div>
                 </div>
@@ -295,13 +294,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🌙 Late Game
-                        <span class="level-badge">Nível 8+</span>
+                        <span class="level-badge">Níveis 8+</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Use seu Unite Move (Bliss Assistance) para salvar aliados em perigo ou para iniciar lutas 
-                            com o buff de Ataque e Ataque Especial. Perfeito pra ser usado em pokémon do tipo dive (metagross, tyranitar, greninja, ceruledge, etc etc, basicamente pokémon que vão pro meio da briga,
-                            assim você aproveita as 4 utilidades da unite move: Stun, escudo, buff de atk/sp. atk. e redirecionamento de dano)
+                            Use o Unite Move para salvar aliados em perigo ou iniciar lutas. Posicione-se perto dos carries.
                         </p>
                     </div>
                 </div>
@@ -311,11 +308,10 @@
                     <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
                     <div class="pokemon-card-content">
                         <ul class="strategy-tips">
-                            <li>Gerencie suas prioridades com cuidado, principalmente com Safeguard.</li>
-                            <li>Saiba quando usar safeguard preventivamente ou reativamente, lembrando que pode não só ficar imune a CC, pode cancelar um stun em andamento.</li>
-                            <li>Seu Unite Move pode salvar um aliado de uma ult inimiga e virar a luta ou tornar seu carry uma mini pekka, digo, um mini tank.</li>
-                            <li>Soft-Boiled cura você e o aliado designado, não só ele em si.</li>
-                            <li>Sua ult é o principal do kit, tenha ela pronta nas fights importantes, e por favor, não usa o auto aim, mira ela!</li>
+                                                        <li>Priorize curar os carries da equipe, não os tanques.</li>
+                            <li>Use Safeguard preventivamente antes de lutas de equipe.</li>
+                            <li>Seu Unite Move pode salvar um aliado de uma ult inimiga.</li>
+
                         </ul>
                     </div>
                 </div>
