@@ -1,10 +1,3 @@
-// Mapeamento de imagens
-let imagensMap = {
-    held_items: {},
-    battle_items: {},
-    skills: {}
-};
-
 // ============================================
 // DADOS DOS POKÉMON SUPORTE
 // ============================================
