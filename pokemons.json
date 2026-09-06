@@ -1,402 +1,1135 @@
 [
- {
-  "nome": "Mr. Mime",
-  "imagem": "mrmime.jpg",
-  "descricao": "Mr. Mime é um suporte com capacidades tank. Usa seus stuns e barreiras para controlar o campo de batalha e proteger os aliados.",
-  "tags": ["support", "melee", "intermediate", "special"],
-  "evolucao": [],
-  "passiva": {
-    "nome": "Filter",
-    "descricao": "Ao usar uma habilidade, Mr. Mime recebe 10% menos dano por 2s. Isso reforça seu papel de suporte tanque.",
-    "cooldown": ""
+  {
+    "nome": "Alcremie",
+    "imagem": "alcremie.jpg",
+    "descricao": "Alcremie é um Pokémon Suporte que foca em curar e fortalecer aliados. Sua passiva Aroma Veil remove hindrances (stuns) de aliados que possuem seus escudos ou buffs. Possui um medidor especial chamado Sweet Gauge que, quando cheio, fortalece suas habilidades.",
+    "tags": ["support", "ranged", "novice", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Milcery" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 4" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Alcremie" }
+    ],
+    "passiva": {
+      "nome": "Aroma Veil",
+      "descricao": "Quando um aliado está sob efeito de um dos escudos ou buffs de Alcremie, remove quaisquer hindrances aplicados ou que estejam afetando aquele aliado. Esta habilidade entra em cooldown de 10s após remover um hindrance. Esta habilidade também funciona em Alcremie.",
+      "cooldown": "10s"
+    },
+    "ataque_basico": "Ataca jogando chantilly. Milcery e Alcremie não possuem ataque carregado (boosted attack).",
+    "habilidades": [
+      {
+        "emoji": "🛡️",
+        "nome": "Helping Hand",
+        "nivel": "1 ou 3",
+        "cooldown": "8.00s",
+        "tipo": "Buff",
+        "descricao": "Concede a um aliado designado ou a si mesmo um escudo por 3s, além de aumentar o Ataque dele em 40 e Ataque Especial em 25 por 3s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "💖",
+        "nome": "Charm",
+        "nivel": "1 ou 3",
+        "cooldown": "5.00s",
+        "tipo": "Debuff",
+        "descricao": "Encanta um Pokémon alvo, causando dano, reduzindo Ataque em 30, Ataque Especial em 20 e velocidade em 30% por 2s. Aumenta o Sweet Gauge em 2.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🎀",
+        "nome": "Decorate",
+        "nivel": "4",
+        "cooldown": "8.50s",
+        "tipo": "Buff",
+        "descricao": "Concede escudo por 4s. Se usado em aliado, Alcremie também recebe escudo. Ataques do protegido causam dano adicional e aumentam o Sweet Gauge.",
+        "upgrade": "Nível 10: Aumenta o tamanho do escudo."
+      },
+      {
+        "emoji": "🧁",
+        "nome": "Recover",
+        "nivel": "4",
+        "cooldown": "7.00s",
+        "tipo": "Recovery",
+        "descricao": "Coloca uma porção de chantilly no local designado. Aliados que pegarem recuperam HP e ganham velocidade.",
+        "upgrade": "Nível 10: O número máximo de usos em reserva aumenta para 3."
+      },
+      {
+        "emoji": "✨",
+        "nome": "Dazzling Gleam",
+        "nivel": "6",
+        "cooldown": "6.00s",
+        "tipo": "Hindrance",
+        "descricao": "Lança um raio de luz em cone que causa dano e stun de 0.4s.",
+        "upgrade": "Nível 12: Aumenta o dano."
+      },
+      {
+        "emoji": "🌸",
+        "nome": "Sweet Scent",
+        "nivel": "6",
+        "cooldown": "8.00s",
+        "tipo": "Debuff",
+        "descricao": "Lança perfume que causa dano e reduz velocidade. O anel externo causa slow de 100%.",
+        "upgrade": "Nível 12: Aumenta a duração do slow do anel externo para 1.5s."
+      }
+    ],
+    "unite_move": {
+      "nome": "Fluffy Cream Supreme",
+      "nivel": "Nível 8",
+      "cooldown": "100s",
+      "descricao": "Cria um bolo gigante e fica em cima dele, tornando-se imparável e curando/buffando aliados.",
+      "buffs": "40% Velocidade, 30% CDR, 30% Escudo de HP Máximo (6s)"
+    },
+    "build": [
+      { "nome": "Rescue Hood", "descricao": "Aumenta a eficácia de curas e escudos concedidos aos aliados." },
+      { "nome": "Wise Glasses", "descricao": "Aumenta o Ataque Especial, amplificando o poder das habilidades." },
+      { "nome": "Sp. Atk Specs", "descricao": "Aumenta permanentemente o Ataque Especial ao marcar gols." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-3",
+      "early": "Comece com Charm. Apoie seu aliado em dano para ele terminar os farms mais rapidamente.",
+      "mid_niveis": "4-7",
+      "mid": "Escolha Decorate ou Recover. Recover é o mais recomendado. Tente prever onde seus aliados estarão.",
+      "late_niveis": "8+",
+      "late": "Use o Unite Move em lutas de equipe. Posicione-se perto dos carries."
+    },
+    "dicas": [
+      "Gerencie o Sweet Gauge para ter habilidades fortalecidas nos momentos certos.",
+      "Use Aroma Veil para limpar CC dos aliados.",
+      "Decorate pode ser usado em si mesmo se estiver sendo focado."
+    ]
   },
-  "ataque_basico": "A cada 5s, ganha um ataque carregado que causa dano aumentado e arremessa os inimigos no ar por 0,5s.",
-  "habilidades": [
-    {
-      "emoji": "👏",
-      "nome": "Fake Out",
-      "nivel": "1 ou 3",
-      "cooldown": "7.00s",
-      "tipo": "Melee / Stun",
-      "descricao": "Bate palmas, causando dano e empurrando os inimigos por 0,4s. Use para roubar farm e afastar oponentes.",
-      "upgrade": ""
+  {
+    "nome": "Blissey",
+    "imagem": "blissey.jpg",
+    "descricao": "Blissey é a Suporte tanque focada em manter aliados vivos com curas poderosas e escudos. Sua passiva Natural Cure limpa efeitos negativos automaticamente a cada 6s. Possui habilidades de cura, buff e proteção que a tornam essencial em composições de equipe.",
+    "tags": ["support", "melee", "intermediate", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Happiny" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 4" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Chansey" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 8" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Blissey" }
+    ],
+    "passiva": {
+      "nome": "Natural Cure",
+      "descricao": "Limpa automaticamente este Pokémon a cada 6s, mesmo se não houver efeitos para limpar. Isso significa que Blissey remove efeitos negativos de status de si mesma constantemente.",
+      "cooldown": "6s"
     },
-    {
-      "emoji": "🔮",
-      "nome": "Confusion",
-      "nivel": "4",
-      "cooldown": "5.00s",
-      "tipo": "Ranged / Stun",
-      "descricao": "Dispara uma onda psíquica que empurra os inimigos. Se baterem na parede, tomam dano bônus e stun de 1,5s. Inimigos afetados por Power Swap também sofrem stun.",
-      "upgrade": "Nível 11: Aumenta o dano."
+    "ataque_basico": "Torna-se um ataque carregado (boosted attack) após 6s, causando dano aumentado. Este ataque carregado permanece pronto até ser usado.",
+    "habilidades": [
+      {
+        "emoji": "👊",
+        "nome": "Pound",
+        "nivel": "1 ou 2",
+        "cooldown": "6.00s",
+        "tipo": "Melee",
+        "descricao": "Golpeia na direção designada, causando dano aos Pokémon oponentes na área de efeito e diminuindo a velocidade de movimento deles em 40% por 2s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "💚",
+        "nome": "Heal Pulse",
+        "nivel": "1 ou 2",
+        "cooldown": "10.00s",
+        "tipo": "Recovery",
+        "descricao": "Restaura o HP do usuário e de um aliado designado a cada 0.5s durante 2s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "💣",
+        "nome": "Egg Bomb",
+        "nivel": "6",
+        "cooldown": "9.00s",
+        "tipo": "Ranged",
+        "descricao": "Lança um ovo no local designado que explode, causando dano aos Pokémon oponentes na área e empurrando-os para longe do centro do impacto por 0.8s.",
+        "upgrade": "Nível 12: Reduz a velocidade dos oponentes em 40% por 2s."
+      },
+      {
+        "emoji": "🛡️",
+        "nome": "Helping Hand",
+        "nivel": "6",
+        "cooldown": "9.00s",
+        "tipo": "Buff",
+        "descricao": "Aumenta a velocidade de movimento e velocidade de ataque básico do usuário e aliados próximos em 30% por 4s. Quando buffado, os ataques básicos do usuário também se tornam ataques carregados.",
+        "upgrade": "Nível 12: Aumenta o dano de ataque básico de todos os aliados buffados em 15% por 4s."
+      },
+      {
+        "emoji": "🥚",
+        "nome": "Soft-Boiled",
+        "nivel": "4",
+        "cooldown": "12.00s",
+        "tipo": "Recovery",
+        "descricao": "Lança um ovo para um aliado designado, restaurando o HP do usuário e do aliado. Depois, ambos restauram HP ao longo do tempo a cada 1s durante 2s.",
+        "upgrade": "Nível 10: Ganha 1 uso adicional em reserva."
+      },
+      {
+        "emoji": "🛡️",
+        "nome": "Safeguard",
+        "nivel": "4",
+        "cooldown": "10.00s",
+        "tipo": "Buff",
+        "descricao": "Limpa o usuário e um aliado designado, e concede a ambos um escudo que os torna imparáveis (unstoppable) por 4s.",
+        "upgrade": "Nível 10: Fortalece o valor do escudo."
+      }
+    ],
+    "unite_move": {
+      "nome": "Bliss Assistance",
+      "nivel": "Nível 8",
+      "cooldown": "112s",
+      "descricao": "Fica imparável e avança para o aliado designado, dando-lhe um ovo que concede escudo e aumenta o Ataque e Ataque Especial dele em 20% por 6s. Blissey também intercepta 50% do dano pós-mitigação recebido pelo aliado como dano não mitigado por 6s.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
     },
-    {
-      "emoji": "🧠",
-      "nome": "Psychic",
-      "nivel": "4",
-      "cooldown": "6.50s",
-      "tipo": "Area / Dano",
-      "descricao": "Pulsa energia ao redor de si, causando dano em área. Após três pulsos, um pulso final stuna por 1s. Cada acerto reduz a Def. Especial do inimigo.",
-      "upgrade": "Nível 11: Os pulsos também reduzem a velocidade em 30%."
+    "build": [
+      { "nome": "Rescue Hood", "descricao": "Aumenta a eficácia de curas e escudos concedidos aos aliados." },
+      { "nome": "Buddy Barrier", "descricao": "Concede escudo para você e um aliado ao usar o Unite Move." },
+      { "nome": "Exp. Share", "descricao": "Compartilha experiência com aliados próximos, acelerando o nível da equipe." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-2",
+      "early": "Fique na rota com seu aliado e use Heal Pulse para mantê-lo vivo durante as trocas.",
+      "mid_niveis": "4-6",
+      "mid": "Escolha Soft-Boiled para cura forte ou Safeguard para proteção contra CC. No nível 6, Helping Hand para buff ou Egg Bomb para dano.",
+      "late_niveis": "8+",
+      "late": "Use o Unite Move para salvar aliados em perigo ou iniciar lutas. Posicione-se perto dos carries."
     },
-    {
-      "emoji": "🧱",
-      "nome": "Barrier",
-      "nivel": "6",
-      "cooldown": "7.50s",
-      "tipo": "Hindrance",
-      "descricao": "Cria uma parede que impede a passagem dos inimigos. Inimigos próximos são empurrados e ficam sem ação por 0,5s. Possui 2 cargas.",
-      "upgrade": "Nível 13: Passa a ter 3 cargas."
-    },
-    {
-      "emoji": "🔗",
-      "nome": "Power Swap",
-      "nivel": "6",
-      "cooldown": "4.50s",
-      "tipo": "Buff / Debuff",
-      "descricao": "Cria um vínculo com o alvo. Se for aliado, aumenta velocidade e dano, e cura ao longo do tempo. Se for inimigo, reduz velocidade e dano, e causa dano contínuo.",
-      "upgrade": "Nível 13: Aumenta o buff/dano em aliados e o debuff em inimigos para 20%."
-    }
-  ],
-  "unite_move": {
-    "nome": "Showtime",
-    "nivel": "Nível 9",
-    "cooldown": "100s",
-    "descricao": "Mr. Mime salta e começa uma performance, causando dano em área 4 vezes e ficando imparável. O golpe final causa dano dobrado e stun de 1s.",
-    "buffs": "30% Velocidade, 30% Escudo de HP Máximo (6s)"
+    "dicas": [
+      "Priorize curar os carries da equipe, não os tanques.",
+      "Use Safeguard preventivamente antes de lutas de equipe.",
+      "Seu Unite Move pode salvar um aliado de uma ult inimiga."
+    ]
   },
-  "build": [
-    {
-      "nome": "Focus Band",
-      "descricao": "Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência."
+  {
+    "nome": "Clefable",
+    "imagem": "clefable.jpg",
+    "descricao": "Clefable é uma Suporte que brilha em curas constantes e proteção. Sua passiva Magic Guard concede escudo ao curar, o que a torna ainda mais resistente. O Unite Move é uma caixinha de surpresas: além de curar, pode usar um movimento aleatório que pode virar a luta.",
+    "tags": ["support", "melee", "novice", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Clefairy" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 4" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Clefable" }
+    ],
+    "passiva": {
+      "nome": "Magic Guard",
+      "descricao": "Quando Clefable cura um aliado, ela ganha um escudo por 3s. A força do escudo é igual a 50% do HP restaurado.",
+      "cooldown": ""
     },
-    {
-      "nome": "Resonant Guard",
-      "descricao": "Ao causar dano, concede um escudo a você e a um aliado próximo."
+    "ataque_basico": "A cada terceiro ataque, Clefable usa um ataque carregado que causa dano aumentado.",
+    "habilidades": [
+      {
+        "emoji": "💚",
+        "nome": "Heal Pulse",
+        "nivel": "1 ou 2",
+        "cooldown": "7.00s",
+        "tipo": "Recovery",
+        "descricao": "Cura imediatamente Clefable e aliados próximos.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🎵",
+        "nome": "Disarming Voice",
+        "nivel": "1 ou 2",
+        "cooldown": "9.00s",
+        "tipo": "Area",
+        "descricao": "Dá um grito charmoso que causa dano em área aos inimigos próximos e reduz a velocidade deles em 40% por 2s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌙",
+        "nome": "Moonlight",
+        "nivel": "4",
+        "cooldown": "8.00s",
+        "tipo": "Recovery",
+        "descricao": "Cura Clefable e aliados próximos ao longo de 3s. Enquanto ativa, Clefable ganha 20% de velocidade de movimento.",
+        "upgrade": "Nível 10: Aumenta a área de efeito e a duração em 1s."
+      },
+      {
+        "emoji": "💋",
+        "nome": "Draining Kiss",
+        "nivel": "4",
+        "cooldown": "4.00s",
+        "tipo": "Recovery",
+        "descricao": "Ataca inimigos próximos com um beijo drenante. Cada inimigo atingido solta um 'beijo aéreo' que cura o aliado com menor HP.",
+        "upgrade": "Nível 10: Aumenta a área e a cura para 200% do dano causado."
+      },
+      {
+        "emoji": "🌍",
+        "nome": "Gravity",
+        "nivel": "6",
+        "cooldown": "8.00s",
+        "tipo": "Hindrance",
+        "descricao": "Cria uma zona de gravidade ao redor de Clefable por 3s. Inimigos na área têm a velocidade reduzida e ficam impedidos de usar dash.",
+        "upgrade": "Nível 12: Aumenta a área e a duração para 4s."
+      },
+      {
+        "emoji": "🛡️",
+        "nome": "Follow Me",
+        "nivel": "6",
+        "cooldown": "7.50s",
+        "tipo": "Hindrance",
+        "descricao": "Clefable vai para o local designado balançando o dedo e ganha um escudo por 3s. Inimigos próximos são forçados a atacar Clefable por 2s.",
+        "upgrade": "Nível 12: Aumenta Defesa em 150 e Def. Especial em 100 por 3s."
+      }
+    ],
+    "unite_move": {
+      "nome": "Wonder Wish",
+      "nivel": "Nível 8",
+      "cooldown": "100s",
+      "descricao": "Clefable balança o dedo e cura os aliados em uma área. Depois disso, Clefable ganha um movimento aleatório que pode ser usado ao apertar o Unite Move novamente em até 10s.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
     },
-    {
-      "nome": "Vanguard Bell",
-      "descricao": "Restaura HP sempre que você aplica controle de grupo em um oponente."
-    }
-  ],
-  "estrategias": {
-    "early_niveis": "1-3",
-    "early": "Comece com Fake Out para roubar farm inimigo e afastar oponentes. Use Light Screen para ser chato, stunnando e atrapalhando a movimentação inimiga perto de você.",
-    "mid_niveis": "4-6",
-    "mid": "Use os stuns das skills do nível 4 para que seus aliados acertem as skills deles com mais facilidade. Depois use as skills do nível 6 para aplicar stuns de forma mais poderosa. Combinações ideais: Confusion + Barrier ou Psychic + Power Swap.",
-    "late_niveis": "9+",
-    "late": "Use a ult para stunnar inimigos em área, impedir o avanço de um oponente que poderia eliminar um aliado facilmente, ou iniciar uma luta com vantagem."
+    "build": [
+      { "nome": "Rescue Hood", "descricao": "Aumenta a eficácia de curas e escudos concedidos aos aliados." },
+      { "nome": "Wise Glasses", "descricao": "Aumenta o Ataque Especial, amplificando o poder das habilidades." },
+      { "nome": "Buddy Barrier", "descricao": "Concede escudo para você e um aliado ao usar o Unite Move." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-2",
+      "early": "Use Heal Pulse e Disarming Voice para sustentar a lane e dar slow nos inimigos.",
+      "mid_niveis": "4-6",
+      "mid": "Escolha Moonlight ou Draining Kiss. Depois Gravity ou Follow Me dependendo da necessidade.",
+      "late_niveis": "8+",
+      "late": "Use o Unite Move nas lutas de equipe para curar e depois contar com a sorte do movimento aleatório."
+    },
+    "dicas": [
+      "A passiva Magic Guard te dá escudo ao curar, então cure sem medo.",
+      "Follow Me é excelente para salvar um carry de um assassino.",
+      "Gravity anula dashes, use contra speedsters."
+    ]
   },
-  "dicas": [
-    "Confusion + Barrier é uma combinação devastadora perto de paredes.",
-    "Power Swap é excelente para fortalecer um carry ou enfraquecer um assassino.",
-    "Light Screen pode bloquear rotas de fuga e entrada.",
-    "Seu ataque básico carregado pode interromper habilidades inimigas.",
-    "Jogue na linha de frente, mas sem se afastar demais dos aliados."
-  ]
-},
-{
-  "nome": "Psyduck",
-  "imagem": "psyduck.jpg",
-  "descricao": "Psyduck é um suporte focado em stuns e também consegue cumprir papel tank. Suas habilidades desestabilizam os oponentes e criam vantagens para o time.",
-  "tags": ["support", "ranged", "novice", "special"],
-  "evolucao": [],
-  "passiva": {
-    "nome": "Swift Swim + Headache Gauge",
-    "descricao": "Ao sofrer dano, aumenta a velocidade de movimento por 2s. Além disso, acumula uma barra de dor de cabeça; quando cheia, Psyduck fica imparável, empurra inimigos próximos e tem os cooldowns resetados. Durante 10s, suas habilidades são fortalecidas.",
-    "cooldown": "10s (velocidade)"
+  {
+    "nome": "Comfey",
+    "imagem": "comfey.jpg",
+    "descricao": "Comfey é o suporte que literalmente gruda em você. Com sua passiva Triage, ela se prende a aliados, fica inalvejável e cura sem parar. Acumula flores para fortalecer suas habilidades e pode até marcar gols junto com o aliado.",
+    "tags": ["support", "ranged", "novice", "special"],
+    "evolucao": [],
+    "passiva": {
+      "nome": "Triage",
+      "descricao": "Aumenta a velocidade de movimento em 25% quando está perto de aliados com 50% do HP máximo ou menos. Armazena até 8 flores; consome todas ao usar Synthesis, Floral Healing ou Sweet Kiss enquanto está agarrada, fortalecendo os efeitos. Ganha 1 flor a cada 1,5s e 4 flores ao entrar na grama alta quando está solta (5s de CD). Enquanto agarrada, fica inalvejável, restaura 1% do HP máximo por segundo, e marca gols junto com o aliado se não estiver usando habilidades.",
+      "cooldown": ""
+    },
+    "ataque_basico": "A cada terceiro ataque, usa um ataque carregado que causa dano aumentado e ganha 2 flores quando acerta.",
+    "habilidades": [
+      {
+        "emoji": "🌿",
+        "nome": "Synthesis",
+        "nivel": "1 ou 2",
+        "cooldown": "5.00s",
+        "tipo": "Recovery",
+        "descricao": "Se estiver solta, agarra-se ao aliado designado e concede escudo Triage. Se estiver agarrada, restaura o HP do aliado. Consome flores para curar adicionalmente (até 8 flores).",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌿",
+        "nome": "Vine Whip",
+        "nivel": "1 ou 2",
+        "cooldown": "9.00s",
+        "tipo": "Ranged",
+        "descricao": "Ataca com vinhas na direção designada, causando dano em linha e reduzindo a velocidade dos oponentes em 40% por 2s. Enquanto agarrada a um aliado, o alcance aumenta.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌸",
+        "nome": "Floral Healing",
+        "nivel": "4",
+        "cooldown": "5.00s",
+        "tipo": "Recovery",
+        "descricao": "Se estiver solta, agarra-se ao aliado e concede escudo Triage. Se estiver agarrada, restaura o HP do aliado, consumindo flores para curar mais. O excesso de cura vira um escudo de overheal por 5s.",
+        "upgrade": "Nível 10: Enquanto agarrada, aumenta a velocidade do aliado em 30% por 2s."
+      },
+      {
+        "emoji": "💋",
+        "nome": "Sweet Kiss",
+        "nivel": "4",
+        "cooldown": "6.00s",
+        "tipo": "Hindrance",
+        "descricao": "Se estiver solta, agarra-se ao aliado e concede escudo Triage reforçado. Se estiver agarrada, carrega poder por até 2,5s e depois infatua oponentes na área, forçando-os a se aproximar sem poder agir.",
+        "upgrade": "Nível 10: Enquanto agarrada, aumenta a velocidade do aliado em 50% por 2s durante o carregamento."
+      },
+      {
+        "emoji": "🍃",
+        "nome": "Magical Leaf",
+        "nivel": "6",
+        "cooldown": "9.00s",
+        "tipo": "Area",
+        "descricao": "Lança folhas curiosas que perseguem oponentes aleatórios na área por 5s, causando dano e aplicando marcas. Se um alvo marcado for atingido por 6 folhas, fica atordoado por 0,5s.",
+        "upgrade": "Nível 12: Aumenta para 4 folhas por segundo (máximo 24 folhas)."
+      },
+      {
+        "emoji": "🌱",
+        "nome": "Grass Knot",
+        "nivel": "6",
+        "cooldown": "7.00s",
+        "tipo": "Hindrance",
+        "descricao": "Lança vinhas que imobilizam até dois oponentes. Se acertar dois inimigos próximos, puxa o segundo para a localização do primeiro e causa dano adicional em ambos.",
+        "upgrade": "Nível 12: Aumenta a área de efeito."
+      }
+    ],
+    "unite_move": {
+      "nome": "Flowery Fields Forever",
+      "nivel": "Nível 8",
+      "cooldown": "89s",
+      "descricao": "Fica imparável e cria uma grande área de grama alta por 6s. Pokémon dentro da grama ficam invisíveis, como na grama normal do mapa. A grama cura aliados a cada 0,5s e concede flores especiais.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
+    },
+    "build": [
+      { "nome": "Rescue Hood", "descricao": "Aumenta a eficácia de curas e escudos concedidos aos aliados." },
+      { "nome": "Wise Glasses", "descricao": "Aumenta o Ataque Especial, amplificando o poder das habilidades." },
+      { "nome": "Exp. Share", "descricao": "Compartilha experiência com aliados próximos, acelerando o nível da equipe." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-2",
+      "early": "Comece com Synthesis para se agarrar ao seu parceiro de rota e curar constantemente. Use Vine Whip para dar slow nos inimigos.",
+      "mid_niveis": "4-6",
+      "mid": "Escolha Floral Healing ou Sweet Kiss. Mantenha-se agarrada no carry e use as flores com sabedoria.",
+      "late_niveis": "8+",
+      "late": "Use o Unite Move nas lutas de equipe para curar e esconder aliados."
+    },
+    "dicas": [
+      "Fique agarrada no carry para ficar inalvejável e curar sem parar.",
+      "Gerencie as flores: use-as nos momentos decisivos, não desperdice.",
+      "Entre na grama alta quando estiver solta para ganhar 4 flores rapidamente."
+    ]
   },
-  "ataque_basico": "Ataca com um jato d'água. Psyduck não possui ataque carregado.",
-  "habilidades": [
-    {
-      "emoji": "🔮",
-      "nome": "Confusion",
-      "nivel": "1 ou 3",
-      "cooldown": "6.00s",
-      "tipo": "Ranged / Stun",
-      "descricao": "Lança uma força telecinética que causa dano e stuna por 1s. Com o mysterious power ativo, causa mais dano.",
-      "upgrade": ""
+  {
+    "nome": "Eldegoss",
+    "imagem": "eldegoss.jpg",
+    "descricao": "Eldegoss é a Suporte clássica: cura, escuda e ainda atrapalha os inimigos com seu algodão. Sua passiva Cotton Down pune quem tenta dar muito dano nela, devolvendo dano e slow. É a escolha perfeita para quem quer aprender a jogar de suporte sem complicação.",
+    "tags": ["support", "ranged", "novice", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Gossifleur" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 4" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Eldegoss" }
+    ],
+    "passiva": {
+      "nome": "Cotton Down",
+      "descricao": "Quando Eldegoss recebe pelo menos 5% do HP máximo de dano em um único ataque, ela restaura o próprio HP e ganha 15% de velocidade de movimento por 1,5s. Além disso, causa dano de vingança nos inimigos próximos e reduz a velocidade deles em 30% por 1,5s.",
+      "cooldown": "10s"
     },
-    {
-      "emoji": "🌊",
-      "nome": "Surf",
-      "nivel": "4",
-      "cooldown": "7.50s",
-      "tipo": "Hindrance / Dash",
-      "descricao": "Cria uma onda que causa dano e reduz a velocidade. Psyduck pode surfar na onda, aumentando a própria velocidade e a de aliados que tocarem nela.",
-      "upgrade": "Nível 11: Onda reduz o dano dos inimigos em 25%."
+    "ataque_basico": "A cada terceiro ataque, Eldegoss usa um ataque carregado que prende um pouco de algodão no oponente por 3s. Ataques básicos de Eldegoss e aliados contra alvos com algodão causam dano adicional e reduzem a velocidade do alvo em 20% por 1s.",
+    "habilidades": [
+      {
+        "emoji": "🍃",
+        "nome": "Leafage",
+        "nivel": "1 ou 3",
+        "cooldown": "4.50s",
+        "tipo": "Ranged",
+        "descricao": "Dispara um feixe de folhas na direção designada que explode no primeiro inimigo atingido ou ao alcançar a distância máxima. Causa dano em área e reduz a velocidade dos oponentes em 40% por 2s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "☀️",
+        "nome": "Synthesis",
+        "nivel": "1 ou 3",
+        "cooldown": "8.00s",
+        "tipo": "Recovery",
+        "descricao": "Usa a luz do sol para curar a si mesma e aos aliados na área de efeito.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌸",
+        "nome": "Pollen Puff",
+        "nivel": "4",
+        "cooldown": "5.00s",
+        "tipo": "Ranged",
+        "descricao": "Lança um puff de pólen no local designado que se prende ao Pokémon mais próximo em 0,5s. O puff explode 2s depois de se prender, curando aliados e causando dano em inimigos na área.",
+        "upgrade": "Nível 10: Se prender a um aliado, reduz o dano recebido por ele em 20% por 2s antes de explodir."
+      },
+      {
+        "emoji": "🌪️",
+        "nome": "Leaf Tornado",
+        "nivel": "4",
+        "cooldown": "8.00s",
+        "tipo": "Ranged",
+        "descricao": "Lança um tornado de folhas afiadas que causa dano nos inimigos e cria um caminho de vento que dura 4s. Aliados no caminho ganham 60% de velocidade de movimento.",
+        "upgrade": "Nível 10: Aplica debuff que faz ataques básicos causarem 0 de dano por 2,5s nos inimigos atingidos."
+      },
+      {
+        "emoji": "🛡️",
+        "nome": "Cotton Guard",
+        "nivel": "6",
+        "cooldown": "9.50s",
+        "tipo": "Buff",
+        "descricao": "Concede escudos de algodão aos aliados na área por 3s. Após 3s, o algodão restante é usado para curar os aliados com escudo em 15% do valor do escudo restante.",
+        "upgrade": "Nível 12: Aumenta a velocidade dos aliados na área em 30% por 2s."
+      },
+      {
+        "emoji": "💨",
+        "nome": "Cotton Spore",
+        "nivel": "6",
+        "cooldown": "6.00s",
+        "tipo": "Area",
+        "descricao": "Reúne esporos ao redor de si por 2s, ganhando 40% de velocidade de movimento. Os esporos explodem no final, causando dano em área, arremessando inimigos por 0,5s e reduzindo a velocidade deles em 40% por 2s.",
+        "upgrade": "Nível 12: Aumenta Defesa e Def. Especial em 50% por 2s."
+      }
+    ],
+    "unite_move": {
+      "nome": "Cotton Cloud Crash",
+      "nivel": "Nível 9",
+      "cooldown": "100s",
+      "descricao": "Eldegoss fica invencível e flutua no ar por até 3s, movendo-se livremente sobre obstáculos com 10% de velocidade extra. Ao usar novamente ou após 3s, ela bate no chão, curando a si mesma e aliados na área, causando dano nos oponentes e empurrando-os por 0,7s.",
+      "buffs": "30% Velocidade, 30% Escudo de HP Máximo (6s)"
     },
-    {
-      "emoji": "🫧",
-      "nome": "Bubble Beam",
-      "nivel": "4",
-      "cooldown": "6.50s",
-      "tipo": "Ranged / Utility",
-      "descricao": "Lança um jato de bolhas que marca os inimigos. Ataques básicos de aliados estouram as bolhas, causando dano extra. O dano extra é considerado como sendo do Psyduck, então ele ganha o crédito por last hits em farms ou abates.",
-      "upgrade": "Nível 11: Reduz a velocidade dos inimigos atingidos em 30%."
+    "build": [
+      { "nome": "Rescue Hood", "descricao": "Aumenta a eficácia de curas e escudos concedidos aos aliados." },
+      { "nome": "Wise Glasses", "descricao": "Aumenta o Ataque Especial, amplificando o poder das habilidades." },
+      { "nome": "Buddy Barrier", "descricao": "Concede escudo para você e um aliado ao usar o Unite Move." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-3",
+      "early": "Comece com Leafage para dar slow e ajudar no farm, e Synthesis para curar.",
+      "mid_niveis": "4-6",
+      "mid": "Escolha Pollen Puff ou Leaf Tornado. No nível 6, Cotton Guard para escudos ou Cotton Spore para slow e dano.",
+      "late_niveis": "9+",
+      "late": "Use o Unite Move para curar a equipe inteira em lutas de equipe."
     },
-    {
-      "emoji": "⚡",
-      "nome": "Disable",
-      "nivel": "6",
-      "cooldown": "8.00s",
-      "tipo": "Hindrance",
-      "descricao": "Lança eletricidade que stuna e marca os inimigos. A marca aumenta o cooldown do último movimento usado pelo alvo.",
-      "upgrade": "Nível 13: Aumenta a duração do stun para 0,5s."
-    },
-    {
-      "emoji": "🧠",
-      "nome": "Psychic",
-      "nivel": "6",
-      "cooldown": "7.00s",
-      "tipo": "Hindrance",
-      "descricao": "Cria uma área de força telecinética que stuna e puxa inimigos. Com o mysterious power ativo, o alvo marcado é stunado após ser puxado.",
-      "upgrade": "Nível 13: Reduz a Def. Especial dos inimigos atingidos."
-    }
-  ],
-  "unite_move": {
-    "nome": "Full-Power Psy-ay-ay!",
-    "nivel": "Nível 8",
-    "cooldown": "112s",
-    "descricao": "Lança três ondas psíquicas ao redor de si, causando dano e reduzindo o dano dos inimigos em 30% por 3s. Aumenta a headache gauge em 50%.",
-    "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
+    "dicas": [
+      "A passiva Cotton Down pune inimigos que tentam te dar muito dano de uma vez.",
+      "Use Leaf Tornado para dar velocidade à equipe em perseguições ou fugas.",
+      "Cotton Guard é perfeita antes de iniciar uma luta de equipe."
+    ]
   },
-  "build": [
-    {
-      "nome": "Focus Band",
-      "descricao": "Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência."
+  {
+    "nome": "Hoopa",
+    "imagem": "hoopa.jpg",
+    "descricao": "Hoopa é um suporte capaz de controlar a rotação do time e controlar seu avanço, se ele permitir né, não dá pra fazer milagre kkkk. A passiva Magician permite roubar frutas do lado adversário ou energia aeos.",
+    "tags": ["support", "ranged", "expert", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Hoopa" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Unite Move" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Hoopa Unbound" }
+    ],
+    "passiva": {
+      "nome": "Magician",
+      "descricao": "Quando se escolhe Hoopa, um novo botão é desbloqueado na interface, na parte superior. Você pode direcionar. Quando se usa essa passiva, um portal é criado no chão, e alguns segundos depois surge uma berry ou energia aeos. Esses recursos não surgem aleatoriamente, eles aparecem na seguinte ordem de prioridade: Sitrus Berry da primeira torre (bot ou top), Fruta do meio do mapa (varia com a season), energia aeos. Use sempre que possível pra retirar recursos dos inimigos.",
+      "cooldown": "40s ou 20s se nada sair do portal"
     },
-    {
-      "nome": "Resonant Guard",
-      "descricao": "Ao causar dano, concede um escudo a você e a um aliado próximo."
+    "ataque_basico": "A cada terceiro ataque, Hoopa lança um feixe de luz, que dá dano aumentado e atinge o alvo quase que instantaneamente.",
+    "habilidades": [
+      {
+        "emoji": "👻",
+        "nome": "Astonish",
+        "nivel": "1 ou 3",
+        "cooldown": "6.50s",
+        "tipo": "Hindrance",
+        "descricao": "Hoopa solta um grito assustador que causa dano na área designada e deixa os inimigos impossibilitados de agir por 0,75s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🔮",
+        "nome": "Confusion",
+        "nivel": "1 ou 3",
+        "cooldown": "9.00s",
+        "tipo": "Ranged",
+        "descricao": "Libera uma força telecinética na direção designada, causando dano ao primeiro inimigo atingido. A força se prende ao inimigo e causa uma explosão retardada que reduz a velocidade dos oponentes na área em 50% por 0,5s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌀",
+        "nome": "Hyperspace Hole",
+        "nivel": "4",
+        "cooldown": "12.00s",
+        "tipo": "Dash",
+        "descricao": "Cria um grande anel no local designado, causando dano aos inimigos na área. Após 3s, Hoopa e aliados na área retornam à base com aumento de velocidade. Eles também podem voltar manualmente para onde o anel foi criado em até 3s.",
+        "upgrade": "Nível 10: Aumenta a velocidade de movimento em 70% para aliados próximos ao anel."
+      },
+      {
+        "emoji": "🎩",
+        "nome": "Trick",
+        "nivel": "4",
+        "cooldown": "7.50s",
+        "tipo": "Buff",
+        "descricao": "Cria um vínculo entre Hoopa e um aliado, aumentando a velocidade de ambos em 60% (decaindo para 40%) e concedendo escudo por 3s. Durante 7s, quando Hoopa usa Shadow Ball ou ataque básico, o aliado vinculado também dispara o mesmo ataque.",
+        "upgrade": "Nível 10: Hoopa e o aliado vinculado curam 10% do dano causado por 3s."
+      },
+      {
+        "emoji": "👤",
+        "nome": "Phantom Force",
+        "nivel": "6",
+        "cooldown": "6.50s",
+        "tipo": "Hindrance",
+        "descricao": "Hoopa cria um anel de portal sob si e se teletransporta para o local designado, causando dano e empurrando inimigos próximos. Depois dispara duas chamas sinistras que reduzem a velocidade dos inimigos em 40% por 2s.",
+        "upgrade": "Nível 12: Fica invencível por 0,6s ao usar esta habilidade."
+      },
+      {
+        "emoji": "🌑",
+        "nome": "Shadow Ball",
+        "nivel": "6",
+        "cooldown": "4.50s",
+        "tipo": "Ranged",
+        "descricao": "Lança uma esfera sombria que causa dano, reduz a velocidade em 50% por 1s e diminui a Defesa Especial do alvo em 30% por 3s. Se Hoopa acertar o mesmo alvo com outra habilidade ou ataque carregado em até 4s, causa dano adicional e deixa o inimigo impossibilitado de agir por 0,8s.",
+        "upgrade": "Nível 12: A esfera explode ao desaparecer, afetando inimigos na área."
+      }
+    ],
+    "unite_move": {
+      "nome": "Rings Unbound",
+      "nivel": "Nível 9",
+      "cooldown": "112s",
+      "descricao": "Hoopa se torna invencível por 0,6s enquanto se transforma em Hoopa Unbound e abre um grande portal em um local designado. A forma Unbound dura 15s, aumentando o HP máximo em 40% e trocando as habilidades para Hyperspace Fury e Psybeam. Nessa forma, Hoopa não pode marcar gols nem usar a passiva Magician.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
     },
-    {
-      "nome": "Vanguard Bell",
-      "descricao": "Restaura HP sempre que você aplica controle de grupo em um oponente."
-    }
-  ],
-  "estrategias": {
-    "early_niveis": "1-3",
-    "early": "Pegue Confusion primeiro e ajude seu aliado a farmar. Depois pegue Tail Whip. Use Tail Whip + Confusion para interromper o que o inimigo tentar fazer, seja smitar farm ou eliminar um aliado.",
-    "mid_niveis": "4-6",
-    "mid": "Pegue Bubble Beam para ajudar ofensivamente, ou Surf (apenas se não houver muito stun na comp inimiga). Use seus stuns para atrapalhar o jogo inimigo.",
-    "late_niveis": "8+",
-    "late": "Use a ult no começo das team fights para aproveitar o debuff de dano. Use Psychic para reposicionar oponentes e Disable para punir comps bloqueadas."
+    "build": [
+      { "nome": "Rescue Hood", "descricao": "Aumenta a eficácia de curas e escudos concedidos aos aliados." },
+      { "nome": "Buddy Barrier", "descricao": "Concede escudo para você e um aliado ao usar o Unite Move." },
+      { "nome": "LIVRE", "descricao": "Pode usar um item da sua preferência pessoal. Não sabe qual usar? Cursed Incense, Resonant Guard, etc." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-3",
+      "early": "Comece com Astonish para dar stun e ajudar no farm, e Confusion para dar dano e slow. Use a passiva Magician sempre que possível para roubar frutas ou energia dos inimigos.",
+      "mid_niveis": "4-7",
+      "mid": "No nível 4, escolha Hyperspace Hole (rotação de equipe) ou Trick (buff e link). No nível 6, Phantom Force para mobilidade e dano, ou Shadow Ball para poke e controle.",
+      "late_niveis": "9+",
+      "late": "Use o Unite Move Rings Unbound nas lutas de equipe para se transformar em Hoopa Unbound e abrir um portal para a equipe."
+    },
+    "dicas": [
+      "Use a passiva Magician para negar recursos ao time inimigo.",
+      "Hyperspace Hole pode virar uma luta se usada para trazer a equipe inteira.",
+      "Trick é excelente com Pokémon de ataque básico forte, como Cinderace ou Decidueye."
+    ]
   },
-  "dicas": [
-    "Use seus vários stuns, puxões e empurrões para desestabilizar os oponentes (até mentalmente kkkk).",
-    "Bubble Beam funciona parecido com Choice Specs, e o dano extra sempre conta como do Psyduck.",
-    "A ult é ótima para iniciar lutas e reduzir o dano inimigo.",
-    "A headache gauge pode virar o rumo de uma luta se ativada no momento certo.",
-    "Psyduck é um tanque, não tenha medo de ficar na frente."
-  ]
-},
-{
-  "nome": "Sableye",
-  "imagem": "sableye.jpg",
-  "descricao": "Sableye é o suporte mais próximo de um assassino. Fica invisível, invade a jungle inimiga, rouba buffs e estraga o mental do adversário. É complexo, mas recompensador.",
-  "tags": ["support", "melee", "intermediate", "physical"],
-  "evolucao": [],
-  "passiva": {
-    "nome": "Prankster",
-    "descricao": "Quando Sableye está fora da visão inimiga, entra em stealth e ganha 10% de velocidade. Ao entrar no campo de visão inimigo, permanece invisível por mais 1,7s. Sai do stealth ao atacar.",
-    "cooldown": ""
+  {
+    "nome": "Latias",
+    "imagem": "latias.jpg",
+    "descricao": "Latias é um suporte com capacidade de ficar mais forte ao longo do jogo, tem debuff, buff, escudos, e dano!",
+    "tags": ["support", "ranged", "novice", "special"],
+    "evolucao": [],
+    "passiva": {
+      "nome": "Levitate",
+      "descricao": "Depois de usar uma skill, a speed de Latias aumenta por um curto período em 50%. Ficar perto de um Latios aliado também aumenta a speed, em 10% (esses buffs na velocidade não tem cooldown). Se Latias não estiver em combate, ela pode usar um botão que a passiva cria para teleportar para o local que Latios (se for um aliado) está.",
+      "cooldown": "90s"
+    },
+    "ataque_basico": "Lança um projétil psíquico. Latias não tem ataque boostado.",
+    "habilidades": [
+      {
+        "emoji": "🌌",
+        "nome": "Confusion",
+        "nivel": "1 ou 3",
+        "cooldown": "8.00s",
+        "tipo": "Ranged",
+        "descricao": "Lança uma força psíquica em linha reta, causando dano e diminuindo a speed dos oponentes em 20% por 2 segundos.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "⭐",
+        "nome": "Swift",
+        "nivel": "1 ou 3",
+        "cooldown": "6.00s",
+        "tipo": "Area / Dano",
+        "descricao": "Lança raios em formato de estrelas em cone.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🐲",
+        "nome": "Dragon Pulse",
+        "nivel": "4",
+        "cooldown": "6.50s",
+        "tipo": "Area / Dano",
+        "descricao": "Libera um laser em cone, causando dano. Após aprender, Latias ganha Eon a cada farm eliminado ou oponente atingido.",
+        "upgrade": "Nível 10: O laser diminui a velocidade dos oponentes atingidos em 30% por 2s."
+      },
+      {
+        "emoji": "🌠",
+        "nome": "Dragon Breath",
+        "nivel": "4",
+        "cooldown": "5.50s",
+        "tipo": "Ranged / Dano",
+        "descricao": "Libera uma baforada em linha reta, diminuindo speed e def sp em 30% por 3s.",
+        "upgrade": "Nível 10: O slow aumenta para 40%."
+      },
+      {
+        "emoji": "💨",
+        "nome": "Mist Ball",
+        "nivel": "6",
+        "cooldown": "7.00s",
+        "tipo": "Ranged / Debuff",
+        "descricao": "Lança uma bola de névoa que cria área de DPS e aplica marca que reduz o dano do oponente em 25%.",
+        "upgrade": "Nível 12: Aumenta a duração base da marca para 3s."
+      },
+      {
+        "emoji": "🌑",
+        "nome": "Dragon Cheer",
+        "nivel": "6",
+        "cooldown": "8.00s",
+        "tipo": "Target / Buff",
+        "descricao": "Ruge para um aliado, garantindo escudo e dano extra no próximo hit.",
+        "upgrade": "Nível 12: Escudo aumenta um pouco."
+      }
+    ],
+    "unite_move": {
+      "nome": "Mist Blast",
+      "nivel": "Nível 8",
+      "cooldown": "112s",
+      "descricao": "Mira um oponente e carrega energia por 1.8s antes de lançar um laser. Cooldowns são resetados após acertar.",
+      "buffs": "30% Velocidade, 20% Escudo de HP Máximo (6s)"
+    },
+    "build": [
+      { "nome": "Drive Lens", "descricao": "Reduz ligeiramente os cooldowns e aumenta seu dano após kills/assistências." },
+      { "nome": "Shell Bell", "descricao": "Reduz ligeiramente os cooldowns e recupera HP ao acertar uma skill." },
+      { "nome": "LIVRE", "descricao": "Item da sua preferência. Cursed Incense, Resonant Guard, Energy Amplifier, etc." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-3",
+      "early": "Comece com Swift e ajude seu aliado a farmar. Dispute os farms neutros usando Confusion seguido de Swift.",
+      "mid_niveis": "4-7",
+      "mid": "Escolha Dragon Pulse ou Dragon Breath. Stacke sempre que possível. No nível 6, escolha Dragon Cheer ou Mist Ball.",
+      "late_niveis": "8+",
+      "late": "Use o Unite Move Mist Blast para eliminar inimigos fugindo ou contribuir em fights."
+    },
+    "dicas": [
+      "Use a passiva Levitate para se reposicionar e chegar antecipadamente nos locais.",
+      "Combo básico: Mist Ball/Dragon Cheer, Dragon Pulse/Breath, ult, repita.",
+      "Latias é um suporte ofensivo, não jogue recuado à toa."
+    ]
   },
-  "ataque_basico": "A cada terceiro ataque, lança um ataque carregado que causa dano e reduz a velocidade em 20%. Se estiver em stealth, aplica medo por 1s, forçando o inimigo a se afastar.",
-  "habilidades": [
-    {
-      "emoji": "💎",
-      "nome": "Thief",
-      "nivel": "1 ou 2",
-      "cooldown": "7.50s",
-      "tipo": "Dash / Dano",
-      "descricao": "Avança na direção designada, causando dano e roubando 5 de energia Aeos do inimigo. Se o inimigo não tiver energia, fica sem ação por 0,5s.",
-      "upgrade": ""
+  {
+    "nome": "Meganium",
+    "imagem": "meganium.jpg",
+    "descricao": "Meganium é um suporte capaz de curar em área, debuffar e stunnar inimigos.",
+    "tags": ["support", "melee", "novice", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Chikorita" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 5" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Bayleef" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 7" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Meganium" }
+    ],
+    "passiva": {
+      "nome": "Overgrow",
+      "descricao": "Aumenta a cura das suas skills em 10% se o(s) alvo(s) da cura estiver(em) com 30% ou menos do HP.",
+      "cooldown": "Sempre ativo"
     },
-    {
-      "emoji": "🌑",
-      "nome": "Shadow Sneak",
-      "nivel": "4",
-      "cooldown": "12.00s",
-      "tipo": "Buff / Stealth",
-      "descricao": "Aplica um buff que deixa Sableye invisível após 1,5s e aumenta a velocidade. Ao entrar em stealth, prepara um ataque carregado com dano extra.",
-      "upgrade": "Nível 10: Aumenta a duração e restaura HP enquanto estiver em stealth."
+    "ataque_basico": "Usa vinhas pra dar uma cabeçada no oponente.",
+    "habilidades": [
+      {
+        "emoji": "🍂",
+        "nome": "Magical Leaf",
+        "nivel": "1 ou 3",
+        "cooldown": "5.00s",
+        "tipo": "Ranged / Target",
+        "descricao": "Lança folhas no alvo, causando dano e reduzindo a velocidade dele em 40% por 2 segundos.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "☀️",
+        "nome": "Synthesis",
+        "nivel": "1 ou 3",
+        "cooldown": "5.00s",
+        "tipo": "Target / Recovery",
+        "descricao": "Produz energia recuperativa ao redor de si e do aliado designado em uma pequena área, qualquer pokémon nas áreas terá uma pequena parte do hp restaurado, essas duas áreas curam separadamente.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌾",
+        "nome": "Grass Knot",
+        "nivel": "5",
+        "cooldown": "6.00s",
+        "tipo": "Ranged / Hindrance",
+        "descricao": "Libera vinhas na direção designada, atingindo o primeiro alvo acertado e prendendo ele por 1 segundo. Na floração, este golpe tem área aumentada e após 2 segundos prende qualquer inimigo ao redor do alvo.",
+        "upgrade": "Nível 11: Reduz o cooldown dessa skill em 1 segundo."
+      },
+      {
+        "emoji": "🌸",
+        "nome": "Petal Blizzard",
+        "nivel": "7",
+        "cooldown": "7.00s",
+        "tipo": "Ranged / Recovery",
+        "descricao": "Joga pétalas na direção designada, causando dano, curando a si e um aliado próximo e diminuindo a speed de inimigos acertados em 30% por 2 segundos. Na floração, este golpe deixa pétalas no chão, tem range aumentado e ganha dano/cura extra a cada 0.5 segundos enquanto as pétalas ficam no chão.",
+        "upgrade": "Nível 13: Aumenta a cura ligeiramente."
+      }
+    ],
+    "unite_move": {
+      "nome": "Full Bloom Aroma",
+      "nivel": "Nível 7",
+      "cooldown": "34s",
+      "descricao": "Emite um aroma doce ao seu redor, causando dano a cada 0,5s em oponentes na área de efeito. Oponentes acertados tem seu dano reduzido em 10% por 3 segundos, essa duração reseta a cada vez que o oponente recebe o dano. Após usar, a próxima skill usada é afetada pela floração.",
+      "buffs": "10% Velocidade, 10% Escudo de HP Máximo (5s)"
     },
-    {
-      "emoji": "👊",
-      "nome": "Knock Off",
-      "nivel": "4",
-      "cooldown": "8.50s",
-      "tipo": "Hindrance / Dano",
-      "descricao": "Avança e retorna, causando dano e fazendo inimigos sem energia ficarem sem ação por mais tempo. Inimigos atingidos derrubam Aeos Energy.",
-      "upgrade": "Nível 10: Energia coletada recupera HP e aumenta velocidade."
+    "build": [
+      { "nome": "Sp. Atk Specs", "descricao": "Aumenta Ataque Especial permanentemente a cada gol até um máximo de 6 vezes." },
+      { "nome": "Shell Bell", "descricao": "Reduz ligeiramente os cooldowns e recupera HP ao acertar uma skill." },
+      { "nome": "LIVRE", "descricao": "Item da sua preferência. Cursed Incense, Resonant Guard, Energy Amplifier, etc." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-4",
+      "early": "Comece com Magical Leaf e ajude seu aliado a farmar, aproveite o alto dano da skill pra roubar farm, e use synthesis para aumentar a sustain do time.",
+      "mid_niveis": "5-6",
+      "mid": "Consiga Grass Knot e o use pra restringir o avanço/recuo de inimigos.",
+      "late_niveis": "7+",
+      "late": "Consiga Petal Blizzard e use constantemente sua ult, aproveitando o baixo cooldown."
     },
-    {
-      "emoji": "😈",
-      "nome": "Confuse Ray",
-      "nivel": "6",
-      "cooldown": "10.00s",
-      "tipo": "Hindrance",
-      "descricao": "Lança um raio que confunde os inimigos, fazendo-os atacar aliados por 2s. Inimigos confusos têm o dano reduzido.",
-      "upgrade": "Nível 12: Aumenta a velocidade e a velocidade de ataque do alvo confuso."
-    },
-    {
-      "emoji": "💰",
-      "nome": "Feint Attack",
-      "nivel": "6",
-      "cooldown": "7.00s",
-      "tipo": "Area / Armadilha",
-      "descricao": "Lança energia Aeos falsa no chão. Se um inimigo pisar, explode causando dano ao longo do tempo e reduzindo a velocidade.",
-      "upgrade": "Nível 12: Inimigos derrotados pela armadilha dropam mais energia."
-    }
-  ],
-  "unite_move": {
-    "nome": "Chaos Glower",
-    "nivel": "Nível 8",
-    "cooldown": "100s",
-    "descricao": "Sableye fica imparável e atira luz dos olhos em cone. Inimigos de frente são forçados a preparar retorno à base; se sofrerem dano, ficam sem ação por 1,5s.",
-    "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
+    "dicas": [
+      "Sua cura após o level 7 é baixa, não confie demais",
+      "Na floração, prefira usar Grass Knot primeiro",
+      "Use a ult para salvar aliados com o efeito da buddy barrier e o debuff de dano"
+    ]
   },
-  "build": [
-    {
-      "nome": "Float Stone",
-      "descricao": "Aumenta a velocidade de movimento quando fora de combate. Essencial para rotação e invisibilidade."
+  {
+    "nome": "Mr. Mime",
+    "imagem": "mrmime.jpg",
+    "descricao": "Mr. Mime é um suporte com capacidades tank. Usa seus stuns e barreiras para controlar o campo de batalha e proteger os aliados.",
+    "tags": ["support", "melee", "intermediate", "special"],
+    "evolucao": [],
+    "passiva": {
+      "nome": "Filter",
+      "descricao": "Ao usar uma habilidade, Mr. Mime recebe 10% menos dano por 2s. Isso reforça seu papel de suporte tanque.",
+      "cooldown": ""
     },
-    {
-      "nome": "Exp. Share",
-      "descricao": "Ganha experiência passiva por segundo. Deixa o Sableye relevante mesmo sem farmar."
+    "ataque_basico": "A cada 5s, ganha um ataque carregado que causa dano aumentado e arremessa os inimigos no ar por 0,5s.",
+    "habilidades": [
+      {
+        "emoji": "👏",
+        "nome": "Fake Out",
+        "nivel": "1 ou 3",
+        "cooldown": "7.00s",
+        "tipo": "Melee / Stun",
+        "descricao": "Bate palmas, causando dano e empurrando os inimigos por 0,4s. Use para roubar farm e afastar oponentes.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🔮",
+        "nome": "Confusion",
+        "nivel": "4",
+        "cooldown": "5.00s",
+        "tipo": "Ranged / Stun",
+        "descricao": "Dispara uma onda psíquica que empurra os inimigos. Se baterem na parede, tomam dano bônus e stun de 1,5s. Inimigos afetados por Power Swap também sofrem stun.",
+        "upgrade": "Nível 11: Aumenta o dano."
+      },
+      {
+        "emoji": "🧠",
+        "nome": "Psychic",
+        "nivel": "4",
+        "cooldown": "6.50s",
+        "tipo": "Area / Dano",
+        "descricao": "Pulsa energia ao redor de si, causando dano em área. Após três pulsos, um pulso final stuna por 1s. Cada acerto reduz a Def. Especial do inimigo.",
+        "upgrade": "Nível 11: Os pulsos também reduzem a velocidade em 30%."
+      },
+      {
+        "emoji": "🧱",
+        "nome": "Barrier",
+        "nivel": "6",
+        "cooldown": "7.50s",
+        "tipo": "Hindrance",
+        "descricao": "Cria uma parede que impede a passagem dos inimigos. Inimigos próximos são empurrados e ficam sem ação por 0,5s. Possui 2 cargas.",
+        "upgrade": "Nível 13: Passa a ter 3 cargas."
+      },
+      {
+        "emoji": "🔗",
+        "nome": "Power Swap",
+        "nivel": "6",
+        "cooldown": "4.50s",
+        "tipo": "Buff / Debuff",
+        "descricao": "Cria um vínculo com o alvo. Se for aliado, aumenta velocidade e dano, e cura ao longo do tempo. Se for inimigo, reduz velocidade e dano, e causa dano contínuo.",
+        "upgrade": "Nível 13: Aumenta o buff/dano em aliados e o debuff em inimigos para 20%."
+      }
+    ],
+    "unite_move": {
+      "nome": "Showtime",
+      "nivel": "Nível 9",
+      "cooldown": "100s",
+      "descricao": "Mr. Mime salta e começa uma performance, causando dano em área 4 vezes e ficando imparável. O golpe final causa dano dobrado e stun de 1s.",
+      "buffs": "30% Velocidade, 30% Escudo de HP Máximo (6s)"
     },
-    {
-      "nome": "Leftovers",
-      "descricao": "Recupera uma porcentagem do HP máximo por segundo quando fora de combate."
-    }
-  ],
-  "estrategias": {
-    "early_niveis": "1-2",
-    "early": "Invada a jungle inimiga para roubar buffs e atrasar o jungler adversário. Use Thief para roubar energia e atrapalhar. Tome cuidado com o head, pois você não tem escape sem X Speed.",
-    "mid_niveis": "4-6",
-    "mid": "Pegue Shadow Sneak para invisibilidade ou Knock Off para dano e controle. Use Confuse Ray para desorganizar o time inimigo ou Feint Attack como armadilha.",
-    "late_niveis": "8+",
-    "late": "Use a ult para tirar um inimigo da luta ou forçar um retorno. Continue perturbando a rotação inimiga e protegendo seus carries."
+    "build": [
+      { "nome": "Focus Band", "descricao": "Recupera HP quando estiver com pouca vida, aumentando a sobrevivência." },
+      { "nome": "Resonant Guard", "descricao": "Concede escudo a você e aliados próximos ao usar o Unite Move." },
+      { "nome": "Vanguard Bell", "descricao": "Reduz o dano recebido e fortalece a resistência." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-3",
+      "early": "Comece com Fake Out para roubar farm inimigo e afastar oponentes. Use Light Screen para ser chato, stunnando e atrapalhando a movimentação inimiga perto de você.",
+      "mid_niveis": "4-6",
+      "mid": "Use os stuns das skills do nível 4 para que seus aliados acertem as skills deles com mais facilidade. Depois use as skills do nível 6 para aplicar stuns de forma mais poderosa. Combinações ideais: Confusion + Barrier ou Psychic + Power Swap.",
+      "late_niveis": "9+",
+      "late": "Use a ult para stunnar inimigos em área, impedir o avanço de um oponente que poderia eliminar um aliado facilmente, ou iniciar uma luta com vantagem."
+    },
+    "dicas": [
+      "Confusion + Barrier é uma combinação devastadora perto de paredes.",
+      "Power Swap é excelente para fortalecer um carry ou enfraquecer um assassino.",
+      "Light Screen pode bloquear rotas de fuga e entrada."
+    ]
   },
-  "dicas": [
-    "Sableye é ótimo para estragar o mental do jungler inimigo.",
-    "Sempre tenha um propósito ao engajar: você não causa dano sozinho.",
-    "Jogue como um defensor invisível: proteja seu carry sem ser visto.",
-    "Use a ult para negar a participação de um inimigo em uma luta.",
-    "A invisibilidade permite posicionamentos agressivos.",
-    "É um dos suportes mais difíceis de dominar, mas muito recompensador."
-  ]
-},
-{
-  "nome": "Wigglytuff",
-  "imagem": "wigglytuff.jpg",
-  "descricao": "Wigglytuff faz papel de tank e é ótima para ajudar o time a aplicar dano. Suas habilidades controlam o ritmo da luta.",
-  "tags": ["support", "melee", "intermediate", "special"],
-  "evolucao": [
-    { "tipo": "nome", "valor": "Jigglypuff" },
-    { "tipo": "seta", "valor": "→" },
-    { "tipo": "nivel", "valor": "Nível 4" },
-    { "tipo": "seta", "valor": "→" },
-    { "tipo": "nome", "valor": "Wigglytuff" }
-  ],
-  "passiva": {
-    "nome": "Cute Charm",
-    "descricao": "Quando atingida por um ataque inimigo de curto alcance, encanta o atacante, fazendo-o se aproximar involuntariamente. Cooldown de 10s.",
-    "cooldown": "10s"
+  {
+    "nome": "Psyduck",
+    "imagem": "psyduck.jpg",
+    "descricao": "Psyduck é um suporte focado em stuns e também consegue cumprir papel tank. Suas habilidades desestabilizam os oponentes e criam vantagens para o time.",
+    "tags": ["support", "ranged", "novice", "special"],
+    "evolucao": [],
+    "passiva": {
+      "nome": "Swift Swim + Headache Gauge",
+      "descricao": "Ao sofrer dano, aumenta a velocidade de movimento por 2s. Além disso, acumula uma barra de dor de cabeça; quando cheia, Psyduck fica imparável, empurra inimigos próximos e tem os cooldowns resetados. Durante 10s, suas habilidades são fortalecidas.",
+      "cooldown": "10s (velocidade)"
+    },
+    "ataque_basico": "Ataca com um jato d'água. Psyduck não possui ataque carregado.",
+    "habilidades": [
+      {
+        "emoji": "🔮",
+        "nome": "Confusion",
+        "nivel": "1 ou 3",
+        "cooldown": "6.00s",
+        "tipo": "Ranged / Stun",
+        "descricao": "Lança uma força telecinética que causa dano e stuna por 1s. Com o mysterious power ativo, causa mais dano.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌊",
+        "nome": "Surf",
+        "nivel": "4",
+        "cooldown": "7.50s",
+        "tipo": "Hindrance / Dash",
+        "descricao": "Cria uma onda que causa dano e reduz a velocidade. Psyduck pode surfar na onda, aumentando a própria velocidade e a de aliados que tocarem nela.",
+        "upgrade": "Nível 11: Onda reduz o dano dos inimigos em 25%."
+      },
+      {
+        "emoji": "🫧",
+        "nome": "Bubble Beam",
+        "nivel": "4",
+        "cooldown": "6.50s",
+        "tipo": "Ranged / Utility",
+        "descricao": "Lança um jato de bolhas que marca os inimigos. Ataques básicos de aliados estouram as bolhas, causando dano extra. O dano extra é considerado como sendo do Psyduck, então ele ganha o crédito por last hits em farms ou abates.",
+        "upgrade": "Nível 11: Reduz a velocidade dos inimigos atingidos em 30%."
+      },
+      {
+        "emoji": "⚡",
+        "nome": "Disable",
+        "nivel": "6",
+        "cooldown": "8.00s",
+        "tipo": "Hindrance",
+        "descricao": "Lança eletricidade que stuna e marca os inimigos. A marca aumenta o cooldown do último movimento usado pelo alvo.",
+        "upgrade": "Nível 13: Aumenta a duração do stun para 0,5s."
+      },
+      {
+        "emoji": "🧠",
+        "nome": "Psychic",
+        "nivel": "6",
+        "cooldown": "7.00s",
+        "tipo": "Hindrance",
+        "descricao": "Cria uma área de força telecinética que stuna e puxa inimigos. Com o mysterious power ativo, o alvo marcado é stunado após ser puxado.",
+        "upgrade": "Nível 13: Reduz a Def. Especial dos inimigos atingidos."
+      }
+    ],
+    "unite_move": {
+      "nome": "Full-Power Psy-ay-ay!",
+      "nivel": "Nível 8",
+      "cooldown": "112s",
+      "descricao": "Lança três ondas psíquicas ao redor de si, causando dano e reduzindo o dano dos inimigos em 30% por 3s. Aumenta a headache gauge em 50%.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
+    },
+    "build": [
+      { "nome": "Focus Band", "descricao": "Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência." },
+      { "nome": "Resonant Guard", "descricao": "Ao causar dano, concede um escudo a você e a um aliado próximo." },
+      { "nome": "Vanguard Bell", "descricao": "Restaura HP sempre que você aplica controle de grupo em um oponente." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-3",
+      "early": "Pegue Confusion primeiro e ajude seu aliado a farmar. Depois pegue Tail Whip. Use Tail Whip + Confusion para interromper o que o inimigo tentar fazer, seja smitar farm ou eliminar um aliado.",
+      "mid_niveis": "4-6",
+      "mid": "Pegue Bubble Beam para ajudar ofensivamente, ou Surf (apenas se não houver muito stun na comp inimiga). Use seus stuns para atrapalhar o jogo inimigo.",
+      "late_niveis": "8+",
+      "late": "Use a ult no começo das team fights para aproveitar o debuff de dano. Use Psychic para reposicionar oponentes e Disable para punir comps bloqueadas."
+    },
+    "dicas": [
+      "Use seus vários stuns, puxões e empurrões para desestabilizar os oponentes (até mentalmente kkkk).",
+      "Bubble Beam funciona parecido com Choice Specs, e o dano extra sempre conta como do Psyduck.",
+      "A ult é ótima para iniciar lutas e reduzir o dano inimigo."
+    ]
   },
-  "ataque_basico": "A cada terceiro ataque, Wigglytuff ganha um ataque carregado que causa dano e stuna por 0,5s.",
-  "habilidades": [
-    {
-      "emoji": "👋",
-      "nome": "Pound",
-      "nivel": "1 ou 2",
-      "cooldown": "5.00s",
-      "tipo": "Melee / Slow",
-      "descricao": "Bate no chão duas vezes em cone, causando dano e reduzindo a velocidade em 40% por 0,5s.",
-      "upgrade": ""
+  {
+    "nome": "Sableye",
+    "imagem": "sableye.jpg",
+    "descricao": "Sableye é o suporte mais próximo de um assassino. Fica invisível, invade a jungle inimiga, rouba buffs e estraga o mental do adversário. É complexo, mas recompensador.",
+    "tags": ["support", "melee", "intermediate", "physical"],
+    "evolucao": [],
+    "passiva": {
+      "nome": "Prankster",
+      "descricao": "Quando Sableye está fora da visão inimiga, entra em stealth e ganha 10% de velocidade. Ao entrar no campo de visão inimigo, permanece invisível por mais 1,7s. Sai do stealth ao atacar.",
+      "cooldown": ""
     },
-    {
-      "emoji": "🛡️",
-      "nome": "Defense Curl",
-      "nivel": "1 ou 2",
-      "cooldown": "8.00s",
-      "tipo": "Hindrance",
-      "descricao": "Ganha um escudo de 25% do HP máximo por 0,5s e rola para frente, jogando inimigos no ar por 0,5s. Se bater em obstáculo, reseta o cooldown de Pound.",
-      "upgrade": ""
+    "ataque_basico": "A cada terceiro ataque, lança um ataque carregado que causa dano e reduz a velocidade em 20%. Se estiver em stealth, aplica medo por 1s, forçando o inimigo a se afastar.",
+    "habilidades": [
+      {
+        "emoji": "💎",
+        "nome": "Thief",
+        "nivel": "1 ou 2",
+        "cooldown": "7.50s",
+        "tipo": "Dash / Dano",
+        "descricao": "Avança na direção designada, causando dano e roubando 5 de energia Aeos do inimigo. Se o inimigo não tiver energia, fica sem ação por 0,5s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🌑",
+        "nome": "Shadow Sneak",
+        "nivel": "4",
+        "cooldown": "12.00s",
+        "tipo": "Buff / Stealth",
+        "descricao": "Aplica um buff que deixa Sableye invisível após 1,5s e aumenta a velocidade. Ao entrar em stealth, prepara um ataque carregado com dano extra.",
+        "upgrade": "Nível 10: Aumenta a duração e restaura HP enquanto estiver em stealth."
+      },
+      {
+        "emoji": "👊",
+        "nome": "Knock Off",
+        "nivel": "4",
+        "cooldown": "8.50s",
+        "tipo": "Hindrance / Dano",
+        "descricao": "Avança e retorna, causando dano e fazendo inimigos sem energia ficarem sem ação por mais tempo. Inimigos atingidos derrubam Aeos Energy.",
+        "upgrade": "Nível 10: Energia coletada recupera HP e aumenta velocidade."
+      },
+      {
+        "emoji": "😈",
+        "nome": "Confuse Ray",
+        "nivel": "6",
+        "cooldown": "10.00s",
+        "tipo": "Hindrance",
+        "descricao": "Lança um raio que confunde os inimigos, fazendo-os atacar aliados por 2s. Inimigos confusos têm o dano reduzido.",
+        "upgrade": "Nível 12: Aumenta a velocidade e a velocidade de ataque do alvo confuso."
+      },
+      {
+        "emoji": "💰",
+        "nome": "Feint Attack",
+        "nivel": "6",
+        "cooldown": "7.00s",
+        "tipo": "Area / Armadilha",
+        "descricao": "Lança energia Aeos falsa no chão. Se um inimigo pisar, explode causando dano ao longo do tempo e reduzindo a velocidade.",
+        "upgrade": "Nível 12: Inimigos derrotados pela armadilha dropam mais energia."
+      }
+    ],
+    "unite_move": {
+      "nome": "Chaos Glower",
+      "nivel": "Nível 8",
+      "cooldown": "100s",
+      "descricao": "Sableye fica imparável e atira luz dos olhos em cone. Inimigos de frente são forçados a preparar retorno à base; se sofrerem dano, ficam sem ação por 1,5s.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
     },
-    {
-      "emoji": "🎵",
-      "nome": "Sing",
-      "nivel": "4",
-      "cooldown": "8.00s",
-      "tipo": "Area / Sleep",
-      "descricao": "Canta, reduzindo a velocidade dos inimigos e aumentando a própria velocidade. Inimigos que ficarem na área por 4 notas adormecem e têm suas defesas reduzidas.",
-      "upgrade": "Nível 12: Aumenta a duração do sono."
+    "build": [
+      { "nome": "Float Stone", "descricao": "Aumenta a velocidade de movimento quando fora de combate. Essencial para rotação e invisibilidade." },
+      { "nome": "Exp. Share", "descricao": "Ganha experiência passiva por segundo. Deixa o Sableye relevante mesmo sem farmar." },
+      { "nome": "Leftovers", "descricao": "Recupera uma porcentagem do HP máximo por segundo quando fora de combate." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-2",
+      "early": "Invada a jungle inimiga para roubar buffs e atrasar o jungler adversário. Use Thief para roubar energia e atrapalhar. Tome cuidado com o head, pois você não tem escape sem X Speed.",
+      "mid_niveis": "4-6",
+      "mid": "Pegue Shadow Sneak para invisibilidade ou Knock Off para dano e controle. Use Confuse Ray para desorganizar o time inimigo ou Feint Attack como armadilha.",
+      "late_niveis": "8+",
+      "late": "Use a ult para tirar um inimigo da luta ou forçar um retorno. Continue perturbando a rotação inimiga e protegendo seus carries."
     },
-    {
-      "emoji": "🌀",
-      "nome": "Rollout",
-      "nivel": "4",
-      "cooldown": "10.00s",
-      "tipo": "Hindrance",
-      "descricao": "Ganha escudo e rola para frente, ficando imparável. Joga inimigos no ar e reseta o cooldown de Pound, Double Slap e Dazzling Gleam ao bater em obstáculos.",
-      "upgrade": "Nível 12: Aumenta o tempo dos inimigos no ar."
-    },
-    {
-      "emoji": "✨",
-      "nome": "Dazzling Gleam",
-      "nivel": "6",
-      "cooldown": "4.00s",
-      "tipo": "Area / Dano",
-      "descricao": "Emite um flash de energia encantada, causando dano em cone em dois tempos.",
-      "upgrade": "Nível 10: O primeiro flash reduz a velocidade em 40%."
-    },
-    {
-      "emoji": "👋",
-      "nome": "Double Slap",
-      "nivel": "6",
-      "cooldown": "5.00s",
-      "tipo": "Melee / Slow",
-      "descricao": "Desfere uma sequência de tapas em cone, causando dano múltiplas vezes e reduzindo a velocidade.",
-      "upgrade": "Nível 10: Aumenta o número de tapas."
-    }
-  ],
-  "unite_move": {
-    "nome": "Starlight Recital",
-    "nivel": "Nível 8",
-    "cooldown": "89s",
-    "descricao": "Canta e fica imparável por 3s, dando escudo a aliados próximos e removendo status negativos. Quando o escudo expira, aliados são curados.",
-    "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
+    "dicas": [
+      "Sableye é ótimo para estragar o mental do jungler inimigo.",
+      "Sempre tenha um propósito ao engajar: você não causa dano sozinho.",
+      "Jogue como um defensor invisível: proteja seu carry sem ser visto."
+    ]
   },
-  "build": [
-    {
-      "nome": "Focus Band",
-      "descricao": "Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência."
+  {
+    "nome": "Wigglytuff",
+    "imagem": "wigglytuff.jpg",
+    "descricao": "Wigglytuff faz papel de tank e é ótima para ajudar o time a aplicar dano. Suas habilidades controlam o ritmo da luta.",
+    "tags": ["support", "melee", "intermediate", "special"],
+    "evolucao": [
+      { "tipo": "nome", "valor": "Jigglypuff" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nivel", "valor": "Nível 4" },
+      { "tipo": "seta", "valor": "→" },
+      { "tipo": "nome", "valor": "Wigglytuff" }
+    ],
+    "passiva": {
+      "nome": "Cute Charm",
+      "descricao": "Quando atingida por um ataque inimigo de curto alcance, encanta o atacante, fazendo-o se aproximar involuntariamente. Cooldown de 10s.",
+      "cooldown": "10s"
     },
-    {
-      "nome": "Resonant Guard",
-      "descricao": "Ao causar dano, concede um escudo a você e a um aliado próximo."
+    "ataque_basico": "A cada terceiro ataque, Wigglytuff ganha um ataque carregado que causa dano e stuna por 0,5s.",
+    "habilidades": [
+      {
+        "emoji": "👋",
+        "nome": "Pound",
+        "nivel": "1 ou 2",
+        "cooldown": "5.00s",
+        "tipo": "Melee / Slow",
+        "descricao": "Bate no chão duas vezes em cone, causando dano e reduzindo a velocidade em 40% por 0,5s.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🛡️",
+        "nome": "Defense Curl",
+        "nivel": "1 ou 2",
+        "cooldown": "8.00s",
+        "tipo": "Hindrance",
+        "descricao": "Ganha um escudo de 25% do HP máximo por 0,5s e rola para frente, jogando inimigos no ar por 0,5s. Se bater em obstáculo, reseta o cooldown de Pound.",
+        "upgrade": ""
+      },
+      {
+        "emoji": "🎵",
+        "nome": "Sing",
+        "nivel": "4",
+        "cooldown": "8.00s",
+        "tipo": "Area / Sleep",
+        "descricao": "Canta, reduzindo a velocidade dos inimigos e aumentando a própria velocidade. Inimigos que ficarem na área por 4 notas adormecem e têm suas defesas reduzidas.",
+        "upgrade": "Nível 12: Aumenta a duração do sono."
+      },
+      {
+        "emoji": "🌀",
+        "nome": "Rollout",
+        "nivel": "4",
+        "cooldown": "10.00s",
+        "tipo": "Hindrance",
+        "descricao": "Ganha escudo e rola para frente, ficando imparável. Joga inimigos no ar e reseta o cooldown de Pound, Double Slap e Dazzling Gleam ao bater em obstáculos.",
+        "upgrade": "Nível 12: Aumenta o tempo dos inimigos no ar."
+      },
+      {
+        "emoji": "✨",
+        "nome": "Dazzling Gleam",
+        "nivel": "6",
+        "cooldown": "4.00s",
+        "tipo": "Area / Dano",
+        "descricao": "Emite um flash de energia encantada, causando dano em cone em dois tempos.",
+        "upgrade": "Nível 10: O primeiro flash reduz a velocidade em 40%."
+      },
+      {
+        "emoji": "👋",
+        "nome": "Double Slap",
+        "nivel": "6",
+        "cooldown": "5.00s",
+        "tipo": "Melee / Slow",
+        "descricao": "Desfere uma sequência de tapas em cone, causando dano múltiplas vezes e reduzindo a velocidade.",
+        "upgrade": "Nível 10: Aumenta o número de tapas."
+      }
+    ],
+    "unite_move": {
+      "nome": "Starlight Recital",
+      "nivel": "Nível 8",
+      "cooldown": "89s",
+      "descricao": "Canta e fica imparável por 3s, dando escudo a aliados próximos e removendo status negativos. Quando o escudo expira, aliados são curados.",
+      "buffs": "30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)"
     },
-    {
-      "nome": "Vanguard Bell",
-      "descricao": "Restaura HP sempre que você aplica controle de grupo em um oponente."
-    }
-  ],
-  "estrategias": {
-    "early_niveis": "1-2",
-    "early": "Ajude seu aliado a farmar e roube farms inimigos com Pound. Use Defense Curl para resetar o Pound e stunnar inimigos.",
-    "mid_niveis": "4-6",
-    "mid": "Escolha sempre Sing no nível 4 pela utilidade de sono e redução de defesas. No nível 6, qualquer uma das skills é viável; depende da sua preferência.",
-    "late_niveis": "8+",
-    "late": "Use a ult para limpar aliados de stuns e dar sobrevida ao time. Tente usar quando 3 ou mais aliados estiverem no alcance."
-  },
-  "dicas": [
-    "Wigglytuff é tanque, fique na frente protegendo os carries.",
-    "Sing é excelente para preparar emboscadas.",
-    "Defense Curl e Rollout podem surpreender inimigos.",
-    "A ult pode virar uma luta se usada no momento certo.",
-    "Não tenha medo de iniciar lutas."
-  ]
-}
+    "build": [
+      { "nome": "Focus Band", "descricao": "Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência." },
+      { "nome": "Resonant Guard", "descricao": "Ao causar dano, concede um escudo a você e a um aliado próximo." },
+      { "nome": "Vanguard Bell", "descricao": "Restaura HP sempre que você aplica controle de grupo em um oponente." }
+    ],
+    "estrategias": {
+      "early_niveis": "1-2",
+      "early": "Ajude seu aliado a farmar e roube farms inimigos com Pound. Use Defense Curl para resetar o Pound e stunnar inimigos.",
+      "mid_niveis": "4-6",
+      "mid": "Escolha sempre Sing no nível 4 pela utilidade de sono e redução de defesas. No nível 6, qualquer uma das skills é viável; depende da sua preferência.",
+      "late_niveis": "8+",
+      "late": "Use a ult para limpar aliados de stuns e dar sobrevida ao time. Tente usar quando 3 ou mais aliados estiverem no alcance."
+    },
+    "dicas": [
+      "Wigglytuff é tanque, fique na frente protegendo os carries.",
+      "Sing é excelente para preparar emboscadas.",
+      "Defense Curl e Rollout podem surpreender inimigos."
+    ]
+  }
 ]
