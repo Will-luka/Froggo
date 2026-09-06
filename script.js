@@ -216,3 +216,17 @@ document.addEventListener('keydown', function(e) {
         });
     }
 });
+
+const btnSurpreenda = document.getElementById('btn-surpreenda');
+if (btnSurpreenda) {
+    btnSurpreenda.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pokemons = [
+            'alcremie.html', 'blissey.html', 'clefable.html', 'comfey.html',
+            'eldegoss.html', 'hoopa.html', 'latias.html', 'meganium.html',
+            'mrmime.html', 'psyduck.html', 'sableye.html', 'wigglytuff.html'
+        ];
+        const aleatorio = pokemons[Math.floor(Math.random() * pokemons.length)];
+        window.location.href = aleatorio;
+    });
+}
