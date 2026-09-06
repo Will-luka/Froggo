@@ -33,14 +33,6 @@
     font-weight: bold;
 }
 
-.builder-section-title {
-    color: var(--white);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary);
-}
-
 .builder-select {
     background-color: rgba(255, 255, 255, 0.05);
     border: 2px solid var(--card-border);
@@ -87,11 +79,18 @@
     margin-bottom: 1.5rem;
 }
 
+.skill-calc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
 .skill-calc-name {
     color: var(--white);
     font-size: 1.6rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .skill-calc-type {
@@ -159,19 +158,44 @@
     border: 2px solid var(--card-border);
     border-radius: 8px;
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .item-desc-name {
     color: var(--white);
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .item-desc-text {
     color: var(--lighter-gray);
     font-size: 1.3rem;
     line-height: 1.5;
+}
+
+/* Imagens dos itens e skills */
+.item-icon-img,
+.skill-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 0.8rem;
+    vertical-align: middle;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem;
+    flex-shrink: 0;
+}
+
+.builder-section-title {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
 }
 
 /* Responsividade */
@@ -183,28 +207,4 @@
     .stats-final-container {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-.item-icon-img, .skill-icon-img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    margin-right: 0.8rem;
-    vertical-align: middle;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.3rem;
-}
-
-.skill-calc-header {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.item-desc-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
