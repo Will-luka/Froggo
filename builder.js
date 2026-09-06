@@ -524,6 +524,12 @@ function getEonStacks() {
     return eonInput ? parseInt(eonInput.value) || 0 : 0;
 }
 
+function normalizarNome(nome) {
+    return nome
+        .replace(/ \(.*?\)/g, '')
+        .replace(/_/g, ' ')
+        .trim();
+}
 function applyHeldItems(baseStats, selectedItems, stacks, eonStacks) {
     const finalStats = { ...baseStats };
     selectedItems.forEach(itemName => {
@@ -619,17 +625,18 @@ function updateResultsOnly() {
         <div class="stat-final-box"><div class="stat-final-label">Sp. Def</div><div class="stat-final-value">${finalStats.spDef}</div></div>
     </div>`;
 
-    let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
-    skills.forEach(skill => {
-        const imgSkill = (imagensMap.skills[pokemonName] && imagensMap.skills[pokemonName][skill.nome]) || '';
-        skillsHTML += `<div class="skill-calc-card">
-            <div class="skill-calc-header">
-                ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
-                <div><div class="skill-calc-name">${skill.nome}</div><div class="skill-calc-type">${skill.tipo}</div></div>
-            </div>
-            <div class="skill-calc-values">Valor: <strong>${skill.valor}</strong></div>
-        </div>`;
-    });
+ let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
+skills.forEach(skill => {
+    const nomeLimpo = normalizarNome(skill.nome);
+    const imgSkill = (imagensMap.skills[pokemonName] && imagensMap.skills[pokemonName][nomeLimpo]) || '';
+    skillsHTML += `<div class="skill-calc-card">
+        <div class="skill-calc-header">
+            ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
+            <div><div class="skill-calc-name">${skill.nome}</div><div class="skill-calc-type">${skill.tipo}</div></div>
+        </div>
+        <div class="skill-calc-values">Valor: <strong>${skill.valor}</strong></div>
+    </div>`;
+});
     resultsPanel.innerHTML = statsHTML + skillsHTML;
 
     let itemsHTML = '';
