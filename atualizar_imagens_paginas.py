@@ -25,7 +25,7 @@ for pokemon in pokemons:
     with open(arquivo, 'r', encoding='utf-8') as f:
         html = f.read()
 
-    # === ITENS DA BUILD ===
+    # ITENS
     for item in pokemon.get('build', []):
         item_nome = item['nome']
         if item_nome == "LIVRE":
@@ -36,11 +36,9 @@ for pokemon in pokemons:
                 if chave.lower() == item_nome.lower():
                     imagem_item = caminho
                     break
-
         if not imagem_item:
             print(f'⚠️ Sem imagem para item {item_nome} em {arquivo}')
             continue
-
         padrao = re.compile(
             r'(<div class="build-item">.*?<h3 class="build-item-name">' + re.escape(item_nome) + r'</h3>)',
             re.DOTALL
@@ -57,7 +55,7 @@ for pokemon in pokemons:
         else:
             print(f'⚠️ Bloco do item {item_nome} não encontrado em {arquivo}')
 
-    # === SKILLS ===
+    # SKILLS
     for skill in pokemon['habilidades']:
         emoji = skill.get('emoji', '')
         skill_nome = skill['nome']
@@ -84,7 +82,7 @@ for pokemon in pokemons:
         else:
             print(f'⚠️ Título da skill {skill_nome} não encontrado em {arquivo}')
 
-    # === UNITE MOVE ===
+    # UNITE MOVE
     unite = pokemon.get('unite_move', {})
     if unite:
         nome_unite = unite['nome']
