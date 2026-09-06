@@ -628,11 +628,11 @@ function updateResultsOnly() {
         <div class="stat-final-box"><div class="stat-final-label">Sp. Def</div><div class="stat-final-value">${finalStats.spDef}</div></div>
     </div>`;
 
- let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
+let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
 skills.forEach(skill => {
     const nomeLimpo = normalizarNome(skill.nome);
-const chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
-const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
+    const chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
+    const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
     skillsHTML += `<div class="skill-calc-card">
         <div class="skill-calc-header">
             ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
