@@ -1,0 +1,126 @@
+{
+  "held_items": {
+    "Accel Bracer": "imagens/held-items/Accel_Bracer.png",
+    "Aeos Cookie": "imagens/held-items/Aeos_Cookie.png",
+    "Amulet Coin": "imagens/held-items/Amulet_Coin.png",
+    "Assault Vest": "imagens/held-items/Assault_Vest.png",
+    "Attack Weight": "imagens/held-items/Attack_Weight.png",
+    "Big Root": "imagens/held-items/Big_Root.png",
+    "Buddy Barrier": "imagens/held-items/Buddy_Barrier.png",
+    "Charging Charm": "imagens/held-items/Charging_Charm.png",
+    "Choice Scarf": "imagens/held-items/Choice_Scarf.png",
+    "Choice Specs": "imagens/held-items/Choice_Specs.png",
+    "Curse Bangle": "imagens/held-items/Curse_Bangle.png",
+    "Curse Incense": "imagens/held-items/Curse_Incense.png",
+    "Drain Crown": "imagens/held-items/Drain_Crown.png",
+    "Drive Lens": "imagens/held-items/Drive_Lens.png",
+    "Energy Amplifier": "imagens/held-items/Energy_Amplifier.png",
+    "Exp Share": "imagens/held-items/Exp_Share.png",
+    "Float Stone": "imagens/held-items/Float_Stone.png",
+    "Focus Band": "imagens/held-items/Focus_Band.png",
+    "Leftovers": "imagens/held-items/Leftovers.png",
+    "Muscle Band": "imagens/held-items/Muscle_Band.png",
+    "Rapid Fire Scarf": "imagens/held-items/Rapid_Fire_Scarf.png",
+    "Razor Claw": "imagens/held-items/Razor_Claw.png",
+    "Rescue Hood": "imagens/held-items/Rescue_Hood.png",
+    "Resonant Guard": "imagens/held-items/Resonant_Guard.png",
+    "Rocky Helmet": "imagens/held-items/Rocky_Helmet.png",
+    "Scope Lens": "imagens/held-items/Scope_Lens.png",
+    "Score Shield": "imagens/held-items/Score_Shield.png",
+    "Shell Bell": "imagens/held-items/Shell_Bell.png",
+    "Slick Spoon": "imagens/held-items/Slick_Spoon.png",
+    "Sp. Atk Specs": "imagens/held-items/Sp._Atk_Specs.png",
+    "Tenacity Belt": "imagens/held-items/Tenacity_Belt.png",
+    "Vanguard Bell": "imagens/held-items/Vanguard_Bell.png",
+    "Weakness Policy": "imagens/held-items/Weakness_Policy.png",
+    "Wise Glasses": "imagens/held-items/Wise_Glasses.png"
+  },
+  "battle_items": {
+    "Eject Button": "imagens/battle-items/Eject_Button.png",
+    "Fluffy Tail": "imagens/battle-items/Fluffy_Tail.png",
+    "Full Heal": "imagens/battle-items/Full_Heal.png",
+    "Goal Getter": "imagens/battle-items/Goal_Getter.png",
+    "Goal Hacker": "imagens/battle-items/Goal_Hacker.png",
+    "Potion": "imagens/battle-items/Potion.png",
+    "Shedinja Doll": "imagens/battle-items/Shedinja_Doll.png",
+    "Slow Smoke": "imagens/battle-items/Slow_Smoke.png",
+    "X Attack": "imagens/battle-items/X_Attack.png",
+    "X Speed": "imagens/battle-items/X_Speed.png"
+  },
+  "skills": {
+    "Blissey": {
+      "Bliss Assistance": "imagens/skills/Blissey/Bliss_Assistance.png",
+      "Egg Bomb": "imagens/skills/Blissey/Egg_Bomb.png",
+      "Heal Pulse": "imagens/skills/Blissey/Heal_Pulse.png",
+      "Helping Hand": "imagens/skills/Blissey/Helping_Hand.png",
+      "Pound": "imagens/skills/Blissey/Pound.png",
+      "Safeguard": "imagens/skills/Blissey/Safeguard.png",
+      "Soft-Boiled": "imagens/skills/Blissey/Soft-Boiled.png"
+    },
+    "Clefable": {
+      "Disarming Voice": "imagens/skills/Clefable/Disarming_Voice.png",
+      "Draining Kiss": "imagens/skills/Clefable/Draining_Kiss.png",
+      "Follow Me": "imagens/skills/Clefable/Follow_Me.png",
+      "Gravity": "imagens/skills/Clefable/Gravity.png",
+      "Heal Pulse": "imagens/skills/Clefable/Heal_Pulse.png",
+      "Moonlight": "imagens/skills/Clefable/Moonlight.png",
+      "Wonder Wish": "imagens/skills/Clefable/Wonder_Wish.png"
+    },
+    "Comfey": {
+      "Floral Healing": "imagens/skills/Comfey/Floral_Healing.png",
+      "Flowery Fields Forever": "imagens/skills/Comfey/Flowery_Fields_Forever.png",
+      "Grass Knot": "imagens/skills/Comfey/Grass_Knot.png",
+      "Magical Leaf": "imagens/skills/Comfey/Magical_Leaf.png",
+      "Sweet Kiss": "imagens/skills/Comfey/Sweet_Kiss.png",
+      "Synthesis": "imagens/skills/Comfey/Synthesis.png",
+      "Vine Whip": "imagens/skills/Comfey/Vine_Whip.png"
+    },
+    "Hoopa": {
+      "Astonish": "imagens/skills/Hoopa/Astonish.png",
+      "Psybeam": "imagens/skills/Hoopa/Psybeam.png"
+    },
+    "Latias": {
+      "Confusion": "imagens/skills/Latias/Confusion.png",
+      "Dragon Breath": "imagens/skills/Latias/Dragon_Breath.png",
+      "Dragon Cheer": "imagens/skills/Latias/Dragon_Cheer.png",
+      "Dragon Pulse": "imagens/skills/Latias/Dragon_Pulse.png",
+      "Mist Ball": "imagens/skills/Latias/Mist_Ball.png",
+      "Mist Blast": "imagens/skills/Latias/Mist_Blast.png",
+      "Swift": "imagens/skills/Latias/Swift.png"
+    },
+    "Meganium": {
+      "Full Bloom Aroma": "imagens/skills/Meganium/Full_Bloom_Aroma.png",
+      "Grass Knot": "imagens/skills/Meganium/Grass_Knot.png",
+      "Magical Leaf": "imagens/skills/Meganium/Magical_Leaf.png",
+      "Petal Blizzard": "imagens/skills/Meganium/Petal_Blizzard.png",
+      "Synthesis": "imagens/skills/Meganium/Synthesis.png"
+    },
+    "Psyduck": {
+      "Bubble Beam": "imagens/skills/Psyduck/Bubble_Beam.png",
+      "Confusion": "imagens/skills/Psyduck/Confusion.png",
+      "Disable": "imagens/skills/Psyduck/Disable.png",
+      "Full-Power Psy-ay-ay!": "imagens/skills/Psyduck/Full-Power_Psy-ay-ay!.png",
+      "Psychic": "imagens/skills/Psyduck/Psychic.png",
+      "Surf": "imagens/skills/Psyduck/Surf.png",
+      "Tail Whip": "imagens/skills/Psyduck/Tail_Whip.png"
+    },
+    "Sableye": {
+      "Astonish": "imagens/skills/Sableye/Astonish.png",
+      "Chaos Glower": "imagens/skills/Sableye/Chaos_Glower.png",
+      "Confuse Ray": "imagens/skills/Sableye/Confuse_Ray.png",
+      "Feint Attack": "imagens/skills/Sableye/Feint_Attack.png",
+      "Knock Off": "imagens/skills/Sableye/Knock_Off.png",
+      "Shadow Sneak": "imagens/skills/Sableye/Shadow_Sneak.png",
+      "Thief": "imagens/skills/Sableye/Thief.png"
+    },
+    "Wigglytuff": {
+      "Dazzling Gleam": "imagens/skills/Wigglytuff/Dazzling_Gleam.png",
+      "Defense Curl": "imagens/skills/Wigglytuff/Defense_Curl.png",
+      "Double Slap": "imagens/skills/Wigglytuff/Double_Slap.png",
+      "Pound": "imagens/skills/Wigglytuff/Pound.png",
+      "Rollout": "imagens/skills/Wigglytuff/Rollout.png",
+      "Sing": "imagens/skills/Wigglytuff/Sing.png",
+      "Starlight Recital": "imagens/skills/Wigglytuff/Starlight_Recital.png"
+    }
+  }
+}
