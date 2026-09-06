@@ -84,6 +84,15 @@
       "Synthesis": "imagens/skills/Comfey/Synthesis.png",
       "Vine Whip": "imagens/skills/Comfey/Vine_Whip.png"
     },
+    "Eldegoss": {
+      "Cotton Cloud Crash": "imagens/skills/Eldegoss/Cotton_Cloud_Crash.png",
+      "Cotton Guard": "imagens/skills/Eldegoss/Cotton_Guard.png",
+      "Cotton Spore": "imagens/skills/Eldegoss/Cotton_Spore.png",
+      "Leaf Tornado": "imagens/skills/Eldegoss/Leaf_Tornado.png",
+      "Leafage": "imagens/skills/Eldegoss/Leafage.png",
+      "Pollen Puff": "imagens/skills/Eldegoss/Pollen_Puff.png",
+      "Synthesis": "imagens/skills/Eldegoss/Synthesis.png"
+    },
     "Hoopa": {
       "Astonish": "imagens/skills/Hoopa/Astonish.png",
       "Psybeam": "imagens/skills/Hoopa/Psybeam.png"
@@ -103,6 +112,14 @@
       "Magical Leaf": "imagens/skills/Meganium/Magical_Leaf.png",
       "Petal Blizzard": "imagens/skills/Meganium/Petal_Blizzard.png",
       "Synthesis": "imagens/skills/Meganium/Synthesis.png"
+    },
+    "Mr. Mime": {
+      "Barrier": "imagens/skills/Mr. Mime/Barrier.png",
+      "Confusion": "imagens/skills/Mr. Mime/Confusion.png",
+      "Fake Out": "imagens/skills/Mr. Mime/Fake_Out.png",
+      "Power Swap": "imagens/skills/Mr. Mime/Power_Swap.png",
+      "Psychic": "imagens/skills/Mr. Mime/Psychic.png",
+      "Showtime": "imagens/skills/Mr. Mime/Showtime.png"
     },
     "Psyduck": {
       "Bubble Beam": "imagens/skills/Psyduck/Bubble_Beam.png",
