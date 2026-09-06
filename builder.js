@@ -525,18 +525,23 @@ function getEonStacks() {
 }
 
 function normalizarNome(nome) {
-    // Palavras que devem ser ignoradas
-    const palavrasIgnoradas = ['lv', 'nivel', 'boosted', 'mp', 'explosao', 'anel', 'primeiro', 'segundo', 'dano', 'cura', 'escudo', 'adicional', 'por', 'tick', 'tapa', 'acerto', 'onda', 'folha', 'bolha', 'chamas'];
+    const palavrasIgnoradas = [
+        'lv', 'nivel', 'boosted', 'mp', 'explosao', 'anel',
+        'primeiro', 'segundo', 'dano', 'cura', 'escudo',
+        'adicional', 'por', 'tick', 'tapa', 'acerto', 'onda',
+        'folha', 'bolha', 'chamas', 'fortalecido', 'final',
+        'inicial', 'basico', 'ataque'
+    ];
     
     return nome
         .toLowerCase()
-        .replace(/ \(.*?\)/g, '')   // remove "(...)"
-        .replace(/[_\-]/g, ' ')     // troca _ e - por espaço
-        .replace(/\./g, '')         // remove pontos
-        .replace(/\d+/g, '')        // remove números
+        .replace(/ \(.*?\)/g, '')
+        .replace(/[_\-]/g, ' ')
+        .replace(/\./g, '')
+        .replace(/\d+/g, '')
         .split(' ')
-        .filter(palavra => !palavrasIgnoradas.includes(palavra))  // remove palavras ignoradas
-        .slice(0, 2)                // pega só as duas primeiras palavras restantes
+        .filter(palavra => !palavrasIgnoradas.includes(palavra))
+        .slice(0, 3)
         .join(' ')
         .trim();
 }
