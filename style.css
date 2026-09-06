@@ -392,6 +392,29 @@ a {
     vertical-align: middle;
 }
 
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.quick-action-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color var(--transition), transform var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.quick-action-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
 /* ============================================
    GRADE DE POSTS (página de artigos - antiga)
    ============================================ */
