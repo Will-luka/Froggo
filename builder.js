@@ -631,7 +631,6 @@ function updateResultsOnly() {
  let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
 skills.forEach(skill => {
     const nomeLimpo = normalizarNome(skill.nome);
-    const nomeLimpo = normalizarNome(skill.nome);
 const chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
 const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
     skillsHTML += `<div class="skill-calc-card">
