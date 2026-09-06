@@ -1,0 +1,77 @@
+import json
+import os
+import re
+
+with open('imagens.json', 'r', encoding='utf-8') as f:
+    imagens = json.load(f)
+
+with open('pokemons.json', 'r', encoding='utf-8') as f:
+    pokemons = json.load(f)
+
+for pokemon in pokemons:
+    nome = pokemon['nome']
+    arquivo_base = nome.lower().replace(' ', '-').replace('.', '')
+if arquivo_base == 'mr-mime':
+    arquivo = 'mrmime.html'
+else:
+    arquivo = arquivo_base + '.html'
+
+    if not os.path.exists(arquivo):
+        print(f'❌ {arquivo} não encontrado')
+        continue
+
+    with open(arquivo, 'r', encoding='utf-8') as f:
+        html = f.read()
+
+    for item in pokemon.get('build', []):
+        item_nome = item['nome']
+        imagem_item = None
+        for chave, caminho in imagens.get('held_items', {}).items():
+            if chave.lower() == item_nome.lower():
+                imagem_item = caminho
+                break
+        if imagem_item:
+            html = html.replace(
+                '<div class="item-placeholder">?</div>',
+                f'<img src="{imagem_item}" alt="{item_nome}" class="build-item-img">',
+                1
+            )
+
+    for skill in pokemon['habilidades']:
+        emoji = skill.get('emoji', '')
+        skill_nome = skill['nome']
+        if not emoji:
+            continue
+        imagem_skill = None
+        skills_map = imagens.get('skills', {}).get(nome, {})
+        for chave, caminho in skills_map.items():
+            if chave.lower() == skill_nome.lower() or chave.lower().replace('_', ' ') == skill_nome.lower():
+                imagem_skill = caminho
+                break
+        if imagem_skill:
+            html = html.replace(
+                f'<h2 class="pokemon-card-title">{emoji} {skill_nome}',
+                f'<h2 class="pokemon-card-title"><img src="{imagem_skill}" alt="{skill_nome}" class="skill-title-img"> {skill_nome}'
+            )
+
+    unite = pokemon.get('unite_move', {})
+    if unite:
+        nome_unite = unite['nome']
+        imagem_unite = None
+        skills_map = imagens.get('skills', {}).get(nome, {})
+        for chave, caminho in skills_map.items():
+            if chave.lower() == nome_unite.lower() or chave.lower().replace('_', ' ') == nome_unite.lower():
+                imagem_unite = caminho
+                break
+        if imagem_unite:
+            html = html.replace(
+                f'<h2 class="pokemon-card-title">👑 Unite Move: {nome_unite}',
+                f'<h2 class="pokemon-card-title"><img src="{imagem_unite}" alt="{nome_unite}" class="skill-title-img"> Unite Move: {nome_unite}'
+            )
+
+    with open(arquivo, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+    print(f'✅ {arquivo} atualizado')
+
+print('Concluído!')
