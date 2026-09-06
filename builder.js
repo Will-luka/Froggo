@@ -525,13 +525,20 @@ function getEonStacks() {
 }
 
 function normalizarNome(nome) {
+    // Palavras que devem ser ignoradas
+    const palavrasIgnoradas = ['lv', 'nivel', 'boosted', 'mp', 'explosao', 'anel', 'primeiro', 'segundo', 'dano', 'cura', 'escudo', 'adicional', 'por', 'tick', 'tapa', 'acerto', 'onda', 'folha', 'bolha', 'chamas'];
+    
     return nome
+        .toLowerCase()
         .replace(/ \(.*?\)/g, '')   // remove "(...)"
         .replace(/[_\-]/g, ' ')     // troca _ e - por espaço
         .replace(/\./g, '')         // remove pontos
-        .replace(/\s+/g, ' ')       // remove espaços duplicados
-        .trim()
-        .toLowerCase();             // tudo minúsculo
+        .replace(/\d+/g, '')        // remove números
+        .split(' ')
+        .filter(palavra => !palavrasIgnoradas.includes(palavra))  // remove palavras ignoradas
+        .slice(0, 2)                // pega só as duas primeiras palavras restantes
+        .join(' ')
+        .trim();
 }
 function applyHeldItems(baseStats, selectedItems, stacks, eonStacks) {
     const finalStats = { ...baseStats };
