@@ -610,13 +610,53 @@ function updateResultsOnly() {
     const { stats: finalStats, shieldHealMult } = applyPercentEffects(statsAfterItems, selectedHeld, stacks);
     const skills = calculateSkills(pokemonName, level, finalStats, shieldHealMult, eonStacks);
 
-    let statsHTML = `<div class="stats-final-container">
-        <div class="stat-final-box"><div class="stat-final-label">HP</div><div class="stat-final-value">${finalStats.hp}</div></div>
-        <div class="stat-final-box"><div class="stat-final-label">Ataque</div><div class="stat-final-value">${finalStats.atk}</div></div>
-        <div class="stat-final-box"><div class="stat-final-label">Defesa</div><div class="stat-final-value">${finalStats.def}</div></div>
-        <div class="stat-final-box"><div class="stat-final-label">Sp. Atk</div><div class="stat-final-value">${finalStats.spAtk}</div></div>
-        <div class="stat-final-box"><div class="stat-final-label">Sp. Def</div><div class="stat-final-value">${finalStats.spDef}</div></div>
-    </div>`;
+    const statsBase = getPokemonStats(pokemonName, level);
+const statsItens = finalStats;
+
+const nomesStats = ['HP', 'Ataque', 'Defesa', 'Sp. Atk', 'Sp. Def'];
+const chavesStats = ['hp', 'atk', 'def', 'spAtk', 'spDef'];
+const coresBase = '#4d4d4d';
+const coresItens = ['#4CAF50', '#FF9800', '#9C27B0', '#2196F3', '#F44336'];
+
+let statsHTML = '<div class="stats-bars-container">';
+
+nomesStats.forEach((nomeStat, index) => {
+    const chave = chavesStats[index];
+    const base = statsBase[chave];
+    const total = statsItens[chave];
+    const maxValor = Math.max(total, base, 1);
+
+    let segmentos = '';
+
+    // Segmento base
+    if (base > 0) {
+        const largura = (base / maxValor) * 100;
+        segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${coresBase};" data-tooltip="Base: ${base}"><span class="stat-bar-tooltip">Base: ${base}</span></div>`;
+    }
+
+    // Segmentos dos itens
+    const itensSelecionados = [window.held1Selecionado, window.held2Selecionado, window.held3Selecionado].filter(Boolean);
+    itensSelecionados.forEach((itemNome, idx) => {
+        const item = heldItemsData[itemNome];
+        if (!item || !item.atributos) return;
+        const valorItem = item.atributos[chave] || 0;
+        if (valorItem > 0) {
+            const largura = (valorItem / maxValor) * 100;
+            const cor = coresItens[idx % coresItens.length];
+            segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${cor};" data-tooltip="${itemNome}: +${valorItem}"><span class="stat-bar-tooltip">${itemNome}: +${valorItem}</span></div>`;
+        }
+    });
+
+    statsHTML += `
+        <div class="stacked-bar-row">
+            <span class="stacked-bar-label">${nomeStat}</span>
+            <div class="stat-bar-stack">${segmentos}</div>
+            <span class="stacked-bar-total">${total}</span>
+        </div>
+    `;
+});
+
+statsHTML += '</div>';
 
     let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
     skills.forEach(skill => {
