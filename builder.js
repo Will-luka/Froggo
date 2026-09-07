@@ -446,12 +446,7 @@ const stackItems = {
     "Weakness Policy": { maxStacks: 4, atkPercentPerStack: 2.5 }
 };
 
-const pokemonSelect = document.getElementById('pokemon-select');
 const levelSelect = document.getElementById('level-select');
-const held1 = document.getElementById('held1');
-const held2 = document.getElementById('held2');
-const held3 = document.getElementById('held3');
-const battleItem = document.getElementById('battle-item');
 const resultsPanel = document.getElementById('results-panel');
 const itemDescContainer = document.getElementById('item-desc');
 
@@ -462,6 +457,8 @@ stacksContainer.id = 'stacks-container';
 stacksContainer.style.marginTop = '1rem';
 document.querySelector('.builder-panel').appendChild(stacksContainer);
 
+let customSelects = {};
+
 async function carregarImagens() {
     try {
         const resposta = await fetch('imagens.json');
@@ -471,26 +468,6 @@ async function carregarImagens() {
     } catch (erro) {
         console.warn('Não foi possível carregar imagens.json:', erro);
     }
-}
-
-function populateItemSelects() {
-    const heldSelects = [held1, held2, held3];
-    heldSelects.forEach(select => {
-        select.innerHTML = '<option value="">-- Nenhum --</option>';
-        Object.keys(heldItemsData).forEach(itemName => {
-            const option = document.createElement('option');
-            option.value = itemName;
-            option.textContent = itemName;
-            select.appendChild(option);
-        });
-    });
-    battleItem.innerHTML = '<option value="">-- Nenhum --</option>';
-    Object.keys(battleItemsData).forEach(itemName => {
-        const option = document.createElement('option');
-        option.value = itemName;
-        option.textContent = itemName;
-        battleItem.appendChild(option);
-    });
 }
 
 function populateLevelSelect() {
@@ -604,9 +581,9 @@ function calculateSkills(pokemonName, level, finalStats, shieldHealMult, eonStac
 }
 
 function updateStackInputs() {
-    const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
+    const selectedHeld = [window.held1Selecionado, window.held2Selecionado, window.held3Selecionado].filter(v => v);
     const neededItems = selectedHeld.filter(item => stackItems[item]);
-    const needsEon = pokemonSelect.value === "Latias";
+    const needsEon = window.pokemonSelecionado === "Latias";
     let html = '';
     neededItems.forEach(itemName => {
         const max = stackItems[itemName].maxStacks;
@@ -621,12 +598,12 @@ function updateStackInputs() {
 }
 
 function updateResultsOnly() {
-    const pokemonName = pokemonSelect.value;
+    const pokemonName = window.pokemonSelecionado;
     const level = levelSelect.value;
     if (!pokemonName || !level) return;
     const baseStats = getPokemonStats(pokemonName, level);
     if (!baseStats) return;
-    const selectedHeld = [held1.value, held2.value, held3.value].filter(v => v !== "");
+    const selectedHeld = [window.held1Selecionado, window.held2Selecionado, window.held3Selecionado].filter(v => v);
     const stacks = getSelectedStacks();
     const eonStacks = getEonStacks();
     const statsAfterItems = applyHeldItems(baseStats, selectedHeld, stacks, eonStacks);
@@ -671,16 +648,16 @@ function updateResultsOnly() {
             itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${itemName}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${itemName}</div><div class="item-desc-text">${heldItemsData[itemName].efeito}</div></div></div>`;
         }
     });
-    if (battleItem.value && battleItemsData[battleItem.value]) {
-        const chaveBattle = Object.keys(imagensMap.battle_items || {}).find(k => normalizarNome(k) === normalizarNome(battleItem.value));
+    if (window.battleSelecionado && battleItemsData[window.battleSelecionado]) {
+        const chaveBattle = Object.keys(imagensMap.battle_items || {}).find(k => normalizarNome(k) === normalizarNome(window.battleSelecionado));
         const img = chaveBattle ? imagensMap.battle_items[chaveBattle] : '';
-        itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${battleItem.value}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${battleItem.value} (Battle Item)</div><div class="item-desc-text">${battleItemsData[battleItem.value].efeito}</div></div></div>`;
+        itemsHTML += `<div class="item-desc-card">${img ? `<img src="${img}" alt="${window.battleSelecionado}" class="item-icon-img" onerror="this.style.display='none'">` : ''}<div><div class="item-desc-name">${window.battleSelecionado} (Battle Item)</div><div class="item-desc-text">${battleItemsData[window.battleSelecionado].efeito}</div></div></div>`;
     }
     itemDescContainer.innerHTML = itemsHTML;
 }
 
 function renderResults() {
-    const pokemonName = pokemonSelect.value;
+    const pokemonName = window.pokemonSelecionado;
     const level = levelSelect.value;
     if (!pokemonName || !level) {
         resultsPanel.innerHTML = '<p class="results-placeholder">Selecione um Pokémon para ver os resultados.</p>';
@@ -691,31 +668,6 @@ function renderResults() {
     updateStackInputs();
     updateResultsOnly();
 }
-
-function initEvents() {
-    pokemonSelect.addEventListener('change', renderResults);
-    levelSelect.addEventListener('change', updateResultsOnly);
-    held1.addEventListener('change', renderResults);
-    held2.addEventListener('change', renderResults);
-    held3.addEventListener('change', renderResults);
-    battleItem.addEventListener('change', updateResultsOnly);
-}
-
-async function initBuilder() {
-    await carregarImagens();
-    populateLevelSelect();
-    populateItemSelects();
-    initEvents();
-    renderResults();
-}
-
-document.addEventListener('DOMContentLoaded', initBuilder);
-
-// ============================================
-// INICIALIZAÇÃO DOS CUSTOM SELECTS
-// ============================================
-
-let customSelects = {};
 
 function iniciarCustomSelects() {
     const opcoesPokemon = Object.keys(pokemonData).map(nome => ({
@@ -743,7 +695,7 @@ function iniciarCustomSelects() {
             opcoes: opcoesPokemon,
             onChange: (op) => {
                 window.pokemonSelecionado = op.value;
-                if (typeof renderResults === 'function') renderResults();
+                renderResults();
             }
         },
         {
@@ -752,7 +704,7 @@ function iniciarCustomSelects() {
             opcoes: opcoesHeld,
             onChange: (op) => {
                 window.held1Selecionado = op.value;
-                if (typeof renderResults === 'function') renderResults();
+                renderResults();
             }
         },
         {
@@ -761,7 +713,7 @@ function iniciarCustomSelects() {
             opcoes: opcoesHeld,
             onChange: (op) => {
                 window.held2Selecionado = op.value;
-                if (typeof renderResults === 'function') renderResults();
+                renderResults();
             }
         },
         {
@@ -770,7 +722,7 @@ function iniciarCustomSelects() {
             opcoes: opcoesHeld,
             onChange: (op) => {
                 window.held3Selecionado = op.value;
-                if (typeof renderResults === 'function') renderResults();
+                renderResults();
             }
         },
         {
@@ -779,17 +731,17 @@ function iniciarCustomSelects() {
             opcoes: opcoesBattle,
             onChange: (op) => {
                 window.battleSelecionado = op.value;
-                if (typeof updateResultsOnly === 'function') updateResultsOnly();
+                updateResultsOnly();
             }
         }
     ]);
 }
 
-// Chame depois de carregar as imagens e montar os dados
 async function initBuilder() {
     await carregarImagens();
     populateLevelSelect();
     iniciarCustomSelects();
-    initEvents();
     renderResults();
 }
+
+document.addEventListener('DOMContentLoaded', initBuilder);
