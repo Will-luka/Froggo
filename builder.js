@@ -740,6 +740,7 @@ function iniciarCustomSelects() {
 async function initBuilder() {
     await carregarImagens();
     populateLevelSelect();
+    levelSelect.addEventListener('change', updateResultsOnly);
     iniciarCustomSelects();
     renderResults();
 }
