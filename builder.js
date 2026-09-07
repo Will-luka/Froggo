@@ -721,7 +721,7 @@ function iniciarCustomSelects() {
     const opcoesPokemon = Object.keys(pokemonData).map(nome => ({
         value: nome,
         nome: nome,
-        img: `imagens/skills/${nome}/${Object.keys(imagensMap.skills[nome] || {})[0] || ''}`
+        img: `${nome === 'Mr. Mime' ? 'mrmime' : nome.toLowerCase().replace(' ', '-').replace('.', '')}.jpg`
     }));
 
     const opcoesHeld = Object.keys(heldItemsData).map(nome => ({
