@@ -710,3 +710,86 @@ async function initBuilder() {
 }
 
 document.addEventListener('DOMContentLoaded', initBuilder);
+
+// ============================================
+// INICIALIZAÇÃO DOS CUSTOM SELECTS
+// ============================================
+
+let customSelects = {};
+
+function iniciarCustomSelects() {
+    const opcoesPokemon = Object.keys(pokemonData).map(nome => ({
+        value: nome,
+        nome: nome,
+        img: `imagens/skills/${nome}/${Object.keys(imagensMap.skills[nome] || {})[0] || ''}`
+    }));
+
+    const opcoesHeld = Object.keys(heldItemsData).map(nome => ({
+        value: nome,
+        nome: nome,
+        img: imagensMap.held_items[nome] || ''
+    }));
+
+    const opcoesBattle = Object.keys(battleItemsData).map(nome => ({
+        value: nome,
+        nome: nome,
+        img: imagensMap.battle_items[nome] || ''
+    }));
+
+    customSelects = criarCustomSelects([
+        {
+            selector: '[data-type="pokemon"]',
+            tipo: 'pokemon',
+            opcoes: opcoesPokemon,
+            onChange: (op) => {
+                window.pokemonSelecionado = op.value;
+                if (typeof renderResults === 'function') renderResults();
+            }
+        },
+        {
+            selector: '[data-type="held1"]',
+            tipo: 'held1',
+            opcoes: opcoesHeld,
+            onChange: (op) => {
+                window.held1Selecionado = op.value;
+                if (typeof renderResults === 'function') renderResults();
+            }
+        },
+        {
+            selector: '[data-type="held2"]',
+            tipo: 'held2',
+            opcoes: opcoesHeld,
+            onChange: (op) => {
+                window.held2Selecionado = op.value;
+                if (typeof renderResults === 'function') renderResults();
+            }
+        },
+        {
+            selector: '[data-type="held3"]',
+            tipo: 'held3',
+            opcoes: opcoesHeld,
+            onChange: (op) => {
+                window.held3Selecionado = op.value;
+                if (typeof renderResults === 'function') renderResults();
+            }
+        },
+        {
+            selector: '[data-type="battle"]',
+            tipo: 'battle',
+            opcoes: opcoesBattle,
+            onChange: (op) => {
+                window.battleSelecionado = op.value;
+                if (typeof updateResultsOnly === 'function') updateResultsOnly();
+            }
+        }
+    ]);
+}
+
+// Chame depois de carregar as imagens e montar os dados
+async function initBuilder() {
+    await carregarImagens();
+    populateLevelSelect();
+    iniciarCustomSelects();
+    initEvents();
+    renderResults();
+}
