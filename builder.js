@@ -605,7 +605,7 @@ function posicionarTooltip(e, tooltip) {
     tooltip.style.top = e.clientY + 'px';
 }
 
-function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados) {
+function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks) {
     const nomesStats = ['HP', 'Ataque', 'Defesa', 'Sp. Atk', 'Sp. Def'];
     const chavesStats = ['hp', 'atk', 'def', 'spAtk', 'spDef'];
     const coresBase = '#81D4FA'; // azul claro
@@ -729,7 +729,7 @@ function updateResultsOnly() {
 
     // Barras empilhadas
     const itensSelecionados = selectedHeld;
-    const statsHTML = gerarBarrasEmpilhadas(baseStats, finalStats, itensSelecionados);
+    const statsHTML = gerarBarrasEmpilhadas(baseStats, finalStats, itensSelecionados, stacks);
 
     let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
     skills.forEach(skill => {
