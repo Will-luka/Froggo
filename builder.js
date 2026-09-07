@@ -686,6 +686,18 @@ itensSelecionados.forEach((itemNome, idx) => {
     }
 });
 
+    html += `
+        <div class="stacked-bar-row">
+            <span class="stacked-bar-label">${nomeStat}</span>
+            <div class="stat-bar-stack">${segmentos}</div>
+            <span class="stacked-bar-total">${total}</span>
+        </div>`;
+});
+
+html += '</div>';
+return html;
+}
+
 function iniciarTooltipsBarras() {
     document.addEventListener('mouseover', function(e) {
         const seg = e.target.closest('.stat-bar-segment');
