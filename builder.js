@@ -627,52 +627,52 @@ function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks)
             segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${coresBase};" data-tooltip="Base: ${base}"><span class="stat-bar-tooltip">Base: ${base}</span></div>`;
         }
 
-        // Segmentos dos itens
-        itensSelecionados.forEach((itemNome, idx) => {
+        // Primeiro, calcula o total de atributos fixos
+let totalBase = statsBase[chave];
+itensSelecionados.forEach(itemNome => {
+    const item = heldItemsData[itemNome];
+    if (item && item.atributos) {
+        totalBase += item.atributos[chave] || 0;
+        if (stackItems[itemNome] && stacks[itemNome]) {
+            const info = stackItems[itemNome];
+            const count = Math.min(stacks[itemNome], info.maxStacks);
+            if (info.spAtkPerStack && chave === 'spAtk') totalBase += info.spAtkPerStack * count;
+            if (info.atkPerStack && chave === 'atk') totalBase += info.atkPerStack * count;
+            if (info.hpPerStack && chave === 'hp') totalBase += info.hpPerStack * count;
+        }
+    }
+});
+
+// Agora aplica percentuais sobre totalBase
+itensSelecionados.forEach((itemNome, idx) => {
     const item = heldItemsData[itemNome];
     if (!item || !item.atributos) return;
 
     let valorItem = item.atributos[chave] || 0;
     let valorStacks = 0;
 
-    // Soma stacks fixos (Sp. Atk Specs, Attack Weight, Aeos Cookie)
     if (stackItems[itemNome] && stacks[itemNome]) {
         const info = stackItems[itemNome];
         const count = Math.min(stacks[itemNome], info.maxStacks);
-        if (info.spAtkPerStack && chave === 'spAtk') {
-            valorStacks = info.spAtkPerStack * count;
-        }
-        if (info.atkPerStack && chave === 'atk') {
-            valorStacks = info.atkPerStack * count;
-        }
-        if (info.hpPerStack && chave === 'hp') {
-            valorStacks = info.hpPerStack * count;
-        }
+        if (info.spAtkPerStack && chave === 'spAtk') valorStacks = info.spAtkPerStack * count;
+        if (info.atkPerStack && chave === 'atk') valorStacks = info.atkPerStack * count;
+        if (info.hpPerStack && chave === 'hp') valorStacks = info.hpPerStack * count;
     }
 
     valorItem += valorStacks;
 
-    // Adiciona efeitos percentuais para Sp. Atk e Atk
-    if (chave === 'spAtk') {
-        if (itemNome === 'Wise Glasses') {
-            valorItem += Math.round((statsBase[chave] + valorItem) * 0.07);
-        }
-        if (stackItems[itemNome]) {
-            const info = stackItems[itemNome];
-            const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
-            if (info.spAtkPercentPerStack) {
-                valorItem += Math.round((statsBase[chave] + valorItem) * (info.spAtkPercentPerStack / 100) * count);
-            }
-        }
+    // Aplica percentual sobre o totalBase (que já inclui os outros itens)
+    if (chave === 'spAtk' && itemNome === 'Wise Glasses') {
+        valorItem += Math.round(totalBase * 0.07);
     }
-
-    if (chave === 'atk') {
-        if (stackItems[itemNome]) {
-            const info = stackItems[itemNome];
-            const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
-            if (info.atkPercentPerStack) {
-                valorItem += Math.round((statsBase[chave] + valorItem) * (info.atkPercentPerStack / 100) * count);
-            }
+    if (stackItems[itemNome]) {
+        const info = stackItems[itemNome];
+        const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
+        if (info.spAtkPercentPerStack && chave === 'spAtk') {
+            valorItem += Math.round(totalBase * (info.spAtkPercentPerStack / 100) * count);
+        }
+        if (info.atkPercentPerStack && chave === 'atk') {
+            valorItem += Math.round(totalBase * (info.atkPercentPerStack / 100) * count);
         }
     }
 
@@ -685,18 +685,6 @@ function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks)
         segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${cor};" data-tooltip="${tooltipTexto}"><span class="stat-bar-tooltip">${tooltipTexto}</span></div>`;
     }
 });
-        
-        html += `
-            <div class="stacked-bar-row">
-                <span class="stacked-bar-label">${nomeStat}</span>
-                <div class="stat-bar-stack">${segmentos}</div>
-                <span class="stacked-bar-total">${total}</span>
-            </div>`;
-    });
-
-    html += '</div>';
-    return html;
-}
 
 function iniciarTooltipsBarras() {
     document.addEventListener('mouseover', function(e) {
