@@ -629,42 +629,63 @@ function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks)
 
         // Segmentos dos itens
         itensSelecionados.forEach((itemNome, idx) => {
-            const item = heldItemsData[itemNome];
-            if (!item || !item.atributos) return;
+    const item = heldItemsData[itemNome];
+    if (!item || !item.atributos) return;
 
-            let valorItem = item.atributos[chave] || 0;
+    let valorItem = item.atributos[chave] || 0;
+    let valorStacks = 0;
 
-            // Adiciona efeitos percentuais para Sp. Atk e Atk
-            if (chave === 'spAtk') {
-                if (itemNome === 'Wise Glasses') {
-                    valorItem += Math.round((statsBase[chave] + valorItem) * 0.07);
-                }
-                if (stackItems[itemNome]) {
-                    const info = stackItems[itemNome];
-                    const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
-                    if (info.spAtkPercentPerStack) {
-                        valorItem += Math.round((statsBase[chave] + valorItem) * (info.spAtkPercentPerStack / 100) * count);
-                    }
-                }
+    // Soma stacks fixos (Sp. Atk Specs, Attack Weight, Aeos Cookie)
+    if (stackItems[itemNome] && stacks[itemNome]) {
+        const info = stackItems[itemNome];
+        const count = Math.min(stacks[itemNome], info.maxStacks);
+        if (info.spAtkPerStack && chave === 'spAtk') {
+            valorStacks = info.spAtkPerStack * count;
+        }
+        if (info.atkPerStack && chave === 'atk') {
+            valorStacks = info.atkPerStack * count;
+        }
+        if (info.hpPerStack && chave === 'hp') {
+            valorStacks = info.hpPerStack * count;
+        }
+    }
+
+    valorItem += valorStacks;
+
+    // Adiciona efeitos percentuais para Sp. Atk e Atk
+    if (chave === 'spAtk') {
+        if (itemNome === 'Wise Glasses') {
+            valorItem += Math.round((statsBase[chave] + valorItem) * 0.07);
+        }
+        if (stackItems[itemNome]) {
+            const info = stackItems[itemNome];
+            const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
+            if (info.spAtkPercentPerStack) {
+                valorItem += Math.round((statsBase[chave] + valorItem) * (info.spAtkPercentPerStack / 100) * count);
             }
+        }
+    }
 
-            if (chave === 'atk') {
-                if (stackItems[itemNome]) {
-                    const info = stackItems[itemNome];
-                    const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
-                    if (info.atkPercentPerStack) {
-                        valorItem += Math.round((statsBase[chave] + valorItem) * (info.atkPercentPerStack / 100) * count);
-                    }
-                }
+    if (chave === 'atk') {
+        if (stackItems[itemNome]) {
+            const info = stackItems[itemNome];
+            const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
+            if (info.atkPercentPerStack) {
+                valorItem += Math.round((statsBase[chave] + valorItem) * (info.atkPercentPerStack / 100) * count);
             }
+        }
+    }
 
-            if (valorItem > 0) {
-                const largura = (valorItem / maxValor) * 100;
-                const cor = coresItens[idx % coresItens.length];
-                segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${cor};" data-tooltip="${itemNome}: +${valorItem}"><span class="stat-bar-tooltip">${itemNome}: +${valorItem}</span></div>`;
-            }
-        });
-
+    if (valorItem > 0) {
+        const largura = (valorItem / maxValor) * 100;
+        const cor = coresItens[idx % coresItens.length];
+        const tooltipTexto = valorStacks > 0 
+            ? `${itemNome}: +${valorItem} (${item.atributos[chave] || 0} base + ${valorStacks} stacks)`
+            : `${itemNome}: +${valorItem}`;
+        segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${cor};" data-tooltip="${tooltipTexto}"><span class="stat-bar-tooltip">${tooltipTexto}</span></div>`;
+    }
+});
+        
         html += `
             <div class="stacked-bar-row">
                 <span class="stacked-bar-label">${nomeStat}</span>
