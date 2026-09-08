@@ -880,4 +880,13 @@ async function initBuilder() {
     renderResults();
 }
 
+document.getElementById('btn-comparador').addEventListener('click', () => {
+    document.querySelector('.builder-panel').style.display = 'none';
+    document.getElementById('comparador-container').style.display = 'grid';
+
+    // Preenche cada lado com uma cópia simplificada do builder
+    document.getElementById('lado-a').innerHTML = gerarHtmlBuilder('A');
+    document.getElementById('lado-b').innerHTML = gerarHtmlBuilder('B');
+});
+
 document.addEventListener('DOMContentLoaded', initBuilder);
