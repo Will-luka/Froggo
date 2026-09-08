@@ -309,3 +309,23 @@ select.builder-select option {
     font-weight: bold;
     font-size: 1.3rem;
 }
+
+#comparador-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.comparador-lado {
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: var(--card-bg);
+}
+
+@media (max-width: 768px) {
+    #comparador-container {
+        grid-template-columns: 1fr;
+    }
+}
