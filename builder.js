@@ -805,31 +805,6 @@ function renderResults() {
 
 function iniciarCustomSelects() {
     const opcoesPokemon = Object.keys(pokemonData).map(nome => ({
-    value: nome,
-    nome: nome,
-    img: `${nome === 'Mr. Mime' ? 'mrmime' : nome.toLowerCase().replace(' ', '-').replace('.', '')}.jpg`
-}));
-
-const selectsComparador = [
-    {
-        selector: '[data-type="comparador-a"]',
-        tipo: 'comparador-a',
-        opcoes: opcoesPokemon,
-        onChange: (op) => { window.comparadorA = op.value; }
-    },
-    {
-        selector: '[data-type="comparador-b"]',
-        tipo: 'comparador-b',
-        opcoes: opcoesPokemon,
-        onChange: (op) => { window.comparadorB = op.value; }
-    }
-];
-
-selectsComparador.forEach(cfg => {
-    customSelects[cfg.tipo] = new CustomSelect(document.querySelector(cfg.selector), cfg.opcoes, cfg.onChange);
-});
-    
-    const opcoesPokemon = Object.keys(pokemonData).map(nome => ({
         value: nome,
         nome: nome,
         img: `${nome === 'Mr. Mime' ? 'mrmime' : nome.toLowerCase().replace(' ', '-').replace('.', '')}.jpg`
@@ -905,29 +880,4 @@ async function initBuilder() {
     renderResults();
 }
 
-document.getElementById('btn-comparador').addEventListener('click', () => {
-    document.querySelector('.builder-panel').style.display = 'none';
-    document.getElementById('comparador-container').style.display = 'grid';
-});
-
-const selectsComparador = [
-    {
-        selector: '[data-type="comparador-a"]',
-        tipo: 'comparador-a',
-        opcoes: opcoesPokemon,
-        onChange: (op) => { window.comparadorA = op.value; }
-    },
-    {
-        selector: '[data-type="comparador-b"]',
-        tipo: 'comparador-b',
-        opcoes: opcoesPokemon,
-        onChange: (op) => { window.comparadorB = op.value; }
-    }
-];
-
-selectsComparador.forEach(cfg => {
-    customSelects[cfg.tipo] = new CustomSelect(document.querySelector(cfg.selector), cfg.opcoes, cfg.onChange);
-});
-
 document.addEventListener('DOMContentLoaded', initBuilder);
-
