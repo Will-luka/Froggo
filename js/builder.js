@@ -461,7 +461,7 @@ let customSelects = {};
 
 async function carregarImagens() {
     try {
-        const resposta = await fetch('imagens.json');
+        const resposta = await fetch('../imagens.json');
         if (resposta.ok) {
             imagensMap = await resposta.json();
         }
@@ -807,7 +807,7 @@ function iniciarCustomSelects() {
     const opcoesPokemon = Object.keys(pokemonData).map(nome => ({
         value: nome,
         nome: nome,
-        img: `${nome === 'Mr. Mime' ? 'mrmime' : nome.toLowerCase().replace(' ', '-').replace('.', '')}.jpg`
+        img: `../imagens/pokemon/${nome === 'Mr. Mime' ? 'mrmime' : nome.toLowerCase().replace(' ', '-').replace('.', '')}.jpg`
     }));
 
     const opcoesHeld = Object.keys(heldItemsData).map(nome => ({

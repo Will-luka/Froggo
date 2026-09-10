@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gâteau! - Alcremie</title>
+    <title>Gâteau! - Psyduck</title>
     <!-- Favicon -->
     <link rel="icon" href="bolo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Cabeçalho fixo -->
@@ -33,10 +33,10 @@
             <div class="pokemon-card intro-card">
                 <div class="pokemon-intro">
                     <div class="pokemon-intro-image">
-                        <img src="alcremie.jpg" alt="Alcremie">
+                        <img src="imagens/pokemon/psyduck.jpg" alt="Psyduck">
                     </div>
                     <div class="pokemon-intro-info">
-                        <h1 class="pokemon-detail-title">Alcremie</h1>
+                        <h1 class="pokemon-detail-title">Psyduck</h1>
                         <div class="pokemon-tags">
                             <span class="tag tag-support">Support</span>
 <span class="tag tag-ranged">Ranged</span>
@@ -44,7 +44,7 @@
 <span class="tag tag-special">Special</span>
                         </div>
                         <p class="pokemon-description">
-                            Alcremie é um Pokémon Suporte que foca em curar e buffar aliados. Sua passiva Aroma Veil remove hindrances (stuns) de aliados que possuem seus escudos ou buffs. Possui um medidor especial chamado Sweet Gauge que, quando cheio, fortalece suas habilidades.
+                            Psyduck é um suporte focado em stuns e também consegue cumprir papel tank. Suas habilidades desestabilizam os oponentes e criam vantagens para o time.
                         </p>
                     </div>
                 </div>
@@ -53,29 +53,15 @@
             <!-- Grade de cards individuais -->
             <div class="pokemon-cards-container">
                 
-                <!-- Card: Evolução/Transformação -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">🔄 Evolução</h2>
-                    <div class="pokemon-card-content">
-                        <div class="evolution-chain">
-                            <span class="evolution-name">Milcery</span>
-                            <span class="evolution-arrow">→</span>
-                            <span class="evolution-level">Nível 4</span>
-                            <span class="evolution-arrow">→</span>
-                            <span class="evolution-name">Alcremie</span>
-                        </div>
-                    </div>
-                </div>
-
 
                 <!-- Card: Passiva -->
                 <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">✨ Passiva: Aroma Veil</h2>
+                    <h2 class="pokemon-card-title">✨ Passiva: Swift Swim + Headache Gauge</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Quando um aliado está sob efeito de um dos escudos ou buffs de Alcremie, remove quaisquer hindrances aplicados ou que estejam afetando aquele aliado. Esta habilidade entra em cooldown de 10s após remover um hindrance. Esta habilidade também funciona em Alcremie.
+                            Ao sofrer dano, aumenta a velocidade de movimento por 2s. Além disso, acumula uma barra de dor de cabeça; quando cheia, Psyduck fica imparável, empurra inimigos próximos e tem os cooldowns resetados. Durante 10s, suas habilidades são fortalecidas.
                         </p>
-                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 10s</p>
+                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 10s (velocidade)</p>
                     </div>
                 </div>
 
@@ -84,120 +70,102 @@
                     <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Ataca jogando chantilly. Milcery e Alcremie não possuem ataque carregado (boosted attack).
+                            Ataca com um jato d'água. Psyduck não possui ataque carregado.
                         </p>
                     </div>
                 </div>
 
                 
-                <!-- Card: Helping Hand -->
+                <!-- Card: Confusion -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Helping_Hand.png" alt="Helping Hand" class="skill-title-img"> Helping Hand
+                        <img src="imagens/skills/Psyduck/Confusion.png" alt="Confusion" class="skill-title-img"> Confusion
                         <span class="level-badge">Nível 1 ou 3</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Concede a um aliado designado ou a si mesmo um escudo por 3s, além de aumentar o Ataque dele em 40 e Ataque Especial em 25 por 3s.
+                            Lança uma força telecinética que causa dano e stuna por 1s. Com o mysterious power ativo, causa mais dano.
                         </p>
                         <div class="pokemon-card-meta">
                             
-                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
-                            <span class="meta-type">📋 Tipo: Buff</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Stun</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Charm -->
+                <!-- Card: Surf -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Charm.png" alt="Charm" class="skill-title-img"> Charm
-                        <span class="level-badge">Nível 1 ou 3</span>
-                    </h2>
-                    <div class="pokemon-card-content">
-                        <p class="pokemon-card-text">
-                            Encanta um Pokémon alvo, causando dano, reduzindo Ataque em 30, Ataque Especial em 20 e velocidade em 30% por 2s. Aumenta o Sweet Gauge em 2.
-                        </p>
-                        <div class="pokemon-card-meta">
-                            
-                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
-                            <span class="meta-type">📋 Tipo: Debuff</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Decorate -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Decorate.png" alt="Decorate" class="skill-title-img"> Decorate
+                        <img src="imagens/skills/Psyduck/Surf.png" alt="Surf" class="skill-title-img"> Surf
                         <span class="level-badge">Nível 4</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Concede escudo por 4s. Se usado em aliado, Alcremie também recebe escudo. Ataques do protegido causam dano adicional e aumentam o Sweet Gauge.
+                            Cria uma onda que causa dano e reduz a velocidade. Psyduck pode surfar na onda, aumentando a própria velocidade e a de aliados que tocarem nela.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: Aumenta o tamanho do escudo.</span>
+                            <span class="meta-upgrade">⭐ Nível 11: Onda reduz o dano dos inimigos em 25%.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 8.50s</span>
-                            <span class="meta-type">📋 Tipo: Buff</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.50s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance / Dash</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Recover -->
+                <!-- Card: Bubble Beam -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Recover.png" alt="Recover" class="skill-title-img"> Recover
+                        <img src="imagens/skills/Psyduck/Bubble_Beam.png" alt="Bubble Beam" class="skill-title-img"> Bubble Beam
                         <span class="level-badge">Nível 4</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Coloca uma porção de chantilly no local designado. Aliados que pegarem recuperam HP e ganham velocidade.
+                            Lança um jato de bolhas que marca os inimigos. Ataques básicos de aliados estouram as bolhas, causando dano extra. O dano extra é considerado como sendo do Psyduck, então ele ganha o crédito por last hits em farms ou abates.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: O número máximo de usos em reserva aumenta para 3.</span>
+                            <span class="meta-upgrade">⭐ Nível 11: Reduz a velocidade dos inimigos atingidos em 30%.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
-                            <span class="meta-type">📋 Tipo: Recovery</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.50s</span>
+                            <span class="meta-type">📋 Tipo: Ranged / Utility</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Dazzling Gleam -->
+                <!-- Card: Disable -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Dazzling_Gleam.png" alt="Dazzling Gleam" class="skill-title-img"> Dazzling Gleam
+                        <img src="imagens/skills/Psyduck/Disable.png" alt="Disable" class="skill-title-img"> Disable
                         <span class="level-badge">Nível 6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança um raio de luz em cone que causa dano e stun de 0.4s.
+                            Lança eletricidade que stuna e marca os inimigos. A marca aumenta o cooldown do último movimento usado pelo alvo.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano.</span>
+                            <span class="meta-upgrade">⭐ Nível 13: Aumenta a duração do stun para 0,5s.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
                             <span class="meta-type">📋 Tipo: Hindrance</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Sweet Scent -->
+                <!-- Card: Psychic -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Sweet_Scent.png" alt="Sweet Scent" class="skill-title-img"> Sweet Scent
+                        <img src="imagens/skills/Psyduck/Psychic.png" alt="Psychic" class="skill-title-img"> Psychic
                         <span class="level-badge">Nível 6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança perfume que causa dano e reduz velocidade. O anel externo causa slow de 100%.
+                            Cria uma área de força telecinética que stuna e puxa inimigos. Com o mysterious power ativo, o alvo marcado é stunado após ser puxado.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a duração do slow do anel externo para 1.5s.</span>
+                            <span class="meta-upgrade">⭐ Nível 13: Reduz a Def. Especial dos inimigos atingidos.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
-                            <span class="meta-type">📋 Tipo: Debuff</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
+                            <span class="meta-type">📋 Tipo: Hindrance</span>
                         </div>
                     </div>
                 </div>
@@ -206,16 +174,16 @@
                 <!-- Card: Unite Move -->
                 <div class="pokemon-card unite-move-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Alcremie/Fluffy_Cream_Supreme.png" alt="Fluffy Cream Supreme" class="skill-title-img"> Unite Move: Fluffy Cream Supreme
+                        <img src="imagens/skills/Psyduck/Full-Power_Psy-ay-ay!.png" alt="Full-Power Psy-ay-ay!" class="skill-title-img"> Unite Move: Full-Power Psy-ay-ay!
                         <span class="level-badge">Nível 8</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Cria um bolo gigante e fica em cima dele, tornando-se imparável e curando/buffando aliados.
+                            Lança três ondas psíquicas ao redor de si, causando dano e reduzindo o dano dos inimigos em 30% por 3s. Aumenta a headache gauge em 50%.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-cooldown">⏱️ Cooldown: 100s</span>
-                            <span class="meta-type">📋 40% Velocidade, 30% CDR, 30% Escudo de HP Máximo (6s)</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 112s</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
                         </div>
                     </div>
                 </div>
@@ -228,31 +196,31 @@
                             
                             <div class="build-item">
                                 <div class="build-item-icon">
-                                    <img src="imagens/held-items/Rescue_Hood.png" alt="Rescue Hood" class="build-item-img">
+                                    <img src="imagens/held-items/Focus_Band.png" alt="Focus Band" class="build-item-img">
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Rescue Hood</h3>
-                                    <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
+                                    <h3 class="build-item-name">Focus Band</h3>
+                                    <p class="build-item-desc">Quando o HP cai abaixo de 25%, recupera vida gradualmente por 3s. Aumenta a sobrevivência.</p>
                                 </div>
                             </div>
 
                             <div class="build-item">
                                 <div class="build-item-icon">
-                                    <img src="imagens/held-items/Wise_Glasses.png" alt="Wise Glasses" class="build-item-img">
+                                    <img src="imagens/held-items/Resonant_Guard.png" alt="Resonant Guard" class="build-item-img">
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Wise Glasses</h3>
-                                    <p class="build-item-desc">Aumenta o Ataque Especial, amplificando o poder das habilidades.</p>
+                                    <h3 class="build-item-name">Resonant Guard</h3>
+                                    <p class="build-item-desc">Ao causar dano, concede um escudo a você e a um aliado próximo.</p>
                                 </div>
                             </div>
 
                             <div class="build-item">
                                 <div class="build-item-icon">
-                                    <img src="imagens/held-items/Sp._Atk_Specs.png" alt="Sp. Atk Specs" class="build-item-img">
+                                    <img src="imagens/held-items/Vanguard_Bell.png" alt="Vanguard Bell" class="build-item-img">
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Sp. Atk Specs</h3>
-                                    <p class="build-item-desc">Aumenta permanentemente o Ataque Especial ao marcar gols.</p>
+                                    <h3 class="build-item-name">Vanguard Bell</h3>
+                                    <p class="build-item-desc">Restaura HP sempre que você aplica controle de grupo em um oponente.</p>
                                 </div>
                             </div>
 
@@ -268,8 +236,7 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Comece com Charm. Apoie seu aliado em dano para ele terminar os farms mais rapidamente. Use helping hand pra proteger
-                            ou antes de um engaje.
+                            Pegue Confusion primeiro e ajude seu aliado a farmar. Depois pegue Tail Whip. Use Tail Whip + Confusion para interromper o que o inimigo tentar fazer, seja smitar farm ou eliminar um aliado.
                         </p>
                     </div>
                 </div>
@@ -278,12 +245,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         ☀️ Mid Game
-                        <span class="level-badge">Níveis 4-7</span>
+                        <span class="level-badge">Níveis 4-6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Escolha Decorate ou Recover. Recover é o mais recomendado. Tente prever onde seus aliados estarão quando mirar os
-                            "bolos".
+                            Pegue Bubble Beam para ajudar ofensivamente, ou Surf (apenas se não houver muito stun na comp inimiga). Use seus stuns para atrapalhar o jogo inimigo.
                         </p>
                     </div>
                 </div>
@@ -296,8 +262,7 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Use o Unite Move em lutas de equipe. Posicione-se corretamente: Fique longe de dano inimigo e próximo aos aliados.
-                            Se esconda numa moita e ative o Unite Move caso necessário.
+                            Use a ult no começo das team fights para aproveitar o debuff de dano. Use Psychic para reposicionar oponentes e Disable para punir comps bloqueadas.
                         </p>
                     </div>
                 </div>
@@ -307,9 +272,9 @@
                     <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
                     <div class="pokemon-card-content">
                         <ul class="strategy-tips">
-                                                        <li>Gerencie o Sweet Gauge para ter habilidades fortalecidas nos momentos certos.</li>
-                            <li>Use Aroma Veil para limpar CC dos aliados.</li>
-                            <li>Se sua ult for cancelada muito rapidamente por dano inimigo, ou se morrer sem perder o escudo, grande parte dela voltará.</li>
+                                                        <li>Use seus vários stuns, puxões e empurrões para desestabilizar os oponentes (até mentalmente kkkk).</li>
+                            <li>Bubble Beam funciona parecido com Choice Specs, e o dano extra sempre conta como do Psyduck.</li>
+                            <li>A ult é ótima para iniciar lutas e reduzir o dano inimigo.</li>
 
                         </ul>
                     </div>
@@ -336,6 +301,6 @@
 
     <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

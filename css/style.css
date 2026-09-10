@@ -104,7 +104,7 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-image: url("bolo.jpg");
+    background-image: url("../imagens/icons/bolo.jpg");
     background-size: cover;
     background-position: center;
     border: 2px solid var(--primary);

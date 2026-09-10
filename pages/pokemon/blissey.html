@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gâteau! - Latias</title>
+    <title>Gâteau! - Blissey</title>
     <!-- Favicon -->
     <link rel="icon" href="bolo.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Cabeçalho fixo -->
@@ -33,18 +33,18 @@
             <div class="pokemon-card intro-card">
                 <div class="pokemon-intro">
                     <div class="pokemon-intro-image">
-                        <img src="latias.jpg" alt="Latias">
+                        <img src="imagens/pokemon/blissey.jpg" alt="Blissey">
                     </div>
                     <div class="pokemon-intro-info">
-                        <h1 class="pokemon-detail-title">Latias</h1>
+                        <h1 class="pokemon-detail-title">Blissey</h1>
                         <div class="pokemon-tags">
                             <span class="tag tag-support">Support</span>
-<span class="tag tag-ranged">Ranged</span>
-<span class="tag tag-novice">Novice</span>
+<span class="tag tag-melee">Melee</span>
+<span class="tag tag-intermediate">Intermediate</span>
 <span class="tag tag-special">Special</span>
                         </div>
                         <p class="pokemon-description">
-                            Latias é um suporte com capacidade de ficar mais forte ao longo do jogo, tem debuff, buff, escudos, e dano!
+                            Blissey é a Suporte focada em manter aliados vivos com e escudos. Sua passiva Natural Cure limpa efeitos negativos automaticamente a cada 6s. Possui habilidades de cura, buff e proteção que a tornam essencial em composições de equipe.
                         </p>
                     </div>
                 </div>
@@ -53,15 +53,33 @@
             <!-- Grade de cards individuais -->
             <div class="pokemon-cards-container">
                 
+                <!-- Card: Evolução/Transformação -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">🔄 Evolução</h2>
+                    <div class="pokemon-card-content">
+                        <div class="evolution-chain">
+                            <span class="evolution-name">Happiny</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 4</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Chansey</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 8</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Blissey</span>
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- Card: Passiva -->
                 <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">✨ Passiva: Levitate</h2>
+                    <h2 class="pokemon-card-title">✨ Passiva: Natural Cure</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Depois de usar uma skill, a speed de Latias aumenta por um curto período em 50%. Ficar perto de um Latios aliado também aumenta a speed, em 10% (esses buffs na velocidade não tem cooldown). Se Latias não estiver em combate, ela pode usar um botão que a passiva cria para teleportar para o local que Latios (se for um aliado) está.
+                            Limpa automaticamente este Pokémon a cada 6s, mesmo se não houver efeitos para limpar. Isso significa que Blissey remove efeitos negativos de status de si mesma constantemente.
                         </p>
-                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 90s</p>
+                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 6s</p>
                     </div>
                 </div>
 
@@ -70,120 +88,120 @@
                     <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança um projétil psíquico. Latias não tem ataque boostado.
+                            Torna-se um ataque carregado (boosted attack) após 6s, causando dano aumentado. Este ataque carregado permanece pronto até ser usado.
                         </p>
                     </div>
                 </div>
 
                 
-                <!-- Card: Confusion -->
+                <!-- Card: Pound -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Confusion.png" alt="Confusion" class="skill-title-img"> Confusion
-                        <span class="level-badge">Nível 1 ou 3</span>
+                        <img src="imagens/skills/Blissey/Pound.png" alt="Pound" class="skill-title-img"> Pound
+                        <span class="level-badge">Nível 1 ou 2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança uma força psíquica em linha reta, causando dano e diminuindo a speed dos oponentes em 20% por 2 segundos.
+                            Golpeia na direção designada, causando dano aos Pokémon oponentes na área de efeito e diminuindo a velocidade de movimento deles em 40% por 2s.
                         </p>
                         <div class="pokemon-card-meta">
                             
-                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Melee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Heal Pulse -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        <img src="imagens/skills/Blissey/Heal_Pulse.png" alt="Heal Pulse" class="skill-title-img"> Heal Pulse
+                        <span class="level-badge">Nível 1 ou 2</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Restaura o HP do usuário e de um aliado designado a cada 0.5s durante 2s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Egg Bomb -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        <img src="imagens/skills/Blissey/Egg_Bomb.png" alt="Egg Bomb" class="skill-title-img"> Egg Bomb
+                        <span class="level-badge">Nível 6</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança um ovo no local designado que explode, causando dano aos Pokémon oponentes na área e empurrando-os para longe do centro do impacto por 0.8s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 12: Reduz a velocidade dos oponentes em 40% por 2s.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
                             <span class="meta-type">📋 Tipo: Ranged</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Swift -->
+                <!-- Card: Helping Hand -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Swift.png" alt="Swift" class="skill-title-img"> Swift
-                        <span class="level-badge">Nível 1 ou 3</span>
-                    </h2>
-                    <div class="pokemon-card-content">
-                        <p class="pokemon-card-text">
-                            Lança raios em formato de estrelas em cone.
-                        </p>
-                        <div class="pokemon-card-meta">
-                            
-                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
-                            <span class="meta-type">📋 Tipo: Area / Dano</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Dragon Pulse -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Dragon_Pulse.png" alt="Dragon Pulse" class="skill-title-img"> Dragon Pulse
-                        <span class="level-badge">Nível 4</span>
-                    </h2>
-                    <div class="pokemon-card-content">
-                        <p class="pokemon-card-text">
-                            Libera um laser em cone, causando dano. Após aprender, Latias ganha Eon a cada farm eliminado ou oponente atingido.
-                        </p>
-                        <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: O laser diminui a velocidade dos oponentes atingidos em 30% por 2s.</span>
-
-                            <span class="meta-cooldown">⏱️ Cooldown: 6.50s</span>
-                            <span class="meta-type">📋 Tipo: Area / Dano</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Dragon Breath -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Dragon_Breath.png" alt="Dragon Breath" class="skill-title-img"> Dragon Breath
-                        <span class="level-badge">Nível 4</span>
-                    </h2>
-                    <div class="pokemon-card-content">
-                        <p class="pokemon-card-text">
-                            Libera uma baforada em linha reta, diminuindo speed e def sp em 30% por 3s.
-                        </p>
-                        <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 10: O slow aumenta para 40%.</span>
-
-                            <span class="meta-cooldown">⏱️ Cooldown: 5.50s</span>
-                            <span class="meta-type">📋 Tipo: Ranged / Dano</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Mist Ball -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Mist_Ball.png" alt="Mist Ball" class="skill-title-img"> Mist Ball
+                        <img src="imagens/skills/Blissey/Helping_Hand.png" alt="Helping Hand" class="skill-title-img"> Helping Hand
                         <span class="level-badge">Nível 6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Lança uma bola de névoa que cria área de DPS e aplica marca que reduz o dano do oponente em 25%.
+                            Aumenta a velocidade de movimento e velocidade de ataque básico do usuário e aliados próximos em 30% por 4s. Quando buffado, os ataques básicos do usuário também se tornam ataques carregados.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 12: Aumenta a duração base da marca para 3s.</span>
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano de ataque básico de todos os aliados buffados em 15% por 4s.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
-                            <span class="meta-type">📋 Tipo: Ranged / Debuff</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
+                            <span class="meta-type">📋 Tipo: Buff</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Dragon Cheer -->
+                <!-- Card: Soft-Boiled -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Dragon_Cheer.png" alt="Dragon Cheer" class="skill-title-img"> Dragon Cheer
-                        <span class="level-badge">Nível 6</span>
+                        <img src="imagens/skills/Blissey/Soft-Boiled.png" alt="Soft-Boiled" class="skill-title-img"> Soft-Boiled
+                        <span class="level-badge">Nível 4</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Ruge para um aliado, garantindo escudo e dano extra no próximo hit.
+                            Lança um ovo para um aliado designado, restaurando o HP do usuário e do aliado. Depois, ambos restauram HP ao longo do tempo a cada 1s durante 2s.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 12: Escudo aumenta um pouco.</span>
+                            <span class="meta-upgrade">⭐ Nível 10: Ganha 1 uso adicional em reserva.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 8.00s</span>
-                            <span class="meta-type">📋 Tipo: Target / Buff</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 12.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Safeguard -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        <img src="imagens/skills/Blissey/Safeguard.png" alt="Safeguard" class="skill-title-img"> Safeguard
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Limpa o usuário e um aliado designado, e concede a ambos um escudo que os torna imparáveis (unstoppable) por 4s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Fortalece o valor do escudo.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
+                            <span class="meta-type">📋 Tipo: Buff</span>
                         </div>
                     </div>
                 </div>
@@ -192,16 +210,16 @@
                 <!-- Card: Unite Move -->
                 <div class="pokemon-card unite-move-card">
                     <h2 class="pokemon-card-title">
-                        <img src="imagens/skills/Latias/Mist_Blast.png" alt="Mist Blast" class="skill-title-img"> Unite Move: Mist Blast
+                        <img src="imagens/skills/Blissey/Bliss_Assistance.png" alt="Bliss Assistance" class="skill-title-img"> Unite Move: Bliss Assistance
                         <span class="level-badge">Nível 8</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Mira um oponente e carrega energia por 1.8s antes de lançar um laser. Cooldowns são resetados após acertar.
+                            Fica imparável e avança para o aliado designado, dando-lhe um ovo que concede escudo e aumenta o Ataque e Ataque Especial dele em 20% por 6s. Blissey também intercepta 50% do dano pós-mitigação recebido pelo aliado como dano não mitigado por 6s.
                         </p>
                         <div class="pokemon-card-meta">
                             <span class="meta-cooldown">⏱️ Cooldown: 112s</span>
-                            <span class="meta-type">📋 30% Velocidade, 20% Escudo de HP Máximo (6s)</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
                         </div>
                     </div>
                 </div>
@@ -214,33 +232,33 @@
                             
                             <div class="build-item">
                                 <div class="build-item-icon">
-                                    <img src="imagens/held-items/Drive_Lens.png" alt="Drive Lens" class="build-item-img">
+                                    <img src="imagens/held-items/Rescue_Hood.png" alt="Rescue Hood" class="build-item-img">
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Drive Lens</h3>
-                                    <p class="build-item-desc">Reduz ligeiramente os cooldowns e aumenta seu dano após kills/assistências.</p>
+                                    <h3 class="build-item-name">Rescue Hood</h3>
+                                    <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
                                 </div>
                             </div>
 
                             <div class="build-item">
                                 <div class="build-item-icon">
-                                    <img src="imagens/held-items/Shell_Bell.png" alt="Shell Bell" class="build-item-img">
+                                    <img src="imagens/held-items/Buddy_Barrier.png" alt="Buddy Barrier" class="build-item-img">
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Shell Bell</h3>
-                                    <p class="build-item-desc">Reduz ligeiramente os cooldowns e recupera HP ao acertar uma skill.</p>
+                                    <h3 class="build-item-name">Buddy Barrier</h3>
+                                    <p class="build-item-desc">Concede escudo para você e um aliado ao usar o Unite Move.</p>
                                 </div>
                             </div>
 
                             <div class="build-item">
-                                <div class="build-item-icon">
-                                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.1aevdZl5geQiW3haLNRongHaHa%3Fr%3D0%26pid%3DApi&f=1&ipt=5fc6c2d31523b905571e223d1ab02ed5618e37d9f0a914492e5200ac73042e71&ipo=images" alt="LIVRE" class="build-item-img">
-                                </div>
-                                <div class="build-item-info">
-                                    <h3 class="build-item-name">LIVRE</h3>
-                                    <p class="build-item-desc">Item da sua preferência. Cursed Incense, Resonant Guard, Energy Amplifier, etc.</p>
-                                </div>
-                            </div>
+    <div class="build-item-icon">
+        <img src="imagens/held-items/Sp._Atk_Specs.png" alt="Sp. Atk Specs" class="build-item-img">
+    </div>
+    <div class="build-item-info">
+        <h3 class="build-item-name">Sp. Atk Specs</h3>
+        <p class="build-item-desc">Aumenta permanentemente o Ataque Especial ao marcar gols.</p>
+    </div>
+</div>
 
                         </div>
                     </div>
@@ -250,11 +268,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🌅 Early Game
-                        <span class="level-badge">Níveis 1-3</span>
+                        <span class="level-badge">Níveis 1-2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Comece com Swift e ajude seu aliado a farmar. Dispute os farms neutros usando Confusion seguido de Swift.
+                            Fique na rota com seu aliado e use Heal Pulse para aumentar ligeiramente sua durabilidade durante as trocas.
                         </p>
                     </div>
                 </div>
@@ -263,11 +281,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         ☀️ Mid Game
-                        <span class="level-badge">Níveis 4-7</span>
+                        <span class="level-badge">Níveis 4-6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Escolha Dragon Pulse ou Dragon Breath. Stacke sempre que possível. No nível 6, escolha Dragon Cheer ou Mist Ball.
+                            Escolha Soft-Boiled para cura forte ou Safeguard para proteção contra CC. No nível 6, Helping Hand para buff ou Egg Bomb para dano.
                         </p>
                     </div>
                 </div>
@@ -280,7 +298,7 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Use o Unite Move Mist Blast para eliminar inimigos fugindo ou contribuir em fights.
+                            Use o Unite Move para salvar aliados em perigo ou iniciar lutas. Posicione-se perto dos carries.
                         </p>
                     </div>
                 </div>
@@ -290,9 +308,9 @@
                     <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
                     <div class="pokemon-card-content">
                         <ul class="strategy-tips">
-                                                        <li>Use a passiva Levitate para se reposicionar e chegar antecipadamente nos locais.</li>
-                            <li>Combo básico: Mist Ball/Dragon Cheer, Dragon Pulse/Breath, ult, repita.</li>
-                            <li>Latias é um suporte ofensivo, não jogue recuado à toa.</li>
+                                                        <li>Priorize curar quem está em risco e não quem está a salvo.</li>
+                            <li>Use Safeguard preventivamente antes de CC que você tiver certeza que virão.</li>
+                            <li>Seu Unite Move pode salvar um aliado de morrer ou garantir que ele consiga fazer seu papel.</li>
 
                         </ul>
                     </div>
@@ -319,6 +337,6 @@
 
     <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
