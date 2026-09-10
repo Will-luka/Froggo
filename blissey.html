@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gâteau! - Mr. Mime</title>
+    <title>Gâteau! - Blissey</title>
     <!-- Favicon -->
     <link rel="icon" href="bolo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="css/style.css">
@@ -33,10 +33,10 @@
             <div class="pokemon-card intro-card">
                 <div class="pokemon-intro">
                     <div class="pokemon-intro-image">
-                        <img src="mrmime.jpg" alt="Mr. Mime">
+                        <img src="blissey.jpg" alt="Blissey">
                     </div>
                     <div class="pokemon-intro-info">
-                        <h1 class="pokemon-detail-title">Mr. Mime</h1>
+                        <h1 class="pokemon-detail-title">Blissey</h1>
                         <div class="pokemon-tags">
                             <span class="tag tag-support">Support</span>
 <span class="tag tag-melee">Melee</span>
@@ -44,7 +44,7 @@
 <span class="tag tag-special">Special</span>
                         </div>
                         <p class="pokemon-description">
-                            Mr. Mime é um suporte com capacidades tank. Usa seus stuns e barreiras para controlar o campo de batalha e proteger os aliados.
+                            Blissey é a Suporte tanque focada em manter aliados vivos com curas poderosas e escudos. Sua passiva Natural Cure limpa efeitos negativos automaticamente a cada 6s. Possui habilidades de cura, buff e proteção que a tornam essencial em composições de equipe.
                         </p>
                     </div>
                 </div>
@@ -53,15 +53,33 @@
             <!-- Grade de cards individuais -->
             <div class="pokemon-cards-container">
                 
+                <!-- Card: Evolução/Transformação -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">🔄 Evolução</h2>
+                    <div class="pokemon-card-content">
+                        <div class="evolution-chain">
+                            <span class="evolution-name">Happiny</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 4</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Chansey</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-level">Nível 8</span>
+                            <span class="evolution-arrow">→</span>
+                            <span class="evolution-name">Blissey</span>
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- Card: Passiva -->
                 <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">✨ Passiva: Filter</h2>
+                    <h2 class="pokemon-card-title">✨ Passiva: Natural Cure</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Ao usar uma habilidade, Mr. Mime recebe 10% menos dano por 2s. Isso reforça seu papel de suporte tanque.
+                            Limpa automaticamente este Pokémon a cada 6s, mesmo se não houver efeitos para limpar. Isso significa que Blissey remove efeitos negativos de status de si mesma constantemente.
                         </p>
-                        
+                        <p class="pokemon-card-text"><strong>Cooldown da passiva:</strong> 6s</p>
                     </div>
                 </div>
 
@@ -70,102 +88,120 @@
                     <h2 class="pokemon-card-title">👊 Ataque Básico</h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            A cada 5s, ganha um ataque carregado que causa dano aumentado e arremessa os inimigos no ar por 0,5s.
+                            Torna-se um ataque carregado (boosted attack) após 6s, causando dano aumentado. Este ataque carregado permanece pronto até ser usado.
                         </p>
                     </div>
                 </div>
 
                 
-                <!-- Card: Fake Out -->
+                <!-- Card: Pound -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        👏 Fake Out
-                        <span class="level-badge">Nível 1 ou 3</span>
+                        👊 Pound
+                        <span class="level-badge">Nível 1 ou 2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Bate palmas, causando dano e empurrando os inimigos por 0,4s. Use para roubar farm e afastar oponentes.
+                            Golpeia na direção designada, causando dano aos Pokémon oponentes na área de efeito e diminuindo a velocidade de movimento deles em 40% por 2s.
                         </p>
                         <div class="pokemon-card-meta">
                             
-                            <span class="meta-cooldown">⏱️ Cooldown: 7.00s</span>
-                            <span class="meta-type">📋 Tipo: Melee / Stun</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 6.00s</span>
+                            <span class="meta-type">📋 Tipo: Melee</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Confusion -->
+                <!-- Card: Heal Pulse -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        🔮 Confusion
-                        <span class="level-badge">Nível 4</span>
+                        💚 Heal Pulse
+                        <span class="level-badge">Nível 1 ou 2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Dispara uma onda psíquica que empurra os inimigos. Se baterem na parede, tomam dano bônus e stun de 1,5s. Inimigos afetados por Power Swap também sofrem stun.
+                            Restaura o HP do usuário e de um aliado designado a cada 0.5s durante 2s.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 11: Aumenta o dano.</span>
-
-                            <span class="meta-cooldown">⏱️ Cooldown: 5.00s</span>
-                            <span class="meta-type">📋 Tipo: Ranged / Stun</span>
+                            
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Psychic -->
+                <!-- Card: Egg Bomb -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        🧠 Psychic
-                        <span class="level-badge">Nível 4</span>
-                    </h2>
-                    <div class="pokemon-card-content">
-                        <p class="pokemon-card-text">
-                            Pulsa energia ao redor de si, causando dano em área. Após três pulsos, um pulso final stuna por 1s. Cada acerto reduz a Def. Especial do inimigo.
-                        </p>
-                        <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 11: Os pulsos também reduzem a velocidade em 30%.</span>
-
-                            <span class="meta-cooldown">⏱️ Cooldown: 6.50s</span>
-                            <span class="meta-type">📋 Tipo: Area / Dano</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Barrier -->
-                <div class="pokemon-card">
-                    <h2 class="pokemon-card-title">
-                        🧱 Barrier
+                        💣 Egg Bomb
                         <span class="level-badge">Nível 6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Cria uma parede que impede a passagem dos inimigos. Inimigos próximos são empurrados e ficam sem ação por 0,5s. Possui 2 cargas.
+                            Lança um ovo no local designado que explode, causando dano aos Pokémon oponentes na área e empurrando-os para longe do centro do impacto por 0.8s.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 13: Passa a ter 3 cargas.</span>
+                            <span class="meta-upgrade">⭐ Nível 12: Reduz a velocidade dos oponentes em 40% por 2s.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 7.50s</span>
-                            <span class="meta-type">📋 Tipo: Hindrance</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
+                            <span class="meta-type">📋 Tipo: Ranged</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Power Swap -->
+                <!-- Card: Helping Hand -->
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
-                        🔗 Power Swap
+                        🛡️ Helping Hand
                         <span class="level-badge">Nível 6</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Cria um vínculo com o alvo. Se for aliado, aumenta velocidade e dano, e cura ao longo do tempo. Se for inimigo, reduz velocidade e dano, e causa dano contínuo.
+                            Aumenta a velocidade de movimento e velocidade de ataque básico do usuário e aliados próximos em 30% por 4s. Quando buffado, os ataques básicos do usuário também se tornam ataques carregados.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-upgrade">⭐ Nível 13: Aumenta o buff/dano em aliados e o debuff em inimigos para 20%.</span>
+                            <span class="meta-upgrade">⭐ Nível 12: Aumenta o dano de ataque básico de todos os aliados buffados em 15% por 4s.</span>
 
-                            <span class="meta-cooldown">⏱️ Cooldown: 4.50s</span>
-                            <span class="meta-type">📋 Tipo: Buff / Debuff</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 9.00s</span>
+                            <span class="meta-type">📋 Tipo: Buff</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Soft-Boiled -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🥚 Soft-Boiled
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Lança um ovo para um aliado designado, restaurando o HP do usuário e do aliado. Depois, ambos restauram HP ao longo do tempo a cada 1s durante 2s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Ganha 1 uso adicional em reserva.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 12.00s</span>
+                            <span class="meta-type">📋 Tipo: Recovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Safeguard -->
+                <div class="pokemon-card">
+                    <h2 class="pokemon-card-title">
+                        🛡️ Safeguard
+                        <span class="level-badge">Nível 4</span>
+                    </h2>
+                    <div class="pokemon-card-content">
+                        <p class="pokemon-card-text">
+                            Limpa o usuário e um aliado designado, e concede a ambos um escudo que os torna imparáveis (unstoppable) por 4s.
+                        </p>
+                        <div class="pokemon-card-meta">
+                            <span class="meta-upgrade">⭐ Nível 10: Fortalece o valor do escudo.</span>
+
+                            <span class="meta-cooldown">⏱️ Cooldown: 10.00s</span>
+                            <span class="meta-type">📋 Tipo: Buff</span>
                         </div>
                     </div>
                 </div>
@@ -174,16 +210,16 @@
                 <!-- Card: Unite Move -->
                 <div class="pokemon-card unite-move-card">
                     <h2 class="pokemon-card-title">
-                        👑 Unite Move: Showtime
-                        <span class="level-badge">Nível 9</span>
+                        👑 Unite Move: Bliss Assistance
+                        <span class="level-badge">Nível 8</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Mr. Mime salta e começa uma performance, causando dano em área 4 vezes e ficando imparável. O golpe final causa dano dobrado e stun de 1s.
+                            Fica imparável e avança para o aliado designado, dando-lhe um ovo que concede escudo e aumenta o Ataque e Ataque Especial dele em 20% por 6s. Blissey também intercepta 50% do dano pós-mitigação recebido pelo aliado como dano não mitigado por 6s.
                         </p>
                         <div class="pokemon-card-meta">
-                            <span class="meta-cooldown">⏱️ Cooldown: 100s</span>
-                            <span class="meta-type">📋 30% Velocidade, 30% Escudo de HP Máximo (6s)</span>
+                            <span class="meta-cooldown">⏱️ Cooldown: 112s</span>
+                            <span class="meta-type">📋 30% Velocidade, 30% CDR, 20% Escudo de HP Máximo (6s)</span>
                         </div>
                     </div>
                 </div>
@@ -199,8 +235,8 @@
                                     <div class="item-placeholder">?</div>
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Focus Band</h3>
-                                    <p class="build-item-desc">Recupera HP quando estiver com pouca vida, aumentando a sobrevivência.</p>
+                                    <h3 class="build-item-name">Rescue Hood</h3>
+                                    <p class="build-item-desc">Aumenta a eficácia de curas e escudos concedidos aos aliados.</p>
                                 </div>
                             </div>
 
@@ -209,8 +245,8 @@
                                     <div class="item-placeholder">?</div>
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Resonant Guard</h3>
-                                    <p class="build-item-desc">Concede escudo a você e aliados próximos ao usar o Unite Move.</p>
+                                    <h3 class="build-item-name">Buddy Barrier</h3>
+                                    <p class="build-item-desc">Concede escudo para você e um aliado ao usar o Unite Move.</p>
                                 </div>
                             </div>
 
@@ -219,8 +255,8 @@
                                     <div class="item-placeholder">?</div>
                                 </div>
                                 <div class="build-item-info">
-                                    <h3 class="build-item-name">Vanguard Bell</h3>
-                                    <p class="build-item-desc">Reduz o dano recebido e fortalece a resistência.</p>
+                                    <h3 class="build-item-name">Exp. Share</h3>
+                                    <p class="build-item-desc">Compartilha experiência com aliados próximos, acelerando o nível da equipe.</p>
                                 </div>
                             </div>
 
@@ -232,11 +268,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🌅 Early Game
-                        <span class="level-badge">Níveis 1-3</span>
+                        <span class="level-badge">Níveis 1-2</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Comece com Fake Out para roubar farm inimigo e afastar oponentes. Use Light Screen para ser chato, stunnando e atrapalhando a movimentação inimiga perto de você.
+                            Fique na rota com seu aliado e use Heal Pulse para mantê-lo vivo durante as trocas.
                         </p>
                     </div>
                 </div>
@@ -249,7 +285,7 @@
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Use os stuns das skills do nível 4 para que seus aliados acertem as skills deles com mais facilidade. Depois use as skills do nível 6 para aplicar stuns de forma mais poderosa. Combinações ideais: Confusion + Barrier ou Psychic + Power Swap.
+                            Escolha Soft-Boiled para cura forte ou Safeguard para proteção contra CC. No nível 6, Helping Hand para buff ou Egg Bomb para dano.
                         </p>
                     </div>
                 </div>
@@ -258,11 +294,11 @@
                 <div class="pokemon-card">
                     <h2 class="pokemon-card-title">
                         🌙 Late Game
-                        <span class="level-badge">Níveis 9+</span>
+                        <span class="level-badge">Níveis 8+</span>
                     </h2>
                     <div class="pokemon-card-content">
                         <p class="pokemon-card-text">
-                            Use a ult para stunnar inimigos em área, impedir o avanço de um oponente que poderia eliminar um aliado facilmente, ou iniciar uma luta com vantagem.
+                            Use o Unite Move para salvar aliados em perigo ou iniciar lutas. Posicione-se perto dos carries.
                         </p>
                     </div>
                 </div>
@@ -272,9 +308,9 @@
                     <h2 class="pokemon-card-title">💡 Dicas Gerais</h2>
                     <div class="pokemon-card-content">
                         <ul class="strategy-tips">
-                                                        <li>Confusion + Barrier é uma combinação devastadora perto de paredes.</li>
-                            <li>Power Swap é excelente para fortalecer um carry ou enfraquecer um assassino.</li>
-                            <li>Light Screen pode bloquear rotas de fuga e entrada.</li>
+                                                        <li>Priorize curar os carries da equipe, não os tanques.</li>
+                            <li>Use Safeguard preventivamente antes de lutas de equipe.</li>
+                            <li>Seu Unite Move pode salvar um aliado de uma ult inimiga.</li>
 
                         </ul>
                     </div>
