@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gâteau! - Dicionário</title>
+    <link rel="icon" href="imagens/icons/bolo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/builder.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gâteau<span>!</span></a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <h1 class="page-title">📖 Dicionário</h1>
+        <p class="section-subtitle">Todos os termos de Pokémon UNITE que você precisa saber</p>
+
+        <div class="glossario-toolbar">
+            <input type="text" id="glossario-search" class="glossario-search" placeholder="🔍 Buscar termo...">
+            <div class="glossario-filters" id="glossario-filters">
+                <button class="glossario-filter-btn active" data-cat="all">Todos</button>
+                <button class="glossario-filter-btn" data-cat="combate">⚔️ Combate</button>
+                <button class="glossario-filter-btn" data-cat="classe">🎭 Classe</button>
+                <button class="glossario-filter-btn" data-cat="mapa">🗺️ Mapa</button>
+                <button class="glossario-filter-btn" data-cat="estrategia">🧠 Estratégia</button>
+                <button class="glossario-filter-btn" data-cat="build">🔧 Build</button>
+            </div>
+            <span id="glossario-count" class="glossario-count"></span>
+        </div>
+
+        <div class="glossario-list" id="glossario-list"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2025 Gâteau! Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/glossario-data.js"></script>
+    <script src="js/glossario.js"></script>
+</body>
+</html>
