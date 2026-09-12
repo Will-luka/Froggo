@@ -4,39 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gâteau! - Sobre</title>
+    <link rel="icon" href="imagens/icons/bolo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">Gâteau<span>!</span></a>
-
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
                     <li class="nav-item"><a href="artigos.html" class="nav-link">Artigos</a></li>
-                    <!-- Link ativo na página sobre -->
                     <li class="nav-item"><a href="sobre.html" class="nav-link active">Sobre</a></li>
                     <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
         </div>
     </header>
 
     <main class="container main-content">
-        <section class="about-section">
-            <div class="about-container">
-                <h1 class="page-title">Sobre o Gâteau!</h1>
-                <p class="section-text">
-                    Um dia eu dou uma função pra essa aba
+        <h1 class="page-title">Sobre o Gâteau!</h1>
+
+        <!-- Card: Boas-vindas (reaproveita .pokemon-card) -->
+        <div class="pokemon-card">
+            <h2 class="pokemon-card-title">🍰 Bem-vindo(a) ao Gâteau!</h2>
+            <div class="pokemon-card-content">
+                <p class="pokemon-card-text">
+                    Um espaço dedicado a <strong>Pokémon UNITE</strong>, com foco nos <strong>Pokémon Suporte</strong> — a classe que segura a barra, cura os aliados e vira jogos que pareciam perdidos.
                 </p>
-                <p class="section-text">
-                    teste teste teste
+                <p class="pokemon-card-text">
+                    Aqui você encontra guias, builds, dicas e ferramentas pra dominar cada suporte do jogo. Seja você main Alcremie, Blissey, Hoopa ou só curioso pra aprender, tem espaço pra todo mundo.
                 </p>
             </div>
-        </section>
+        </div>
+
+        <!-- Card: O que tem no site -->
+        <div class="pokemon-card">
+            <h2 class="pokemon-card-title">📚 O que você encontra por aqui</h2>
+            <div class="pokemon-card-content">
+                <div class="sobre-grid">
+                    <div class="sobre-item">
+                        <h3>📖 Guias de Pokémon</h3>
+                        <p>Página detalhada de cada suporte, com passiva, habilidades, Unite Move, build recomendada e estratégias por fase do jogo.</p>
+                    </div>
+                    <div class="sobre-item">
+                        <h3>🔨 Builder de Builds</h3>
+                        <p>Monte sua build com itens e emblemas, e veja em tempo real o impacto nos status e nas habilidades.</p>
+                    </div>
+                    <div class="sobre-item">
+                        <h3>🎨 Boost Emblems</h3>
+                        <p>Sistema completo de emblemas, com busca por cor, atributo e nome. Veja os bônus de conjunto ativados em tiers.</p>
+                    </div>
+                    <div class="sobre-item">
+                        <h3>📕 Dicionário</h3>
+                        <p>Todos os termos do UNITE em um só lugar: hindrance, CDR, peel, kite, poke, meta e muito mais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card: Sobre o autor (reaproveita .pokemon-intro) -->
+        <div class="pokemon-card">
+            <h2 class="pokemon-card-title">👤 Quem faz o Gâteau!</h2>
+            <div class="pokemon-card-content">
+                <div class="pokemon-intro">
+                    <div class="pokemon-intro-image">
+                        <span style="font-size: 6rem;">🍮</span>
+                    </div>
+                    <div class="pokemon-intro-info">
+                        <h3 class="pokemon-detail-title" style="font-size: 1.8rem;">VA・Fallen - QFL35X7(id)</h3>
+                        <p class="pokemon-card-text">
+                            O Gâteau! nasceu da vontade de centralizar informação de qualidade sobre suportes em Pokémon UNITE. Muita gente subestima a classe, mas quem joga sabe: <strong>suporte bom ganha jogo</strong>.
+                        </p>
+                        <p class="pokemon-card-text">
+                            Todo o conteúdo é feito com base em experiência real de jogo, testes e troca de informações com outros mains suporte da comunidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card: Missão (reaproveita .strategy-tips) -->
+        <div class="pokemon-card">
+            <h2 class="pokemon-card-title">🎯 Nossa missão</h2>
+            <div class="pokemon-card-content">
+                <ul class="strategy-tips">
+                    <li><strong>Desmistificar a classe Suporte</strong> — mostrar que ela é tão impactante quanto qualquer outra, se não mais.</li>
+                    <li><strong>Informação de qualidade em português</strong> — conteúdo acessível, direto ao ponto.</li>
+                    <li><strong>Ferramentas úteis</strong> — o builder, o dicionário e tudo que economize seu tempo.</li>
+                    <li><strong>Comunidade</strong> — aprender junto, trocar ideia, ajudar quem tá começando.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card: Créditos -->
+        <div class="pokemon-card">
+            <h2 class="pokemon-card-title">💖 Créditos e agradecimentos</h2>
+            <div class="pokemon-card-content">
+                <p class="pokemon-card-text">
+                    Pokémon UNITE é uma marca registrada da <strong>The Pokémon Company</strong> e da <strong>TiMi Studios</strong>. Este é um site <strong>feito por fã, para fãs</strong>, sem vínculo oficial.
+                </p>
+                <p class="pokemon-card-text">
+                    Agradecimentos especiais à comunidade que compartilha conhecimento e ajuda a manter a informação atualizada.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card: CTA final -->
+        <div class="pokemon-card tips-card">
+            <h2 class="pokemon-card-title">Pronto pra começar?</h2>
+            <div class="pokemon-card-content">
+                <p class="pokemon-card-text">Explore os guias, monte sua build ou dê uma olhada no dicionário.</p>
+                <div class="sobre-cta-botoes">
+                    <a href="index.html" class="btn-load-more">Ver Pokémon</a>
+                    <a href="builder.html" class="btn-load-more">Abrir Builder</a>
+                    <a href="glossario.html" class="btn-load-more">Dicionário</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="site-footer">

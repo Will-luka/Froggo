@@ -1578,3 +1578,45 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   PÁGINA SOBRE (complementos)
+   ============================================ */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.sobre-item {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.sobre-item h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.sobre-item p {
+    color: var(--lighter-gray);
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.sobre-cta-botoes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+}
