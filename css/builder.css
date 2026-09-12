@@ -309,3 +309,328 @@ select.builder-select option {
     font-weight: bold;
     font-size: 1.3rem;
 }
+
+/* ============================================
+   BOOST EMBLEMS
+   ============================================ */
+.emblems-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+}
+
+.emblems-subtitle {
+    color: var(--lighter-gray);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.emblems-slots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.emblem-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.6rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+}
+
+.emblem-slot-label {
+    font-size: 1.1rem;
+    color: var(--lighter-gray);
+    font-weight: bold;
+}
+
+.emblem-slot-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border: 2px solid var(--card-border);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: left;
+    transition: border-color var(--transition);
+    font-family: inherit;
+}
+
+.emblem-slot-trigger:hover {
+    border-color: var(--primary);
+}
+
+.emblem-slot-trigger.empty {
+    color: var(--medium-gray);
+    font-style: italic;
+}
+
+.emblem-slot-info {
+    font-size: 1.1rem;
+    color: var(--lighter-gray);
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.emblem-color-tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emblem-color-tag.green  { background-color: #4CAF50; color: #fff; }
+.emblem-color-tag.yellow { background-color: #FFEB3B; color: #000; }
+.emblem-color-tag.red    { background-color: #F44336; color: #fff; }
+.emblem-color-tag.blue   { background-color: #2196F3; color: #fff; }
+.emblem-color-tag.white  { background-color: #E0E0E0; color: #000; }
+.emblem-color-tag.black  { background-color: #121212; color: #fff; }
+.emblem-color-tag.brown  { background-color: #8D6E63; color: #fff; }
+.emblem-color-tag.purple { background-color: #9C27B0; color: #fff; }
+.emblem-color-tag.pink   { background-color: #E91E63; color: #fff; }
+.emblem-color-tag.navy   { background-color: #1A237E; color: #fff; }
+.emblem-color-tag.gray   { background-color: #9E9E9E; color: #fff; }
+
+.emblems-bonus-panel {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.2rem;
+}
+
+.emblems-bonus-panel h3 {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.emblems-bonus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.emblem-bonus-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+    color: var(--lighter-gray);
+    padding: 0.5rem 0.8rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+}
+
+.emblem-bonus-item.active {
+    border-left-color: #4CAF50;
+    color: var(--white);
+}
+
+.emblem-bonus-item.inactive {
+    opacity: 0.5;
+}
+
+/* Modal de Emblemas */
+.emblem-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.emblem-modal.active { display: flex; }
+
+.emblem-modal-content {
+    background-color: var(--card-bg);
+    border: 3px solid var(--primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.emblem-modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.emblem-modal-close:hover { color: var(--primary); }
+
+.emblem-modal-title {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.emblem-search {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--dark-gray);
+    border: 2px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    outline: none;
+    font-family: inherit;
+}
+
+.emblem-search:focus { border-color: var(--primary); }
+
+.emblem-filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.emblem-filter-label {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.emblem-color-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.emblem-filter-btn {
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-color: rgba(255,255,255,0.05);
+    color: var(--white);
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.emblem-filter-btn:hover { border-color: var(--primary); }
+.emblem-filter-btn.active { background-color: var(--primary); border-color: var(--primary); font-weight: bold; }
+.emblem-filter-btn.green.active  { background-color: #4CAF50; }
+.emblem-filter-btn.yellow.active { background-color: #FFEB3B; color: #000; }
+.emblem-filter-btn.red.active    { background-color: #F44336; }
+.emblem-filter-btn.blue.active   { background-color: #2196F3; }
+.emblem-filter-btn.white.active  { background-color: #E0E0E0; color: #000; }
+.emblem-filter-btn.black.active  { background-color: #121212; }
+.emblem-filter-btn.brown.active  { background-color: #8D6E63; }
+.emblem-filter-btn.purple.active { background-color: #9C27B0; }
+.emblem-filter-btn.pink.active   { background-color: #E91E63; }
+.emblem-filter-btn.navy.active   { background-color: #1A237E; }
+.emblem-filter-btn.gray.active   { background-color: #9E9E9E; }
+
+.emblem-filter-select {
+    padding: 0.4rem;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border: 2px solid var(--card-border);
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.emblem-filter-select:focus { outline: none; border-color: var(--primary); }
+
+.emblem-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.6rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.emblem-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.6rem 0.8rem;
+    background-color: rgba(255,255,255,0.03);
+    border: 2px solid var(--card-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.emblem-item:hover {
+    border-color: var(--primary);
+    background-color: rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+}
+
+.emblem-item-name { color: var(--white); font-weight: bold; font-size: 1.3rem; }
+.emblem-item-colors { display: flex; gap: 0.2rem; flex-wrap: wrap; }
+.emblem-item-efeitos { font-size: 1.1rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.emblem-item-efeitos .plus  { color: #4CAF50; }
+.emblem-item-efeitos .minus { color: #F44336; }
+
+.emblem-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.emblem-result-count { color: var(--lighter-gray); font-size: 1.2rem; }
+
+.emblem-clear-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #F44336;
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: inherit;
+}
+
+.emblem-clear-btn:hover { background-color: #c62828; }
+
+@media (max-width: 768px) {
+    .emblems-slots { grid-template-columns: 1fr; }
+    .emblem-list { grid-template-columns: 1fr; }
+}

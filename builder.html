@@ -9,6 +9,68 @@
     <link rel="stylesheet" href="css/builder.css">
     <link rel="stylesheet" href="css/custom-select.css">
 </head>
+<!-- Modal de seleção de emblema -->
+<div class="emblem-modal" id="emblem-modal">
+    <div class="emblem-modal-content">
+        <button class="emblem-modal-close" id="emblem-modal-close">✕</button>
+        <h3 class="emblem-modal-title">Escolher Emblema</h3>
+
+        <input type="text" id="emblem-search" class="emblem-search" placeholder="🔍 Buscar por nome (ex: Lugia, Pikachu...)">
+
+        <div class="emblem-filter-group">
+            <span class="emblem-filter-label">Cor:</span>
+            <div class="emblem-color-filters" id="emblem-color-filters">
+                <button class="emblem-filter-btn active" data-color="all">Todos</button>
+                <button class="emblem-filter-btn green"  data-color="green">🟢 Verde</button>
+                <button class="emblem-filter-btn brown"  data-color="brown">🟤 Marrom</button>
+                <button class="emblem-filter-btn blue"   data-color="blue">🔵 Azul</button>
+                <button class="emblem-filter-btn white"  data-color="white">⚪ Branco</button>
+                <button class="emblem-filter-btn black"  data-color="black">⚫ Preto</button>
+                <button class="emblem-filter-btn purple" data-color="purple">🟣 Roxo</button>
+                <button class="emblem-filter-btn yellow" data-color="yellow">🟡 Amarelo</button>
+                <button class="emblem-filter-btn red"    data-color="red">🔴 Vermelho</button>
+                <button class="emblem-filter-btn pink"   data-color="pink">🌸 Rosa</button>
+                <button class="emblem-filter-btn navy"   data-color="navy">🔷 Marinho</button>
+                <button class="emblem-filter-btn gray"   data-color="gray">⬜ Cinza</button>
+            </div>
+        </div>
+
+        <div class="emblem-filter-group">
+            <span class="emblem-filter-label">Atributo +:</span>
+            <select id="emblem-filter-plus" class="emblem-filter-select">
+                <option value="">Qualquer</option>
+                <option value="hp">HP</option>
+                <option value="atk">Ataque</option>
+                <option value="def">Defesa</option>
+                <option value="spAtk">Sp. Atk</option>
+                <option value="spDef">Sp. Def</option>
+                <option value="speed">Velocidade</option>
+                <option value="crit">Crit Rate</option>
+                <option value="cdr">CDR</option>
+            </select>
+
+            <span class="emblem-filter-label" style="margin-left:1rem;">Atributo −:</span>
+            <select id="emblem-filter-minus" class="emblem-filter-select">
+                <option value="">Qualquer</option>
+                <option value="hp">HP</option>
+                <option value="atk">Ataque</option>
+                <option value="def">Defesa</option>
+                <option value="spAtk">Sp. Atk</option>
+                <option value="spDef">Sp. Def</option>
+                <option value="speed">Velocidade</option>
+                <option value="crit">Crit Rate</option>
+                <option value="cdr">CDR</option>
+            </select>
+        </div>
+
+        <div class="emblem-list" id="emblem-list"></div>
+
+        <div class="emblem-modal-footer">
+            <span id="emblem-result-count" class="emblem-result-count"></span>
+            <button id="emblem-clear-btn" class="emblem-clear-btn">Limpar Slot</button>
+        </div>
+    </div>
+</div>
 <body>
     <header class="site-header">
         <div class="container header-container">
@@ -109,6 +171,21 @@
 
         <!-- Descrições dos itens selecionados -->
         <div class="item-desc-container" id="item-desc"></div>
+
+        <!-- Seção de Boost Emblems -->
+<section class="emblems-section">
+    <h2 class="builder-section-title">🎨 Boost Emblems</h2>
+    <p class="emblems-subtitle">Até 10 emblemas. Bônus de cor ativam em tiers (2/4/6 ou 3/5/7).</p>
+
+    <div class="emblems-slots" id="emblems-slots"></div>
+
+    <div class="emblems-bonus-panel" id="emblems-bonus-panel">
+        <h3>Bônus de Cor Ativos</h3>
+        <div class="emblems-bonus-list" id="emblems-bonus-list">
+            <p class="results-placeholder">Selecione emblemas para ver os bônus.</p>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="site-footer">
@@ -124,6 +201,7 @@
 
     <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">↑</button>
 
+    <script src="js/emblems-data.js"></script>
     <script src="js/script.js"></script>
     <script src="js/custom-select.js"></script>
     <script src="js/builder.js"></script>

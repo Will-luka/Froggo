@@ -459,6 +459,9 @@ document.querySelector('.builder-panel').appendChild(stacksContainer);
 
 let customSelects = {};
 
+// Estado dos emblemas
+window.emblemsSelecionados = new Array(10).fill(null);
+
 async function carregarImagens() {
     try {
         const resposta = await fetch('../imagens.json');
@@ -545,8 +548,9 @@ function applyHeldItems(baseStats, selectedItems, stacks, eonStacks) {
     return finalStats;
 }
 
-function applyPercentEffects(finalStats, selectedItems, stacks) {
-    let spAtkMult = 1, shieldHealMult = 1, atkMult = 1;
+function applyPercentEffects(finalStats, selectedItems, stacks, emblemPercent = {}) {
+    let spAtkMult = 1, shieldHealMult = 1, atkMult = 1, hpMult = 1, defMult = 1, spDefMult = 1;
+
     selectedItems.forEach(itemName => {
         if (itemName === "Wise Glasses") spAtkMult += 0.07;
         if (itemName === "Rescue Hood") shieldHealMult += 0.23;
@@ -557,8 +561,19 @@ function applyPercentEffects(finalStats, selectedItems, stacks) {
             if (info.atkPercentPerStack) atkMult += (info.atkPercentPerStack / 100) * count;
         }
     });
+
+    spAtkMult += emblemPercent.spAtk || 0;
+    atkMult   += emblemPercent.atk   || 0;
+    hpMult    += emblemPercent.hp    || 0;
+    defMult   += emblemPercent.def   || 0;
+    spDefMult += emblemPercent.spDef || 0;
+
+    finalStats.hp    = Math.round(finalStats.hp    * hpMult);
+    finalStats.atk   = Math.round(finalStats.atk   * atkMult);
+    finalStats.def   = Math.round(finalStats.def   * defMult);
     finalStats.spAtk = Math.round(finalStats.spAtk * spAtkMult);
-    finalStats.atk = Math.round(finalStats.atk * atkMult);
+    finalStats.spDef = Math.round(finalStats.spDef * spDefMult);
+
     return { stats: finalStats, shieldHealMult };
 }
 
@@ -598,6 +613,237 @@ function updateStackInputs() {
 }
 
 // ============================================
+// EMBLEMAS
+// ============================================
+function getEmblemBonus() {
+    const flat = { hp: 0, atk: 0, def: 0, spAtk: 0, spDef: 0 };
+    const colorCounts = {};
+    const emblems = window.emblemsSelecionados.filter(Boolean);
+
+    emblems.forEach(e => {
+        if (e.plus && flat[e.plus.attr] !== undefined) flat[e.plus.attr] += e.plus.val;
+        if (e.minus && flat[e.minus.attr] !== undefined) flat[e.minus.attr] += e.minus.val;
+        e.colors.forEach(c => {
+            colorCounts[c] = (colorCounts[c] || 0) + 1;
+        });
+    });
+
+    const percent = { hp: 0, atk: 0, def: 0, spAtk: 0, spDef: 0 };
+    const activeTiers = {};
+
+    Object.keys(SET_BONUSES).forEach(color => {
+        const count = colorCounts[color] || 0;
+        const bonus = SET_BONUSES[color];
+        let tierIdx = -1;
+        for (let i = bonus.tiers.length - 1; i >= 0; i--) {
+            if (count >= bonus.tiers[i]) { tierIdx = i; break; }
+        }
+        const value = tierIdx >= 0 ? bonus.values[tierIdx] : 0;
+        activeTiers[color] = { tier: tierIdx + 1, value, count, config: bonus };
+        if (bonus.attr && percent[bonus.attr] !== undefined) {
+            percent[bonus.attr] += value;
+        }
+    });
+
+    return { flat, percent, colorCounts, activeTiers };
+}
+
+function gerarSlotsEmblemas() {
+    const container = document.getElementById('emblems-slots');
+    if (!container) return;
+
+    let html = '';
+    for (let i = 0; i < 10; i++) {
+        html += `<div class="emblem-slot">
+            <span class="emblem-slot-label">Emblema ${i + 1}</span>
+            <button type="button" class="emblem-slot-trigger empty" data-slot="${i}" id="emblem-trigger-${i}">
+                -- Nenhum --
+            </button>
+            <div class="emblem-slot-info" id="emblem-info-${i}"></div>
+        </div>`;
+    }
+    container.innerHTML = html;
+
+    document.querySelectorAll('.emblem-slot-trigger').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const slot = parseInt(this.dataset.slot);
+            abrirModalEmblema(slot);
+        });
+    });
+}
+
+function abrirModalEmblema(slot) {
+    window.emblemSlotAtual = slot;
+    const modal = document.getElementById('emblem-modal');
+    if (!modal) return;
+
+    document.getElementById('emblem-search').value = '';
+    document.querySelectorAll('.emblem-filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.emblem-filter-btn[data-color="all"]').classList.add('active');
+    document.getElementById('emblem-filter-plus').value = '';
+    document.getElementById('emblem-filter-minus').value = '';
+
+    renderizarListaEmblemas();
+    modal.classList.add('active');
+    setTimeout(() => document.getElementById('emblem-search').focus(), 50);
+}
+
+function fecharModalEmblema() {
+    document.getElementById('emblem-modal')?.classList.remove('active');
+}
+
+function renderizarListaEmblemas() {
+    const lista = document.getElementById('emblem-list');
+    const contador = document.getElementById('emblem-result-count');
+    if (!lista) return;
+
+    const busca = document.getElementById('emblem-search').value.toLowerCase().trim();
+    const corAtiva = document.querySelector('.emblem-filter-btn.active')?.dataset.color || 'all';
+    const filtroPlus = document.getElementById('emblem-filter-plus').value;
+    const filtroMinus = document.getElementById('emblem-filter-minus').value;
+
+    const filtrados = emblemsData.filter(e => {
+        if (busca && !e.name.toLowerCase().includes(busca)) return false;
+        if (corAtiva !== 'all' && !e.colors.includes(corAtiva)) return false;
+        if (filtroPlus && (!e.plus || e.plus.attr !== filtroPlus)) return false;
+        if (filtroMinus && (!e.minus || e.minus.attr !== filtroMinus)) return false;
+        return true;
+    });
+
+    contador.textContent = `${filtrados.length} emblema(s) encontrado(s)`;
+
+    if (filtrados.length === 0) {
+        lista.innerHTML = '<p style="color:var(--lighter-gray);grid-column:1/-1;text-align:center;padding:2rem;">Nenhum emblema encontrado.</p>';
+        return;
+    }
+
+    lista.innerHTML = filtrados.map(e => {
+        const coresHTML = e.colors.map(c => {
+            const cfg = SET_BONUSES[c];
+            return `<span class="emblem-color-tag ${c}" title="${cfg ? cfg.name : c}">${cfg ? cfg.emoji : c}</span>`;
+        }).join('');
+
+        const plusHTML = e.plus ? `<span class="plus">+${e.plus.val} ${e.plus.attr}</span>` : '';
+        const minusHTML = e.minus ? `<span class="minus">${e.minus.val} ${e.minus.attr}</span>` : '';
+
+        return `<div class="emblem-item" data-id="${e.id}">
+            <div class="emblem-item-name">${e.name}</div>
+            <div class="emblem-item-colors">${coresHTML}</div>
+            <div class="emblem-item-efeitos">${plusHTML} ${minusHTML}</div>
+        </div>`;
+    }).join('');
+
+    lista.querySelectorAll('.emblem-item').forEach(item => {
+        item.addEventListener('click', function () {
+            const id = parseInt(this.dataset.id);
+            selecionarEmblema(window.emblemSlotAtual, id);
+            fecharModalEmblema();
+        });
+    });
+}
+
+function selecionarEmblema(slot, id) {
+    window.emblemsSelecionados[slot] = id ? emblemsData.find(e => e.id === id) : null;
+    atualizarSlotVisual(slot);
+    updateResultsOnly();
+}
+
+function atualizarSlotVisual(slot) {
+    const btn = document.getElementById(`emblem-trigger-${slot}`);
+    const info = document.getElementById(`emblem-info-${slot}`);
+    const e = window.emblemsSelecionados[slot];
+
+    if (!e) {
+        if (btn) {
+            btn.textContent = '-- Nenhum --';
+            btn.classList.add('empty');
+        }
+        if (info) info.innerHTML = '';
+        return;
+    }
+
+    if (btn) {
+        btn.textContent = e.name;
+        btn.classList.remove('empty');
+    }
+
+    if (info) {
+        const coresHTML = e.colors.map(c =>
+            `<span class="emblem-color-tag ${c}">${SET_BONUSES[c] ? SET_BONUSES[c].name : c}</span>`
+        ).join('');
+        let efeitos = '';
+        if (e.plus) efeitos += `<span style="color:#4CAF50;">+${e.plus.val} ${e.plus.attr}</span> `;
+        if (e.minus) efeitos += `<span style="color:#F44336;">${e.minus.val} ${e.minus.attr}</span>`;
+        info.innerHTML = coresHTML + '<br>' + efeitos;
+    }
+}
+
+function atualizarPainelBonus() {
+    const panel = document.getElementById('emblems-bonus-list');
+    if (!panel) return;
+
+    const bonus = getEmblemBonus();
+    const emblemsAtivos = window.emblemsSelecionados.filter(Boolean);
+
+    if (emblemsAtivos.length === 0) {
+        panel.innerHTML = '<p class="results-placeholder">Selecione emblemas para ver os bônus.</p>';
+        return;
+    }
+
+    let html = '';
+    Object.keys(bonus.activeTiers).forEach(color => {
+        const t = bonus.activeTiers[color];
+        if (t.count === 0) return;
+
+        const cfg = t.config;
+        const isActive = t.tier > 0;
+        const pct = (t.value * 100).toFixed(1).replace('-', '−');
+        const sinal = t.value >= 0 ? '+' : '';
+        const status = isActive ? `Tier ${t.tier}: ${sinal}${pct}%` : `Sem bônus (precisa de ${cfg.tiers[0]})`;
+
+        html += `<div class="emblem-bonus-item ${isActive ? 'active' : 'inactive'}">
+            <span>${cfg.emoji} <strong>${cfg.name}</strong></span>
+            <span style="margin-left:auto;">${t.count} emblema(s) — ${status}</span>
+        </div>`;
+    });
+
+    panel.innerHTML = html || '<p class="results-placeholder">Nenhum bônus ativo.</p>';
+}
+
+function iniciarEventosModal() {
+    const modal = document.getElementById('emblem-modal');
+    if (!modal) return;
+
+    document.getElementById('emblem-modal-close').addEventListener('click', fecharModalEmblema);
+
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) fecharModalEmblema();
+    });
+
+    document.getElementById('emblem-search').addEventListener('input', renderizarListaEmblemas);
+
+    document.getElementById('emblem-color-filters').addEventListener('click', function (e) {
+        const btn = e.target.closest('.emblem-filter-btn');
+        if (!btn) return;
+        document.querySelectorAll('.emblem-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderizarListaEmblemas();
+    });
+
+    document.getElementById('emblem-filter-plus').addEventListener('change', renderizarListaEmblemas);
+    document.getElementById('emblem-filter-minus').addEventListener('change', renderizarListaEmblemas);
+
+    document.getElementById('emblem-clear-btn').addEventListener('click', function () {
+        selecionarEmblema(window.emblemSlotAtual, null);
+        fecharModalEmblema();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') fecharModalEmblema();
+    });
+}
+
+// ============================================
 // FUNÇÕES PARA BARRAS EMPILHADAS E TOOLTIP
 // ============================================
 function posicionarTooltip(e, tooltip) {
@@ -605,11 +851,13 @@ function posicionarTooltip(e, tooltip) {
     tooltip.style.top = e.clientY + 'px';
 }
 
-function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks) {
+function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks, emblemBonus) {
     const nomesStats = ['HP', 'Ataque', 'Defesa', 'Sp. Atk', 'Sp. Def'];
     const chavesStats = ['hp', 'atk', 'def', 'spAtk', 'spDef'];
-    const coresBase = '#81D4FA'; // azul claro
+    const coresBase = '#81D4FA';
     const coresItens = ['#4CAF50', '#FF9800', '#9C27B0', '#2196F3', '#F44336'];
+    const corEmblemaFlat = '#FFD700';
+    const corPercent = '#00BCD4';
 
     let html = '<div class="stats-bars-container">';
 
@@ -617,85 +865,53 @@ function gerarBarrasEmpilhadas(statsBase, statsItens, itensSelecionados, stacks)
         const chave = chavesStats[index];
         const base = statsBase[chave];
         const total = statsItens[chave];
-        const maxValor = Math.max(total, base, 1);
+        const emblemFlat = emblemBonus ? (emblemBonus.flat[chave] || 0) : 0;
 
+        const somaItens = itensSelecionados.reduce((acc, itemName) => {
+            const it = heldItemsData[itemName];
+            return acc + (it && it.atributos ? (it.atributos[chave] || 0) : 0);
+        }, 0);
+
+        const prePercent = base + somaItens + emblemFlat;
+        const percentBonus = total - prePercent;
+
+        const maxValor = Math.max(total, base, 1);
         let segmentos = '';
 
-        // Segmento base
         if (base > 0) {
-            const largura = (base / maxValor) * 100;
-            segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${coresBase};" data-tooltip="Base: ${base}"><span class="stat-bar-tooltip">Base: ${base}</span></div>`;
+            segmentos += `<div class="stat-bar-segment" style="width:${(base/maxValor)*100}%; background-color:${coresBase};" data-tooltip="Base: ${base}"><span class="stat-bar-tooltip">Base: ${base}</span></div>`;
         }
 
-        // Primeiro, calcula o total de atributos fixos
-let totalBase = statsBase[chave];
-itensSelecionados.forEach(itemNome => {
-    const item = heldItemsData[itemNome];
-    if (item && item.atributos) {
-        totalBase += item.atributos[chave] || 0;
-        if (stackItems[itemNome] && stacks[itemNome]) {
-            const info = stackItems[itemNome];
-            const count = Math.min(stacks[itemNome], info.maxStacks);
-            if (info.spAtkPerStack && chave === 'spAtk') totalBase += info.spAtkPerStack * count;
-            if (info.atkPerStack && chave === 'atk') totalBase += info.atkPerStack * count;
-            if (info.hpPerStack && chave === 'hp') totalBase += info.hpPerStack * count;
+        itensSelecionados.forEach((itemNome, idx) => {
+            const item = heldItemsData[itemNome];
+            if (!item || !item.atributos) return;
+            let valorItem = item.atributos[chave] || 0;
+            if (valorItem > 0) {
+                const cor = coresItens[idx % coresItens.length];
+                segmentos += `<div class="stat-bar-segment" style="width:${(valorItem/maxValor)*100}%; background-color:${cor};" data-tooltip="${itemNome}: +${valorItem}"><span class="stat-bar-tooltip">${itemNome}: +${valorItem}</span></div>`;
+            }
+        });
+
+        if (emblemFlat !== 0) {
+            const sinal = emblemFlat >= 0 ? '+' : '';
+            const cor = emblemFlat >= 0 ? corEmblemaFlat : '#F44336';
+            segmentos += `<div class="stat-bar-segment" style="width:${Math.abs(emblemFlat)/maxValor*100}%; background-color:${cor};" data-tooltip="Emblemas: ${sinal}${emblemFlat}"><span class="stat-bar-tooltip">Emblemas: ${sinal}${emblemFlat}</span></div>`;
         }
-    }
-});
 
-// Agora aplica percentuais sobre totalBase
-itensSelecionados.forEach((itemNome, idx) => {
-    const item = heldItemsData[itemNome];
-    if (!item || !item.atributos) return;
-
-    let valorItem = item.atributos[chave] || 0;
-    let valorStacks = 0;
-
-    if (stackItems[itemNome] && stacks[itemNome]) {
-        const info = stackItems[itemNome];
-        const count = Math.min(stacks[itemNome], info.maxStacks);
-        if (info.spAtkPerStack && chave === 'spAtk') valorStacks = info.spAtkPerStack * count;
-        if (info.atkPerStack && chave === 'atk') valorStacks = info.atkPerStack * count;
-        if (info.hpPerStack && chave === 'hp') valorStacks = info.hpPerStack * count;
-    }
-
-    valorItem += valorStacks;
-
-    // Aplica percentual sobre o totalBase (que já inclui os outros itens)
-    if (chave === 'spAtk' && itemNome === 'Wise Glasses') {
-        valorItem += Math.round(totalBase * 0.07);
-    }
-    if (stackItems[itemNome]) {
-        const info = stackItems[itemNome];
-        const count = Math.min(stacks[itemNome] || 0, info.maxStacks || 0);
-        if (info.spAtkPercentPerStack && chave === 'spAtk') {
-            valorItem += Math.round(totalBase * (info.spAtkPercentPerStack / 100) * count);
+        if (percentBonus > 0) {
+            segmentos += `<div class="stat-bar-segment" style="width:${(percentBonus/maxValor)*100}%; background-color:${corPercent};" data-tooltip="Bônus %: +${percentBonus}"><span class="stat-bar-tooltip">Bônus %: +${percentBonus}</span></div>`;
         }
-        if (info.atkPercentPerStack && chave === 'atk') {
-            valorItem += Math.round(totalBase * (info.atkPercentPerStack / 100) * count);
-        }
-    }
 
-    if (valorItem > 0) {
-        const largura = (valorItem / maxValor) * 100;
-        const cor = coresItens[idx % coresItens.length];
-        const tooltipTexto = valorStacks > 0 
-            ? `${itemNome}: +${valorItem} (${item.atributos[chave] || 0} base + ${valorStacks} stacks)`
-            : `${itemNome}: +${valorItem}`;
-        segmentos += `<div class="stat-bar-segment" style="width:${largura}%; background-color:${cor};" data-tooltip="${tooltipTexto}"><span class="stat-bar-tooltip">${tooltipTexto}</span></div>`;
-    }
-});
+        html += `
+            <div class="stacked-bar-row">
+                <span class="stacked-bar-label">${nomeStat}</span>
+                <div class="stat-bar-stack">${segmentos}</div>
+                <span class="stacked-bar-total">${total}</span>
+            </div>`;
+    });
 
-    html += `
-        <div class="stacked-bar-row">
-            <span class="stacked-bar-label">${nomeStat}</span>
-            <div class="stat-bar-stack">${segmentos}</div>
-            <span class="stacked-bar-total">${total}</span>
-        </div>`;
-});
-
-html += '</div>';
-return html;
+    html += '</div>';
+    return html;
 }
 
 function iniciarTooltipsBarras() {
@@ -734,36 +950,44 @@ function iniciarTooltipsBarras() {
 // ============================================
 // FUNÇÃO PRINCIPAL DE ATUALIZAÇÃO
 // ============================================
+
 function updateResultsOnly() {
     const pokemonName = window.pokemonSelecionado;
     const level = levelSelect.value;
     if (!pokemonName || !level) return;
+
     const baseStats = getPokemonStats(pokemonName, level);
     if (!baseStats) return;
 
     const selectedHeld = [window.held1Selecionado, window.held2Selecionado, window.held3Selecionado].filter(v => v);
     const stacks = getSelectedStacks();
     const eonStacks = getEonStacks();
+
     const statsAfterItems = applyHeldItems(baseStats, selectedHeld, stacks, eonStacks);
-    const { stats: finalStats, shieldHealMult } = applyPercentEffects(statsAfterItems, selectedHeld, stacks);
+
+    const emblemBonus = getEmblemBonus();
+    const statsAfterEmblems = { ...statsAfterItems };
+    ['hp', 'atk', 'def', 'spAtk', 'spDef'].forEach(k => {
+        statsAfterEmblems[k] += emblemBonus.flat[k] || 0;
+    });
+
+    const { stats: finalStats, shieldHealMult } = applyPercentEffects(
+        statsAfterEmblems, selectedHeld, stacks, emblemBonus.percent
+    );
+
     const skills = calculateSkills(pokemonName, level, finalStats, shieldHealMult, eonStacks);
 
-    // Barras empilhadas
-    const itensSelecionados = selectedHeld;
-    const statsHTML = gerarBarrasEmpilhadas(baseStats, finalStats, itensSelecionados, stacks);
+    const statsHTML = gerarBarrasEmpilhadas(baseStats, finalStats, selectedHeld, stacks, emblemBonus);
 
     let skillsHTML = '<h2 class="builder-section-title">Valores das Habilidades</h2>';
     skills.forEach(skill => {
         let nomeLimpo = normalizarNome(skill.nome);
         let chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k) === nomeLimpo);
-
         if (!chaveJson && nomeLimpo.includes(' ')) {
             const primeiraPalavra = nomeLimpo.split(' ')[0];
             chaveJson = Object.keys(imagensMap.skills[pokemonName] || {}).find(k => normalizarNome(k).startsWith(primeiraPalavra));
         }
-
         const imgSkill = chaveJson ? imagensMap.skills[pokemonName][chaveJson] : '';
-
         skillsHTML += `<div class="skill-calc-card">
             <div class="skill-calc-header">
                 ${imgSkill ? `<img src="${imgSkill}" alt="${skill.nome}" class="skill-icon-img" onerror="this.style.display='none'">` : ''}
@@ -773,6 +997,8 @@ function updateResultsOnly() {
         </div>`;
     });
     resultsPanel.innerHTML = statsHTML + skillsHTML;
+
+    atualizarPainelBonus();
 
     let itemsHTML = '';
     selectedHeld.forEach(itemName => {
@@ -789,6 +1015,7 @@ function updateResultsOnly() {
     }
     itemDescContainer.innerHTML = itemsHTML;
 }
+
 
 function renderResults() {
     const pokemonName = window.pokemonSelecionado;
@@ -877,6 +1104,8 @@ async function initBuilder() {
     levelSelect.addEventListener('change', updateResultsOnly);
     iniciarCustomSelects();
     iniciarTooltipsBarras();
+    gerarSlotsEmblemas();
+    iniciarEventosModal();
     renderResults();
 }
 
